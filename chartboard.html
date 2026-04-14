@@ -148,8 +148,8 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
         </div>
       </div>
     </div>
-    <div class="upload-panel">
-      <div class="upload-hdr">UPLOAD YOUR CHART</div>
+    <div class="upload-panel" id="uploadPanel" style="display:none;">
+      <div class="upload-hdr">UPLOAD YOUR CHART <span style="font-size:9px;opacity:0.7;">(ADMIN)</span></div>
       <div class="upload-form" id="uploadForm">
         <div class="uf-row">
           <label class="uf-label">Your Name *</label>
@@ -397,6 +397,20 @@ function closeLightbox(e){ if(e.target === document.getElementById('lightbox')) 
 renderCharts(null);
 </script>
 <script>
+// Admin check — show upload panel only for admin
+(function(){
+  var key = 'mc@2024admin';
+  if(sessionStorage.getItem('mc_admin')==='1'){
+    document.getElementById('uploadPanel').style.display='';
+  }
+  // Add admin login via URL hash: chartboard.html#admin
+  if(window.location.hash==='#admin'){
+    var pw=prompt('Admin access required. Enter password:');
+    if(pw===key){sessionStorage.setItem('mc_admin','1');document.getElementById('uploadPanel').style.display='';history.replaceState(null,null,' ');}
+    else if(pw!==null){alert('Incorrect password.');}
+  }
+})();
+
 // Adjust nav/ticker for social bar
 (function(){
   var sb = document.querySelector('.social-bar');

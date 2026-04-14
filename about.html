@@ -142,10 +142,10 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
     <div class="trainer-left">
       <div class="sb-hdr" style="padding:7px 14px;">IDENTIFICATION</div>
       <div class="portrait-area">
-        <div class="avatar-box" onclick="document.getElementById('trainerPhotoInput').click()">
+        <div class="avatar-box" onclick="adminUpload('trainerPhotoInput')">
           <div class="av-init" id="avInitials">AS</div>
           <img class="trainer-photo" id="trainerPhoto" style="display:none;" alt="Trainer Photo"/>
-          <div class="avatar-upload-hint">
+          <div class="avatar-upload-hint" id="uploadHint" style="display:none;">
             <svg viewBox="0 0 24 24"><path d="M19 7v2.99s-1.99.01-2 0V7h-3s.01-1.99 0-2h3V2h2v3h3v2h-3zm-3 4V8h-3V5H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8h-3zM5 19l3-4 2 3 3-4 4 5H5z"/></svg>
             <span>Upload Photo</span>
           </div>
@@ -487,6 +487,28 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
   var mainEl = document.querySelector('main');
   if(sb && ticker){ ticker.style.top='96px'; }
   if(sb && mainEl){ mainEl.style.marginTop='124px'; }
+})();
+
+/* Admin Auth for Uploads */
+var _mcAdmin = false;
+var _mcAdminKey = 'mc@2024admin';
+function adminUpload(inputId) {
+  if (_mcAdmin) { document.getElementById(inputId).click(); return; }
+  var pw = prompt('Admin access required. Enter password:');
+  if (pw === _mcAdminKey) {
+    _mcAdmin = true;
+    sessionStorage.setItem('mc_admin', '1');
+    document.getElementById(inputId).click();
+  } else if (pw !== null) {
+    alert('Incorrect password.');
+  }
+}
+(function checkAdmin() {
+  if (sessionStorage.getItem('mc_admin') === '1') {
+    _mcAdmin = true;
+    var hint = document.getElementById('uploadHint');
+    if (hint) hint.style.display = '';
+  }
 })();
 
 /* Trainer Photo Upload */

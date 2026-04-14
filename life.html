@@ -229,9 +229,9 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
 
   <!-- PHOTO / MOMENT GALLERY -->
   <div class="life-gallery-intro">
-    <div class="lgi-text"><strong>Inside the Classroom</strong> &mdash; Moments from Market Credo sessions, student chart work, live analysis days, and the community that makes this institute special. <span style="color:var(--orange);">Add your own photo below.</span></div>
-    <button class="lgi-upload-btn" onclick="document.getElementById('galleryModal').classList.add('open')">
-      &#8682; ADD PHOTO &lt;GO&gt;
+    <div class="lgi-text"><strong>Inside the Classroom</strong> &mdash; Moments from Market Credo sessions, student chart work, live analysis days, and the community that makes this institute special.</div>
+    <button class="lgi-upload-btn" id="lifeUploadBtn" style="display:none;" onclick="document.getElementById('galleryModal').classList.add('open')">
+      &#8682; ADD PHOTO &lt;GO&gt; <span style="font-size:8px;opacity:0.7;">(ADMIN)</span>
     </button>
   </div>
   <div class="photo-masonry" id="photoMasonry">
@@ -475,6 +475,19 @@ function renderGalleryPhoto(p){
 })();
 </script>
 <script>
+// Admin check — show upload button only for admin
+(function(){
+  var key = 'mc@2024admin';
+  if(sessionStorage.getItem('mc_admin')==='1'){
+    document.getElementById('lifeUploadBtn').style.display='';
+  }
+  if(window.location.hash==='#admin'){
+    var pw=prompt('Admin access required. Enter password:');
+    if(pw===key){sessionStorage.setItem('mc_admin','1');document.getElementById('lifeUploadBtn').style.display='';history.replaceState(null,null,' ');}
+    else if(pw!==null){alert('Incorrect password.');}
+  }
+})();
+
 // Adjust nav/ticker for social bar
 (function(){
   var sb = document.querySelector('.social-bar');

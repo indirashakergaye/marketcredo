@@ -855,9 +855,9 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
 
   <!-- PHOTO / MOMENT GALLERY -->
   <div class="life-gallery-intro">
-    <div class="lgi-text"><strong>Inside the Classroom</strong> &mdash; Moments from Market Credo sessions, student chart work, live analysis days, and the community that makes this institute special. <span style="color:var(--orange);">Add your own photo below.</span></div>
-    <button class="lgi-upload-btn" onclick="document.getElementById('galleryModal').classList.add('open')">
-      &#8682; ADD PHOTO &lt;GO&gt;
+    <div class="lgi-text"><strong>Inside the Classroom</strong> &mdash; Moments from Market Credo sessions, student chart work, live analysis days, and the community that makes this institute special.</div>
+    <button class="lgi-upload-btn" id="lifeUploadBtn" style="display:none;" onclick="document.getElementById('galleryModal').classList.add('open')">
+      &#8682; ADD PHOTO &lt;GO&gt; <span style="font-size:8px;opacity:0.7;">(ADMIN)</span>
     </button>
   </div>
   <div class="photo-masonry" id="photoMasonry">
@@ -1185,8 +1185,8 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
         </div>
       </div>
     </div>
-    <div class="upload-panel">
-      <div class="upload-hdr">UPLOAD YOUR CHART</div>
+    <div class="upload-panel" id="uploadPanel" style="display:none;">
+      <div class="upload-hdr">UPLOAD YOUR CHART <span style="font-size:9px;opacity:0.7;">(ADMIN)</span></div>
       <div class="upload-form" id="uploadForm">
         <div class="uf-row">
           <label class="uf-label">Your Name *</label>
@@ -1514,6 +1514,24 @@ function renderGalleryPhoto(p){
   getGalleryPhotos().forEach(renderGalleryPhoto);
 })();
 
+
+// Admin check — show upload panels only for admin
+(function(){
+  var key = 'mc@2024admin';
+  if(sessionStorage.getItem('mc_admin')==='1'){
+    var up=document.getElementById('uploadPanel'); if(up) up.style.display='';
+    var lb=document.getElementById('lifeUploadBtn'); if(lb) lb.style.display='';
+  }
+  if(window.location.hash==='#admin'){
+    var pw=prompt('Admin access required. Enter password:');
+    if(pw===key){
+      sessionStorage.setItem('mc_admin','1');
+      var up=document.getElementById('uploadPanel'); if(up) up.style.display='';
+      var lb=document.getElementById('lifeUploadBtn'); if(lb) lb.style.display='';
+      history.replaceState(null,null,' ');
+    } else if(pw!==null){alert('Incorrect password.');}
+  }
+})();
 
 // Adjust nav/ticker for social bar
 (function(){
