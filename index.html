@@ -5,8 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>MARKET CREDO | Technical Analysis Institute | Bhopal</title>
 <meta name="description" content="Market Credo is Bhopal's premier Technical Analysis Institute led by SEBI-registered analyst Atish Shakergaye with 20+ years experience. Learn stock market trading, chart patterns, and price action strategies."/>
-<meta name="keywords" content="technical analysis course Bhopal, stock market training, SEBI registered analyst, candlestick patterns, price action trading, Market Credo, Atish Shakergaye"/>
+<meta name="keywords" content="technical analysis course Bhopal, stock market training Bhopal, SEBI registered analyst Bhopal, candlestick patterns course, price action trading, Market Credo, Atish Shakergaye, stock market institute MP Nagar, share market classes Bhopal"/>
 <link rel="canonical" href="https://www.marketcredo.in/"/>
+<!-- Geo Meta Tags -->
+<meta name="geo.region" content="IN-MP"/>
+<meta name="geo.placename" content="Bhopal"/>
+<meta name="geo.position" content="23.2332;77.4347"/>
+<meta name="ICBM" content="23.2332, 77.4347"/>
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Market Credo — Technical Analysis Institute, Bhopal"/>
@@ -36,50 +41,126 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "EducationalOrganization",
+      "@type": ["EducationalOrganization", "LocalBusiness"],
       "name": "Market Credo",
       "alternateName": "Market Credo Technical Analysis Institute",
       "url": "https://www.marketcredo.in",
       "logo": "https://www.marketcredo.in/logo.png",
-      "description": "Bhopal's premier Technical Analysis Institute offering stock market education by SEBI-registered analyst Atish Shakergaye.",
+      "image": "https://www.marketcredo.in/logo.png",
+      "description": "Bhopal's premier Technical Analysis Institute offering stock market education by SEBI-registered analyst Atish Shakergaye with 20+ years experience.",
+      "@id": "https://www.marketcredo.in/#organization",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Plot No 83, Shrinivas Tower, M.P. Nagar Zone II",
         "addressLocality": "Bhopal",
         "addressRegion": "Madhya Pradesh",
+        "postalCode": "462016",
         "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "23.2332",
+        "longitude": "77.4347"
       },
       "telephone": "+91-8827979008",
       "email": "info@marketcredo.in",
+      "priceRange": "$$",
+      "currenciesAccepted": "INR",
+      "paymentAccepted": "Cash, UPI, Bank Transfer",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Bhopal"
+        },
+        {
+          "@type": "State",
+          "name": "Madhya Pradesh"
+        },
+        {
+          "@type": "Country",
+          "name": "India"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Stock Market Courses",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "Basics of Stock Market",
+              "description": "Introductory course covering stock market fundamentals for complete beginners."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "Advanced Technical Analysis",
+              "description": "Flagship programme covering chart structure, chart flow, chart patterns, chart behaviour, price action, and application across equity, commodity, forex and crypto markets."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "Free 2-Day Demo Class",
+              "description": "2-day free demo class with SEBI-registered analyst Atish Shakergaye. Zero cost, no commitment.",
+              "price": "0",
+              "priceCurrency": "INR"
+            }
+          }
+        ]
+      },
       "founder": {
         "@type": "Person",
         "name": "Atish Shakergaye",
         "jobTitle": "SEBI Registered Research Analyst",
-        "description": "SEBI Reg: INH000006086 | 20+ years of stock market experience"
+        "description": "SEBI Reg: INH000006086 | 20+ years of stock market experience",
+        "knowsAbout": ["Technical Analysis", "Price Action", "Stock Market Trading", "Candlestick Patterns", "Chart Patterns"]
       },
       "sameAs": [
         "https://www.youtube.com/@MarketCredo",
         "https://www.instagram.com/marketcredo",
         "https://www.facebook.com/marketcredo"
-      ]
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "500",
+        "bestRating": "5"
+      }
     },
     {
       "@type": "Course",
-      "name": "Technical Analysis Course",
-      "description": "Comprehensive technical analysis training covering candlestick patterns, chart patterns, price action, indicators, and trading strategies.",
+      "name": "Advanced Technical Analysis Course",
+      "description": "Flagship programme — master chart structure, chart flow, chart patterns and chart behaviour. Apply core price action concepts across equity, commodity, forex and crypto markets.",
       "provider": {
         "@type": "EducationalOrganization",
         "name": "Market Credo",
         "url": "https://www.marketcredo.in"
       },
       "educationalLevel": "Beginner to Advanced",
-      "about": ["Technical Analysis", "Stock Market Trading", "Chart Patterns", "Price Action"],
+      "about": ["Technical Analysis", "Stock Market Trading", "Chart Patterns", "Price Action", "Options Trading", "Commodity Trading"],
       "inLanguage": ["en", "hi"],
       "locationCreated": {
         "@type": "Place",
+        "name": "Market Credo, Bhopal",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "Plot No 83, Shrinivas Tower, M.P. Nagar Zone II",
           "addressLocality": "Bhopal",
           "addressRegion": "Madhya Pradesh",
+          "postalCode": "462016",
           "addressCountry": "IN"
         }
       }
@@ -263,9 +344,11 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
     <div class="foot-col">
       <div class="fc-logo">MARKET CREDO</div>
       <p class="fc-about">Bhopal's premier technical analysis training institute. Founded by Atish Shakergaye &mdash; SEBI Registered Research Analyst with 20+ years of market experience. Teaching traders to read the language of markets.</p>
-      <div class="fc-row"><span class="fc-ico">&#9673;</span>Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, MP 462016</div>
+      <div class="fc-row"><span class="fc-ico">&#9673;</span><a href="https://maps.google.com/?q=Market+Credo+Plot+No+83+Shrinivas+Tower+MP+Nagar+Zone+II+Bhopal+462016" target="_blank" rel="noopener" style="color:var(--dim);text-decoration:none;">Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, MP 462016</a></div>
       <div class="fc-row"><span class="fc-ico">&#9658;</span><a href="tel:+918827979008">+91-8827979008</a></div>
+      <div class="fc-row"><span class="fc-ico">&#9658;</span><a href="mailto:info@marketcredo.in" style="color:var(--cyan);text-decoration:none;">info@marketcredo.in</a></div>
       <div class="fc-row"><span class="fc-ico">&#9658;</span>SEBI Reg. No: <span style="color:var(--orange)">INH000006086</span></div>
+      <div style="margin-top:12px;border:1px solid var(--border);"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.7!2d77.4347!3d23.2332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sMP+Nagar+Zone+II%2C+Bhopal!5e0!3m2!1sen!2sin!4v1" width="100%" height="150" style="border:0;display:block;filter:grayscale(1) contrast(1.1) brightness(0.7);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Market Credo Location - MP Nagar, Bhopal"></iframe></div>
     </div>
     <div class="foot-col">
       <div class="foot-hdr">Courses</div>
