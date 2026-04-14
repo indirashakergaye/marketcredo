@@ -1,0 +1,2235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="theme-color" content="#121212">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Market Credo">
+<title>Market Credo — Learn The Language of Charts</title>
+<meta name="description" content="Market Credo — Bhopal's premier Technical Analysis Institute. Learn stock market trading, chart patterns, and price action from SEBI-registered analyst Atish Shakergaye."/>
+<link rel="canonical" href="https://www.marketcredo.in/mobile.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Market Credo — Learn The Language of Charts"/>
+<meta property="og:description" content="Learn stock market trading from SEBI-registered analyst. Technical analysis courses in Bhopal."/>
+<meta property="og:url" content="https://www.marketcredo.in/mobile.html"/>
+<meta property="og:site_name" content="Market Credo"/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23121212'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='monospace' font-weight='700' font-size='18' fill='%23F3772C'%3EMC%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
+:root {
+  --primary: #F3772C;
+  --primary-dark: #833C14;
+  --primary-light: #F99727;
+  --primary-glow: rgba(243,119,44,0.15);
+  --primary-glow-strong: rgba(243,119,44,0.25);
+  --bg: #121212;
+  --surface: #191919;
+  --surface-2: #2C2C31;
+  --surface-3: #2F3132;
+  --border: #43434A;
+  --border-bright: #626262;
+  --text: #E8E8E8;
+  --text-secondary: #9F9F9F;
+  --text-dim: #626262;
+  --green: #4CAF50;
+  --green-dim: #2E7D32;
+  --amber: #F99727;
+  --red: #EF4444;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-pill: 50px;
+  --header-h: 52px;
+  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  touch-action: manipulation;
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; }
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(1); opacity: 0.6; }
+  70% { transform: scale(2.2); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============================================
+   HEADER — Glassmorphism Floating
+   ============================================ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
+  background: rgba(18,18,18,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(243,119,44,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 1000;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-mark span {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.header-title {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text);
+  letter-spacing: 1.5px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-wa {
+  width: 36px;
+  height: 36px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.2s;
+}
+
+.header-wa:active { transform: scale(0.92); }
+.header-wa svg { width: 18px; height: 18px; }
+
+/* HAMBURGER MENU */
+.menu-toggle {
+  width: 36px;
+  height: 36px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.2s;
+  position: relative;
+  z-index: 1002;
+}
+.menu-toggle:active { background: var(--surface-3); }
+.menu-toggle span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translate(3px, 3px); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(3px, -3px); }
+
+/* SLIDE MENU OVERLAY */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* SLIDE MENU DRAWER */
+.menu-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  z-index: 1001;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.menu-drawer.open { transform: translateX(0); }
+
+.menu-drawer-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: var(--header-h);
+}
+.menu-drawer-header .logo-mark {
+  width: 36px;
+  height: 36px;
+}
+.menu-drawer-header .logo-mark span { font-size: 14px; }
+.menu-drawer-brand {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+.menu-drawer-sub {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-dim);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.menu-nav {
+  padding: 12px 0;
+  flex: 1;
+}
+.menu-nav-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 12px 20px 6px;
+}
+.menu-nav a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s;
+  border-left: 3px solid transparent;
+}
+.menu-nav a:active,
+.menu-nav a:hover {
+  background: var(--surface-2);
+  border-left-color: var(--primary);
+}
+.menu-nav a .nav-icon {
+  width: 20px;
+  text-align: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.menu-nav a .nav-label {
+  flex: 1;
+}
+.menu-nav a .nav-arrow {
+  font-size: 10px;
+  color: var(--text-dim);
+}
+.menu-nav-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 8px 20px;
+}
+
+.menu-footer {
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+}
+.menu-footer-sebi {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--green);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.menu-footer-sebi::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+.menu-footer-contact {
+  font-size: 11px;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* ============================================
+   SECTION SHARED
+   ============================================ */
+.section {
+  padding: 60px 20px;
+  position: relative;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.section-divider::before {
+  content: '';
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  border-radius: 1px;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: calc(var(--header-h) + 40px) 24px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(243,119,44,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--bg), transparent);
+  pointer-events: none;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(243,119,44,0.1);
+  border: 1px solid rgba(243,119,44,0.2);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 1.5px;
+  margin-bottom: 28px;
+  width: fit-content;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.hero-tag-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--primary);
+  border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+
+.hero-headline {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 16px;
+  animation: fadeInUp 0.8s ease 0.15s both;
+}
+
+.hero-headline em {
+  font-style: normal;
+  color: var(--primary);
+}
+
+.hero-quote {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  line-height: 1.6;
+  padding-left: 16px;
+  border-left: 2px solid rgba(243,119,44,0.3);
+  animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 48px;
+  animation: fadeInUp 0.8s ease 0.45s both;
+}
+
+.btn-fill {
+  flex: 1;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(243,119,44,0.25);
+}
+
+.btn-fill:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 10px rgba(243,119,44,0.2);
+}
+
+.btn-ghost {
+  flex: 1;
+  background: transparent;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1.5px solid rgba(243,119,44,0.4);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.btn-ghost:active {
+  background: var(--primary-glow);
+  border-color: var(--primary);
+  transform: scale(0.97);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 0;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease 0.6s both;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-stat {
+  flex: 1;
+  padding: 16px 8px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+
+.hero-stat:last-child { border-right: none; }
+
+.hero-stat-val {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-stat-lbl {
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: var(--text-dim);
+  line-height: 1.3;
+}
+
+/* ============================================
+   ABOUT TRAINER
+   ============================================ */
+.about-section {
+  padding: 60px 20px;
+}
+
+.mentor-card {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.mentor-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 3px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  position: relative;
+}
+
+.mentor-avatar span {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--primary);
+}
+.mentor-avatar { cursor: pointer; overflow: hidden; }
+.mentor-avatar img.m-trainer-photo {
+  width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; border-radius: 50%; z-index: 2;
+}
+.mentor-avatar .m-upload-hint {
+  position: absolute; inset: 0; z-index: 3; border-radius: 50%;
+  background: rgba(0,0,0,0.55); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 2px;
+  opacity: 0; transition: opacity 0.2s;
+}
+.mentor-avatar:active .m-upload-hint { opacity: 1; }
+.mentor-avatar .m-upload-hint svg { width: 18px; height: 18px; fill: var(--primary); }
+.mentor-avatar .m-upload-hint span { font-size: 7px; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
+#mTrainerInput { display: none; }
+
+.mentor-name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.mentor-role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--primary);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.mentor-reg {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(76,175,80,0.1);
+  border: 1px solid rgba(76,175,80,0.25);
+  border-radius: var(--radius-pill);
+  padding: 5px 14px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--green);
+  letter-spacing: 0.5px;
+}
+
+.mentor-reg-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+
+.bio-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+.skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+.skill-chip {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+  letter-spacing: 0.3px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.exp-banner {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.exp-number {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 42px;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.exp-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.exp-label strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+/* ============================================
+   WHY MARKET CREDO
+   ============================================ */
+.why-section {
+  padding: 60px 20px;
+  background: var(--surface);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.why-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.why-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--primary-glow);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.why-title {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--text);
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.why-desc {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+/* ============================================
+   COURSES
+   ============================================ */
+.courses-section {
+  padding: 60px 20px;
+}
+
+.course-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.course-accent {
+  height: 4px;
+  width: 100%;
+}
+
+.course-accent.green { background: linear-gradient(90deg, var(--green), var(--green-dim)); }
+.course-accent.amber { background: linear-gradient(90deg, var(--amber), var(--primary)); }
+.course-accent.orange { background: linear-gradient(90deg, var(--primary), var(--primary-dark)); }
+
+.course-body {
+  padding: 20px;
+}
+
+.course-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.course-level.green {
+  color: var(--green);
+  background: rgba(76,175,80,0.1);
+  border: 1px solid rgba(76,175,80,0.25);
+}
+
+.course-level.amber {
+  color: var(--amber);
+  background: rgba(249,151,39,0.1);
+  border: 1px solid rgba(249,151,39,0.25);
+}
+
+.course-level.orange {
+  color: var(--primary);
+  background: var(--primary-glow);
+  border: 1px solid rgba(243,119,44,0.25);
+}
+
+.course-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.course-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.course-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.course-chip {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 5px 12px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.3px;
+}
+
+.btn-enquire {
+  width: 100%;
+  background: transparent;
+  color: var(--primary);
+  border: 1.5px solid rgba(243,119,44,0.4);
+  border-radius: var(--radius);
+  padding: 13px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.btn-enquire:active {
+  background: var(--primary-glow);
+  border-color: var(--primary);
+  transform: scale(0.98);
+}
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonials-section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.testimonials-section .section-label {
+  padding: 0 20px;
+}
+
+.testi-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 14px;
+  padding: 8px 20px 20px;
+  scrollbar-width: none;
+}
+
+.testi-track::-webkit-scrollbar { display: none; }
+
+.testi-card {
+  flex-shrink: 0;
+  width: calc(100vw - 56px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.testi-stars {
+  color: var(--primary);
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.testi-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-style: italic;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testi-avatar {
+  width: 40px;
+  height: 40px;
+  background: var(--surface-2);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.testi-name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.testi-role {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.testi-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 0 0;
+}
+
+.testi-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  -webkit-tap-highlight-color: transparent;
+  padding: 0;
+}
+
+.testi-dot.active {
+  background: var(--primary);
+  transform: scale(1.25);
+}
+
+/* ============================================
+   TRUST METRICS
+   ============================================ */
+.trust-section {
+  padding: 60px 20px;
+  background: var(--surface);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.trust-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 16px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.trust-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 0 0 3px 3px;
+}
+
+.trust-val {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.trust-lbl {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.3;
+}
+
+/* ============================================
+   CONTACT & ENQUIRY
+   ============================================ */
+.contact-section {
+  padding: 60px 20px;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+}
+
+.contact-card-icon {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.contact-card-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-dim);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.contact-card-val {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.contact-card-val a {
+  color: var(--primary);
+}
+
+.sebi-badge {
+  background: rgba(76,175,80,0.06);
+  border: 1px solid rgba(76,175,80,0.2);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sebi-indicator {
+  width: 10px;
+  height: 10px;
+  background: var(--green);
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.sebi-indicator::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid rgba(76,175,80,0.3);
+  animation: pulseRing 2s ease infinite;
+}
+
+.sebi-badge-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--green);
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+}
+
+.sebi-badge-text strong {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+/* Form */
+.enquiry-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-input::placeholder { color: var(--text-dim); }
+
+.form-input:focus,
+.form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239F9F9F' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  color: var(--text-secondary);
+}
+
+.form-select option {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, var(--green), var(--green-dim));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 16px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(76,175,80,0.2);
+}
+
+.btn-submit:active {
+  transform: scale(0.98);
+}
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 24px;
+}
+
+.form-success-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.form-success-title {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+
+.form-success-text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn-wa-cta {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 14px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  padding: 40px 20px;
+  padding-bottom: calc(40px + env(safe-area-inset-bottom) + 60px);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.disclaimer-text {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.disclaimer-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-dim);
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.legal-btns {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.legal-btn {
+  flex: 1;
+  display: block;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 12px;
+  text-align: center;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.legal-btn:active { border-color: var(--primary); }
+
+.legal-btn-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.legal-btn-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.footer-copy {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.footer-love {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+/* ============================================
+   FLOATING WHATSAPP BUTTON
+   ============================================ */
+.float-wa {
+  position: fixed;
+  right: 16px;
+  bottom: 80px;
+  z-index: 999;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.float-wa-btn {
+  width: 52px;
+  height: 52px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(37,211,102,0.3);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.float-wa-btn:active { transform: scale(0.92); }
+.float-wa-btn svg { width: 26px; height: 26px; }
+
+.float-wa-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  animation: pulseRing 2s ease infinite;
+}
+
+/* ============================================
+   STICKY CTA
+   ============================================ */
+.sticky-cta {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  z-index: 998;
+  padding-bottom: env(safe-area-inset-bottom);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.sticky-cta.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sticky-cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 14px 28px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 8px 32px rgba(243,119,44,0.4);
+  white-space: nowrap;
+  transition: transform 0.2s;
+  text-decoration: none;
+}
+
+.sticky-cta-btn:active { transform: scale(0.96); }
+
+.sticky-cta-dot {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  animation: pulse 1.5s ease infinite;
+}
+
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
+</script>
+</head>
+<body>
+
+<!-- AUTO REDIRECT FOR DESKTOP -->
+<script>
+  if (window.innerWidth > 768) {
+    window.location.href = 'index.html';
+  }
+</script>
+
+<!-- ============================================
+     HEADER
+     ============================================ -->
+<header class="header">
+  <div class="header-logo">
+    <div class="logo-mark"><span>MC</span></div>
+    <span class="header-title">MARKET CREDO</span>
+  </div>
+  <div class="header-right">
+    <a href="https://wa.me/919109999776" class="header-wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MENU OVERLAY -->
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+<!-- MENU DRAWER -->
+<nav class="menu-drawer" id="menuDrawer">
+  <div class="menu-drawer-header">
+    <div class="logo-mark"><span>MC</span></div>
+    <div>
+      <div class="menu-drawer-brand">MARKET CREDO</div>
+      <div class="menu-drawer-sub">Technical Analysis Institute</div>
+    </div>
+  </div>
+  <div class="menu-nav">
+    <div class="menu-nav-label">Navigate</div>
+    <a href="#hero" onclick="closeMenuAndScroll(this)"><span class="nav-icon">&#x2302;</span><span class="nav-label">Home</span><span class="nav-arrow">&#x203A;</span></a>
+    <a href="#about" onclick="closeMenuAndScroll(this)"><span class="nav-icon">&#x263A;</span><span class="nav-label">About Trainer</span><span class="nav-arrow">&#x203A;</span></a>
+    <a href="#courses" onclick="closeMenuAndScroll(this)"><span class="nav-icon">&#x25B6;</span><span class="nav-label">Courses</span><span class="nav-arrow">&#x203A;</span></a>
+    <a href="#testimonials" onclick="closeMenuAndScroll(this)"><span class="nav-icon">&#x2605;</span><span class="nav-label">Reviews</span><span class="nav-arrow">&#x203A;</span></a>
+    <a href="#contact" onclick="closeMenuAndScroll(this)"><span class="nav-icon">&#x260E;</span><span class="nav-label">Contact</span><span class="nav-arrow">&#x203A;</span></a>
+    <div class="menu-nav-divider"></div>
+    <div class="menu-nav-label">Desktop Pages</div>
+    <a href="index.html"><span class="nav-icon">&#x25A3;</span><span class="nav-label">Desktop Home</span><span class="nav-arrow">&#x203A;</span></a>
+    <a href="about.html"><span class="nav-icon">&#x2139;</span><span class="nav-label">About &amp; Certs</span><span class="nav-arrow">&#x203A;</span></a>
+    <a href="courses.html"><span class="nav-icon">&#x1F4DA;</span><span class="nav-label">Courses &amp; Demo</span><span class="nav-arrow">&#x203A;</span></a>
+    <a href="life.html"><span class="nav-icon">&#x1F3AC;</span><span class="nav-label">Life @ Credo</span><span class="nav-arrow">&#x203A;</span></a>
+    <a href="videos.html"><span class="nav-icon">&#x25B6;</span><span class="nav-label">Video Gallery</span><span class="nav-arrow">&#x203A;</span></a>
+    <a href="testimonials.html"><span class="nav-icon">&#x2606;</span><span class="nav-label">Testimonials</span><span class="nav-arrow">&#x203A;</span></a>
+    <a href="chartboard.html"><span class="nav-icon">&#x2261;</span><span class="nav-label">Chart Board</span><span class="nav-arrow">&#x203A;</span></a>
+    <div class="menu-nav-divider"></div>
+    <div class="menu-nav-label">Legal</div>
+    <a href="terms.html"><span class="nav-icon">&#x2696;</span><span class="nav-label">Terms &amp; Conditions</span><span class="nav-arrow">&#x203A;</span></a>
+    <a href="privacy.html"><span class="nav-icon">&#x1F512;</span><span class="nav-label">Privacy Policy</span><span class="nav-arrow">&#x203A;</span></a>
+  </div>
+  <div class="menu-footer">
+    <div class="menu-footer-sebi">SEBI REGISTERED &middot; INH000006086</div>
+    <div class="menu-footer-contact">
+      Bhopal, Madhya Pradesh<br>
+      +91-8827979008
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="hero" id="hero">
+  <div class="hero-tag">
+    <span class="hero-tag-dot"></span>
+    SEBI REGISTERED &middot; INH000006086
+  </div>
+
+  <h1 class="hero-headline">Learn The<br>Language of <em>Charts</em></h1>
+
+  <p class="hero-quote">"Chart aapse baat karte hein, aapko language samajhni chahiye."<br>
+  <span style="font-size:12px;color:var(--text-dim);font-style:normal;">-- Charts speak to you; you must understand the language.</span></p>
+
+  <div class="hero-btns">
+    <a href="#courses" class="btn-fill">Explore Courses</a>
+    <a href="https://wa.me/919109999776?text=Hi%2C%20I%20want%20to%20book%20a%20free%20demo%20class%20at%20Market%20Credo" class="btn-ghost" target="_blank" rel="noopener">Free Demo</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-val">18+</div>
+      <div class="hero-stat-lbl">Years in<br>Markets</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">500+</div>
+      <div class="hero-stat-lbl">Students<br>Trained</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">100%</div>
+      <div class="hero-stat-lbl">Concept<br>Based</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ============================================
+     ABOUT TRAINER
+     ============================================ -->
+<section class="about-section" id="about">
+  <div class="section-label reveal">MEET YOUR MENTOR</div>
+
+  <div class="mentor-card reveal reveal-delay-1">
+    <div class="mentor-avatar" onclick="document.getElementById('mTrainerInput').click()">
+      <span id="mAvInitials">AS</span>
+      <img class="m-trainer-photo" id="mTrainerPhoto" style="display:none;" alt="Trainer"/>
+      <div class="m-upload-hint">
+        <svg viewBox="0 0 24 24"><path d="M19 7v2.99s-1.99.01-2 0V7h-3s.01-1.99 0-2h3V2h2v3h3v2h-3zm-3 4V8h-3V5H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8h-3zM5 19l3-4 2 3 3-4 4 5H5z"/></svg>
+        <span>Upload</span>
+      </div>
+      <input type="file" id="mTrainerInput" accept="image/*" onchange="handleMobileTrainerPhoto(this)"/>
+    </div>
+    <div class="mentor-name">Aatish Shakergaye</div>
+    <div class="mentor-role">SEBI Registered Research Analyst</div>
+    <div class="mentor-reg">
+      <span class="mentor-reg-dot"></span>
+      REG. NO: INH000006086
+    </div>
+  </div>
+
+  <div class="reveal reveal-delay-2">
+    <p class="bio-text">Aatish Shakergaye is a SEBI Registered Research Analyst based in Bhopal, India, with over 18 years of deep market experience. He is the founder of Market Credo — a professional stock market training institute dedicated to building genuine trading and investing skills.</p>
+    <p class="bio-text">With a strong belief in the power of Technical Analysis and Price Action, Aatish sir has trained hundreds of students across India — both online and offline — helping them develop the discipline and clarity needed to navigate complex markets.</p>
+    <p class="bio-text">His approach is simple: no shortcuts, no tips. Just the foundational language that charts have always spoken — and the patience to teach it thoroughly.</p>
+  </div>
+
+  <div class="skills-wrap reveal reveal-delay-3">
+    <div class="skill-chip">Technical Analysis</div>
+    <div class="skill-chip">Price Action</div>
+    <div class="skill-chip">Chart Structure</div>
+    <div class="skill-chip">Risk Management</div>
+    <div class="skill-chip">Trading Psychology</div>
+    <div class="skill-chip">Elliott Wave</div>
+  </div>
+
+  <div class="exp-banner reveal reveal-delay-4">
+    <div class="exp-number">18+</div>
+    <div class="exp-label">
+      <strong>Experience</strong>
+      Years in Markets
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ============================================
+     WHY MARKET CREDO
+     ============================================ -->
+<section class="why-section" id="why">
+  <div class="section-label reveal">WHY MARKET CREDO</div>
+
+  <div class="why-grid">
+    <div class="why-card reveal reveal-delay-1">
+      <div class="why-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F3772C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="why-title">SEBI Registered Analyst</div>
+      <div class="why-desc">Government-recognized Research Analyst -- INH000006086. Learn from a credentialed professional.</div>
+    </div>
+
+    <div class="why-card reveal reveal-delay-2">
+      <div class="why-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F3772C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div class="why-title">No Tips -- Pure Education</div>
+      <div class="why-desc">We teach you to fish, not sell you the fish. Zero stock tips, 100% concept-building curriculum.</div>
+    </div>
+
+    <div class="why-card reveal reveal-delay-3">
+      <div class="why-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F3772C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      </div>
+      <div class="why-title">Core Concepts Only</div>
+      <div class="why-desc">Price action, chart structure, risk management -- no indicators noise, just timeless market logic.</div>
+    </div>
+
+    <div class="why-card reveal reveal-delay-4">
+      <div class="why-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F3772C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="why-title">Personal Mentorship</div>
+      <div class="why-desc">Direct access to Aatish sir. Small batches, personalised attention, real market discussions.</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ============================================
+     COURSES
+     ============================================ -->
+<section class="courses-section" id="courses">
+  <div class="section-label reveal">OUR PROGRAMS</div>
+
+  <!-- Foundation -->
+  <div class="course-card reveal reveal-delay-1">
+    <div class="course-accent green"></div>
+    <div class="course-body">
+      <div class="course-level green">FOUNDATION</div>
+      <div class="course-title">Technical Analysis Foundation</div>
+      <div class="course-desc">Master the building blocks of chart reading. Understand how markets move, what candlesticks reveal, and how to spot key support and resistance zones with confidence.</div>
+      <div class="course-chips">
+        <span class="course-chip">Candlestick Patterns</span>
+        <span class="course-chip">S&amp;R Zones</span>
+        <span class="course-chip">Trend Lines</span>
+        <span class="course-chip">Volume Analysis</span>
+        <span class="course-chip">Chart Types</span>
+      </div>
+      <a href="https://wa.me/919109999776?text=Hi%2C%20I%20want%20to%20enquire%20about%20the%20Foundation%20course%20at%20Market%20Credo" class="btn-enquire" target="_blank" rel="noopener">ENQUIRE NOW</a>
+    </div>
+  </div>
+
+  <!-- Intermediate -->
+  <div class="course-card reveal reveal-delay-2">
+    <div class="course-accent amber"></div>
+    <div class="course-body">
+      <div class="course-level amber">INTERMEDIATE</div>
+      <div class="course-title">Price Action Mastery</div>
+      <div class="course-desc">Go deeper into pure price action trading. Learn to read market structure, identify high-probability setups, and trade without relying on lagging indicators.</div>
+      <div class="course-chips">
+        <span class="course-chip">Price Action</span>
+        <span class="course-chip">Market Structure</span>
+        <span class="course-chip">Trading Setups</span>
+        <span class="course-chip">Risk-Reward</span>
+        <span class="course-chip">Entry &amp; Exit</span>
+        <span class="course-chip">Sector Analysis</span>
+      </div>
+      <a href="https://wa.me/919109999776?text=Hi%2C%20I%20want%20to%20enquire%20about%20the%20Intermediate%20course%20at%20Market%20Credo" class="btn-enquire" target="_blank" rel="noopener">ENQUIRE NOW</a>
+    </div>
+  </div>
+
+  <!-- Advanced -->
+  <div class="course-card reveal reveal-delay-3">
+    <div class="course-accent orange"></div>
+    <div class="course-body">
+      <div class="course-level orange">ADVANCED</div>
+      <div class="course-title">Advanced Chart Analysis</div>
+      <div class="course-desc">An intensive program for serious market students. Advanced pattern recognition, multi-timeframe analysis, trading psychology, and live market sessions with Aatish sir.</div>
+      <div class="course-chips">
+        <span class="course-chip">Elliott Wave</span>
+        <span class="course-chip">Harmonic Patterns</span>
+        <span class="course-chip">Multi-TF Analysis</span>
+        <span class="course-chip">Psychology</span>
+        <span class="course-chip">Live Sessions</span>
+        <span class="course-chip">Mentorship</span>
+      </div>
+      <a href="https://wa.me/919109999776?text=Hi%2C%20I%20want%20to%20enquire%20about%20the%20Advanced%20course%20at%20Market%20Credo" class="btn-enquire" target="_blank" rel="noopener">ENQUIRE NOW</a>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ============================================
+     TESTIMONIALS
+     ============================================ -->
+<section class="testimonials-section" id="testimonials">
+  <div class="section-label reveal">WHAT STUDENTS SAY</div>
+
+  <div class="testi-track" id="testi-track">
+    <div class="testi-card">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testi-text">Market Credo changed the way I look at charts. Aatish sir teaches with incredible clarity — no jargon, no confusion. Within 3 months I could read market structure on my own. Highly recommended for anyone serious about trading.</div>
+      <div class="testi-author">
+        <div class="testi-avatar">RV</div>
+        <div>
+          <div class="testi-name">Rahul Verma</div>
+          <div class="testi-role">Equity Trader, Indore</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testi-text">Maine bahut jagah se seekha, lekin yahan ka approach bilkul alag hai. Concept-based teaching — koi tips nahi, sirf market ki language. Ab main khud analyse kar sakta hoon. Shukriya Aatish sir.</div>
+      <div class="testi-author">
+        <div class="testi-avatar">AS</div>
+        <div>
+          <div class="testi-name">Amit Sharma</div>
+          <div class="testi-role">Retail Investor, Bhopal</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testi-text">The personal mentorship is what sets Market Credo apart. You're not just watching videos — Aatish sir actually reviews your charts, corrects your thinking, and builds your confidence step by step. Worth every rupee.</div>
+      <div class="testi-author">
+        <div class="testi-avatar">PD</div>
+        <div>
+          <div class="testi-name">Priya Desai</div>
+          <div class="testi-role">Options Learner, Pune</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testi-text">I was completely lost in the noise of social media tips before joining Market Credo. After the Foundation course, I finally understood that charts tell the truth — you just have to learn to listen. Aatish sir is a true educator.</div>
+      <div class="testi-author">
+        <div class="testi-avatar">SK</div>
+        <div>
+          <div class="testi-name">Suresh Kumar</div>
+          <div class="testi-role">Intraday Trader, Nagpur</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="testi-text">Being a working professional, I needed flexible learning. The online batch at Market Credo worked perfectly. The curriculum is structured, the pace is right, and the doubt-clearing sessions are genuinely helpful. 10/10 experience.</div>
+      <div class="testi-author">
+        <div class="testi-avatar">NJ</div>
+        <div>
+          <div class="testi-name">Neha Joshi</div>
+          <div class="testi-role">IT Professional, Bengaluru</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="testi-dots" id="testi-dots">
+    <button class="testi-dot active" data-idx="0" aria-label="Testimonial 1"></button>
+    <button class="testi-dot" data-idx="1" aria-label="Testimonial 2"></button>
+    <button class="testi-dot" data-idx="2" aria-label="Testimonial 3"></button>
+    <button class="testi-dot" data-idx="3" aria-label="Testimonial 4"></button>
+    <button class="testi-dot" data-idx="4" aria-label="Testimonial 5"></button>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ============================================
+     TRUST METRICS
+     ============================================ -->
+<section class="trust-section" id="trust">
+  <div class="section-label reveal">TRUST METRICS</div>
+
+  <div class="trust-grid">
+    <div class="trust-card reveal reveal-delay-1">
+      <div class="trust-val">500+</div>
+      <div class="trust-lbl">Students Trained</div>
+    </div>
+    <div class="trust-card reveal reveal-delay-2">
+      <div class="trust-val">4.9&#9733;</div>
+      <div class="trust-lbl">Average Rating</div>
+    </div>
+    <div class="trust-card reveal reveal-delay-3">
+      <div class="trust-val">18+</div>
+      <div class="trust-lbl">Years Experience</div>
+    </div>
+    <div class="trust-card reveal reveal-delay-4">
+      <div class="trust-val">100%</div>
+      <div class="trust-lbl">Concept Based</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ============================================
+     CONTACT & ENQUIRY
+     ============================================ -->
+<section class="contact-section" id="contact">
+  <div class="section-label reveal">GET IN TOUCH</div>
+
+  <div class="contact-cards reveal reveal-delay-1">
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F3772C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <div class="contact-card-label">Phone</div>
+      <div class="contact-card-val"><a href="tel:+919109999776">+91 91099 99776</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F3772C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div class="contact-card-label">Email</div>
+      <div class="contact-card-val"><a href="mailto:info@marketcredo.in">info@marketcredo.in</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F3772C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="contact-card-label">City</div>
+      <div class="contact-card-val">Bhopal, MP</div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F3772C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="contact-card-label">Hours</div>
+      <div class="contact-card-val">Mon-Sat, 9AM-7PM</div>
+    </div>
+  </div>
+
+  <div class="sebi-badge reveal reveal-delay-2">
+    <div class="sebi-indicator"></div>
+    <div class="sebi-badge-text">
+      <strong>SEBI REGISTERED -- VERIFIED</strong>
+      Research Analyst &middot; INH000006086<br>
+      <span style="font-size:10px;color:var(--text-dim);">Registered since 2006 &middot; Securities &amp; Exchange Board of India</span>
+    </div>
+  </div>
+
+  <!-- Enquiry Form -->
+  <div class="enquiry-form reveal reveal-delay-3">
+    <div class="section-label" style="margin-bottom:20px;">SEND AN ENQUIRY</div>
+
+    <div id="form-fields">
+      <div class="form-group">
+        <label class="form-label" for="f-name">Full Name</label>
+        <input class="form-input" type="text" id="f-name" placeholder="Your full name" autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="f-phone">Phone</label>
+        <input class="form-input" type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="f-email">Email</label>
+        <input class="form-input" type="email" id="f-email" placeholder="you@example.com" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="f-program">Program of Interest</label>
+        <select class="form-select" id="f-program">
+          <option value="" disabled selected>Select a program...</option>
+          <option>Foundation — Technical Analysis</option>
+          <option>Intermediate — Price Action Mastery</option>
+          <option>Advanced — Chart Analysis</option>
+          <option>I want guidance on which to choose</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="f-exp">Your Experience Level</label>
+        <select class="form-select" id="f-exp">
+          <option value="" disabled selected>Select your level...</option>
+          <option>Complete Beginner</option>
+          <option>Know the basics, want structure</option>
+          <option>Intermediate — have traded before</option>
+          <option>Experienced — want advanced concepts</option>
+        </select>
+      </div>
+      <button class="btn-submit" id="submit-btn" onclick="submitForm()">Submit Enquiry</button>
+    </div>
+
+    <div class="form-success" id="form-success">
+      <div class="form-success-icon">&#10003;</div>
+      <div class="form-success-title">Enquiry Received!</div>
+      <div class="form-success-text">We'll get back to you within 24 hours.<br>WhatsApp us for faster response.</div>
+      <a href="https://wa.me/919109999776?text=Hi%2C%20I%20just%20submitted%20an%20enquiry%20on%20your%20website" class="btn-wa-cta" target="_blank" rel="noopener">WhatsApp Us Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="disclaimer-title">SEBI Disclaimer</div>
+  <p class="disclaimer-text">Aatish Shakergaye is a SEBI Registered Research Analyst (INH000006086). Market Credo provides educational content only and does not provide any investment advisory or stock tips. Trading and investing in securities involves market risk. Past performance is not indicative of future results. Please read all scheme related documents carefully before investing.</p>
+
+  <div class="legal-btns">
+    <a href="terms.html" class="legal-btn">
+      <div class="legal-btn-label">Legal</div>
+      <div class="legal-btn-title">Terms &amp; Conditions</div>
+    </a>
+    <a href="privacy.html" class="legal-btn">
+      <div class="legal-btn-label">Legal</div>
+      <div class="legal-btn-title">Privacy Policy</div>
+    </a>
+  </div>
+
+  <div class="footer-copy">&copy; 2024 Market Credo &middot; Bhopal, MP</div>
+  <div class="footer-love">Made with &#9829; for serious learners</div>
+</footer>
+
+<!-- ============================================
+     FLOATING WHATSAPP
+     ============================================ -->
+<div class="float-wa" id="float-wa">
+  <a href="https://wa.me/919109999776?text=Hi%2C%20I%27m%20interested%20in%20Market%20Credo%20courses" class="float-wa-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <div class="float-wa-pulse"></div>
+    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- ============================================
+     STICKY CTA
+     ============================================ -->
+<div class="sticky-cta" id="sticky-cta">
+  <a href="https://wa.me/919109999776?text=Hi%2C%20I%20want%20to%20book%20a%20free%20demo%20class%20at%20Market%20Credo" class="sticky-cta-btn" target="_blank" rel="noopener">
+    <span class="sticky-cta-dot"></span>
+    Book Free Demo
+  </a>
+</div>
+
+<!-- ============================================
+     JAVASCRIPT
+     ============================================ -->
+<script>
+
+/* ── IntersectionObserver: Fade-in on scroll ── */
+(function() {
+  const reveals = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    reveals.forEach(function(el) {
+      observer.observe(el);
+    });
+  } else {
+    // Fallback: show everything
+    reveals.forEach(function(el) {
+      el.classList.add('visible');
+    });
+  }
+})();
+
+/* ── IST Clock (not displayed but kept for JS parity) ── */
+function updateClock() {
+  var now = new Date();
+  var ist = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+  // Clock is available in JS if needed
+}
+updateClock();
+setInterval(updateClock, 1000);
+
+/* ── Sticky CTA: show/hide based on scroll ── */
+(function() {
+  var stickyCta = document.getElementById('sticky-cta');
+  var hero = document.getElementById('hero');
+  var lastScrollY = 0;
+
+  function checkSticky() {
+    var scrollY = window.scrollY || window.pageYOffset;
+    var heroBottom = hero.offsetTop + hero.offsetHeight;
+
+    if (scrollY > heroBottom - 100) {
+      stickyCta.classList.add('visible');
+    } else {
+      stickyCta.classList.remove('visible');
+    }
+    lastScrollY = scrollY;
+  }
+
+  window.addEventListener('scroll', checkSticky, { passive: true });
+  checkSticky();
+})();
+
+/* ── Testimonials scroll dots ── */
+(function() {
+  var track = document.getElementById('testi-track');
+  var dots = document.querySelectorAll('#testi-dots .testi-dot');
+
+  function updateDots() {
+    if (!track || !dots.length) return;
+    var cards = track.querySelectorAll('.testi-card');
+    if (!cards.length) return;
+    var cardWidth = cards[0].offsetWidth + 14; // gap
+    var idx = Math.round(track.scrollLeft / cardWidth);
+    idx = Math.max(0, Math.min(idx, dots.length - 1));
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === idx);
+    });
+  }
+
+  if (track) {
+    track.addEventListener('scroll', updateDots, { passive: true });
+  }
+
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      var idx = parseInt(dot.getAttribute('data-idx'));
+      var cards = track.querySelectorAll('.testi-card');
+      if (!cards.length) return;
+      var cardWidth = cards[0].offsetWidth + 14;
+      track.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
+    });
+  });
+})();
+
+/* ── Smooth scroll for anchor links ── */
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    var targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    var target = document.querySelector(targetId);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+/* ── Form submission → WhatsApp ── */
+function submitForm() {
+  var name = document.getElementById('f-name').value.trim();
+  var phone = document.getElementById('f-phone').value.trim();
+  var email = document.getElementById('f-email').value.trim();
+  var program = document.getElementById('f-program').value;
+  var exp = document.getElementById('f-exp').value;
+
+  if (!name || !phone) {
+    alert('Please enter your name and phone number.');
+    return;
+  }
+
+  var msg = encodeURIComponent(
+    'Hi! I\'m interested in Market Credo.\n\nName: ' + name +
+    '\nPhone: ' + phone +
+    '\nEmail: ' + (email || 'N/A') +
+    '\nProgram: ' + (program || 'N/A') +
+    '\nExperience: ' + (exp || 'N/A')
+  );
+
+  /* Save lead to CRM */
+  try {
+    var leads = JSON.parse(localStorage.getItem('mc_crm_leads') || '[]');
+    leads.push({
+      id: Date.now() + '_' + Math.random().toString(36).substr(2, 5),
+      name: name, phone: phone, email: email || '', city: '',
+      source: 'Website Form', course: program || 'Not specified',
+      status: 'New', notes: 'Mobile enquiry. Experience: ' + (exp || 'N/A'),
+      followUpDate: '', createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      history: [{ date: new Date().toISOString(), action: 'Lead Created', detail: 'Via mobile enquiry form' }]
+    });
+    localStorage.setItem('mc_crm_leads', JSON.stringify(leads));
+  } catch (e) {}
+
+  // Show success state
+  document.getElementById('form-fields').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+
+  // Open WhatsApp after short delay
+  setTimeout(function() {
+    window.open('https://wa.me/919109999776?text=' + msg, '_blank');
+  }, 600);
+}
+
+/* ── Trainer Photo Upload ── */
+function handleMobileTrainerPhoto(input) {
+  if (!input.files || !input.files[0]) return;
+  var file = input.files[0];
+  if (file.size > 5 * 1024 * 1024) { alert('File too large. Max 5MB.'); return; }
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var dataUrl = e.target.result;
+    document.getElementById('mTrainerPhoto').src = dataUrl;
+    document.getElementById('mTrainerPhoto').style.display = 'block';
+    document.getElementById('mAvInitials').style.display = 'none';
+    try { localStorage.setItem('mc_trainer_photo', dataUrl); } catch(err) {}
+  };
+  reader.readAsDataURL(file);
+}
+(function loadMobileTrainerPhoto() {
+  try {
+    var saved = localStorage.getItem('mc_trainer_photo');
+    if (saved) {
+      document.getElementById('mTrainerPhoto').src = saved;
+      document.getElementById('mTrainerPhoto').style.display = 'block';
+      document.getElementById('mAvInitials').style.display = 'none';
+    }
+  } catch(err) {}
+})();
+
+/* ── Resize: redirect to desktop ── */
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 768) {
+    window.location.href = 'index.html';
+  }
+});
+
+/* ── Menu Toggle ── */
+function toggleMenu() {
+  var toggle = document.getElementById('menuToggle');
+  var drawer = document.getElementById('menuDrawer');
+  var overlay = document.getElementById('menuOverlay');
+  toggle.classList.toggle('open');
+  drawer.classList.toggle('open');
+  overlay.classList.toggle('open');
+  document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+}
+
+function closeMenuAndScroll(el) {
+  var toggle = document.getElementById('menuToggle');
+  var drawer = document.getElementById('menuDrawer');
+  var overlay = document.getElementById('menuOverlay');
+  toggle.classList.remove('open');
+  drawer.classList.remove('open');
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+  var href = el.getAttribute('href');
+  if (href && href.startsWith('#')) {
+    setTimeout(function() {
+      var target = document.querySelector(href);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }, 350);
+  }
+}
+
+</script>
+
+</body>
+</html>
