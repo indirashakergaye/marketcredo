@@ -268,6 +268,25 @@ input,select,textarea,button{font-family:inherit;font-size:inherit;}
 .toast.error{border-left:3px solid var(--red);}
 .toast.info{border-left:3px solid var(--orange);}
 
+/* =========== SITE MANAGER =========== */
+.sm-tab{background:var(--bg1);border:none;border-right:1px solid var(--border);color:var(--dim);padding:12px 18px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all 0.15s;font-family:'IBM Plex Mono',monospace;flex:1;text-align:center;}
+.sm-tab:last-child{border-right:none;}
+.sm-tab:hover{background:var(--bg2);color:var(--orange);}
+.sm-tab.active{background:var(--orange);color:#fff;}
+.sm-photo-card{background:var(--bg);position:relative;overflow:hidden;}
+.sm-photo-card img{width:100%;height:120px;object-fit:cover;display:block;}
+.sm-photo-card .sm-photo-actions{position:absolute;top:0;right:0;display:flex;gap:2px;padding:4px;}
+.sm-photo-card .sm-photo-del{background:rgba(239,68,68,0.9);border:none;color:#fff;width:24px;height:24px;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.sm-photo-card .sm-photo-del:hover{background:var(--red);}
+.sm-photo-card .sm-photo-label{padding:6px 8px;font-size:9px;color:var(--dim);letter-spacing:0.5px;}
+.sm-tcard{background:var(--bg);border-bottom:1px solid var(--border);padding:16px 20px;display:flex;gap:16px;align-items:flex-start;}
+.sm-tcard:last-child{border-bottom:none;}
+.sm-tcard-body{flex:1;}
+.sm-tcard-name{font-size:12px;font-weight:700;color:var(--white);margin-bottom:2px;}
+.sm-tcard-detail{font-size:9px;color:var(--dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.sm-tcard-quote{font-size:11px;color:var(--dim);line-height:1.7;font-family:'IBM Plex Sans',sans-serif;font-style:italic;}
+.sm-tcard-actions{display:flex;gap:4px;flex-shrink:0;}
+
 /* =========== RESPONSIVE =========== */
 @media(max-width:768px){
   .hdr-actions{display:none;}
@@ -326,6 +345,7 @@ input,select,textarea,button{font-family:inherit;font-size:inherit;}
       <button class="btn-add" onclick="openAddModal()"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Add Lead</button>
       <button class="btn-wa-tpl" onclick="openTemplatePanel(null)">&#128242; WA Templates</button>
       <button class="btn-outline" onclick="exportCSV()"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Export CSV</button>
+      <button class="btn-outline" onclick="toggleCrmView()" id="viewToggleBtn" style="border-color:var(--orange);color:var(--orange);">&#9881; Site Manager</button>
       <button class="btn-logout" onclick="logout()">Logout</button>
     </div>
   </header>
@@ -402,6 +422,144 @@ input,select,textarea,button{font-family:inherit;font-size:inherit;}
         <div class="analytics-grid" id="analyticsGrid"></div>
       </div>
     </div>
+
+    <!-- =========== SITE MANAGER =========== -->
+    <div id="siteManager" style="display:none;">
+
+      <!-- TAB BAR -->
+      <div style="display:flex;gap:0;border:1px solid var(--border);margin-bottom:20px;">
+        <button class="sm-tab active" data-tab="sm-photos" onclick="switchSmTab(this)">&#128247; PHOTOS</button>
+        <button class="sm-tab" data-tab="sm-testimonials" onclick="switchSmTab(this)">&#9733; TESTIMONIALS</button>
+        <button class="sm-tab" data-tab="sm-content" onclick="switchSmTab(this)">&#9998; CONTENT</button>
+        <button class="sm-tab" data-tab="sm-settings" onclick="switchSmTab(this)">&#9881; SETTINGS</button>
+      </div>
+
+      <!-- PHOTOS TAB -->
+      <div class="sm-panel" id="sm-photos">
+        <!-- Trainer Photo -->
+        <div style="background:var(--bg1);border:1px solid var(--border);margin-bottom:20px;">
+          <div style="background:var(--bg2);padding:12px 16px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);border-bottom:1px solid var(--border);">Trainer Photo</div>
+          <div style="padding:20px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+            <div id="smTrainerPreview" style="width:120px;height:120px;background:var(--bg2);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+              <span style="color:var(--dimmer);font-size:32px;font-weight:700;">AS</span>
+            </div>
+            <div>
+              <p style="font-size:12px;color:var(--dim);margin-bottom:12px;">Upload trainer photo for About page. Max 5MB, JPG/PNG.</p>
+              <input type="file" id="smTrainerFile" accept="image/*" style="display:none;" onchange="smUploadTrainer(this)"/>
+              <button class="btn-add" onclick="document.getElementById('smTrainerFile').click()" style="font-size:10px;padding:8px 16px;">UPLOAD PHOTO</button>
+              <button class="btn-outline" onclick="smRemoveTrainer()" style="font-size:10px;padding:7px 14px;margin-left:8px;border-color:var(--red);color:var(--red);">REMOVE</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gallery Photos -->
+        <div style="background:var(--bg1);border:1px solid var(--border);margin-bottom:20px;">
+          <div style="background:var(--bg2);padding:12px 16px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+            Gallery Photos (Life Page)
+            <button class="btn-add" onclick="document.getElementById('smGalleryFile').click()" style="font-size:9px;padding:6px 12px;">+ ADD PHOTO</button>
+          </div>
+          <input type="file" id="smGalleryFile" accept="image/*" multiple style="display:none;" onchange="smAddGalleryPhotos(this)"/>
+          <div id="smGalleryGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1px;background:var(--border);min-height:100px;">
+            <div style="grid-column:1/-1;padding:40px;text-align:center;color:var(--dimmer);font-size:12px;background:var(--bg);">No gallery photos uploaded yet.</div>
+          </div>
+        </div>
+
+        <!-- Chart Board Photos -->
+        <div style="background:var(--bg1);border:1px solid var(--border);">
+          <div style="background:var(--bg2);padding:12px 16px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+            Chart Board Submissions
+            <button class="btn-add" onclick="document.getElementById('smChartFile').click()" style="font-size:9px;padding:6px 12px;">+ ADD CHART</button>
+          </div>
+          <input type="file" id="smChartFile" accept="image/*" style="display:none;" onchange="smAddChart(this)"/>
+          <div id="smChartGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1px;background:var(--border);min-height:100px;">
+            <div style="grid-column:1/-1;padding:40px;text-align:center;color:var(--dimmer);font-size:12px;background:var(--bg);">No chart submissions yet.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TESTIMONIALS TAB -->
+      <div class="sm-panel" id="sm-testimonials" style="display:none;">
+        <div style="background:var(--bg1);border:1px solid var(--border);">
+          <div style="background:var(--bg2);padding:12px 16px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+            Student Testimonials
+            <button class="btn-add" onclick="smAddTestimonial()" style="font-size:9px;padding:6px 12px;">+ ADD REVIEW</button>
+          </div>
+          <div id="smTestimonialList" style="padding:0;"></div>
+        </div>
+      </div>
+
+      <!-- CONTENT TAB -->
+      <div class="sm-panel" id="sm-content" style="display:none;">
+        <!-- Hero Section -->
+        <div style="background:var(--bg1);border:1px solid var(--border);margin-bottom:20px;">
+          <div style="background:var(--bg2);padding:12px 16px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);border-bottom:1px solid var(--border);">Hero Section</div>
+          <div style="padding:20px;">
+            <div class="form-row">
+              <div class="form-group"><label>Hero Title</label><input type="text" id="smHeroTitle" value="Learn the Language of the Market." onchange="smSaveContent()"/></div>
+              <div class="form-group"><label>Hero Subtitle</label><input type="text" id="smHeroSub" value="Advanced Technical Analysis · 20 Years of Real Market Experience" onchange="smSaveContent()"/></div>
+            </div>
+            <div class="form-row full">
+              <div class="form-group"><label>Hero Description</label><textarea id="smHeroDesc" rows="3" onchange="smSaveContent()">At Market Credo, we don't teach signals or tips. We teach the core concepts of technical analysis — chart structure, chart flow, the logic and beauty of price action — so deeply that you build your own strategy and trade with complete independence.</textarea></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Students Count</label><input type="text" id="smStatStudents" value="500+" onchange="smSaveContent()"/></div>
+              <div class="form-group"><label>Experience Years</label><input type="text" id="smStatYears" value="20+" onchange="smSaveContent()"/></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ticker Messages -->
+        <div style="background:var(--bg1);border:1px solid var(--border);">
+          <div style="background:var(--bg2);padding:12px 16px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);border-bottom:1px solid var(--border);">Ticker / Announcement Bar</div>
+          <div style="padding:20px;">
+            <div class="form-row full">
+              <div class="form-group"><label>Announcement Text (shows in ticker)</label><input type="text" id="smTicker" value="NEW BATCH STARTING SOON · BOOK FREE DEMO · CALL +91-8827979008" onchange="smSaveContent()"/></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SETTINGS TAB -->
+      <div class="sm-panel" id="sm-settings" style="display:none;">
+        <div style="background:var(--bg1);border:1px solid var(--border);margin-bottom:20px;">
+          <div style="background:var(--bg2);padding:12px 16px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);border-bottom:1px solid var(--border);">Contact Information</div>
+          <div style="padding:20px;">
+            <div class="form-row">
+              <div class="form-group"><label>Phone / WhatsApp</label><input type="text" id="smPhone" value="+91-8827979008" onchange="smSaveSettings()"/></div>
+              <div class="form-group"><label>Email</label><input type="text" id="smEmail" value="info@marketcredo.in" onchange="smSaveSettings()"/></div>
+            </div>
+            <div class="form-row full">
+              <div class="form-group"><label>Address</label><textarea id="smAddress" rows="2" onchange="smSaveSettings()">Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, MP 462016</textarea></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--bg1);border:1px solid var(--border);margin-bottom:20px;">
+          <div style="background:var(--bg2);padding:12px 16px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);border-bottom:1px solid var(--border);">Social Media Links</div>
+          <div style="padding:20px;">
+            <div class="form-row">
+              <div class="form-group"><label>YouTube</label><input type="url" id="smYoutube" value="https://www.youtube.com/@MarketCredo" onchange="smSaveSettings()"/></div>
+              <div class="form-group"><label>Instagram</label><input type="url" id="smInstagram" value="https://www.instagram.com/marketcredo" onchange="smSaveSettings()"/></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Facebook</label><input type="url" id="smFacebook" value="https://www.facebook.com/marketcredo" onchange="smSaveSettings()"/></div>
+              <div class="form-group"><label>WhatsApp Link</label><input type="url" id="smWhatsapp" value="https://wa.me/918827979008" onchange="smSaveSettings()"/></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--bg1);border:1px solid var(--border);">
+          <div style="background:var(--bg2);padding:12px 16px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);border-bottom:1px solid var(--border);">SEBI &amp; Credentials</div>
+          <div style="padding:20px;">
+            <div class="form-row">
+              <div class="form-group"><label>SEBI Reg. No.</label><input type="text" id="smSebi" value="INH000006086" onchange="smSaveSettings()"/></div>
+              <div class="form-group"><label>Trainer Name</label><input type="text" id="smTrainerName" value="Atish Shakergaye" onchange="smSaveSettings()"/></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /siteManager -->
 
   </div><!-- /crm-main -->
 </div><!-- /dashboard -->
@@ -1426,6 +1584,316 @@ function init() {
 
 // Check auth on load
 checkAuth();
+
+/* =========================================================
+   SITE MANAGER — Photo, Testimonial & Content Management
+   ========================================================= */
+
+var smViewActive = false;
+
+function toggleCrmView() {
+  closeMobileMenu();
+  var leadsSection = document.querySelector('.stats-row');
+  var filterBar = document.querySelector('.filter-bar');
+  var tableWrap = document.querySelector('.table-wrap');
+  var pagination = document.getElementById('pagination');
+  var analytics = document.querySelector('.analytics-section');
+  var siteManager = document.getElementById('siteManager');
+  var btn = document.getElementById('viewToggleBtn');
+
+  smViewActive = !smViewActive;
+  if (smViewActive) {
+    leadsSection.style.display = 'none';
+    filterBar.style.display = 'none';
+    tableWrap.style.display = 'none';
+    pagination.style.display = 'none';
+    analytics.style.display = 'none';
+    siteManager.style.display = 'block';
+    btn.innerHTML = '&#9664; Back to Leads';
+    smLoadAll();
+  } else {
+    leadsSection.style.display = '';
+    filterBar.style.display = '';
+    tableWrap.style.display = '';
+    pagination.style.display = '';
+    analytics.style.display = '';
+    siteManager.style.display = 'none';
+    btn.innerHTML = '&#9881; Site Manager';
+  }
+}
+
+function switchSmTab(el) {
+  document.querySelectorAll('.sm-tab').forEach(function(t) { t.classList.remove('active'); });
+  document.querySelectorAll('.sm-panel').forEach(function(p) { p.style.display = 'none'; });
+  el.classList.add('active');
+  document.getElementById(el.dataset.tab).style.display = 'block';
+}
+
+/* ---- TRAINER PHOTO ---- */
+function smLoadTrainerPhoto() {
+  var saved = localStorage.getItem('mc_trainer_photo');
+  var preview = document.getElementById('smTrainerPreview');
+  if (saved) {
+    preview.innerHTML = '<img src="' + saved + '" style="width:100%;height:100%;object-fit:cover;"/>';
+  } else {
+    preview.innerHTML = '<span style="color:var(--dimmer);font-size:32px;font-weight:700;">AS</span>';
+  }
+}
+
+function smUploadTrainer(input) {
+  if (!input.files || !input.files[0]) return;
+  var file = input.files[0];
+  if (file.size > 5 * 1024 * 1024) { alert('Max 5MB'); return; }
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    localStorage.setItem('mc_trainer_photo', e.target.result);
+    smLoadTrainerPhoto();
+    showToast('Trainer photo updated', 'success');
+  };
+  reader.readAsDataURL(file);
+  input.value = '';
+}
+
+function smRemoveTrainer() {
+  localStorage.removeItem('mc_trainer_photo');
+  smLoadTrainerPhoto();
+  showToast('Trainer photo removed', 'info');
+}
+
+/* ---- GALLERY PHOTOS ---- */
+function smGetGallery() {
+  try { return JSON.parse(localStorage.getItem('mc_gallery_photos') || '[]'); } catch(e) { return []; }
+}
+
+function smSaveGallery(arr) {
+  localStorage.setItem('mc_gallery_photos', JSON.stringify(arr));
+}
+
+function smRenderGallery() {
+  var photos = smGetGallery();
+  var grid = document.getElementById('smGalleryGrid');
+  if (photos.length === 0) {
+    grid.innerHTML = '<div style="grid-column:1/-1;padding:40px;text-align:center;color:var(--dimmer);font-size:12px;background:var(--bg);">No gallery photos uploaded yet.</div>';
+    return;
+  }
+  grid.innerHTML = photos.map(function(p, i) {
+    return '<div class="sm-photo-card"><img src="' + p.data + '" alt="' + escHtml(p.caption || 'Gallery') + '"/><div class="sm-photo-actions"><button class="sm-photo-del" onclick="smDelGallery(' + i + ')" title="Delete">&times;</button></div><div class="sm-photo-label">' + escHtml(p.caption || 'Photo ' + (i + 1)) + '</div></div>';
+  }).join('');
+}
+
+function smAddGalleryPhotos(input) {
+  if (!input.files || !input.files.length) return;
+  var photos = smGetGallery();
+  var remaining = input.files.length;
+  Array.from(input.files).forEach(function(file) {
+    if (file.size > 8 * 1024 * 1024) { remaining--; return; }
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var caption = prompt('Caption for this photo (optional):') || '';
+      photos.push({ data: e.target.result, caption: caption, date: new Date().toISOString() });
+      remaining--;
+      if (remaining <= 0) {
+        smSaveGallery(photos);
+        smRenderGallery();
+        showToast('Gallery photos added', 'success');
+      }
+    };
+    reader.readAsDataURL(file);
+  });
+  input.value = '';
+}
+
+function smDelGallery(i) {
+  if (!confirm('Delete this photo?')) return;
+  var photos = smGetGallery();
+  photos.splice(i, 1);
+  smSaveGallery(photos);
+  smRenderGallery();
+  showToast('Photo deleted', 'info');
+}
+
+/* ---- CHART BOARD ---- */
+function smGetCharts() {
+  try { return JSON.parse(localStorage.getItem('mc_chart_uploads') || '[]'); } catch(e) { return []; }
+}
+
+function smSaveCharts(arr) {
+  localStorage.setItem('mc_chart_uploads', JSON.stringify(arr));
+}
+
+function smRenderCharts() {
+  var charts = smGetCharts();
+  var grid = document.getElementById('smChartGrid');
+  if (charts.length === 0) {
+    grid.innerHTML = '<div style="grid-column:1/-1;padding:40px;text-align:center;color:var(--dimmer);font-size:12px;background:var(--bg);">No chart submissions yet.</div>';
+    return;
+  }
+  grid.innerHTML = charts.map(function(c, i) {
+    return '<div class="sm-photo-card"><img src="' + c.image + '" alt="' + escHtml(c.stock || 'Chart') + '" style="height:140px;"/><div class="sm-photo-actions"><button class="sm-photo-del" onclick="smDelChart(' + i + ')" title="Delete">&times;</button></div><div class="sm-photo-label"><strong>' + escHtml(c.student || '') + '</strong> &mdash; ' + escHtml(c.stock || '') + '<br/><span style="color:var(--orange);">' + escHtml(c.pattern || '') + '</span></div></div>';
+  }).join('');
+}
+
+function smAddChart(input) {
+  if (!input.files || !input.files[0]) return;
+  var file = input.files[0];
+  if (file.size > 5 * 1024 * 1024) { alert('Max 5MB'); return; }
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var student = prompt('Student name:') || 'Anonymous';
+    var stock = prompt('Stock / Index name:') || '';
+    var pattern = prompt('Pattern identified (e.g. Head & Shoulders):') || '';
+    var charts = smGetCharts();
+    charts.unshift({ image: e.target.result, student: student, stock: stock, pattern: pattern, date: new Date().toISOString() });
+    smSaveCharts(charts);
+    smRenderCharts();
+    showToast('Chart added', 'success');
+  };
+  reader.readAsDataURL(file);
+  input.value = '';
+}
+
+function smDelChart(i) {
+  if (!confirm('Delete this chart?')) return;
+  var charts = smGetCharts();
+  charts.splice(i, 1);
+  smSaveCharts(charts);
+  smRenderCharts();
+  showToast('Chart deleted', 'info');
+}
+
+/* ---- TESTIMONIALS ---- */
+function smGetTestimonials() {
+  try { return JSON.parse(localStorage.getItem('mc_testimonials') || '[]'); } catch(e) { return []; }
+}
+
+function smSaveTestimonials(arr) {
+  localStorage.setItem('mc_testimonials', JSON.stringify(arr));
+}
+
+function smRenderTestimonials() {
+  var list = smGetTestimonials();
+  var container = document.getElementById('smTestimonialList');
+  if (list.length === 0) {
+    container.innerHTML = '<div style="padding:40px;text-align:center;color:var(--dimmer);font-size:12px;">No testimonials added yet. Click "+ ADD REVIEW" to add one.</div>';
+    return;
+  }
+  container.innerHTML = list.map(function(t, i) {
+    return '<div class="sm-tcard"><div class="sm-tcard-body"><div class="sm-tcard-name">' + escHtml(t.name) + '</div><div class="sm-tcard-detail">' + escHtml(t.detail || '') + ' &middot; ' + escHtml(t.course || '') + ' &middot; &#9733;'.repeat(parseInt(t.rating) || 5) + '</div><div class="sm-tcard-quote">&ldquo;' + escHtml(t.quote) + '&rdquo;</div></div><div class="sm-tcard-actions"><button class="act-btn edit" onclick="smEditTestimonial(' + i + ')" title="Edit">&#9998;</button><button class="act-btn del" onclick="smDelTestimonial(' + i + ')" title="Delete">&times;</button></div></div>';
+  }).join('');
+}
+
+function smAddTestimonial() {
+  var name = prompt('Student Name:');
+  if (!name) return;
+  var detail = prompt('Detail (e.g. "MBA Student, Bhopal"):') || '';
+  var course = prompt('Course (e.g. "Advanced Technical Analysis"):') || 'Advanced Technical Analysis';
+  var rating = prompt('Rating (1-5):', '5') || '5';
+  var quote = prompt('Testimonial quote:');
+  if (!quote) return;
+  var list = smGetTestimonials();
+  list.unshift({ name: name, detail: detail, course: course, rating: rating, quote: quote, date: new Date().toISOString() });
+  smSaveTestimonials(list);
+  smRenderTestimonials();
+  showToast('Testimonial added', 'success');
+}
+
+function smEditTestimonial(i) {
+  var list = smGetTestimonials();
+  var t = list[i];
+  var name = prompt('Student Name:', t.name);
+  if (!name) return;
+  t.name = name;
+  t.detail = prompt('Detail:', t.detail) || '';
+  t.course = prompt('Course:', t.course) || '';
+  t.rating = prompt('Rating (1-5):', t.rating) || '5';
+  t.quote = prompt('Quote:', t.quote) || t.quote;
+  list[i] = t;
+  smSaveTestimonials(list);
+  smRenderTestimonials();
+  showToast('Testimonial updated', 'success');
+}
+
+function smDelTestimonial(i) {
+  if (!confirm('Delete this testimonial?')) return;
+  var list = smGetTestimonials();
+  list.splice(i, 1);
+  smSaveTestimonials(list);
+  smRenderTestimonials();
+  showToast('Testimonial deleted', 'info');
+}
+
+/* ---- CONTENT ---- */
+function smSaveContent() {
+  var content = {
+    heroTitle: document.getElementById('smHeroTitle').value,
+    heroSub: document.getElementById('smHeroSub').value,
+    heroDesc: document.getElementById('smHeroDesc').value,
+    statStudents: document.getElementById('smStatStudents').value,
+    statYears: document.getElementById('smStatYears').value,
+    ticker: document.getElementById('smTicker').value
+  };
+  localStorage.setItem('mc_site_content', JSON.stringify(content));
+  showToast('Content saved', 'success');
+}
+
+function smLoadContent() {
+  try {
+    var c = JSON.parse(localStorage.getItem('mc_site_content'));
+    if (c) {
+      if (c.heroTitle) document.getElementById('smHeroTitle').value = c.heroTitle;
+      if (c.heroSub) document.getElementById('smHeroSub').value = c.heroSub;
+      if (c.heroDesc) document.getElementById('smHeroDesc').value = c.heroDesc;
+      if (c.statStudents) document.getElementById('smStatStudents').value = c.statStudents;
+      if (c.statYears) document.getElementById('smStatYears').value = c.statYears;
+      if (c.ticker) document.getElementById('smTicker').value = c.ticker;
+    }
+  } catch(e) {}
+}
+
+/* ---- SETTINGS ---- */
+function smSaveSettings() {
+  var settings = {
+    phone: document.getElementById('smPhone').value,
+    email: document.getElementById('smEmail').value,
+    address: document.getElementById('smAddress').value,
+    youtube: document.getElementById('smYoutube').value,
+    instagram: document.getElementById('smInstagram').value,
+    facebook: document.getElementById('smFacebook').value,
+    whatsapp: document.getElementById('smWhatsapp').value,
+    sebi: document.getElementById('smSebi').value,
+    trainerName: document.getElementById('smTrainerName').value
+  };
+  localStorage.setItem('mc_site_settings', JSON.stringify(settings));
+  showToast('Settings saved', 'success');
+}
+
+function smLoadSettings() {
+  try {
+    var s = JSON.parse(localStorage.getItem('mc_site_settings'));
+    if (s) {
+      if (s.phone) document.getElementById('smPhone').value = s.phone;
+      if (s.email) document.getElementById('smEmail').value = s.email;
+      if (s.address) document.getElementById('smAddress').value = s.address;
+      if (s.youtube) document.getElementById('smYoutube').value = s.youtube;
+      if (s.instagram) document.getElementById('smInstagram').value = s.instagram;
+      if (s.facebook) document.getElementById('smFacebook').value = s.facebook;
+      if (s.whatsapp) document.getElementById('smWhatsapp').value = s.whatsapp;
+      if (s.sebi) document.getElementById('smSebi').value = s.sebi;
+      if (s.trainerName) document.getElementById('smTrainerName').value = s.trainerName;
+    }
+  } catch(e) {}
+}
+
+/* ---- LOAD ALL ---- */
+function smLoadAll() {
+  smLoadTrainerPhoto();
+  smRenderGallery();
+  smRenderCharts();
+  smRenderTestimonials();
+  smLoadContent();
+  smLoadSettings();
+}
+
 </script>
 </body>
 </html>
