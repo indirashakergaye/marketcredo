@@ -421,7 +421,7 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
 </main>
 <script>
 // Gallery upload functionality
-const GALLERY_KEY = 'mc_gallery_v1';
+const GALLERY_KEY = 'mc_gallery_photos';
 function getGalleryPhotos(){ try{ return JSON.parse(localStorage.getItem(GALLERY_KEY)||'[]'); }catch(e){ return []; } }
 function saveGalleryPhotos(arr){ localStorage.setItem(GALLERY_KEY, JSON.stringify(arr)); }
 
