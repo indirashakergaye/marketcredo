@@ -23,13 +23,8 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="styles.css"/>
 <style>
-.avatar-box{cursor:pointer;overflow:hidden;}
+.avatar-box{overflow:hidden;}
 .avatar-box img.trainer-photo{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:2;}
-.avatar-upload-hint{position:absolute;inset:0;z-index:3;background:rgba(0,0,0,0.6);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:0;transition:opacity 0.2s;}
-.avatar-box:hover .avatar-upload-hint{opacity:1;}
-.avatar-upload-hint span{font-size:9px;color:var(--orange);letter-spacing:1px;text-transform:uppercase;font-weight:600;}
-.avatar-upload-hint svg{width:20px;height:20px;fill:var(--orange);}
-#trainerPhotoInput{display:none;}
 </style>
 <script>
   // Redirect mobile users to the dedicated mobile UI
@@ -142,14 +137,9 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
     <div class="trainer-left">
       <div class="sb-hdr" style="padding:7px 14px;">IDENTIFICATION</div>
       <div class="portrait-area">
-        <div class="avatar-box" onclick="adminUpload('trainerPhotoInput')">
+        <div class="avatar-box">
           <div class="av-init" id="avInitials">AS</div>
           <img class="trainer-photo" id="trainerPhoto" style="display:none;" alt="Trainer Photo"/>
-          <div class="avatar-upload-hint" id="uploadHint" style="display:none;">
-            <svg viewBox="0 0 24 24"><path d="M19 7v2.99s-1.99.01-2 0V7h-3s.01-1.99 0-2h3V2h2v3h3v2h-3zm-3 4V8h-3V5H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8h-3zM5 19l3-4 2 3 3-4 4 5H5z"/></svg>
-            <span>Upload Photo</span>
-          </div>
-          <input type="file" id="trainerPhotoInput" accept="image/*" onchange="handleTrainerPhoto(this)"/>
         </div>
         <div class="av-name-block">
           <div class="av-name">ATISH SHAKERGAYE</div>
@@ -489,43 +479,7 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
   if(sb && mainEl){ mainEl.style.marginTop='124px'; }
 })();
 
-/* Admin Auth for Uploads */
-var _mcAdmin = false;
-var _mcAdminKey = 'mc@2024admin';
-function adminUpload(inputId) {
-  if (_mcAdmin) { document.getElementById(inputId).click(); return; }
-  var pw = prompt('Admin access required. Enter password:');
-  if (pw === _mcAdminKey) {
-    _mcAdmin = true;
-    sessionStorage.setItem('mc_admin', '1');
-    document.getElementById(inputId).click();
-  } else if (pw !== null) {
-    alert('Incorrect password.');
-  }
-}
-(function checkAdmin() {
-  if (sessionStorage.getItem('mc_admin') === '1') {
-    _mcAdmin = true;
-    var hint = document.getElementById('uploadHint');
-    if (hint) hint.style.display = '';
-  }
-})();
-
-/* Trainer Photo Upload */
-function handleTrainerPhoto(input) {
-  if (!input.files || !input.files[0]) return;
-  var file = input.files[0];
-  if (file.size > 5 * 1024 * 1024) { alert('File too large. Max 5MB.'); return; }
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    var dataUrl = e.target.result;
-    document.getElementById('trainerPhoto').src = dataUrl;
-    document.getElementById('trainerPhoto').style.display = 'block';
-    document.getElementById('avInitials').style.display = 'none';
-    try { localStorage.setItem('mc_trainer_photo', dataUrl); } catch(err) {}
-  };
-  reader.readAsDataURL(file);
-}
+/* Load Trainer Photo from localStorage (set via CRM) */
 (function loadTrainerPhoto() {
   try {
     var saved = localStorage.getItem('mc_trainer_photo');

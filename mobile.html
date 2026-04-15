@@ -647,20 +647,10 @@ button { font-family: inherit; }
   font-size: 26px;
   color: var(--primary);
 }
-.mentor-avatar { cursor: pointer; overflow: hidden; }
+.mentor-avatar { overflow: hidden; }
 .mentor-avatar img.m-trainer-photo {
   width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; border-radius: 50%; z-index: 2;
 }
-.mentor-avatar .m-upload-hint {
-  position: absolute; inset: 0; z-index: 3; border-radius: 50%;
-  background: rgba(0,0,0,0.55); display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 2px;
-  opacity: 0; transition: opacity 0.2s;
-}
-.mentor-avatar:active .m-upload-hint { opacity: 1; }
-.mentor-avatar .m-upload-hint svg { width: 18px; height: 18px; fill: var(--primary); }
-.mentor-avatar .m-upload-hint span { font-size: 7px; color: var(--primary); letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
-#mTrainerInput { display: none; }
 
 .mentor-name {
   font-family: var(--font-body);
@@ -1616,14 +1606,9 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
   <div class="section-label reveal">MEET YOUR MENTOR</div>
 
   <div class="mentor-card reveal reveal-delay-1">
-    <div class="mentor-avatar" onclick="document.getElementById('mTrainerInput').click()">
+    <div class="mentor-avatar">
       <span id="mAvInitials">AS</span>
       <img class="m-trainer-photo" id="mTrainerPhoto" style="display:none;" alt="Trainer"/>
-      <div class="m-upload-hint">
-        <svg viewBox="0 0 24 24"><path d="M19 7v2.99s-1.99.01-2 0V7h-3s.01-1.99 0-2h3V2h2v3h3v2h-3zm-3 4V8h-3V5H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8h-3zM5 19l3-4 2 3 3-4 4 5H5z"/></svg>
-        <span>Upload</span>
-      </div>
-      <input type="file" id="mTrainerInput" accept="image/*" onchange="handleMobileTrainerPhoto(this)"/>
     </div>
     <div class="mentor-name">Aatish Shakergaye</div>
     <div class="mentor-role">SEBI Registered Research Analyst</div>
@@ -2168,21 +2153,7 @@ function submitForm() {
   }, 600);
 }
 
-/* ── Trainer Photo Upload ── */
-function handleMobileTrainerPhoto(input) {
-  if (!input.files || !input.files[0]) return;
-  var file = input.files[0];
-  if (file.size > 5 * 1024 * 1024) { alert('File too large. Max 5MB.'); return; }
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    var dataUrl = e.target.result;
-    document.getElementById('mTrainerPhoto').src = dataUrl;
-    document.getElementById('mTrainerPhoto').style.display = 'block';
-    document.getElementById('mAvInitials').style.display = 'none';
-    try { localStorage.setItem('mc_trainer_photo', dataUrl); } catch(err) {}
-  };
-  reader.readAsDataURL(file);
-}
+/* ── Load Trainer Photo from localStorage (set via CRM) ── */
 (function loadMobileTrainerPhoto() {
   try {
     var saved = localStorage.getItem('mc_trainer_photo');
