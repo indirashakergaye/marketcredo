@@ -1935,38 +1935,47 @@ function publishToLive() {
   status.textContent = 'Connecting to server...';
   status.style.color = 'var(--dim)';
 
-  // Gather current content & settings from form fields
-  var siteData = {
-    content: {
-      heroTitle: document.getElementById('smHeroTitle').value,
-      heroSub: document.getElementById('smHeroSub').value,
-      heroDesc: document.getElementById('smHeroDesc').value,
-      statStudents: document.getElementById('smStatStudents').value,
-      statYears: document.getElementById('smStatYears').value,
-      ticker: document.getElementById('smTicker').value
-    },
-    settings: {
-      phone: document.getElementById('smPhone').value,
-      email: document.getElementById('smEmail').value,
-      address: document.getElementById('smAddress').value,
-      youtube: document.getElementById('smYoutube').value,
-      instagram: document.getElementById('smInstagram').value,
-      facebook: document.getElementById('smFacebook').value,
-      whatsapp: document.getElementById('smWhatsapp').value,
-      sebi: document.getElementById('smSebi').value,
-      trainerName: document.getElementById('smTrainerName').value
-    },
-    testimonials: smGetTestimonials()
-  };
+  // Fetch existing site-data.json first, then merge CRM edits on top
+  fetch('/site-data.json?' + Date.now())
+  .then(function(r) { return r.ok ? r.json() : {}; })
+  .catch(function() { return {}; })
+  .then(function(existing) {
+    var ec = existing.content || {};
+    var es = existing.settings || {};
 
-  // Also save to localStorage
-  localStorage.setItem('mc_site_content', JSON.stringify(siteData.content));
-  localStorage.setItem('mc_site_settings', JSON.stringify(siteData.settings));
+    // Merge CRM form fields on top of existing data
+    var siteData = {
+      content: Object.assign({}, ec, {
+        heroTitle: document.getElementById('smHeroTitle').value,
+        heroSub: document.getElementById('smHeroSub').value,
+        heroDesc: document.getElementById('smHeroDesc').value,
+        statStudents: document.getElementById('smStatStudents').value,
+        statYears: document.getElementById('smStatYears').value,
+        ticker: document.getElementById('smTicker').value
+      }),
+      settings: Object.assign({}, es, {
+        phone: document.getElementById('smPhone').value,
+        email: document.getElementById('smEmail').value,
+        address: document.getElementById('smAddress').value,
+        youtube: document.getElementById('smYoutube').value,
+        instagram: document.getElementById('smInstagram').value,
+        facebook: document.getElementById('smFacebook').value,
+        whatsapp: document.getElementById('smWhatsapp').value,
+        sebi: document.getElementById('smSebi').value,
+        trainerName: document.getElementById('smTrainerName').value
+      }),
+      testimonials: smGetTestimonials()
+    };
 
-  fetch('/api/publish', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ password: PASSWORD, siteData: siteData })
+    // Also save to localStorage
+    localStorage.setItem('mc_site_content', JSON.stringify(siteData.content));
+    localStorage.setItem('mc_site_settings', JSON.stringify(siteData.settings));
+
+    return fetch('/api/publish', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: PASSWORD, siteData: siteData })
+    });
   })
   .then(function(r) { return r.json().then(function(d) { return { ok: r.ok, data: d }; }); })
   .then(function(res) {

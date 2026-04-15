@@ -3,9 +3,30 @@
     "heroTitle": "Learn the Language of the Market.",
     "heroSub": "Advanced Technical Analysis \u00b7 20 Years of Real Market Experience",
     "heroDesc": "At Market Credo, we don\u2019t teach signals or tips. We teach the core concepts of technical analysis \u2014 chart structure, chart flow, the logic and beauty of price action \u2014 so deeply that you build your own strategy and trade with complete independence.",
+    "heroQuote": "Chart aapse baat karte hein, aapko language samajhni chahiye.",
+    "heroQuoteTrans": "Charts speak to you \u2014 you just need to learn their language.",
     "statStudents": "500+",
     "statYears": "20+",
-    "ticker": "NEW BATCH STARTING SOON \u00b7 BOOK FREE DEMO \u00b7 CALL +91-8827979008"
+    "statRating": "4.9",
+    "ticker": "NEW BATCH STARTING SOON \u00b7 BOOK FREE DEMO \u00b7 CALL +91-8827979008",
+    "mentorBio": [
+      "Atish Shakergaye is a SEBI Registered Research Analyst based in Bhopal, India, with over 20 years of deep market experience. He is the founder of Market Credo \u2014 a professional stock market training institute dedicated to building genuine trading and investing skills.",
+      "With a strong belief in the power of Technical Analysis and Price Action, Atish sir has trained hundreds of students across India \u2014 both online and offline \u2014 helping them develop the discipline and clarity needed to navigate complex markets.",
+      "His approach is simple: teach the core concepts so deeply that every student can read charts, understand market structure, and build their own strategy \u2014 without depending on tips, signals, or anyone else."
+    ],
+    "skills": ["Technical Analysis", "Price Action", "Chart Structure", "Risk Management", "Trading Psychology", "Elliott Wave"],
+    "whyCards": [
+      {"title": "SEBI Registered Analyst", "desc": "Government-recognized Research Analyst. Your education is backed by regulatory credibility and 20+ years of real market experience."},
+      {"title": "No Tips \u2014 Pure Education", "desc": "We teach you to fish, not hand you a fish. Every concept is taught from first principles so you become a self-sufficient trader."},
+      {"title": "Core Concepts Only", "desc": "Price action, chart structure, chart flow \u2014 the real language of the market. No indicators, no shortcuts, just deep understanding."},
+      {"title": "Personal Mentorship", "desc": "Direct access to Atish sir. Small batches, personalised attention, real market discussions."}
+    ],
+    "courses": [
+      {"level": "FOUNDATION", "title": "Technical Analysis Foundation", "desc": "A beginner-friendly course designed to build a rock-solid base in chart reading, market structure, and the core principles of Technical Analysis.", "chips": ["Candlestick Basics", "Support & Resistance", "Trend Lines", "Chart Patterns", "Volume Analysis"]},
+      {"level": "INTERMEDIATE", "title": "Price Action Mastery", "desc": "Go beyond the basics. This course covers advanced candlestick analysis, multi-timeframe thinking, and real-world trade setups with Price Action.", "chips": ["Advanced Candles", "Price Action Setups", "Market Structure", "Trade Management", "Fibonacci", "Sector Analysis"]},
+      {"level": "ADVANCED", "title": "Advanced Chart Analysis", "desc": "An intensive program for serious market students. Advanced pattern recognition, multi-timeframe analysis, trading psychology, and live market sessions with Atish sir.", "chips": ["Elliott Wave", "Harmonic Patterns", "Multi-TF Analysis", "Psychology", "Live Sessions", "Mentorship"]}
+    ],
+    "businessHours": "Mon\u2013Sat, 9AM\u20137PM"
   },
   "settings": {
     "phone": "+91-8827979008",
@@ -16,7 +37,14 @@
     "facebook": "https://www.facebook.com/marketcredo",
     "whatsapp": "https://wa.me/918827979008",
     "sebi": "INH000006086",
-    "trainerName": "Atish Shakergaye"
+    "trainerName": "Atish Shakergaye",
+    "trainerRole": "SEBI Registered Research Analyst"
   },
-  "testimonials": []
+  "testimonials": [
+    {"name": "Rahul Verma", "detail": "Equity Trader, Indore", "rating": "5", "quote": "Market Credo changed the way I look at charts. Atish sir teaches with incredible clarity \u2014 no jargon, no confusion. Within 3 months I could read market structure on my own. Highly recommended for anyone serious about trading."},
+    {"name": "Amit Sharma", "detail": "Retail Investor, Bhopal", "rating": "5", "quote": "Maine bahut jagah se seekha, lekin yahan ka approach bilkul alag hai. Concept-based teaching \u2014 koi tips nahi, sirf market ki language. Ab main khud analyse kar sakta hoon. Shukriya Atish sir."},
+    {"name": "Priya Desai", "detail": "Options Learner, Pune", "rating": "5", "quote": "The personal mentorship is what sets Market Credo apart. You\u2019re not just watching videos \u2014 Atish sir actually reviews your charts, corrects your thinking, and builds your confidence step by step. Worth every rupee."},
+    {"name": "Suresh Kumar", "detail": "Intraday Trader, Nagpur", "rating": "5", "quote": "I was completely lost in the noise of social media tips before joining Market Credo. After the Foundation course, I finally understood that charts tell the truth \u2014 you just have to learn to listen. Atish sir is a true educator."},
+    {"name": "Neha Joshi", "detail": "IT Professional, Bengaluru", "rating": "5", "quote": "As someone with zero market background, I was nervous. But Atish sir\u2019s Foundation course is designed for people like me. Step by step, concept by concept. Now I confidently analyze Nifty charts every morning before work."}
+  ]
 }
