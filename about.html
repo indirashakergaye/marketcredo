@@ -139,7 +139,7 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
       <div class="portrait-area">
         <div class="avatar-box">
           <div class="av-init" id="avInitials">AS</div>
-          <img class="trainer-photo" id="trainerPhoto" style="display:none;" alt="Trainer Photo"/>
+          <img class="trainer-photo" id="trainerPhoto" src="img/trainer.jpg" onerror="this.style.display='none';document.getElementById('avInitials').style.display=''" alt="Trainer Photo"/>
         </div>
         <div class="av-name-block">
           <div class="av-name">ATISH SHAKERGAYE</div>
@@ -479,16 +479,25 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
   if(sb && mainEl){ mainEl.style.marginTop='124px'; }
 })();
 
-/* Load Trainer Photo from localStorage (set via CRM) */
+/* Load Trainer Photo — static file with localStorage fallback */
 (function loadTrainerPhoto() {
-  try {
-    var saved = localStorage.getItem('mc_trainer_photo');
-    if (saved) {
-      document.getElementById('trainerPhoto').src = saved;
-      document.getElementById('trainerPhoto').style.display = 'block';
-      document.getElementById('avInitials').style.display = 'none';
-    }
-  } catch(err) {}
+  var img = document.getElementById('trainerPhoto');
+  var initials = document.getElementById('avInitials');
+  // If static file loaded successfully, show it
+  if (img.naturalWidth > 0) {
+    img.style.display = 'block';
+    initials.style.display = 'none';
+  } else {
+    // Fallback to localStorage (for local CRM preview)
+    try {
+      var saved = localStorage.getItem('mc_trainer_photo');
+      if (saved) {
+        img.src = saved;
+        img.style.display = 'block';
+        initials.style.display = 'none';
+      }
+    } catch(err) {}
+  }
 })();
 </script>
 </body>

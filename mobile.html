@@ -1608,7 +1608,7 @@ gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
   <div class="mentor-card reveal reveal-delay-1">
     <div class="mentor-avatar">
       <span id="mAvInitials">AS</span>
-      <img class="m-trainer-photo" id="mTrainerPhoto" style="display:none;" alt="Trainer"/>
+      <img class="m-trainer-photo" id="mTrainerPhoto" src="img/trainer.jpg" onerror="this.style.display='none';document.getElementById('mAvInitials').style.display=''" alt="Trainer"/>
     </div>
     <div class="mentor-name">Aatish Shakergaye</div>
     <div class="mentor-role">SEBI Registered Research Analyst</div>
@@ -2153,16 +2153,23 @@ function submitForm() {
   }, 600);
 }
 
-/* ── Load Trainer Photo from localStorage (set via CRM) ── */
+/* ── Load Trainer Photo — static file with localStorage fallback ── */
 (function loadMobileTrainerPhoto() {
-  try {
-    var saved = localStorage.getItem('mc_trainer_photo');
-    if (saved) {
-      document.getElementById('mTrainerPhoto').src = saved;
-      document.getElementById('mTrainerPhoto').style.display = 'block';
-      document.getElementById('mAvInitials').style.display = 'none';
-    }
-  } catch(err) {}
+  var img = document.getElementById('mTrainerPhoto');
+  var initials = document.getElementById('mAvInitials');
+  if (img.naturalWidth > 0) {
+    img.style.display = 'block';
+    initials.style.display = 'none';
+  } else {
+    try {
+      var saved = localStorage.getItem('mc_trainer_photo');
+      if (saved) {
+        img.src = saved;
+        img.style.display = 'block';
+        initials.style.display = 'none';
+      }
+    } catch(err) {}
+  }
 })();
 
 /* ── Resize: redirect to desktop ── */
