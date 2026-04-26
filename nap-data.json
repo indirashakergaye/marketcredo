@@ -1,0 +1,29 @@
+{
+  "businessName": "Market Credo",
+  "legalName": "Market Credo Technical Analysis Institute",
+  "owner": "Atish Shakergaye",
+  "sebiRegistration": "INH000006086",
+  "address": {
+    "streetAddress": "Plot No 83, Shrinivas Tower, M.P. Nagar Zone II",
+    "city": "Bhopal",
+    "state": "Madhya Pradesh",
+    "stateCode": "MP",
+    "pincode": "462016",
+    "country": "India",
+    "countryCode": "IN"
+  },
+  "coordinates": { "latitude": "23.2332", "longitude": "77.4347" },
+  "phone": "+91-8827979008",
+  "phoneInternational": "+918827979008",
+  "email": "info@marketcredo.in",
+  "website": "https://www.marketcredo.in",
+  "social": {
+    "youtube": "https://www.youtube.com/@MarketCredo",
+    "instagram": "https://www.instagram.com/marketcredo",
+    "facebook": "https://www.facebook.com/marketcredo",
+    "whatsapp": "https://wa.me/918827979008"
+  },
+  "hours": "Mon-Sat 09:00-18:00",
+  "categories": ["Educational Institute", "Stock Market Training", "Technical Analysis Course"],
+  "description": "Bhopal's premier Technical Analysis Institute. SEBI-registered research analyst Atish Shakergaye with 20+ years experience. Courses in stock market trading, chart patterns & price action."
+}

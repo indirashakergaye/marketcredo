@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How to Use RSI for Better Entry Points | Market Credo</title>
+<meta name="description" content="Learn the correct way to use RSI indicator for trading entries. RSI divergence, overbought/oversold zones explained with Nifty examples. Market Credo guide."/>
+<meta name="keywords" content="RSI indicator, RSI divergence, overbought oversold, RSI trading strategy, Nifty RSI analysis, technical analysis indicators, Market Credo, Atish Shakergaye, Bhopal"/>
+<meta name="geo.region" content="IN-MP"/>
+<meta name="geo.placename" content="Bhopal"/>
+<meta name="geo.position" content="23.2332;77.4347"/>
+<meta name="ICBM" content="23.2332, 77.4347"/>
+<link rel="canonical" href="https://www.marketcredo.in/blog/rsi-better-entry-points.html"/>
+<!-- Open Graph -->
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="How to Use RSI for Better Entry Points | Market Credo"/>
+<meta property="og:description" content="Learn the correct way to use RSI indicator for trading entries. RSI divergence, overbought/oversold zones explained with Nifty examples. Market Credo guide."/>
+<meta property="og:url" content="https://www.marketcredo.in/blog/rsi-better-entry-points.html"/>
+<meta property="og:site_name" content="Market Credo"/>
+<meta property="og:locale" content="en_IN"/>
+<meta property="og:image" content="/images/og-default.jpg"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="How to Use RSI for Better Entry Points | Market Credo"/>
+<meta name="twitter:description" content="Learn the correct way to use RSI indicator for trading entries. RSI divergence, overbought/oversold zones explained with Nifty examples."/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23121212'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='monospace' font-weight='700' font-size='18' fill='%23F3772C'%3EMC%3C/text%3E%3C/svg%3E"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../styles.css"/>
+<style>
+.blog-post-container{max-width:820px;margin:0 auto;padding:40px 24px 60px;}
+.breadcrumb{font-size:10px;letter-spacing:1.5px;color:var(--dimmer);margin-bottom:24px;text-transform:uppercase;}
+.breadcrumb a{color:var(--dim);text-decoration:none;}
+.breadcrumb a:hover{color:var(--orange);}
+.article-tag{display:inline-block;background:rgba(243,119,44,0.1);border:1px solid var(--orange2);padding:3px 10px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--orange);text-transform:uppercase;margin-bottom:16px;}
+.article-h1{font-family:'IBM Plex Mono',monospace;font-size:28px;font-weight:700;color:var(--white);line-height:1.4;margin:0 0 16px;letter-spacing:1px;}
+.article-meta{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dimmer);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:32px;display:flex;gap:16px;flex-wrap:wrap;}
+.tldr-box{background:var(--bg2);border-left:3px solid var(--orange);padding:20px 24px;margin-bottom:32px;}
+.tldr-box .tldr-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;margin-bottom:8px;font-weight:700;}
+.tldr-box p{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--dim);line-height:1.8;margin:0;}
+.toc{background:var(--bg1);border:1px solid var(--border);padding:20px 24px;margin-bottom:40px;}
+.toc-title{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;margin-bottom:12px;font-weight:700;}
+.toc ol{padding-left:20px;margin:0;}
+.toc li{font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:var(--dim);line-height:2.2;}
+.toc a{color:var(--dim);text-decoration:none;}
+.toc a:hover{color:var(--orange);}
+.article-content h2{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700;color:var(--white);margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border);letter-spacing:1px;}
+.article-content h3{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;color:var(--orange);margin:28px 0 12px;letter-spacing:0.5px;}
+.article-content p{font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:var(--dim);line-height:1.9;margin:0 0 16px;}
+.article-content ul,.article-content ol{padding-left:24px;margin:0 0 16px;}
+.article-content li{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--dim);line-height:2;margin-bottom:4px;}
+.article-content strong{color:var(--white);}
+.article-content img{width:100%;border:1px solid var(--border);margin:16px 0;display:block;}
+.expert-tip{background:rgba(243,119,44,0.05);border:1px solid var(--orange2);padding:24px;margin:32px 0;}
+.expert-tip-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;margin-bottom:8px;font-weight:700;}
+.expert-tip p{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--dim);line-height:1.9;margin:0;}
+.expert-tip cite{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dimmer);margin-top:12px;font-style:normal;letter-spacing:1px;}
+.faq-section{margin:40px 0;}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0;}
+.faq-q{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.faq-a{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--dim);line-height:1.8;}
+.cta-box{background:var(--orange);padding:32px;text-align:center;margin:40px 0;}
+.cta-box h3{font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;color:#000;margin:0 0 8px;letter-spacing:1px;}
+.cta-box p{font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:rgba(0,0,0,0.7);margin:0 0 16px;}
+.cta-box a{display:inline-block;background:#000;color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:2px;padding:12px 28px;text-decoration:none;text-transform:uppercase;}
+.cta-box a:hover{background:var(--bg1);}
+.author-bio{display:flex;gap:20px;align-items:flex-start;background:var(--bg1);border:1px solid var(--border);padding:24px;margin:40px 0;}
+.author-bio-avatar{width:64px;height:64px;background:var(--bg2);border:2px solid var(--orange);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700;color:var(--orange);flex-shrink:0;}
+.author-bio-info h4{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--white);margin:0 0 4px;}
+.author-bio-info .author-title{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--orange);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.author-bio-info p{font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:var(--dim);line-height:1.7;margin:0;}
+.related-posts{margin:40px 0;}
+.related-posts h3{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:2px;color:var(--dimmer);text-transform:uppercase;margin-bottom:16px;}
+.related-link{display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);text-decoration:none;padding:10px 0;border-bottom:1px solid var(--border);}
+.related-link:hover{color:var(--orange);}
+@media(max-width:600px){
+  .article-h1{font-size:20px;}
+  .author-bio{flex-direction:column;align-items:center;text-align:center;}
+  .blog-post-container{padding:24px 16px 40px;}
+}
+</style>
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Use RSI for Better Entry Points",
+  "description": "Learn the correct way to use RSI indicator for trading entries. RSI divergence, overbought/oversold zones explained with Nifty examples.",
+  "author": {
+    "@type": "Person",
+    "name": "Atish Shakergaye",
+    "jobTitle": "SEBI Registered Research Analyst",
+    "url": "https://www.marketcredo.in/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Market Credo",
+    "url": "https://www.marketcredo.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.marketcredo.in/logo.png"
+    }
+  },
+  "datePublished": "2025-01-03",
+  "dateModified": "2025-01-03",
+  "mainEntityOfPage": "https://www.marketcredo.in/blog/rsi-better-entry-points.html",
+  "image": "https://www.marketcredo.in/images/og-default.jpg",
+  "articleSection": "Technical Analysis",
+  "wordCount": 2400,
+  "inLanguage": "en-IN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.marketcredo.in/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.marketcredo.in/blog.html"},
+    {"@type": "ListItem", "position": 3, "name": "How to Use RSI for Better Entry Points", "item": "https://www.marketcredo.in/blog/rsi-better-entry-points.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the RSI indicator and how does it work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RSI (Relative Strength Index) is a momentum oscillator developed by J. Welles Wilder that measures the speed and magnitude of price changes. It oscillates between 0 and 100. Traditionally, RSI above 70 is considered overbought and below 30 is considered oversold. The standard period setting is 14."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best RSI setting for Nifty and BankNifty trading?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The standard 14-period RSI works well for most Nifty and BankNifty analysis on daily charts. For intraday trading, some traders use 9-period RSI for faster signals. For swing trading, 14-period on the daily chart is recommended. Do not over-optimize — the default 14-period setting has stood the test of time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I buy when RSI is below 30 (oversold)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not automatically. RSI below 30 means the stock has strong downward momentum — it does not mean it will reverse immediately. In strong downtrends, RSI can stay below 30 for weeks. Use oversold RSI as an alert to start watching for reversal signals (like bullish candlestick patterns at support), not as a direct buy signal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is RSI divergence and why is it important?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RSI divergence occurs when the price makes a new high or low but RSI does not confirm it. Bearish divergence: price makes a higher high but RSI makes a lower high — signals weakening momentum and potential reversal down. Bullish divergence: price makes a lower low but RSI makes a higher low — signals weakening selling pressure and potential reversal up. Divergence is the most reliable RSI signal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can RSI be used for options trading on NSE?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, RSI on the underlying Nifty or BankNifty chart helps time options entries. RSI divergence at a key support level can signal a good time to buy calls or sell puts. RSI divergence at resistance can signal a good time to buy puts or sell calls. Always combine RSI with support/resistance levels and candlestick patterns for options trading."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I combine RSI with support and resistance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most powerful approach is to use support/resistance for the 'where' and RSI for the 'when'. When price reaches a support level AND RSI shows bullish divergence or is moving up from oversold territory, that is a high-probability buy zone. When price reaches resistance AND RSI shows bearish divergence, that is a high-probability sell zone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is hidden divergence in RSI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hidden divergence is a trend continuation signal. Bullish hidden divergence: price makes a higher low but RSI makes a lower low — the uptrend is likely to continue. Bearish hidden divergence: price makes a lower high but RSI makes a higher high — the downtrend is likely to continue. Hidden divergence is less well-known but very powerful for trend-following strategies."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
+</script>
+</head>
+<body>
+<a class="wa-float" href="https://wa.me/918827979008?text=Hello%20Market%20Credo!%20I%20am%20interested%20in%20your%20courses.%20Please%20share%20details." target="_blank">
+  <div class="wa-pulse"></div>
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<div class="status-bar">
+  <div class="sbar-inner">
+    <div class="sbar-seg sbar-brand">MARKET CREDO</div>
+    <div class="sbar-seg sbar-info">TECHNICAL ANALYSIS INSTITUTE</div>
+    <div class="sbar-seg sbar-info">SEBI REG: INH000006086</div>
+    <div class="sbar-seg sbar-info">ATISH SHAKERGAYE &middot; 20 YRS EXPERIENCE</div>
+    <div class="sbar-seg sbar-right"><span class="blink">&bull;</span>&nbsp;BHOPAL &middot; MP &middot; INDIA</div>
+  </div>
+</div>
+
+<nav>
+  <a class="nav-item nav-brand" href="../index.html">MARKET CREDO</a>
+  <a class="nav-item" href="../about.html"><span class="nav-num">F2</span>TRAINER</a>
+  <a class="nav-item" href="../courses.html#courses"><span class="nav-num">F3</span>COURSES</a>
+  <a class="nav-item" href="../testimonials.html"><span class="nav-num">F7</span>REVIEWS</a>
+  <a class="nav-item" href="../videos.html"><span class="nav-num">F8</span>VIDEOS</a>
+  <a class="nav-item" href="../chartboard.html"><span class="nav-num">F9</span>CHARTS</a>
+  <a class="nav-item" href="../index.html#contact"><span class="nav-num">F6</span>CONTACT</a>
+  <a class="nav-item" href="../life.html"><span class="nav-num">F10</span>LIFE</a>
+  <a class="nav-item" href="../faq.html"><span class="nav-num">F11</span>FAQ</a>
+  <a class="nav-item active" href="../blog.html"><span class="nav-num">F12</span>BLOG</a>
+  <a class="nav-item nav-cta" href="../courses.html#demo">BOOK FREE DEMO &lt;GO&gt;</a>
+</nav>
+
+<div class="social-bar" style="position:fixed;top:64px;left:0;right:0;z-index:997;">
+  <div class="social-bar-label">FOLLOW US</div>
+  <div class="social-links">
+    <a class="social-link yt" href="https://www.youtube.com/@MarketCredo" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+      YOUTUBE
+    </a>
+    <a class="social-link ig" href="https://www.instagram.com/marketcredo" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      INSTAGRAM
+    </a>
+    <a class="social-link fb" href="https://www.facebook.com/marketcredo" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      FACEBOOK
+    </a>
+    <a class="social-link wa2" href="https://wa.me/918827979008" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      WHATSAPP
+    </a>
+  </div>
+</div>
+
+<div class="edu-ticker">
+  <div class="ticker-scroll">
+    <div class="t-item"><span class="t-label">CHART STRUCTURE</span><span class="t-tag">&bull; CORE CONCEPT</span></div>
+    <div class="t-item"><span class="t-label">CHART FLOW</span><span class="t-val">TREND READING</span><span class="t-tag">&#9658; TAUGHT</span></div>
+    <div class="t-item"><span class="t-label">EXPERIENCE</span><span class="t-val">20 YEARS IN MARKETS</span></div>
+    <div class="t-item"><span class="t-label">SEBI REGISTERED</span><span class="t-val">INH000006086</span><span class="t-tag">&#10003; VERIFIED</span></div>
+    <div class="t-item"><span class="t-label">CANDLESTICK MASTERY</span><span class="t-tag">&bull; TAUGHT IN DEPTH</span></div>
+    <div class="t-item"><span class="t-label">FREE DEMO CLASS</span><span class="t-val">2 DAYS &middot; ZERO COST</span></div>
+    <div class="t-item"><span class="t-label">BUILD YOUR STRATEGY</span><span class="t-tag">&#9658; YOUR OWN EDGE</span></div>
+    <div class="t-item"><span class="t-label">SUPPORT &amp; RESISTANCE</span><span class="t-tag">&bull; FIRST PRINCIPLES</span></div>
+    <div class="t-item"><span class="t-label">ADVANCED TA</span><span class="t-val">FLAGSHIP COURSE</span></div>
+    <div class="t-item"><span class="t-label">WHATSAPP</span><span class="t-val">+91-8827979008</span><span class="t-tag">&bull; INSTANT REPLY</span></div>
+    <div class="t-item"><span class="t-label">PRACTICE</span><span class="t-val">MAKES PERFECT</span><span class="t-tag">&#9658; LIVE SESSIONS</span></div>
+    <div class="t-sep">&#9670;&#9670;&#9670;</div>
+    <div class="t-item"><span class="t-label">CHART STRUCTURE</span><span class="t-tag">&bull; CORE CONCEPT</span></div>
+    <div class="t-item"><span class="t-label">CHART FLOW</span><span class="t-val">TREND READING</span><span class="t-tag">&#9658; TAUGHT</span></div>
+    <div class="t-item"><span class="t-label">EXPERIENCE</span><span class="t-val">20 YEARS IN MARKETS</span></div>
+    <div class="t-item"><span class="t-label">SEBI REGISTERED</span><span class="t-val">INH000006086</span><span class="t-tag">&#10003; VERIFIED</span></div>
+    <div class="t-item"><span class="t-label">CANDLESTICK MASTERY</span><span class="t-tag">&bull; TAUGHT IN DEPTH</span></div>
+    <div class="t-item"><span class="t-label">FREE DEMO CLASS</span><span class="t-val">2 DAYS &middot; ZERO COST</span></div>
+    <div class="t-item"><span class="t-label">BUILD YOUR STRATEGY</span><span class="t-tag">&#9658; YOUR OWN EDGE</span></div>
+    <div class="t-item"><span class="t-label">SUPPORT &amp; RESISTANCE</span><span class="t-tag">&bull; FIRST PRINCIPLES</span></div>
+    <div class="t-item"><span class="t-label">ADVANCED TA</span><span class="t-val">FLAGSHIP COURSE</span></div>
+    <div class="t-item"><span class="t-label">WHATSAPP</span><span class="t-val">+91-8827979008</span><span class="t-tag">&bull; INSTANT REPLY</span></div>
+    <div class="t-item"><span class="t-label">PRACTICE</span><span class="t-val">MAKES PERFECT</span><span class="t-tag">&#9658; LIVE SESSIONS</span></div>
+    <div class="t-sep">&#9670;&#9670;&#9670;</div>
+  </div>
+</div>
+
+<main>
+
+<div class="blog-post-container">
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <a href="../index.html">Home</a> &rsaquo; <a href="../blog.html">Blog</a> &rsaquo; How to Use RSI for Better Entry Points
+</div>
+
+<!-- Article Header -->
+<span class="article-tag">Technical Analysis</span>
+<h1 class="article-h1">How to Use RSI for Better Entry Points in Indian Markets</h1>
+<div class="article-meta">
+  <span>03 Jan 2025</span>
+  <span>7 Min Read</span>
+  <span>By Atish Shakergaye</span>
+</div>
+
+<!-- TL;DR -->
+<div class="tldr-box">
+  <div class="tldr-label">TL;DR &mdash; Quick Answer</div>
+  <p>RSI (Relative Strength Index) is best used for spotting divergences, not for blindly buying oversold or selling overbought. The most reliable RSI signal is divergence at a key support or resistance level confirmed by a candlestick pattern. In trending markets, adjust your overbought/oversold thresholds to 80/40 (uptrend) or 60/20 (downtrend). Combine RSI with price action for high-probability entries on Nifty, BankNifty, and individual stocks.</p>
+</div>
+
+<!-- Table of Contents -->
+<div class="toc">
+  <div class="toc-title">Table of Contents</div>
+  <ol>
+    <li><a href="#what-is-rsi">What Is RSI? The Basics Explained</a></li>
+    <li><a href="#formula">RSI Formula: Understanding the Math</a></li>
+    <li><a href="#misuse">The Overbought/Oversold Trap &mdash; Why Most Traders Misuse RSI</a></li>
+    <li><a href="#divergence">RSI Divergence: The Most Powerful Signal</a></li>
+    <li><a href="#hidden">Hidden Divergence: The Trend Continuation Secret</a></li>
+    <li><a href="#trending-vs-ranging">RSI in Trending vs. Ranging Markets</a></li>
+    <li><a href="#combining">Combining RSI with S&amp;R and Candlesticks</a></li>
+    <li><a href="#indian-examples">Indian Market Examples: Nifty, BankNifty &amp; Beyond</a></li>
+    <li><a href="#expert-tip">Atish Sir's Expert Tip</a></li>
+    <li><a href="#mistakes">Common Mistakes to Avoid</a></li>
+    <li><a href="#faq">Frequently Asked Questions</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ol>
+</div>
+
+<!-- Article Content -->
+<div class="article-content">
+
+<h2 id="what-is-rsi">What Is RSI? The Basics Explained</h2>
+
+<p>The Relative Strength Index (RSI) is a momentum oscillator developed by <strong>J. Welles Wilder Jr.</strong> in 1978 and introduced in his book &ldquo;New Concepts in Technical Trading Systems.&rdquo; It is one of the most widely used indicators in the world &mdash; you will find it on every charting platform from Zerodha Kite to TradingView to MetaTrader.</p>
+
+<p>RSI measures the <strong>speed and magnitude of recent price changes</strong> to evaluate whether a stock or index is overbought or oversold. It oscillates between 0 and 100, displayed as a line chart below the main price chart. The standard period setting is <strong>14</strong> (meaning it looks at the last 14 candles).</p>
+
+<p>The traditional interpretation is simple:</p>
+<ul>
+  <li><strong>RSI above 70</strong> = Overbought (adhik khareedaari) &mdash; the stock may be due for a pullback.</li>
+  <li><strong>RSI below 30</strong> = Oversold (adhik bikawaali) &mdash; the stock may be due for a bounce.</li>
+  <li><strong>RSI near 50</strong> = Neutral &mdash; no strong momentum in either direction.</li>
+</ul>
+
+<p>However, as you will learn in this article, the traditional interpretation is dangerously oversimplified. Using RSI correctly requires a much deeper understanding, especially when trading liquid Indian instruments like Nifty 50, BankNifty, Reliance, TCS, and HDFC Bank.</p>
+
+<h2 id="formula">RSI Formula: Understanding the Math</h2>
+
+<p>You do not need to calculate RSI manually &mdash; every charting platform does it for you. But understanding the formula helps you understand what RSI is actually measuring, which makes you a better trader.</p>
+
+<p>The RSI formula has two steps:</p>
+
+<p><strong>Step 1:</strong> Calculate the average gain and average loss over the lookback period (default 14 periods).</p>
+<ul>
+  <li>Average Gain = Sum of gains over 14 periods / 14</li>
+  <li>Average Loss = Sum of losses over 14 periods / 14</li>
+</ul>
+
+<p><strong>Step 2:</strong> Calculate the Relative Strength (RS) and then RSI.</p>
+<ul>
+  <li>RS = Average Gain / Average Loss</li>
+  <li>RSI = 100 &minus; (100 / (1 + RS))</li>
+</ul>
+
+<p>What does this tell us? RSI is essentially measuring the <strong>ratio of upward price movement to total price movement</strong> over the lookback period. If every single candle in the last 14 periods was bullish, RSI would be 100. If every single candle was bearish, RSI would be 0. In reality, there is always a mix, so RSI fluctuates between these extremes.</p>
+
+<p>The key insight: RSI is not measuring the absolute price level &mdash; it is measuring <strong>momentum</strong> (gati). A stock can be at its all-time high with RSI at 50 (slowing momentum) or at a multi-month low with RSI at 40 (still has downward momentum). This distinction is critical for avoiding the most common RSI mistakes.</p>
+
+<h2 id="misuse">The Overbought/Oversold Trap &mdash; Why Most Traders Misuse RSI</h2>
+
+<p>The single biggest mistake retail traders make with RSI is treating it as a direct buy/sell signal. They see RSI below 30 and immediately buy, or RSI above 70 and immediately sell. This approach will destroy your trading account in a trending market.</p>
+
+<h3>Why &ldquo;Oversold&rdquo; Does Not Mean &ldquo;Buy&rdquo;</h3>
+<p>Consider this scenario. Nifty is in a strong downtrend, falling from 23,000. It drops to 22,000 and RSI reaches 28 (oversold). A beginner buys, expecting a bounce. But the selling continues. Nifty drops to 21,500, then 21,000. RSI reaches 20, then 15. The &ldquo;oversold buy&rdquo; is now sitting at a massive loss.</p>
+
+<p>This happens because in a <strong>strong downtrend, RSI can stay oversold for weeks</strong>. The oversold reading does not mean selling is over &mdash; it means selling has been aggressive. And aggressive selling can continue. During the March 2020 COVID crash, Nifty&rsquo;s daily RSI dropped below 20 and stayed there for nearly two weeks as the index fell from 12,000 to 7,500. Traders who bought at &ldquo;oversold&rdquo; near 10,000 suffered enormous drawdowns before the eventual recovery.</p>
+
+<h3>Why &ldquo;Overbought&rdquo; Does Not Mean &ldquo;Sell&rdquo;</h3>
+<p>The same problem exists in reverse. During the 2023-2024 Nifty rally from 18,000 to 22,500, the daily RSI crossed above 70 multiple times. Traders who sold at RSI 70 expecting a reversal were stopped out again and again as Nifty continued climbing. In strong bull markets (tezi ka bazaar), RSI above 70 is not a sell signal &mdash; it is a sign of strength. The strongest trends often run with RSI between 70 and 90 for extended periods.</p>
+
+<h3>The Correct Way to Use Overbought/Oversold</h3>
+<p>Use overbought and oversold RSI as an <strong>alert</strong>, not a trigger. When RSI is below 30, it means: &ldquo;Start watching for a reversal &mdash; the selling is intense.&rdquo; Then look for confirmation from price action: a <a href="top-5-candlestick-patterns.html" style="color:var(--orange);">bullish candlestick pattern</a> at a <a href="understanding-support-resistance.html" style="color:var(--orange);">support level</a>. Only then do you enter. RSI gives you the alert; price action gives you the entry.</p>
+
+<h2 id="divergence">RSI Divergence: The Most Powerful Signal</h2>
+
+<p>If there is one RSI concept that can genuinely transform your trading, it is <strong>divergence</strong> (virodhabhass). Divergence occurs when the price chart and the RSI indicator are telling different stories. This disagreement between price and momentum is one of the earliest and most reliable signals of a potential reversal.</p>
+
+<h3>Bearish Divergence (Mandee Virodhabhass)</h3>
+<p>Bearish divergence occurs when:</p>
+<ul>
+  <li>Price makes a <strong>higher high</strong> (new peak)</li>
+  <li>RSI makes a <strong>lower high</strong> (fails to reach its previous peak)</li>
+</ul>
+
+<p>This means that even though the price is reaching new highs, the momentum behind the rally is weakening. The bulls are pushing the price up, but they are doing so with diminishing force. It is like a car going uphill &mdash; the speed is still positive, but the engine is struggling. Eventually, the car will stall and roll back.</p>
+
+<p><strong>Nifty Example:</strong> In late 2024, Nifty made a new all-time high above 23,200, but the daily RSI at that peak was only 62 &mdash; compared to 78 at the previous major high near 22,800. This bearish divergence warned that the rally was losing steam. Within the next two weeks, Nifty corrected over 500 points. Traders who spotted this divergence and combined it with the resistance zone at 23,200 avoided buying at the top or even took profitable short positions.</p>
+
+<h3>Bullish Divergence (Tezi Virodhabhass)</h3>
+<p>Bullish divergence occurs when:</p>
+<ul>
+  <li>Price makes a <strong>lower low</strong> (new trough)</li>
+  <li>RSI makes a <strong>higher low</strong> (higher trough than before)</li>
+</ul>
+
+<p>This signals that selling pressure is weakening even as the price continues to make new lows. The bears are pushing the price down, but each push is weaker than the last. The selling is exhausting itself.</p>
+
+<p><strong>BankNifty Example:</strong> BankNifty fell from 48,000 to 46,500 in a sharp two-week decline. It then bounced to 47,200 before dropping again to a new low of 46,200. However, when you checked the RSI at 46,200, it was at 35 &mdash; higher than the 28 reading at the first low of 46,500. Price made a lower low, but RSI made a higher low: classic bullish divergence. BankNifty reversed sharply from 46,200 and rallied over 2,000 points in the following week.</p>
+
+<h3>How to Trade Divergence</h3>
+<ol>
+  <li><strong>Identify the divergence:</strong> Compare the last two significant peaks (for bearish) or troughs (for bullish) on both the price chart and RSI.</li>
+  <li><strong>Check the location:</strong> Divergence at a key support or resistance level is far more reliable than divergence in the middle of nowhere.</li>
+  <li><strong>Wait for confirmation:</strong> After spotting divergence, wait for a candlestick pattern to confirm the reversal. A bullish engulfing after bullish divergence at support is a high-probability setup.</li>
+  <li><strong>Set your stop-loss:</strong> Place your stop below the recent low (for bullish divergence) or above the recent high (for bearish divergence).</li>
+</ol>
+
+<h2 id="hidden">Hidden Divergence: The Trend Continuation Secret</h2>
+
+<p>Most traders know about regular divergence, but very few understand <strong>hidden divergence</strong> (chhupa virodhabhass). While regular divergence signals a potential reversal, hidden divergence signals <strong>trend continuation</strong>. It tells you that the existing trend is about to resume after a temporary pullback.</p>
+
+<h3>Bullish Hidden Divergence</h3>
+<p>Occurs when:</p>
+<ul>
+  <li>Price makes a <strong>higher low</strong> (normal pullback in an uptrend)</li>
+  <li>RSI makes a <strong>lower low</strong></li>
+</ul>
+
+<p>This seems counterintuitive. The RSI is showing more weakness, but the price is holding higher lows. What is happening? The pullback has caused RSI to dip (natural), but the underlying trend structure remains bullish (price still making higher lows). The dip in RSI is actually resetting the momentum for the next leg up.</p>
+
+<p><strong>Reliance Example:</strong> Reliance was in a clear uptrend from ₹2,300 to ₹2,700. During a pullback, the stock dipped to ₹2,500 (a higher low compared to the previous ₹2,400 swing low). But RSI at ₹2,500 was 38, lower than the 42 reading at the previous swing low of ₹2,400. Bullish hidden divergence. Reliance resumed its uptrend and rallied to ₹2,800 within three weeks. This pattern is especially useful for adding to existing positions during pullbacks in a strong trend.</p>
+
+<h3>Bearish Hidden Divergence</h3>
+<p>Occurs when:</p>
+<ul>
+  <li>Price makes a <strong>lower high</strong> (normal bounce in a downtrend)</li>
+  <li>RSI makes a <strong>higher high</strong></li>
+</ul>
+
+<p>The bounce has pushed RSI higher, but the price failed to make a new high. The downtrend structure is intact, and the bounce was just a temporary relief rally. The downtrend is likely to continue.</p>
+
+<p><strong>Infosys Example:</strong> Infosys was falling from ₹1,800 to ₹1,550 in a clear downtrend. During a bounce, the stock rallied to ₹1,650 (lower high compared to the prior ₹1,700 high). But RSI at ₹1,650 was 55, higher than the 48 reading at the previous bounce peak of ₹1,700. Bearish hidden divergence signalled that the downtrend would resume. Infosys fell to ₹1,480 over the next two weeks.</p>
+
+<h2 id="trending-vs-ranging">RSI in Trending vs. Ranging Markets</h2>
+
+<p>One of the most important yet overlooked aspects of using RSI is adjusting your interpretation based on whether the market is trending or ranging (sideways).</p>
+
+<h3>Ranging (Sideways) Market</h3>
+<p>In a range-bound market (where Nifty is, say, oscillating between 22,000 and 23,000 for weeks), the traditional 70/30 overbought/oversold levels work reasonably well. RSI tends to oscillate between these levels in a predictable pattern, bouncing off 30 and reversing at 70. This is the textbook scenario where buying at RSI 30 and selling at RSI 70 can actually be profitable.</p>
+
+<h3>Strong Uptrend</h3>
+<p>In a strong bull market, the RSI baseline shifts upward. RSI tends to oscillate between 40 and 80 instead of 30 and 70. In this environment:</p>
+<ul>
+  <li>Adjust your &ldquo;oversold&rdquo; level to <strong>40</strong> instead of 30. When RSI pulls back to 40 in an uptrend, it is often a good buying opportunity.</li>
+  <li>Do not sell just because RSI hits 70. In strong uptrends, RSI can stay between 70 and 90 for extended periods.</li>
+  <li>RSI dropping below 40 in an uptrend is a warning that the trend may be changing.</li>
+</ul>
+
+<p>During the 2023 Nifty rally, RSI on the weekly chart rarely dropped below 45. Traders who bought every time daily RSI pulled back to 40-45 captured multiple profitable swing trades.</p>
+
+<h3>Strong Downtrend</h3>
+<p>In a bear market, the RSI baseline shifts downward. RSI oscillates between 20 and 60.</p>
+<ul>
+  <li>Adjust your &ldquo;overbought&rdquo; level to <strong>60</strong> instead of 70. When RSI rallies to 60 in a downtrend, it is often a selling/shorting opportunity.</li>
+  <li>Do not buy just because RSI hits 30 in a downtrend. It can go to 20 or even 10.</li>
+  <li>RSI breaking above 60 in a downtrend may signal a trend change.</li>
+</ul>
+
+<h2 id="combining">Combining RSI with Support/Resistance and Candlesticks</h2>
+
+<p>RSI is most powerful when used as part of a <strong>three-factor confirmation system</strong>. Here is the framework we teach at Market Credo:</p>
+
+<h3>The Three-Factor Setup</h3>
+<ol>
+  <li><strong>Support/Resistance (Where):</strong> Identify a key price level. Use horizontal S&amp;R, trendlines, moving averages, or Fibonacci levels. This tells you <em>where</em> to look for trades.</li>
+  <li><strong>RSI Signal (Why):</strong> Check if RSI is showing divergence, is in oversold/overbought territory, or is breaking a trendline of its own. This tells you <em>why</em> a reversal might happen &mdash; because momentum is shifting.</li>
+  <li><strong>Candlestick Pattern (When):</strong> Wait for a bullish or bearish candlestick pattern to form at the key level. A hammer, engulfing, or morning star at support with bullish RSI divergence is the gold standard. This tells you <em>when</em> to enter.</li>
+</ol>
+
+<h3>Example: The Triple Confirmation Trade</h3>
+<p>Nifty is at 22,000 &mdash; a well-established <a href="understanding-support-resistance.html" style="color:var(--orange);">support level</a>. RSI on the daily chart shows bullish divergence (price made a lower low, RSI made a higher low). Then a <a href="top-5-candlestick-patterns.html" style="color:var(--orange);">bullish engulfing candle</a> forms right at 22,000. This is a triple confirmation: the right location, the right momentum signal, and the right price action trigger. Enter long with a stop-loss below 21,900 (below the support zone). This kind of setup has a success rate well above 65-70% based on extensive backtesting on Indian market data.</p>
+
+<p>The beauty of this approach is that it filters out most noise. You are not trading every RSI signal or every candlestick pattern. You are only trading when all three factors align &mdash; and that alignment happens rarely enough that when it does, the probability is significantly in your favour.</p>
+
+<h2 id="indian-examples">Indian Market Examples: Nifty, BankNifty &amp; Beyond</h2>
+
+<h3>Nifty 50 Weekly RSI</h3>
+<p>The weekly RSI on Nifty is watched by every institutional trader in India. When the Nifty weekly RSI dips below 40 &mdash; which happens only during significant corrections &mdash; it has historically been an excellent buying zone. During the last five years, every time the Nifty weekly RSI touched 35-40, it marked a major swing low: March 2020 (COVID crash), June 2022 (rate hike correction), and March 2023 (Adani crisis selloff). Positional traders who bought Nifty or Nifty ETFs at these weekly RSI readings captured multi-thousand-point rallies.</p>
+
+<h3>BankNifty: RSI Divergence at Option Strikes</h3>
+<p>BankNifty options traders can combine RSI divergence with the highest put/call OI strikes for powerful setups. If BankNifty is falling toward the highest put OI strike (say, 47,000) and the 15-minute RSI shows bullish divergence, that is a strong signal to buy 47,000 call options or sell 47,000 put options. The option OI provides the support level, and RSI divergence provides the momentum confirmation. This strategy works particularly well on expiry days when option writers actively defend key strikes.</p>
+
+<h3>TCS: RSI Trend Following</h3>
+<p>TCS, as a large-cap IT stock with smooth price action, responds beautifully to RSI analysis. During TCS&rsquo;s multi-month rally from ₹3,200 to ₹4,200, every pullback in the daily RSI to the 40-45 zone provided a buying opportunity. Swing traders who used the 40 RSI level as their &ldquo;buy zone&rdquo; (adjusted for uptrend) and combined it with the 50-day EMA support caught three profitable swing trades of ₹200+ each.</p>
+
+<h3>HDFC Bank: Classic Double Divergence</h3>
+<p>HDFC Bank showed a rare &ldquo;double bullish divergence&rdquo; at the ₹1,400 level. The stock made three lower lows (₹1,450, ₹1,420, ₹1,400) while RSI made three higher lows (25, 30, 35). This triple-push divergence &mdash; where each successive low in price is accompanied by a higher RSI reading &mdash; is an extremely powerful signal. HDFC Bank reversed from ₹1,400 and rallied to ₹1,600 in the following month, a move of ₹200 per share.</p>
+
+<!-- Expert Tip -->
+<div class="expert-tip" id="expert-tip">
+  <div class="expert-tip-label">Atish Sir's Expert Tip</div>
+  <p>In 20 years of using indicators, I have learnt one fundamental truth: <strong>RSI does not tell you what to do &mdash; it tells you what the market is feeling.</strong> When RSI shows divergence at a key level, it is the market whispering to you: &ldquo;The trend is tired, something is about to change.&rdquo; Your job is not to act on that whisper immediately. Your job is to wait for the market to <em>confirm</em> the change with price action. At Market Credo, I teach my students a simple rule: &ldquo;RSI ke liye sabr rakhna seekho&rdquo; (learn to be patient with RSI). Never rush into a trade because RSI is oversold or because you spotted a divergence. Wait for the candle to confirm. That one habit &mdash; waiting for confirmation after an RSI signal &mdash; will save you more money than any indicator setting or formula ever could. The indicator shows the possibility; price action shows the reality.</p>
+  <cite>&mdash; Atish Shakergaye, SEBI Reg. INH000006086, 20+ Years Experience</cite>
+</div>
+
+<h2 id="mistakes">Common Mistakes to Avoid</h2>
+
+<p>After teaching RSI analysis to 500+ students at Market Credo, these are the mistakes I see most frequently:</p>
+
+<ul>
+  <li><strong>Buying solely because RSI is below 30:</strong> As discussed, oversold RSI in a downtrend can stay oversold for weeks. RSI below 30 is an alert, not a buy signal. Always wait for price-based confirmation before entering. The cost of patience is a few points of entry; the cost of impatience can be your entire position.</li>
+  <li><strong>Selling in a strong uptrend because RSI is &ldquo;overbought&rdquo;:</strong> In bull markets, the strongest stocks have RSI above 70 for extended periods. Selling Reliance at RSI 72 during a strong rally means you miss the next ₹200 of upside. Adjust your overbought threshold to 80 in strong uptrends.</li>
+  <li><strong>Over-optimizing the RSI period:</strong> Some traders endlessly test RSI with periods of 7, 9, 12, 21, etc. This is a trap. The standard 14-period RSI works well for most situations. The edge in trading comes from reading context, not from finding the perfect indicator setting. Do not waste time optimising what does not need fixing.</li>
+  <li><strong>Ignoring divergence in favour of overbought/oversold:</strong> Divergence is far more reliable than simple overbought/oversold readings. If you learn nothing else from this article, learn to spot divergence. It is the single most valuable RSI skill.</li>
+  <li><strong>Using RSI on very low timeframes:</strong> RSI on a 1-minute chart produces noise, not signals. On BankNifty, even a 5-minute RSI generates too many false signals. Use 15-minute RSI as the minimum for intraday, and daily RSI for swing trades.</li>
+  <li><strong>Using RSI in isolation:</strong> RSI should never be your sole reason for entering a trade. It is a confirmation tool, not a primary tool. Your primary analysis should be based on price action, support/resistance, and chart structure. RSI adds a layer of confirmation on top of that foundation.</li>
+  <li><strong>Not understanding the difference between regular and hidden divergence:</strong> Regular divergence signals reversal. Hidden divergence signals continuation. Using the wrong type leads to trading against the trend. Learn both types and apply them in the correct context.</li>
+</ul>
+
+<!-- FAQ Section -->
+<div class="faq-section" id="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Q: What is the RSI indicator and how does it work?</div>
+    <div class="faq-a">RSI (Relative Strength Index) is a momentum oscillator developed by J. Welles Wilder that measures the speed and magnitude of price changes. It oscillates between 0 and 100. Traditionally, RSI above 70 is considered overbought and below 30 is considered oversold. The standard period setting is 14. It is available on all major charting platforms including Zerodha Kite, TradingView, and ChartIQ.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Q: What is the best RSI setting for Nifty and BankNifty trading?</div>
+    <div class="faq-a">The standard 14-period RSI works well for most Nifty and BankNifty analysis on daily charts. For intraday trading, some traders use 9-period RSI for faster signals. For swing trading, 14-period on the daily chart is recommended. Do not over-optimize &mdash; the default 14-period setting has stood the test of time across all markets globally.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Q: Should I buy when RSI is below 30 (oversold)?</div>
+    <div class="faq-a">Not automatically. RSI below 30 means the stock has strong downward momentum &mdash; it does not mean it will reverse immediately. In strong downtrends, RSI can stay below 30 for weeks. Use oversold RSI as an alert to start watching for reversal signals (like bullish candlestick patterns at support), not as a direct buy signal.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Q: What is RSI divergence and why is it important?</div>
+    <div class="faq-a">RSI divergence occurs when the price makes a new high or low but RSI does not confirm it. Bearish divergence: price makes a higher high but RSI makes a lower high &mdash; signals weakening momentum and potential reversal down. Bullish divergence: price makes a lower low but RSI makes a higher low &mdash; signals weakening selling pressure and potential reversal up. Divergence is the most reliable RSI signal available.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Q: Can RSI be used for options trading on NSE?</div>
+    <div class="faq-a">Yes, RSI on the underlying Nifty or BankNifty chart helps time options entries. RSI divergence at a key support level can signal a good time to buy calls or sell puts. RSI divergence at resistance can signal a good time to buy puts or sell calls. Always account for time decay (theta) and implied volatility when trading options based on RSI signals.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Q: How do I combine RSI with support and resistance?</div>
+    <div class="faq-a">The most powerful approach is to use support/resistance for the &ldquo;where&rdquo; and RSI for the &ldquo;when.&rdquo; When price reaches a support level AND RSI shows bullish divergence or is moving up from oversold territory, that is a high-probability buy zone. When price reaches resistance AND RSI shows bearish divergence, that is a high-probability sell zone. Add a candlestick confirmation for the best results.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Q: What is hidden divergence in RSI?</div>
+    <div class="faq-a">Hidden divergence is a trend continuation signal. Bullish hidden divergence: price makes a higher low but RSI makes a lower low &mdash; the uptrend is likely to continue. Bearish hidden divergence: price makes a lower high but RSI makes a higher high &mdash; the downtrend is likely to continue. Hidden divergence is less well-known but very powerful for trend-following strategies on Nifty and individual stocks.</div>
+  </div>
+</div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>RSI is one of the most powerful tools in a trader&rsquo;s arsenal &mdash; but only when used correctly. The difference between a beginner and a professional trader often comes down to how they use this single indicator. Beginners buy at oversold and sell at overbought. Professionals use divergence at key levels with candlestick confirmation.</p>
+
+<p>Here are the key takeaways from this guide:</p>
+
+<ul>
+  <li><strong>RSI measures momentum, not price direction.</strong> A high RSI does not mean &ldquo;sell&rdquo; and a low RSI does not mean &ldquo;buy.&rdquo;</li>
+  <li><strong>Divergence is the most reliable RSI signal.</strong> Learn to spot both regular divergence (reversal) and hidden divergence (continuation).</li>
+  <li><strong>Adjust your RSI thresholds based on market conditions.</strong> Use 80/40 in uptrends and 60/20 in downtrends instead of the standard 70/30.</li>
+  <li><strong>Never use RSI in isolation.</strong> Combine it with support/resistance for location and candlestick patterns for timing.</li>
+  <li><strong>The three-factor system works:</strong> S&amp;R (where) + RSI (why) + candlestick (when) = high-probability entry.</li>
+  <li><strong>Practice on live charts.</strong> Open Nifty or BankNifty daily chart, add RSI (14), and start marking divergences. The more you practice, the faster you will spot them in real-time.</li>
+</ul>
+
+<p>RSI is not a crystal ball &mdash; no indicator is. But when you understand what it is truly measuring and combine it with solid price action analysis, it becomes an incredibly valuable confirmation tool. At Market Credo, we dedicate an entire module to indicator analysis, covering RSI, MACD, Bollinger Bands, and volume indicators, always in the context of real Indian market charts.</p>
+
+<!-- CTA Box -->
+<div class="cta-box">
+  <h3>Master RSI &amp; Technical Indicators with Live Practice</h3>
+  <p>Join Market Credo's free 2-day demo class. Learn RSI divergence on real-time Nifty charts with Atish Shakergaye.</p>
+  <a href="../courses.html#demo">Book Free Demo Class &lt;GO&gt;</a>
+</div>
+
+</div><!-- end article-content -->
+
+<!-- Author Bio -->
+<div class="author-bio">
+  <div class="author-bio-avatar">AS</div>
+  <div class="author-bio-info">
+    <h4>Atish Shakergaye</h4>
+    <div class="author-title">SEBI Registered Research Analyst &middot; INH000006086</div>
+    <p>Founder of Market Credo, Bhopal's premier technical analysis institute. With over 20 years of hands-on market experience and 500+ students trained, Atish Sir teaches the core concepts of chart structure, chart flow, and price action from first principles. His teaching philosophy centres on building independent traders who develop their own strategies.</p>
+  </div>
+</div>
+
+<!-- Related Posts -->
+<div class="related-posts">
+  <h3>Related Articles</h3>
+  <a class="related-link" href="understanding-support-resistance.html">Understanding Support &amp; Resistance Levels &rsaquo;</a>
+  <a class="related-link" href="top-5-candlestick-patterns.html">Top 5 Candlestick Patterns Every Trader Must Know &rsaquo;</a>
+  <a class="related-link" href="../courses.html">Explore Our Courses &rsaquo;</a>
+</div>
+
+</div><!-- end blog-post-container -->
+
+<!-- WA SECTION -->
+<div class="wa-section">
+  <div class="wa-left">
+    <div class="wa-tag">Instant Information &middot; Fully Automated</div>
+    <h2>WhatsApp Us &mdash; Get Full Details Instantly</h2>
+    <p>Send a message and receive complete information about Market Credo &mdash; courses, schedule, fees, demo booking, and Atish Sir's 20-year background &mdash; directly to your WhatsApp. Automated. Instant reply.</p>
+  </div>
+  <a class="wa-btn" href="https://wa.me/918827979008?text=Hello%20Market%20Credo!%20I%20want%20to%20know%20more%20about%20your%20Technical%20Analysis%20courses%20and%20Free%202-Day%20Demo.%20Please%20share%20complete%20details%20%F0%9F%99%8F" target="_blank">
+    <svg viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    WHATSAPP NOW &lt;GO&gt;
+  </a>
+</div>
+
+<footer id="contact">
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="fc-logo">MARKET CREDO</div>
+      <p class="fc-about">Bhopal's premier technical analysis training institute. Founded by Atish Shakergaye &mdash; SEBI Registered Research Analyst with 20+ years of market experience. Teaching traders to read the language of markets.</p>
+      <div class="fc-row"><span class="fc-ico">&#9673;</span>Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, MP 462016</div>
+      <div class="fc-row"><span class="fc-ico">&#9658;</span><a href="tel:+918827979008">+91-8827979008</a></div>
+      <div class="fc-row"><span class="fc-ico">&#9658;</span>SEBI Reg. No: <span style="color:var(--orange)">INH000006086</span></div>
+    </div>
+    <div class="foot-col">
+      <div class="foot-hdr">Courses</div>
+      <ul class="foot-links">
+        <li><a href="../courses.html#courses">Basics of Stock Market</a></li>
+        <li><a href="../courses.html#courses">Advanced Technical Analysis</a></li>
+        <li><a href="../courses.html#demo">2-Day Free Demo Class</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-hdr">Navigate</div>
+      <ul class="foot-links">
+        <li><a href="../about.html">About Atish Shakergaye</a></li>
+        <li><a href="../courses.html">Curriculum</a></li>
+        <li><a href="../courses.html#demo">Book Free Demo</a></li>
+        <li><a href="https://wa.me/918827979008" target="_blank">WhatsApp Us</a></li>
+        <li><a href="../blog.html">Blog &amp; Insights</a></li>
+        <li><a href="../terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="../privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-hdr">Credentials</div>
+      <div class="sb-body" style="padding:0;">
+        <div class="dr"><span class="dk">REGULATOR</span><span class="dv gr" style="font-size:11px;">SEBI &#10003;</span></div>
+        <div class="dr"><span class="dk">REG. NO.</span><span class="dv or" style="font-size:11px;">INH000006086</span></div>
+        <div class="dr"><span class="dk">EXPERIENCE</span><span class="dv or" style="font-size:11px;">20+ YEARS</span></div>
+        <div class="dr"><span class="dk">STUDENTS</span><span class="dv gr" style="font-size:11px;">500+ TRAINED</span></div>
+        <div class="dr"><span class="dk">CITY</span><span class="dv cy" style="font-size:11px;">BHOPAL, MP</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-disc">DISCLAIMER: Market Credo is a trading and investment education institute. Atish Shakergaye is a SEBI Registered Research Analyst (INH000006086). All course content is strictly for educational purposes only. Trading and investing in securities involves substantial risk of loss. Past performance is not indicative of future results. Please consult a SEBI-registered advisor before making any investment decisions. Market Credo does not provide buy/sell recommendations or portfolio management services.</div>
+  <div class="foot-bottom">
+    <span>&copy; 2024 MARKET CREDO &middot; ALL RIGHTS RESERVED &middot; <a href="../terms.html" style="color:var(--dim);text-decoration:none;">TERMS</a> &middot; <a href="../privacy.html" style="color:var(--dim);text-decoration:none;">PRIVACY</a></span>
+    <span>BHOPAL &middot; MADHYA PRADESH &middot; INDIA</span>
+    <span style="color:var(--orange)">SEBI: INH000006086</span>
+    <a href="../crm.html" style="color:var(--dimmer);text-decoration:none;font-size:9px;letter-spacing:1px;">&#9881; CRM</a>
+  </div>
+</footer>
+
+</main>
+<script>
+// Adjust nav/ticker for social bar
+(function(){
+  var sb = document.querySelector('.social-bar');
+  var ticker = document.querySelector('.edu-ticker');
+  var mainEl = document.querySelector('main');
+  if(sb && ticker){ ticker.style.top='96px'; }
+  if(sb && mainEl){ mainEl.style.marginTop='124px'; }
+})();
+</script>
+</body>
+</html>

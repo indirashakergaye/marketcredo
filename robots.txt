@@ -1,5 +1,17 @@
 User-agent: *
 Allow: /
 Disallow: /crm.html
+Disallow: /api/
 
+# Sitemaps
 Sitemap: https://www.marketcredo.in/sitemap.xml
+
+# Crawl-delay for polite bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

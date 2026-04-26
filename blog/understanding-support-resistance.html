@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Understanding Support &amp; Resistance Levels | Market Credo</title>
+<meta name="description" content="Learn how support and resistance levels work in stock trading. Master key price levels used by professional traders. Free guide by Market Credo, Bhopal."/>
+<meta name="keywords" content="support and resistance, support resistance trading, Nifty support levels, stock market support resistance, technical analysis basics, Market Credo, Atish Shakergaye, Bhopal"/>
+<meta name="geo.region" content="IN-MP"/>
+<meta name="geo.placename" content="Bhopal"/>
+<meta name="geo.position" content="23.2332;77.4347"/>
+<meta name="ICBM" content="23.2332, 77.4347"/>
+<link rel="canonical" href="https://www.marketcredo.in/blog/understanding-support-resistance.html"/>
+<!-- Open Graph -->
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Understanding Support &amp; Resistance Levels | Market Credo"/>
+<meta property="og:description" content="Learn how support and resistance levels work in stock trading. Master key price levels used by professional traders. Free guide by Market Credo, Bhopal."/>
+<meta property="og:url" content="https://www.marketcredo.in/blog/understanding-support-resistance.html"/>
+<meta property="og:site_name" content="Market Credo"/>
+<meta property="og:locale" content="en_IN"/>
+<meta property="og:image" content="/images/og-default.jpg"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Understanding Support &amp; Resistance Levels | Market Credo"/>
+<meta name="twitter:description" content="Learn how support and resistance levels work in stock trading. Master key price levels used by professional traders."/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23121212'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='monospace' font-weight='700' font-size='18' fill='%23F3772C'%3EMC%3C/text%3E%3C/svg%3E"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../styles.css"/>
+<style>
+.blog-post-container{max-width:820px;margin:0 auto;padding:40px 24px 60px;}
+.breadcrumb{font-size:10px;letter-spacing:1.5px;color:var(--dimmer);margin-bottom:24px;text-transform:uppercase;}
+.breadcrumb a{color:var(--dim);text-decoration:none;}
+.breadcrumb a:hover{color:var(--orange);}
+.article-tag{display:inline-block;background:rgba(243,119,44,0.1);border:1px solid var(--orange2);padding:3px 10px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--orange);text-transform:uppercase;margin-bottom:16px;}
+.article-h1{font-family:'IBM Plex Mono',monospace;font-size:28px;font-weight:700;color:var(--white);line-height:1.4;margin:0 0 16px;letter-spacing:1px;}
+.article-meta{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dimmer);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:32px;display:flex;gap:16px;flex-wrap:wrap;}
+.tldr-box{background:var(--bg2);border-left:3px solid var(--orange);padding:20px 24px;margin-bottom:32px;}
+.tldr-box .tldr-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;margin-bottom:8px;font-weight:700;}
+.tldr-box p{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--dim);line-height:1.8;margin:0;}
+.toc{background:var(--bg1);border:1px solid var(--border);padding:20px 24px;margin-bottom:40px;}
+.toc-title{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;margin-bottom:12px;font-weight:700;}
+.toc ol{padding-left:20px;margin:0;}
+.toc li{font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:var(--dim);line-height:2.2;}
+.toc a{color:var(--dim);text-decoration:none;}
+.toc a:hover{color:var(--orange);}
+.article-content h2{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700;color:var(--white);margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border);letter-spacing:1px;}
+.article-content h3{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;color:var(--orange);margin:28px 0 12px;letter-spacing:0.5px;}
+.article-content p{font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:var(--dim);line-height:1.9;margin:0 0 16px;}
+.article-content ul,.article-content ol{padding-left:24px;margin:0 0 16px;}
+.article-content li{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--dim);line-height:2;margin-bottom:4px;}
+.article-content strong{color:var(--white);}
+.article-content img{width:100%;border:1px solid var(--border);margin:16px 0;display:block;}
+.expert-tip{background:rgba(243,119,44,0.05);border:1px solid var(--orange2);padding:24px;margin:32px 0;}
+.expert-tip-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;margin-bottom:8px;font-weight:700;}
+.expert-tip p{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--dim);line-height:1.9;margin:0;}
+.expert-tip cite{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dimmer);margin-top:12px;font-style:normal;letter-spacing:1px;}
+.faq-section{margin:40px 0;}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0;}
+.faq-q{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.faq-a{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--dim);line-height:1.8;}
+.cta-box{background:var(--orange);padding:32px;text-align:center;margin:40px 0;}
+.cta-box h3{font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;color:#000;margin:0 0 8px;letter-spacing:1px;}
+.cta-box p{font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:rgba(0,0,0,0.7);margin:0 0 16px;}
+.cta-box a{display:inline-block;background:#000;color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:2px;padding:12px 28px;text-decoration:none;text-transform:uppercase;}
+.cta-box a:hover{background:var(--bg1);}
+.author-bio{display:flex;gap:20px;align-items:flex-start;background:var(--bg1);border:1px solid var(--border);padding:24px;margin:40px 0;}
+.author-bio-avatar{width:64px;height:64px;background:var(--bg2);border:2px solid var(--orange);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700;color:var(--orange);flex-shrink:0;}
+.author-bio-info h4{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--white);margin:0 0 4px;}
+.author-bio-info .author-title{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--orange);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.author-bio-info p{font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:var(--dim);line-height:1.7;margin:0;}
+.related-posts{margin:40px 0;}
+.related-posts h3{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:2px;color:var(--dimmer);text-transform:uppercase;margin-bottom:16px;}
+.related-link{display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);text-decoration:none;padding:10px 0;border-bottom:1px solid var(--border);}
+.related-link:hover{color:var(--orange);}
+@media(max-width:600px){
+  .article-h1{font-size:20px;}
+  .author-bio{flex-direction:column;align-items:center;text-align:center;}
+  .blog-post-container{padding:24px 16px 40px;}
+}
+</style>
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Understanding Support & Resistance Levels",
+  "description": "Learn how support and resistance levels work in stock trading. Master key price levels used by professional traders.",
+  "author": {
+    "@type": "Person",
+    "name": "Atish Shakergaye",
+    "jobTitle": "SEBI Registered Research Analyst",
+    "url": "https://www.marketcredo.in/about.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Market Credo",
+    "url": "https://www.marketcredo.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.marketcredo.in/logo.png"
+    }
+  },
+  "datePublished": "2025-01-12",
+  "dateModified": "2025-01-12",
+  "mainEntityOfPage": "https://www.marketcredo.in/blog/understanding-support-resistance.html",
+  "image": "https://www.marketcredo.in/images/og-default.jpg",
+  "articleSection": "Beginner Guide",
+  "wordCount": 2200,
+  "inLanguage": "en-IN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.marketcredo.in/"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.marketcredo.in/blog.html"},
+    {"@type": "ListItem", "position": 3, "name": "Understanding Support & Resistance Levels", "item": "https://www.marketcredo.in/blog/understanding-support-resistance.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is support and resistance in the stock market?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Support is a price level where buying interest is strong enough to prevent the price from falling further. Resistance is a price level where selling pressure is strong enough to prevent the price from rising further. These levels form because of collective market memory and institutional order placement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I identify support and resistance on a Nifty chart?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Look for price levels where Nifty has repeatedly bounced (support) or been rejected (resistance). Use multiple timeframes starting from weekly charts. Round numbers like 22,000, 22,500, and 23,000 on Nifty often act as psychological support and resistance levels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do support and resistance levels work on all timeframes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, support and resistance exist on every timeframe from 1-minute to monthly charts. However, levels identified on higher timeframes (weekly, monthly) are stronger and more reliable than those on lower timeframes. Professional traders always check higher timeframe levels first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens when support becomes resistance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This is called the polarity principle or role reversal. When a support level is broken, it often becomes a new resistance level because traders who bought at that level now want to sell at breakeven. This concept works in reverse too — broken resistance becomes support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use exact price lines or zones for support and resistance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Always use zones rather than exact price lines. Markets are not precise — institutional orders are spread across a range. For Nifty, a support zone might span 50-100 points. For individual stocks like Reliance, a zone might span ₹10-20. Thinking in zones reduces false signals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do round numbers act as support and resistance in Indian markets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Round numbers like Nifty 22,000 or Reliance ₹2,500 attract large volumes because retail and institutional traders place orders at psychologically significant levels. Option strike prices at round numbers also add to this effect, especially for BankNifty and Nifty weekly expiry trading."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many times should a level be tested to be considered valid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A minimum of two touches is needed to identify a support or resistance level. Three or more touches make the level more significant. However, each time a level is tested, it gets weaker because pending orders at that level get consumed. A level tested five or six times is likely to break."
+      }
+    }
+  ]
+}
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
+</script>
+</head>
+<body>
+<a class="wa-float" href="https://wa.me/918827979008?text=Hello%20Market%20Credo!%20I%20am%20interested%20in%20your%20courses.%20Please%20share%20details." target="_blank">
+  <div class="wa-pulse"></div>
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<div class="status-bar">
+  <div class="sbar-inner">
+    <div class="sbar-seg sbar-brand">MARKET CREDO</div>
+    <div class="sbar-seg sbar-info">TECHNICAL ANALYSIS INSTITUTE</div>
+    <div class="sbar-seg sbar-info">SEBI REG: INH000006086</div>
+    <div class="sbar-seg sbar-info">ATISH SHAKERGAYE &middot; 20 YRS EXPERIENCE</div>
+    <div class="sbar-seg sbar-right"><span class="blink">&bull;</span>&nbsp;BHOPAL &middot; MP &middot; INDIA</div>
+  </div>
+</div>
+
+<nav>
+  <a class="nav-item nav-brand" href="../index.html">MARKET CREDO</a>
+  <a class="nav-item" href="../about.html"><span class="nav-num">F2</span>TRAINER</a>
+  <a class="nav-item" href="../courses.html#courses"><span class="nav-num">F3</span>COURSES</a>
+  <a class="nav-item" href="../testimonials.html"><span class="nav-num">F7</span>REVIEWS</a>
+  <a class="nav-item" href="../videos.html"><span class="nav-num">F8</span>VIDEOS</a>
+  <a class="nav-item" href="../chartboard.html"><span class="nav-num">F9</span>CHARTS</a>
+  <a class="nav-item" href="../index.html#contact"><span class="nav-num">F6</span>CONTACT</a>
+  <a class="nav-item" href="../life.html"><span class="nav-num">F10</span>LIFE</a>
+  <a class="nav-item" href="../faq.html"><span class="nav-num">F11</span>FAQ</a>
+  <a class="nav-item active" href="../blog.html"><span class="nav-num">F12</span>BLOG</a>
+  <a class="nav-item nav-cta" href="../courses.html#demo">BOOK FREE DEMO &lt;GO&gt;</a>
+</nav>
+
+<div class="social-bar" style="position:fixed;top:64px;left:0;right:0;z-index:997;">
+  <div class="social-bar-label">FOLLOW US</div>
+  <div class="social-links">
+    <a class="social-link yt" href="https://www.youtube.com/@MarketCredo" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+      YOUTUBE
+    </a>
+    <a class="social-link ig" href="https://www.instagram.com/marketcredo" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      INSTAGRAM
+    </a>
+    <a class="social-link fb" href="https://www.facebook.com/marketcredo" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      FACEBOOK
+    </a>
+    <a class="social-link wa2" href="https://wa.me/918827979008" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      WHATSAPP
+    </a>
+  </div>
+</div>
+
+<div class="edu-ticker">
+  <div class="ticker-scroll">
+    <div class="t-item"><span class="t-label">CHART STRUCTURE</span><span class="t-tag">&bull; CORE CONCEPT</span></div>
+    <div class="t-item"><span class="t-label">CHART FLOW</span><span class="t-val">TREND READING</span><span class="t-tag">&#9658; TAUGHT</span></div>
+    <div class="t-item"><span class="t-label">EXPERIENCE</span><span class="t-val">20 YEARS IN MARKETS</span></div>
+    <div class="t-item"><span class="t-label">SEBI REGISTERED</span><span class="t-val">INH000006086</span><span class="t-tag">&#10003; VERIFIED</span></div>
+    <div class="t-item"><span class="t-label">CANDLESTICK MASTERY</span><span class="t-tag">&bull; TAUGHT IN DEPTH</span></div>
+    <div class="t-item"><span class="t-label">FREE DEMO CLASS</span><span class="t-val">2 DAYS &middot; ZERO COST</span></div>
+    <div class="t-item"><span class="t-label">BUILD YOUR STRATEGY</span><span class="t-tag">&#9658; YOUR OWN EDGE</span></div>
+    <div class="t-item"><span class="t-label">SUPPORT &amp; RESISTANCE</span><span class="t-tag">&bull; FIRST PRINCIPLES</span></div>
+    <div class="t-item"><span class="t-label">ADVANCED TA</span><span class="t-val">FLAGSHIP COURSE</span></div>
+    <div class="t-item"><span class="t-label">WHATSAPP</span><span class="t-val">+91-8827979008</span><span class="t-tag">&bull; INSTANT REPLY</span></div>
+    <div class="t-item"><span class="t-label">PRACTICE</span><span class="t-val">MAKES PERFECT</span><span class="t-tag">&#9658; LIVE SESSIONS</span></div>
+    <div class="t-sep">&#9670;&#9670;&#9670;</div>
+    <div class="t-item"><span class="t-label">CHART STRUCTURE</span><span class="t-tag">&bull; CORE CONCEPT</span></div>
+    <div class="t-item"><span class="t-label">CHART FLOW</span><span class="t-val">TREND READING</span><span class="t-tag">&#9658; TAUGHT</span></div>
+    <div class="t-item"><span class="t-label">EXPERIENCE</span><span class="t-val">20 YEARS IN MARKETS</span></div>
+    <div class="t-item"><span class="t-label">SEBI REGISTERED</span><span class="t-val">INH000006086</span><span class="t-tag">&#10003; VERIFIED</span></div>
+    <div class="t-item"><span class="t-label">CANDLESTICK MASTERY</span><span class="t-tag">&bull; TAUGHT IN DEPTH</span></div>
+    <div class="t-item"><span class="t-label">FREE DEMO CLASS</span><span class="t-val">2 DAYS &middot; ZERO COST</span></div>
+    <div class="t-item"><span class="t-label">BUILD YOUR STRATEGY</span><span class="t-tag">&#9658; YOUR OWN EDGE</span></div>
+    <div class="t-item"><span class="t-label">SUPPORT &amp; RESISTANCE</span><span class="t-tag">&bull; FIRST PRINCIPLES</span></div>
+    <div class="t-item"><span class="t-label">ADVANCED TA</span><span class="t-val">FLAGSHIP COURSE</span></div>
+    <div class="t-item"><span class="t-label">WHATSAPP</span><span class="t-val">+91-8827979008</span><span class="t-tag">&bull; INSTANT REPLY</span></div>
+    <div class="t-item"><span class="t-label">PRACTICE</span><span class="t-val">MAKES PERFECT</span><span class="t-tag">&#9658; LIVE SESSIONS</span></div>
+    <div class="t-sep">&#9670;&#9670;&#9670;</div>
+  </div>
+</div>
+
+<main>
+
+<div class="blog-post-container">
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <a href="../index.html">Home</a> &rsaquo; <a href="../blog.html">Blog</a> &rsaquo; Understanding Support &amp; Resistance Levels
+</div>
+
+<!-- Article Header -->
+<span class="article-tag">Beginner Guide</span>
+<h1 class="article-h1">Understanding Support &amp; Resistance Levels: The Foundation of Technical Analysis</h1>
+<div class="article-meta">
+  <span>12 Jan 2025</span>
+  <span>8 Min Read</span>
+  <span>By Atish Shakergaye</span>
+</div>
+
+<!-- TL;DR -->
+<div class="tldr-box">
+  <div class="tldr-label">TL;DR &mdash; Quick Answer</div>
+  <p>Support is a price level where buying demand prevents further decline; resistance is where selling pressure halts a rise. These levels form because of collective market memory, institutional order clusters, and psychological round numbers. In Indian markets, levels like Nifty 22,000 or Reliance ₹2,500 carry enormous significance. Always think in terms of price zones, not exact lines.</p>
+</div>
+
+<!-- Table of Contents -->
+<div class="toc">
+  <div class="toc-title">Table of Contents</div>
+  <ol>
+    <li><a href="#what-is-sr">What Is Support &amp; Resistance?</a></li>
+    <li><a href="#why-sr-forms">Why Support &amp; Resistance Levels Form</a></li>
+    <li><a href="#types">Types of Support &amp; Resistance</a></li>
+    <li><a href="#identify">How to Identify S&amp;R on a Chart</a></li>
+    <li><a href="#role-reversal">The Polarity Principle: Role Reversal</a></li>
+    <li><a href="#indian-examples">Indian Market Examples: Nifty, Reliance &amp; BankNifty</a></li>
+    <li><a href="#institutions">How Institutional Traders Use S&amp;R</a></li>
+    <li><a href="#expert-tip">Atish Sir's Expert Tip</a></li>
+    <li><a href="#mistakes">Common Mistakes to Avoid</a></li>
+    <li><a href="#faq">Frequently Asked Questions</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ol>
+</div>
+
+<!-- Article Content -->
+<div class="article-content">
+
+<p>If there is one concept that every trader &mdash; whether a complete beginner or a seasoned professional &mdash; must understand before placing a single trade, it is <strong>support and resistance</strong> (often abbreviated as S&amp;R). These are the invisible walls on a price chart that determine where the crowd is willing to buy and where it is willing to sell. Miss them, and your entries will always feel wrong. Understand them, and the market starts to make sense.</p>
+
+<p>In this comprehensive guide, we will break down support and resistance from first principles (pehle siddhant), explain why they form, show you the different types, and walk through real examples from NSE &mdash; including Nifty 50, BankNifty, Reliance Industries, and other popular Indian stocks. Whether you trade on Zerodha, Groww, Angel One, or any other broker, these concepts apply universally.</p>
+
+<h2 id="what-is-sr">What Is Support &amp; Resistance?</h2>
+
+<p>At its core, support and resistance represent the battle between buyers (bulls) and sellers (bears) at specific price levels.</p>
+
+<p><strong>Support (Sahara)</strong> is a price level where buying interest is strong enough to absorb all selling and prevent the price from falling further. Think of it as a floor &mdash; the price drops, hits the floor, and bounces back up. When Nifty falls from 23,500 to 22,000 and repeatedly bounces from 22,000, that level becomes a recognized support.</p>
+
+<p><strong>Resistance (Rukawat)</strong> is a price level where selling pressure is strong enough to absorb all buying and prevent the price from rising further. Think of it as a ceiling &mdash; the price rises, hits the ceiling, and gets pushed back down. If BankNifty rallies to 48,000 three times and fails each time, that level is a clear resistance.</p>
+
+<p>These are not just lines on a chart. They represent real decisions made by thousands of traders and institutions. Every support level has a story &mdash; someone placed a large buy order there. Every resistance level has a story &mdash; someone decided to sell there. Your job as a technical analyst is to read these stories.</p>
+
+<h2 id="why-sr-forms">Why Support &amp; Resistance Levels Form</h2>
+
+<p>Understanding <strong>why</strong> these levels exist is far more important than memorising rules. There are three primary reasons:</p>
+
+<h3>1. Market Memory (Bazaar Ki Yaaddasht)</h3>
+<p>Traders remember where they bought and sold. If you bought Reliance at ₹2,500 and the stock dropped to ₹2,300, you are sitting at a loss. You tell yourself: &ldquo;If it comes back to ₹2,500, I will sell and get out at breakeven.&rdquo; When thousands of traders think the same thing, ₹2,500 becomes a resistance level because of collective selling at that price.</p>
+
+<p>Similarly, if you missed buying TCS at ₹3,400 and it rallied to ₹3,800, you might think: &ldquo;Next time it comes to ₹3,400, I am buying.&rdquo; That creates future support at ₹3,400.</p>
+
+<h3>2. Institutional Order Clusters</h3>
+<p>Large institutional players &mdash; mutual funds, FIIs (Foreign Institutional Investors), and DIIs (Domestic Institutional Investors) &mdash; cannot buy or sell their entire position at once without moving the market. They place large orders at specific price levels and wait. These orders create invisible walls that the price cannot easily pass through. A single FII order of ₹500 crore near Nifty 22,000 creates a powerful support zone because it absorbs all the retail selling at that level.</p>
+
+<h3>3. Psychological Round Numbers</h3>
+<p>Human beings are drawn to round numbers. Nifty 20,000. Sensex 75,000. Reliance ₹3,000. BankNifty 50,000. These levels have no mathematical significance, but they carry tremendous psychological weight. When Nifty is at 21,980, lakhs of traders are watching the 22,000 level. Option writers have positioned themselves at the 22,000 strike. This concentration of attention and orders makes round numbers natural support and resistance zones.</p>
+
+<h2 id="types">Types of Support &amp; Resistance</h2>
+
+<h3>1. Horizontal Support &amp; Resistance</h3>
+<p>This is the most basic and most powerful type. Draw a horizontal line where the price has bounced or been rejected multiple times. On a Nifty daily chart, if you see the index touching 22,500 and bouncing three times over several weeks, that horizontal line at 22,500 is a proven support level. The more touches, the stronger the level &mdash; but also the more likely it is to eventually break.</p>
+
+<h3>2. Trendline Support &amp; Resistance</h3>
+<p>A trendline is a diagonal line drawn along a series of higher lows (uptrend) or lower highs (downtrend). In an uptrend, the trendline acts as dynamic support &mdash; the price keeps bouncing off it as it rises. In a downtrend, a descending trendline acts as dynamic resistance. During the 2023 Nifty rally from 16,800 to 22,000, a rising trendline connecting the swing lows acted as reliable support for months.</p>
+
+<h3>3. Dynamic Support &amp; Resistance (Moving Averages)</h3>
+<p>Moving averages like the 50-day EMA, 100-day SMA, and 200-day SMA act as dynamic (changing) support and resistance levels. The 200-day moving average on Nifty is watched by every institutional trader in India. When Nifty pulls back to its 200-day MA, buying often emerges because institutions see it as a value zone. During the October 2023 correction, Nifty found support precisely at its 200-day EMA near 19,300.</p>
+
+<h3>4. Fibonacci Retracement Levels</h3>
+<p>Fibonacci levels (23.6%, 38.2%, 50%, 61.8%) derived from a swing high to swing low often act as support and resistance. The 61.8% retracement level (known as the golden ratio or suvarna anupat) is particularly powerful. In BankNifty, sharp pullbacks often find support at the 50% or 61.8% Fibonacci retracement of the prior move.</p>
+
+<h3>5. Volume Profile Zones</h3>
+<p>Volume profile analysis shows you where the maximum trading volume occurred at specific price levels. The level with the highest volume (Point of Control) acts as a magnet &mdash; the price tends to return to it. Low-volume areas between high-volume zones (called low volume nodes) offer minimal support or resistance, and price moves through them quickly.</p>
+
+<h2 id="identify">How to Identify Support &amp; Resistance on a Chart</h2>
+
+<p>Follow this systematic approach to mark S&amp;R levels on any chart. We will use a Nifty 50 daily chart as our example.</p>
+
+<p><strong>Step 1: Start with the higher timeframe.</strong> Open a weekly or monthly chart first. Mark the levels where Nifty has clearly bounced or reversed. These are your major levels. On a monthly chart, levels like 20,000, 21,000, 22,000, 22,500, and 23,000 will stand out clearly.</p>
+
+<p><strong>Step 2: Move to the daily timeframe.</strong> Now zoom in and mark intermediate levels. You will find additional support and resistance zones between the major weekly levels. For example, between 22,000 and 23,000, you might identify 22,300 and 22,700 as intermediate levels.</p>
+
+<p><strong>Step 3: Look for confluences.</strong> The most powerful S&amp;R levels are where multiple factors align. If a horizontal support level at 22,000 also coincides with the 200-day EMA and a 61.8% Fibonacci retracement, that is a <strong>confluence zone</strong> (sangam kshetra) &mdash; an extremely high-probability area for a bounce.</p>
+
+<p><strong>Step 4: Validate with volume.</strong> A support level that was created with high volume is stronger than one created with low volume. Check the volume bars at the time the level was formed. If Nifty bounced from 22,000 on a day with 2x average volume, that support is very strong.</p>
+
+<p><strong>Step 5: Think in zones, not lines.</strong> This is critical. Do not draw a single line and expect the price to touch it to the exact tick. Instead, mark a zone of 30-100 points on Nifty. For individual stocks, a zone of ₹5-20 is realistic depending on the stock's price and volatility.</p>
+
+<h2 id="role-reversal">The Polarity Principle: Role Reversal</h2>
+
+<p>One of the most elegant concepts in technical analysis is the <strong>polarity principle</strong> &mdash; when a support level breaks, it becomes resistance, and when a resistance level breaks, it becomes support. This is also called <strong>role reversal</strong> (bhoomika parivartan).</p>
+
+<p>Here is why it works. Imagine Nifty has strong support at 22,000. Thousands of traders have bought at this level. When Nifty eventually breaks below 22,000 and falls to 21,500, all those buyers are now holding losing positions. What do they want? They want to sell at breakeven &mdash; at 22,000. So when Nifty bounces back to 22,000, all that pent-up selling turns the old support into new resistance.</p>
+
+<p>This principle is incredibly reliable in Indian markets. Consider Reliance Industries. The stock had a major resistance at ₹2,800 for several months in 2024. Once it broke above ₹2,800 decisively, that level became a strong support, and the stock continued its rally. Traders who shorted at ₹2,800 covered their positions, and new buyers stepped in at the breakout level.</p>
+
+<p>The polarity principle works because of human psychology. It is not a random pattern &mdash; it reflects real decisions made by real people with real money at stake.</p>
+
+<h2 id="indian-examples">Indian Market Examples: Nifty, Reliance &amp; BankNifty</h2>
+
+<h3>Nifty 50: The Power of 22,000</h3>
+<p>The Nifty 22,000 level has been one of the most significant zones in recent market history. It combines all the factors we discussed: it is a round psychological number, it aligns with heavy option open interest (OI) at the 22,000 strike, and it has been tested multiple times. During volatile weeks, you will notice that Nifty bounces from 22,000 as if there is an invisible floor. On the expiry day, option writers who have sold the 22,000 put actively defend this level by buying Nifty futures.</p>
+
+<h3>BankNifty: Extreme Volatility Needs Clear Levels</h3>
+<p>BankNifty is more volatile than Nifty, often moving 500-800 points in a single session. Support and resistance levels on BankNifty need wider zones. The 48,000-48,200 range acted as a ceiling (resistance) for weeks before the index finally broke through. Once it did, that same zone became the floor (support) for the next leg up. Traders on Zerodha and other platforms who understood this polarity could have timed excellent entries.</p>
+
+<h3>Reliance Industries: Round Number Psychology</h3>
+<p>Reliance is the most heavily weighted stock in Nifty. Levels like ₹2,000, ₹2,500, and ₹3,000 are not just support and resistance &mdash; they are battlefields. When Reliance was stuck between ₹2,400 and ₹2,600 for months, every move to ₹2,600 saw heavy selling (resistance), and every dip to ₹2,400 saw heavy buying (support). This range (called a consolidation zone or sthirata kshetra) eventually resolved with a breakout, giving traders a clear directional signal.</p>
+
+<h3>HDFC Bank: Institutional Accumulation</h3>
+<p>HDFC Bank, with its large institutional holding, often shows textbook support and resistance behaviour. The ₹1,500-₹1,520 zone served as a base for months, with DIIs and FIIs accumulating shares every time the price dipped to that level. The volume profile showed massive accumulation in this zone, confirming it as genuine institutional support rather than just retail buying.</p>
+
+<h2 id="institutions">How Institutional Traders Use Support &amp; Resistance</h2>
+
+<p>Institutional traders in India &mdash; including mutual fund houses like SBI MF, HDFC MF, and ICICI Prudential &mdash; do not buy or sell randomly. They have specific price levels where they are instructed to accumulate or distribute. Understanding their behaviour helps you trade with the &ldquo;smart money&rdquo; (samajhdaar paisa) rather than against it.</p>
+
+<p><strong>Accumulation at support:</strong> When a large-cap stock like Infosys falls to a known support level, institutional buying often appears in the form of large block deals. You can track this through the NSE bulk and block deal data published daily. If you see block deals at a support level, that support is likely genuine.</p>
+
+<p><strong>Distribution at resistance:</strong> When a stock reaches resistance, institutions that have accumulated at lower levels begin selling. This often shows up as increased delivery percentage dropping &mdash; more intraday activity relative to delivery &mdash; a sign that smart money is offloading positions to eager retail buyers.</p>
+
+<p><strong>Option open interest as S&amp;R:</strong> In the Indian derivatives market, option open interest data is a powerful proxy for support and resistance. The highest put OI strike acts as support (because option writers will defend it), and the highest call OI strike acts as resistance. For example, if BankNifty has 30 lakh puts at 47,500 and 25 lakh calls at 49,000, the expected range for the week is 47,500-49,000. This data is freely available on the NSE website.</p>
+
+<!-- Expert Tip -->
+<div class="expert-tip" id="expert-tip">
+  <div class="expert-tip-label">Atish Sir's Expert Tip</div>
+  <p>In my 20+ years of trading Indian markets, the single biggest mistake I see beginners make is treating support and resistance as exact price lines. They draw a line at Nifty 22,000 and panic if the index dips to 21,980 &mdash; &ldquo;support is broken!&rdquo; No. Support and resistance are <strong>zones</strong>, not lines. On Nifty, think in terms of a 50-100 point zone. On individual stocks, think ₹10-30 depending on the stock price. When I teach at Market Credo, I always tell my students: &ldquo;The market is not a machine that obeys exact numbers. It is a living organism (jinda cheez) that behaves in zones.&rdquo; Once you shift from lines to zones, your win rate will improve dramatically because you stop getting stopped out by minor wicks and false breakouts.</p>
+  <cite>&mdash; Atish Shakergaye, SEBI Reg. INH000006086, 20+ Years Experience</cite>
+</div>
+
+<h2 id="mistakes">Common Mistakes to Avoid</h2>
+
+<p>After training over 500 students at Market Credo, these are the most frequent mistakes I see traders make with support and resistance:</p>
+
+<ul>
+  <li><strong>Drawing too many levels:</strong> If your chart looks like a grid with lines every 50 points, you have too many levels. Focus on 3-5 major levels on the daily chart. Quality over quantity (gunvatta badi hai, sankhya nahi).</li>
+  <li><strong>Ignoring the timeframe hierarchy:</strong> A support level on a 5-minute chart is weak. A support level on a weekly chart is strong. Always start your analysis from higher timeframes and work down. A weekly support will hold even when a 15-minute support breaks.</li>
+  <li><strong>Buying blindly at support without confirmation:</strong> Support is where you start watching, not where you start buying blindly. Wait for a bullish candlestick pattern (like a hammer or bullish engulfing) at support before entering. S&amp;R gives you the &ldquo;where&rdquo;; candlesticks give you the &ldquo;when.&rdquo;</li>
+  <li><strong>Forgetting that levels weaken with each test:</strong> Every time a support or resistance level is tested, it gets slightly weaker because orders at that level get filled. A level tested 5-6 times is likely to break on the next attempt. Fresh levels with only 2-3 touches are stronger.</li>
+  <li><strong>Not adjusting for market context:</strong> In a strong bull trend (tezi ka daur), support levels tend to hold and resistance levels tend to break. In a bear trend (mandi ka daur), the opposite is true. Always consider the broader trend direction before trading S&amp;R levels.</li>
+  <li><strong>Ignoring volume on breakouts:</strong> A breakout above resistance on low volume is suspicious and often fails. A breakout on 2-3x average volume with strong candle body is more likely to sustain. Volume is the fuel (indhan) behind price movement.</li>
+</ul>
+
+<!-- FAQ Section -->
+<div class="faq-section" id="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Q: What is support and resistance in the stock market?</div>
+    <div class="faq-a">Support is a price level where buying interest is strong enough to prevent the price from falling further. Resistance is a price level where selling pressure is strong enough to prevent the price from rising further. These levels form because of collective market memory, institutional order placement, and psychological round numbers.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Q: How do I identify support and resistance on a Nifty chart?</div>
+    <div class="faq-a">Look for price levels where Nifty has repeatedly bounced (support) or been rejected (resistance). Start with the weekly chart to find major levels, then move to the daily chart for intermediate levels. Round numbers like 22,000, 22,500, and 23,000 on Nifty often act as psychological support and resistance levels. Use at least 2-3 touches to confirm a level.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Q: Do support and resistance levels work on all timeframes?</div>
+    <div class="faq-a">Yes, support and resistance exist on every timeframe from 1-minute to monthly charts. However, levels identified on higher timeframes (weekly, monthly) are stronger and more reliable than those on lower timeframes. Professional traders always prioritise higher timeframe levels.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Q: What happens when support becomes resistance?</div>
+    <div class="faq-a">This is called the polarity principle or role reversal. When a support level is broken, it often becomes a new resistance level because traders who bought at that level now want to sell at breakeven. This concept works in reverse too &mdash; broken resistance becomes support. It is one of the most reliable concepts in technical analysis.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Q: Should I use exact price lines or zones for support and resistance?</div>
+    <div class="faq-a">Always use zones rather than exact price lines. Markets are not precise &mdash; institutional orders are spread across a range. For Nifty, a support zone might span 50-100 points. For individual stocks like Reliance, a zone might span ₹10-20. Thinking in zones significantly reduces false signals and premature stop-losses.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Q: Why do round numbers act as support and resistance in Indian markets?</div>
+    <div class="faq-a">Round numbers like Nifty 22,000 or Reliance ₹2,500 attract large volumes because retail and institutional traders place orders at psychologically significant levels. Option strike prices at round numbers also add to this effect, especially for BankNifty and Nifty weekly expiry trading where option writers defend key strikes.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Q: How many times should a level be tested to be considered valid?</div>
+    <div class="faq-a">A minimum of two touches is needed to identify a support or resistance level. Three or more touches make the level more significant. However, each time a level is tested, it gets weaker because pending orders at that level get consumed. A level tested five or six times is likely to break on the next attempt.</div>
+  </div>
+</div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Support and resistance is not just another concept in technical analysis &mdash; it is <strong>the</strong> foundation upon which every other concept is built. Candlestick patterns matter most when they form at support or resistance levels. Indicators like RSI and MACD give the best signals near these levels. Chart patterns like Head &amp; Shoulders and Double Tops are built entirely from support and resistance structures.</p>
+
+<p>To truly master S&amp;R in the Indian market context, remember these key takeaways:</p>
+
+<ul>
+  <li>Always think in <strong>zones</strong>, not exact lines.</li>
+  <li>Start your analysis from <strong>higher timeframes</strong> (weekly and daily) before looking at intraday levels.</li>
+  <li>Look for <strong>confluences</strong> where multiple factors &mdash; horizontal levels, moving averages, Fibonacci, and option OI &mdash; align.</li>
+  <li>Understand the <strong>polarity principle</strong> &mdash; broken support becomes resistance and vice versa.</li>
+  <li>Use <strong>volume</strong> to validate the strength of any level.</li>
+  <li>Combine S&amp;R with <strong>candlestick patterns</strong> for high-probability trade entries.</li>
+</ul>
+
+<p>The best way to learn support and resistance is not by reading alone &mdash; it is by practicing on live charts. Open your Zerodha Kite or any charting platform, pull up a Nifty daily chart, and start marking levels. The more you practice, the more intuitive it becomes. With time, you will start seeing the market&rsquo;s structure naturally &mdash; and that is when real trading begins.</p>
+
+<!-- CTA Box -->
+<div class="cta-box">
+  <h3>Want to Master Support &amp; Resistance with Live Charts?</h3>
+  <p>Join Market Credo's free 2-day demo class. Learn directly from Atish Shakergaye with 20+ years of market experience.</p>
+  <a href="../courses.html#demo">Book Free Demo Class &lt;GO&gt;</a>
+</div>
+
+</div><!-- end article-content -->
+
+<!-- Author Bio -->
+<div class="author-bio">
+  <div class="author-bio-avatar">AS</div>
+  <div class="author-bio-info">
+    <h4>Atish Shakergaye</h4>
+    <div class="author-title">SEBI Registered Research Analyst &middot; INH000006086</div>
+    <p>Founder of Market Credo, Bhopal's premier technical analysis institute. With over 20 years of hands-on market experience and 500+ students trained, Atish Sir teaches the core concepts of chart structure, chart flow, and price action from first principles. His teaching philosophy centres on building independent traders who develop their own strategies.</p>
+  </div>
+</div>
+
+<!-- Related Posts -->
+<div class="related-posts">
+  <h3>Related Articles</h3>
+  <a class="related-link" href="top-5-candlestick-patterns.html">Top 5 Candlestick Patterns Every Trader Must Know &rsaquo;</a>
+  <a class="related-link" href="rsi-better-entry-points.html">How to Use RSI for Better Entry Points &rsaquo;</a>
+  <a class="related-link" href="../courses.html">Explore Our Courses &rsaquo;</a>
+  <a class="related-link" href="../about.html">About Atish Shakergaye &rsaquo;</a>
+</div>
+
+</div><!-- end blog-post-container -->
+
+<!-- WA SECTION -->
+<div class="wa-section">
+  <div class="wa-left">
+    <div class="wa-tag">Instant Information &middot; Fully Automated</div>
+    <h2>WhatsApp Us &mdash; Get Full Details Instantly</h2>
+    <p>Send a message and receive complete information about Market Credo &mdash; courses, schedule, fees, demo booking, and Atish Sir's 20-year background &mdash; directly to your WhatsApp. Automated. Instant reply.</p>
+  </div>
+  <a class="wa-btn" href="https://wa.me/918827979008?text=Hello%20Market%20Credo!%20I%20want%20to%20know%20more%20about%20your%20Technical%20Analysis%20courses%20and%20Free%202-Day%20Demo.%20Please%20share%20complete%20details%20%F0%9F%99%8F" target="_blank">
+    <svg viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    WHATSAPP NOW &lt;GO&gt;
+  </a>
+</div>
+
+<footer id="contact">
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="fc-logo">MARKET CREDO</div>
+      <p class="fc-about">Bhopal's premier technical analysis training institute. Founded by Atish Shakergaye &mdash; SEBI Registered Research Analyst with 20+ years of market experience. Teaching traders to read the language of markets.</p>
+      <div class="fc-row"><span class="fc-ico">&#9673;</span>Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, MP 462016</div>
+      <div class="fc-row"><span class="fc-ico">&#9658;</span><a href="tel:+918827979008">+91-8827979008</a></div>
+      <div class="fc-row"><span class="fc-ico">&#9658;</span>SEBI Reg. No: <span style="color:var(--orange)">INH000006086</span></div>
+    </div>
+    <div class="foot-col">
+      <div class="foot-hdr">Courses</div>
+      <ul class="foot-links">
+        <li><a href="../courses.html#courses">Basics of Stock Market</a></li>
+        <li><a href="../courses.html#courses">Advanced Technical Analysis</a></li>
+        <li><a href="../courses.html#demo">2-Day Free Demo Class</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-hdr">Navigate</div>
+      <ul class="foot-links">
+        <li><a href="../about.html">About Atish Shakergaye</a></li>
+        <li><a href="../courses.html">Curriculum</a></li>
+        <li><a href="../courses.html#demo">Book Free Demo</a></li>
+        <li><a href="https://wa.me/918827979008" target="_blank">WhatsApp Us</a></li>
+        <li><a href="../blog.html">Blog &amp; Insights</a></li>
+        <li><a href="../terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="../privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-hdr">Credentials</div>
+      <div class="sb-body" style="padding:0;">
+        <div class="dr"><span class="dk">REGULATOR</span><span class="dv gr" style="font-size:11px;">SEBI &#10003;</span></div>
+        <div class="dr"><span class="dk">REG. NO.</span><span class="dv or" style="font-size:11px;">INH000006086</span></div>
+        <div class="dr"><span class="dk">EXPERIENCE</span><span class="dv or" style="font-size:11px;">20+ YEARS</span></div>
+        <div class="dr"><span class="dk">STUDENTS</span><span class="dv gr" style="font-size:11px;">500+ TRAINED</span></div>
+        <div class="dr"><span class="dk">CITY</span><span class="dv cy" style="font-size:11px;">BHOPAL, MP</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-disc">DISCLAIMER: Market Credo is a trading and investment education institute. Atish Shakergaye is a SEBI Registered Research Analyst (INH000006086). All course content is strictly for educational purposes only. Trading and investing in securities involves substantial risk of loss. Past performance is not indicative of future results. Please consult a SEBI-registered advisor before making any investment decisions. Market Credo does not provide buy/sell recommendations or portfolio management services.</div>
+  <div class="foot-bottom">
+    <span>&copy; 2024 MARKET CREDO &middot; ALL RIGHTS RESERVED &middot; <a href="../terms.html" style="color:var(--dim);text-decoration:none;">TERMS</a> &middot; <a href="../privacy.html" style="color:var(--dim);text-decoration:none;">PRIVACY</a></span>
+    <span>BHOPAL &middot; MADHYA PRADESH &middot; INDIA</span>
+    <span style="color:var(--orange)">SEBI: INH000006086</span>
+    <a href="../crm.html" style="color:var(--dimmer);text-decoration:none;font-size:9px;letter-spacing:1px;">&#9881; CRM</a>
+  </div>
+</footer>
+
+</main>
+<script>
+// Adjust nav/ticker for social bar
+(function(){
+  var sb = document.querySelector('.social-bar');
+  var ticker = document.querySelector('.edu-ticker');
+  var mainEl = document.querySelector('main');
+  if(sb && ticker){ ticker.style.top='96px'; }
+  if(sb && mainEl){ mainEl.style.marginTop='124px'; }
+})();
+</script>
+</body>
+</html>

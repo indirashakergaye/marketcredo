@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Moving Averages Explained: SMA vs EMA | Market Credo</title>
+<meta name="description" content="Understand Simple vs Exponential Moving Averages. Learn crossover strategies and trend identification with Nifty examples. Market Credo guide."/>
+<meta name="keywords" content="moving averages, SMA vs EMA, simple moving average, exponential moving average, golden cross, death cross, 200 DMA Nifty, moving average crossover strategy, technical analysis India, Market Credo"/>
+<meta name="geo.region" content="IN-MP"/>
+<meta name="geo.placename" content="Bhopal"/>
+<meta name="geo.position" content="23.2332;77.4347"/>
+<meta name="ICBM" content="23.2332, 77.4347"/>
+<link rel="canonical" href="https://www.marketcredo.in/blog/moving-averages-sma-vs-ema.html"/>
+<!-- Open Graph -->
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Moving Averages Explained: SMA vs EMA | Market Credo"/>
+<meta property="og:description" content="Understand Simple vs Exponential Moving Averages. Learn crossover strategies and trend identification with Nifty examples. Market Credo guide."/>
+<meta property="og:url" content="https://www.marketcredo.in/blog/moving-averages-sma-vs-ema.html"/>
+<meta property="og:site_name" content="Market Credo"/>
+<meta property="og:locale" content="en_IN"/>
+<meta property="og:image" content="/images/og-default.jpg"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Moving Averages Explained: SMA vs EMA | Market Credo"/>
+<meta name="twitter:description" content="Understand Simple vs Exponential Moving Averages. Learn crossover strategies and trend identification with Nifty examples."/>
+<meta name="twitter:image" content="/images/og-default.jpg"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23121212'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='monospace' font-weight='700' font-size='18' fill='%23F3772C'%3EMC%3C/text%3E%3C/svg%3E"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../styles.css"/>
+<style>
+.blog-post-container{max-width:820px;margin:0 auto;padding:40px 24px 60px;}
+.breadcrumb{font-size:10px;letter-spacing:1.5px;color:var(--dimmer);margin-bottom:24px;text-transform:uppercase;}
+.breadcrumb a{color:var(--dim);text-decoration:none;}
+.breadcrumb a:hover{color:var(--orange);}
+.article-tag{display:inline-block;background:rgba(243,119,44,0.1);border:1px solid var(--orange2);padding:3px 10px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--orange);text-transform:uppercase;margin-bottom:16px;}
+.article-h1{font-family:'IBM Plex Mono',monospace;font-size:28px;font-weight:700;color:var(--white);line-height:1.4;margin:0 0 16px;letter-spacing:1px;}
+.article-meta{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dimmer);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:32px;display:flex;gap:16px;flex-wrap:wrap;}
+.tldr-box{background:var(--bg2);border-left:3px solid var(--orange);padding:20px 24px;margin-bottom:32px;}
+.tldr-box .tldr-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;margin-bottom:8px;font-weight:700;}
+.tldr-box p{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--dim);line-height:1.8;margin:0;}
+.toc{background:var(--bg1);border:1px solid var(--border);padding:20px 24px;margin-bottom:40px;}
+.toc-title{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;margin-bottom:12px;font-weight:700;}
+.toc ol{padding-left:20px;margin:0;}
+.toc li{font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:var(--dim);line-height:2.2;}
+.toc a{color:var(--dim);text-decoration:none;}
+.toc a:hover{color:var(--orange);}
+.article-content h2{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700;color:var(--white);margin:40px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border);letter-spacing:1px;}
+.article-content h3{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;color:var(--orange);margin:28px 0 12px;letter-spacing:0.5px;}
+.article-content p{font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:var(--dim);line-height:1.9;margin:0 0 16px;}
+.article-content ul,.article-content ol{padding-left:24px;margin:0 0 16px;}
+.article-content li{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--dim);line-height:2;margin-bottom:4px;}
+.article-content strong{color:var(--white);}
+.article-content img{width:100%;border:1px solid var(--border);margin:16px 0;display:block;}
+.expert-tip{background:rgba(243,119,44,0.05);border:1px solid var(--orange2);padding:24px;margin:32px 0;}
+.expert-tip-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;margin-bottom:8px;font-weight:700;}
+.expert-tip p{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--dim);line-height:1.9;margin:0;}
+.expert-tip cite{display:block;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dimmer);margin-top:12px;font-style:normal;letter-spacing:1px;}
+.faq-section{margin:40px 0;}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0;}
+.faq-q{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.faq-a{font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--dim);line-height:1.8;}
+.cta-box{background:var(--orange);padding:32px;text-align:center;margin:40px 0;}
+.cta-box h3{font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;color:#000;margin:0 0 8px;letter-spacing:1px;}
+.cta-box p{font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:rgba(0,0,0,0.7);margin:0 0 16px;}
+.cta-box a{display:inline-block;background:#000;color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;letter-spacing:2px;padding:12px 28px;text-decoration:none;text-transform:uppercase;}
+.cta-box a:hover{background:var(--bg1);}
+.author-bio{display:flex;gap:20px;align-items:flex-start;background:var(--bg1);border:1px solid var(--border);padding:24px;margin:40px 0;}
+.author-bio-avatar{width:64px;height:64px;background:var(--bg2);border:2px solid var(--orange);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700;color:var(--orange);flex-shrink:0;}
+.author-bio-info h4{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--white);margin:0 0 4px;}
+.author-bio-info .author-title{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--orange);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.author-bio-info p{font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:var(--dim);line-height:1.7;margin:0;}
+.related-posts{margin:40px 0;}
+.related-posts h3{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:2px;color:var(--dimmer);text-transform:uppercase;margin-bottom:16px;}
+.related-link{display:block;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);text-decoration:none;padding:10px 0;border-bottom:1px solid var(--border);}
+.related-link:hover{color:var(--orange);}
+@media(max-width:600px){.article-h1{font-size:20px;}.author-bio{flex-direction:column;align-items:center;text-align:center;}.blog-post-container{padding:24px 16px 40px;}}
+</style>
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Moving Averages Explained: SMA vs EMA",
+      "description": "Understand Simple vs Exponential Moving Averages. Learn crossover strategies and trend identification with Nifty examples.",
+      "author": {
+        "@type": "Person",
+        "name": "Atish Shakergaye",
+        "jobTitle": "SEBI Registered Research Analyst",
+        "url": "https://www.marketcredo.in/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Market Credo",
+        "url": "https://www.marketcredo.in",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.marketcredo.in/logo.png"
+        }
+      },
+      "datePublished": "2024-12-12",
+      "dateModified": "2024-12-12",
+      "mainEntityOfPage": "https://www.marketcredo.in/blog/moving-averages-sma-vs-ema.html",
+      "image": "https://www.marketcredo.in/images/og-default.jpg",
+      "keywords": ["moving averages", "SMA", "EMA", "golden cross", "death cross", "200 DMA", "Nifty", "technical analysis"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.marketcredo.in/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.marketcredo.in/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "Moving Averages: SMA vs EMA", "item": "https://www.marketcredo.in/blog/moving-averages-sma-vs-ema.html"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which is better for intraday trading in India, SMA or EMA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EMA is generally preferred for intraday trading on NSE because it reacts faster to recent price changes. Most BankNifty and Nifty intraday traders use the 9 EMA and 21 EMA on 5-minute and 15-minute charts for quick signals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the 200 DMA and why does it matter for Nifty?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The 200-Day Moving Average (200 DMA) is a long-term trend filter. When Nifty trades above its 200 DMA, the broad trend is considered bullish. FIIs and institutional investors use the 200 DMA as a key reference level. A sustained break below the 200 DMA often triggers large-scale selling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a golden cross and a death cross?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A golden cross occurs when a shorter-term moving average (like the 50 DMA) crosses above a longer-term moving average (like the 200 DMA), signalling a bullish trend. A death cross is the opposite — the 50 DMA crossing below the 200 DMA — signalling a bearish trend."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use moving averages for options trading on NSE?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Moving averages on the underlying index (Nifty or BankNifty) help determine directional bias. For example, if Nifty is above the 20 EMA on the hourly chart, you might favour buying Call options or selling Put options. Combine MA signals with support-resistance and volume for better accuracy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many moving averages should I use on my chart?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Using 2-3 moving averages is optimal. A common setup is a fast MA (9 or 20 EMA), a medium MA (50 SMA), and a slow MA (200 SMA). Adding too many MAs creates clutter and conflicting signals."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-XXXXXXXXXX');
+</script>
+</head>
+<body>
+<a class="wa-float" href="https://wa.me/918827979008?text=Hello%20Market%20Credo!%20I%20am%20interested%20in%20your%20courses.%20Please%20share%20details." target="_blank">
+  <div class="wa-pulse"></div>
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<div class="status-bar">
+  <div class="sbar-inner">
+    <div class="sbar-seg sbar-brand">MARKET CREDO</div>
+    <div class="sbar-seg sbar-info">TECHNICAL ANALYSIS INSTITUTE</div>
+    <div class="sbar-seg sbar-info">SEBI REG: INH000006086</div>
+    <div class="sbar-seg sbar-info">ATISH SHAKERGAYE &middot; 20 YRS EXPERIENCE</div>
+    <div class="sbar-seg sbar-right"><span class="blink">&bull;</span>&nbsp;BHOPAL &middot; MP &middot; INDIA</div>
+  </div>
+</div>
+
+<nav>
+  <a class="nav-item nav-brand" href="../index.html">MARKET CREDO</a>
+  <a class="nav-item" href="../about.html"><span class="nav-num">F2</span>TRAINER</a>
+  <a class="nav-item" href="../courses.html#courses"><span class="nav-num">F3</span>COURSES</a>
+  <a class="nav-item" href="../testimonials.html"><span class="nav-num">F7</span>REVIEWS</a>
+  <a class="nav-item" href="../videos.html"><span class="nav-num">F8</span>VIDEOS</a>
+  <a class="nav-item" href="../chartboard.html"><span class="nav-num">F9</span>CHARTS</a>
+  <a class="nav-item" href="../index.html#contact"><span class="nav-num">F6</span>CONTACT</a>
+  <a class="nav-item" href="../life.html"><span class="nav-num">F10</span>LIFE</a>
+  <a class="nav-item" href="../faq.html"><span class="nav-num">F11</span>FAQ</a>
+  <a class="nav-item active" href="../blog.html"><span class="nav-num">F12</span>BLOG</a>
+  <a class="nav-item nav-cta" href="../courses.html#demo">BOOK FREE DEMO &lt;GO&gt;</a>
+</nav>
+
+<div class="social-bar" style="position:fixed;top:64px;left:0;right:0;z-index:997;">
+  <div class="social-bar-label">FOLLOW US</div>
+  <div class="social-links">
+    <a class="social-link yt" href="https://www.youtube.com/@MarketCredo" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+      YOUTUBE
+    </a>
+    <a class="social-link ig" href="https://www.instagram.com/marketcredo" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      INSTAGRAM
+    </a>
+    <a class="social-link fb" href="https://www.facebook.com/marketcredo" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      FACEBOOK
+    </a>
+    <a class="social-link wa2" href="https://wa.me/918827979008" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      WHATSAPP
+    </a>
+  </div>
+</div>
+
+<div class="edu-ticker">
+  <div class="ticker-scroll">
+    <div class="t-item"><span class="t-label">CHART STRUCTURE</span><span class="t-tag">&bull; CORE CONCEPT</span></div>
+    <div class="t-item"><span class="t-label">CHART FLOW</span><span class="t-val">TREND READING</span><span class="t-tag">&#9658; TAUGHT</span></div>
+    <div class="t-item"><span class="t-label">EXPERIENCE</span><span class="t-val">20 YEARS IN MARKETS</span></div>
+    <div class="t-item"><span class="t-label">SEBI REGISTERED</span><span class="t-val">INH000006086</span><span class="t-tag">&#10003; VERIFIED</span></div>
+    <div class="t-item"><span class="t-label">CANDLESTICK MASTERY</span><span class="t-tag">&bull; TAUGHT IN DEPTH</span></div>
+    <div class="t-item"><span class="t-label">FREE DEMO CLASS</span><span class="t-val">2 DAYS &middot; ZERO COST</span></div>
+    <div class="t-item"><span class="t-label">BUILD YOUR STRATEGY</span><span class="t-tag">&#9658; YOUR OWN EDGE</span></div>
+    <div class="t-item"><span class="t-label">SUPPORT &amp; RESISTANCE</span><span class="t-tag">&bull; FIRST PRINCIPLES</span></div>
+    <div class="t-item"><span class="t-label">ADVANCED TA</span><span class="t-val">FLAGSHIP COURSE</span></div>
+    <div class="t-item"><span class="t-label">WHATSAPP</span><span class="t-val">+91-8827979008</span><span class="t-tag">&bull; INSTANT REPLY</span></div>
+    <div class="t-item"><span class="t-label">PRACTICE</span><span class="t-val">MAKES PERFECT</span><span class="t-tag">&#9658; LIVE SESSIONS</span></div>
+    <div class="t-sep">&#9670;&#9670;&#9670;</div>
+    <div class="t-item"><span class="t-label">CHART STRUCTURE</span><span class="t-tag">&bull; CORE CONCEPT</span></div>
+    <div class="t-item"><span class="t-label">CHART FLOW</span><span class="t-val">TREND READING</span><span class="t-tag">&#9658; TAUGHT</span></div>
+    <div class="t-item"><span class="t-label">EXPERIENCE</span><span class="t-val">20 YEARS IN MARKETS</span></div>
+    <div class="t-item"><span class="t-label">SEBI REGISTERED</span><span class="t-val">INH000006086</span><span class="t-tag">&#10003; VERIFIED</span></div>
+    <div class="t-item"><span class="t-label">CANDLESTICK MASTERY</span><span class="t-tag">&bull; TAUGHT IN DEPTH</span></div>
+    <div class="t-item"><span class="t-label">FREE DEMO CLASS</span><span class="t-val">2 DAYS &middot; ZERO COST</span></div>
+    <div class="t-item"><span class="t-label">BUILD YOUR STRATEGY</span><span class="t-tag">&#9658; YOUR OWN EDGE</span></div>
+    <div class="t-item"><span class="t-label">SUPPORT &amp; RESISTANCE</span><span class="t-tag">&bull; FIRST PRINCIPLES</span></div>
+    <div class="t-item"><span class="t-label">ADVANCED TA</span><span class="t-val">FLAGSHIP COURSE</span></div>
+    <div class="t-item"><span class="t-label">WHATSAPP</span><span class="t-val">+91-8827979008</span><span class="t-tag">&bull; INSTANT REPLY</span></div>
+    <div class="t-item"><span class="t-label">PRACTICE</span><span class="t-val">MAKES PERFECT</span><span class="t-tag">&#9658; LIVE SESSIONS</span></div>
+    <div class="t-sep">&#9670;&#9670;&#9670;</div>
+  </div>
+</div>
+
+<main>
+
+<div class="blog-post-container">
+
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a> &rsaquo; <a href="../blog.html">Blog</a> &rsaquo; Moving Averages: SMA vs EMA
+  </div>
+
+  <span class="article-tag">Technical Analysis</span>
+  <h1 class="article-h1">Moving Averages Explained: SMA vs EMA &mdash; The Complete Guide for Indian Traders</h1>
+  <div class="article-meta">
+    <span>By Atish Shakergaye</span>
+    <span>12 Dec 2024</span>
+    <span>8 Min Read</span>
+  </div>
+
+  <div class="tldr-box">
+    <div class="tldr-label">TL;DR</div>
+    <p>Moving averages smooth out price data to reveal the underlying trend. SMA gives equal weight to all periods, making it stable but slow. EMA weights recent prices more, making it responsive but noisy. Use both: EMA for entries and short-term signals, SMA for long-term trend confirmation. The 200 DMA on Nifty remains the single most important institutional reference level in the Indian market.</p>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">Table of Contents</div>
+    <ol>
+      <li><a href="#what-are-moving-averages">What Are Moving Averages?</a></li>
+      <li><a href="#sma-explained">SMA: Simple Moving Average Explained</a></li>
+      <li><a href="#ema-explained">EMA: Exponential Moving Average Explained</a></li>
+      <li><a href="#key-periods">Key Periods: 20, 50, 100, and 200</a></li>
+      <li><a href="#golden-cross-death-cross">Golden Cross and Death Cross</a></li>
+      <li><a href="#dynamic-support-resistance">Moving Averages as Dynamic Support &amp; Resistance</a></li>
+      <li><a href="#trending-vs-ranging">MAs in Trending vs Ranging Markets</a></li>
+      <li><a href="#combining-price-action">Combining MAs with Price Action</a></li>
+      <li><a href="#indian-market-examples">Indian Market Examples: Nifty 200 DMA</a></li>
+      <li><a href="#faqs">Frequently Asked Questions</a></li>
+    </ol>
+  </div>
+
+  <div class="article-content">
+
+    <h2 id="what-are-moving-averages">1. What Are Moving Averages?</h2>
+
+    <p>If you have ever looked at a stock chart on Zerodha Kite or any other charting platform, you have probably noticed how chaotic raw price movement can look. A stock like Reliance Industries might swing between &#8377;2,400 and &#8377;2,500 in a single week, making it hard to determine whether the broader trend is up, down, or sideways. This is exactly the problem that moving averages solve.</p>
+
+    <p>A <strong>moving average (MA)</strong> is a technical indicator that smooths out price data by creating a constantly updated average price over a specific number of periods. Instead of reacting to every single candle, a moving average condenses the noise into a single flowing line that reveals the direction the market is actually heading.</p>
+
+    <p>Think of it this way: if you measured the temperature in Bhopal every hour, the readings would fluctuate wildly between morning and afternoon. But if you calculated the average temperature over the past 7 days, you would get a much clearer picture of whether the weather is getting warmer or cooler. Moving averages do the same thing for stock prices.</p>
+
+    <p>There are two primary types of moving averages that every trader on NSE and BSE needs to understand: the <strong>Simple Moving Average (SMA)</strong> and the <strong>Exponential Moving Average (EMA)</strong>. Both serve the same core purpose of smoothing price data, but they differ fundamentally in how they calculate that average, and this difference has real implications for your trading decisions.</p>
+
+    <h2 id="sma-explained">2. SMA: Simple Moving Average Explained</h2>
+
+    <p>The Simple Moving Average is the most straightforward moving average. It calculates the arithmetic mean of the closing prices over a specified number of periods. Every price point within the lookback period receives equal weight.</p>
+
+    <h3>How SMA Is Calculated</h3>
+
+    <p>The formula is simple. For a 10-period SMA, you add up the last 10 closing prices and divide by 10.</p>
+
+    <p><strong>SMA = (P1 + P2 + P3 + ... + Pn) / n</strong></p>
+
+    <p>Let us take a real example. Suppose the last 5 closing prices of TCS on NSE are: &#8377;3,520, &#8377;3,545, &#8377;3,510, &#8377;3,560, and &#8377;3,530. The 5-period SMA would be:</p>
+
+    <p><strong>(3520 + 3545 + 3510 + 3560 + 3530) / 5 = &#8377;3,533</strong></p>
+
+    <p>When the next candle closes at, say, &#8377;3,570, the oldest price (&#8377;3,520) drops off the calculation and the new price takes its place. The SMA "moves" forward with each new candle, hence the name moving average.</p>
+
+    <h3>Strengths of SMA</h3>
+    <ul>
+      <li><strong>Stability:</strong> Because every data point gets equal weight, SMA lines are smoother and less prone to false signals from sudden price spikes.</li>
+      <li><strong>Reliability for long-term trends:</strong> The 200-day SMA on Nifty 50 is widely followed by FIIs, DIIs, and institutional desks precisely because of its stability.</li>
+      <li><strong>Simplicity:</strong> Easy to calculate, easy to understand, easy to backtest.</li>
+    </ul>
+
+    <h3>Weaknesses of SMA</h3>
+    <ul>
+      <li><strong>Lag:</strong> SMA reacts slowly to price changes. By the time a 50-period SMA turns, a significant portion of the move may already be over.</li>
+      <li><strong>Equal weighting problem:</strong> A price from 200 days ago has the same influence as yesterday's close. In fast-moving markets like BankNifty, this can be a disadvantage.</li>
+    </ul>
+
+    <h2 id="ema-explained">3. EMA: Exponential Moving Average Explained</h2>
+
+    <p>The Exponential Moving Average addresses the SMA's primary weakness by assigning greater weight to the most recent prices. This makes EMA more responsive to new information, which is critical when trading volatile instruments like Nifty options or BankNifty futures.</p>
+
+    <h3>How EMA Is Calculated</h3>
+
+    <p>The EMA calculation involves a multiplier (also called the weighting factor or smoothing constant). The formula is:</p>
+
+    <p><strong>Multiplier = 2 / (n + 1)</strong></p>
+
+    <p><strong>EMA = (Current Price x Multiplier) + (Previous EMA x (1 - Multiplier))</strong></p>
+
+    <p>For a 20-period EMA, the multiplier is 2 / (20 + 1) = 0.0952, meaning the most recent closing price receives approximately 9.52% of the total weight. The remaining 90.48% comes from the previous EMA value, which itself was influenced by earlier prices with exponentially decreasing weights.</p>
+
+    <p>You do not need to calculate this manually. Every platform from Zerodha Kite to TradingView to Chartink handles it automatically. What matters is understanding the implication: <strong>recent prices matter more in EMA than in SMA</strong>.</p>
+
+    <h3>Strengths of EMA</h3>
+    <ul>
+      <li><strong>Responsiveness:</strong> EMA turns faster when price direction changes, giving earlier signals than SMA.</li>
+      <li><strong>Better for short-term trading:</strong> Intraday traders on NSE often prefer the 9 EMA and 21 EMA on 5-minute or 15-minute charts.</li>
+      <li><strong>Reduced lag:</strong> Because recent data gets more weight, the EMA stays closer to the current price.</li>
+    </ul>
+
+    <h3>Weaknesses of EMA</h3>
+    <ul>
+      <li><strong>More whipsaws:</strong> The sensitivity that makes EMA fast also makes it more susceptible to false signals, especially in choppy, sideways markets.</li>
+      <li><strong>Complexity:</strong> While the calculation is done automatically, understanding why the EMA behaves differently from SMA requires a bit more effort.</li>
+    </ul>
+
+    <div class="expert-tip">
+      <div class="expert-tip-label">Expert Tip</div>
+      <p>In our courses at Market Credo, we teach students to use EMA for entry timing and SMA for trend confirmation. A 9 EMA crossover on a 15-minute BankNifty chart can get you into a trade early, but always check the 50 SMA on the daily chart to make sure you are trading in the direction of the larger trend. This dual-timeframe approach dramatically reduces false signals.</p>
+      <cite>&mdash; Atish Shakergaye, SEBI Reg. INH000006086</cite>
+    </div>
+
+    <h2 id="key-periods">4. Key Periods: 20, 50, 100, and 200</h2>
+
+    <p>Not all moving averages are created equal. Certain periods have become industry standards because they correspond to natural market cycles and are watched by millions of traders worldwide, including institutional participants on Dalal Street.</p>
+
+    <h3>20-Period MA (Short-Term Trend)</h3>
+    <p>The 20-period MA roughly corresponds to one month of trading days (NSE has about 22 trading days per month). It tracks the short-term trend and is commonly used by swing traders. When a stock like HDFC Bank pulls back to its 20-day EMA in an uptrend and bounces, that is a classic swing trading entry.</p>
+
+    <h3>50-Period MA (Medium-Term Trend)</h3>
+    <p>The 50-period MA represents roughly one quarter of trading data. It is the most popular moving average for swing and positional traders. When institutional investors talk about a stock "holding its 50 DMA," they mean the medium-term trend is intact. Mutual fund managers in India frequently reference the 50 DMA when making allocation decisions.</p>
+
+    <h3>100-Period MA (Intermediate Trend)</h3>
+    <p>The 100-period MA sits between the medium-term and long-term perspectives. While less commonly discussed in financial media, it often acts as a strong dynamic support or resistance level, particularly on weekly charts. Many quantitative trading systems on NSE incorporate the 100 DMA as a secondary filter.</p>
+
+    <h3>200-Period MA (Long-Term Trend)</h3>
+    <p>The 200-day MA is the gold standard. It is the single most watched moving average in the world, and on Nifty 50 it carries enormous significance. When Nifty trades above its 200 DMA, the long-term trend is considered bullish. When it trades below, the trend is bearish. FIIs routinely use the 200 DMA as a decision-making reference. During the March 2020 crash, Nifty's break below the 200 DMA triggered massive institutional selling. The recovery above it later that year marked the beginning of one of India's strongest bull runs.</p>
+
+    <h2 id="golden-cross-death-cross">5. Golden Cross and Death Cross</h2>
+
+    <p>Moving average crossovers are among the most powerful trend-change signals in technical analysis. Two crossover patterns stand above all others in significance and reliability.</p>
+
+    <h3>The Golden Cross</h3>
+    <p>A <strong>golden cross</strong> occurs when a shorter-term moving average crosses above a longer-term moving average. The classic golden cross is the <strong>50 DMA crossing above the 200 DMA</strong>. This signals that the recent trend (50-day) has turned bullish and is now overtaking the long-term trend (200-day), suggesting a potential major uptrend is beginning.</p>
+
+    <p>When Nifty 50 formed a golden cross in June 2020 after the COVID crash, it marked the start of a rally from approximately 10,000 to over 18,000 over the following 18 months. Traders who respected this signal and took long positions in quality large-caps like Reliance, Infosys, and HDFC Bank saw extraordinary returns.</p>
+
+    <h3>The Death Cross</h3>
+    <p>The <strong>death cross</strong> is the opposite: the 50 DMA crosses below the 200 DMA. This signals that the medium-term trend has deteriorated below the long-term average, suggesting potential for a sustained downtrend. The death cross appeared on Nifty in March 2020 right as the pandemic sell-off intensified, confirming the bearish momentum that was already underway.</p>
+
+    <h3>Important Caveats</h3>
+    <ul>
+      <li>Golden and death crosses are <strong>lagging signals</strong>. By the time they form, a significant portion of the move has already occurred.</li>
+      <li>They work best in <strong>trending markets</strong>. In prolonged sideways phases, you will see frequent false crossovers.</li>
+      <li>Always confirm crossovers with <strong>volume</strong>. A golden cross accompanied by rising volumes on NSE is far more reliable than one on declining volumes.</li>
+      <li>Use them for <strong>directional bias</strong>, not exact entry points. Combine with <a href="understanding-support-resistance.html" style="color:var(--orange);">support and resistance levels</a> for precise entries.</li>
+    </ul>
+
+    <h2 id="dynamic-support-resistance">6. Moving Averages as Dynamic Support &amp; Resistance</h2>
+
+    <p>One of the most practical applications of moving averages is using them as <strong>dynamic support and resistance levels</strong>. Unlike horizontal support and resistance lines that stay fixed at specific price levels, moving averages shift with each new candle, creating moving zones where price tends to react.</p>
+
+    <p>In a strong uptrend, price often pulls back to a key moving average and bounces. The 20 EMA acts as the first line of defence for the trend, followed by the 50 SMA, then the 200 SMA. Think of these as floors of support stacked beneath the current price.</p>
+
+    <p>Consider Reliance Industries in a strong uptrend. When it pulls back from &#8377;2,600 to &#8377;2,520 and finds buying interest right at the 50-day SMA, that moving average is acting as dynamic support. Traders who understand this can use the bounce as a low-risk entry point with a stop-loss just below the moving average.</p>
+
+    <p>In a downtrend, the same moving averages act as dynamic resistance. When BankNifty rallies from an oversold condition and stalls right at its falling 20 EMA, short sellers gain confidence that the downtrend is intact.</p>
+
+    <p>The key principle is this: <strong>the more times price respects a moving average, the stronger that MA becomes as a reference level</strong>. If Nifty has bounced off its 200 DMA four times in the past year, the fifth touch will attract enormous buying because every institutional trader is watching it.</p>
+
+    <h2 id="trending-vs-ranging">7. MAs in Trending vs Ranging Markets</h2>
+
+    <p>Moving averages are <strong>trend-following indicators</strong>. This is both their greatest strength and their most significant limitation. Understanding when to use them and when to set them aside is crucial for consistent profitability.</p>
+
+    <h3>Moving Averages in Trending Markets</h3>
+    <p>In a clear uptrend or downtrend, moving averages perform brilliantly. The MAs fan out in order (20 above 50 above 100 above 200 in an uptrend), price stays above the key MAs, and pullbacks to the MA lines provide excellent entry opportunities. During Nifty's rally from 15,000 to 20,000, the 20 EMA on the weekly chart acted as a reliable support level for over a year.</p>
+
+    <h3>Moving Averages in Ranging Markets</h3>
+    <p>In sideways, choppy markets, moving averages become liabilities. Price constantly crosses above and below the MAs, generating false buy and sell signals. The moving averages themselves flatten out and start overlapping each other, providing no useful directional information.</p>
+
+    <p>If you were trading Nifty in a 22,800-23,400 range, the 20 EMA would constantly whipsaw as price bounced between range boundaries. Every crossover would look like a breakout signal, but most would fail. This is why many experienced traders on Dalal Street switch to oscillators like <a href="rsi-better-entry-points.html" style="color:var(--orange);">RSI</a> and mean-reversion strategies during ranging phases.</p>
+
+    <h3>How to Identify the Market Regime</h3>
+    <ul>
+      <li><strong>Trending:</strong> Moving averages are fanned out and sloping in one direction. Price stays consistently on one side of the 50 SMA. ADX above 25.</li>
+      <li><strong>Ranging:</strong> Moving averages are flat and intertwined. Price crosses the 20 EMA frequently. ADX below 20.</li>
+    </ul>
+
+    <h2 id="combining-price-action">8. Combining MAs with Price Action</h2>
+
+    <p>Moving averages are most powerful when combined with price action analysis. At Market Credo, we emphasise that no indicator should be used in isolation. Here are proven ways to combine MAs with price action for higher-probability setups on Indian markets.</p>
+
+    <h3>MA Bounce + Candlestick Pattern</h3>
+    <p>When price pulls back to a key MA and forms a bullish reversal candlestick (like a hammer or bullish engulfing), the confluence of two signals dramatically improves the probability of the trade. For example, if HDFC Bank pulls back to its 50 SMA and forms a bullish engulfing candle on the daily chart, that is a textbook long entry with a stop below the engulfing candle's low.</p>
+
+    <h3>MA + Support/Resistance Confluence</h3>
+    <p>When a moving average aligns with a horizontal <a href="understanding-support-resistance.html" style="color:var(--orange);">support or resistance level</a>, the zone becomes exceptionally strong. If Nifty's 200 DMA sits at 21,500 and there is also a horizontal support from previous swing lows at the same level, that confluence creates a wall of demand that is very difficult for sellers to break through.</p>
+
+    <h3>MA + Volume Confirmation</h3>
+    <p>Always look at volume when trading MA signals. A breakout above a declining 200 SMA accompanied by a volume spike of 2-3 times the average daily volume on NSE is far more significant than a breakout on low volume. Volume is the fuel that drives price, and without it, even the best MA signal can fail.</p>
+
+    <h3>Multiple Timeframe MA Analysis</h3>
+    <p>Use higher timeframe MAs for direction and lower timeframe MAs for entry. If the daily 200 SMA on TCS is sloping upward, look for long entries on the 1-hour chart when price bounces off the 20 EMA. This top-down approach ensures you are always trading with the larger trend.</p>
+
+    <h2 id="indian-market-examples">9. Indian Market Examples: Nifty 200 DMA</h2>
+
+    <p>The 200-Day Moving Average on Nifty 50 is arguably the most important single indicator for Indian equity markets. Understanding its significance through historical examples will make you a better trader.</p>
+
+    <h3>March 2020: The COVID Break</h3>
+    <p>Nifty broke below its 200 DMA at approximately 11,600 in early March 2020 and went into freefall, bottoming near 7,500. The break below the 200 DMA was a clear sell signal for positional traders. Those who respected this level and reduced exposure saved their portfolios from a 35% drawdown.</p>
+
+    <h3>April 2020: The Recovery Signal</h3>
+    <p>When Nifty reclaimed its 200 DMA in early 2021, it was a clear signal that the worst was over. FIIs began aggressively buying Indian equities. The subsequent rally from 14,000 to 18,500 rewarded traders who used the 200 DMA reclaim as a re-entry signal.</p>
+
+    <h3>2022: Multiple Tests</h3>
+    <p>Throughout 2022, Nifty tested its 200 DMA on several occasions as global interest rates rose. Each successful defence of the 200 DMA attracted fresh buying from DIIs and domestic retail investors, confirming that the long-term bullish structure was intact despite short-term volatility.</p>
+
+    <h3>Practical Application Today</h3>
+    <p>Every morning before the market opens, check where Nifty's 200 DMA sits. If the index is comfortably above it (say, 5% or more), the long-term trend is strong and you should maintain a bullish bias. If Nifty is approaching or hovering near its 200 DMA, be cautious and reduce position sizes. If it breaks below, shift to a defensive stance. This one simple discipline can protect your capital through the worst market conditions.</p>
+
+    <p>Similarly, watch the 200 DMA on <a href="head-shoulders-pattern-guide.html" style="color:var(--orange);">individual stocks</a>. When Reliance, TCS, Infosys, or HDFC Bank break above or below their respective 200 DMAs, it carries sectoral implications. A Reliance break below its 200 DMA, for instance, would drag the entire Nifty given its heavy index weighting.</p>
+
+    <div class="expert-tip">
+      <div class="expert-tip-label">Expert Tip</div>
+      <p>I have been watching the Nifty 200 DMA for over 20 years, and I can tell you this with certainty: every major bull market in India has been characterised by Nifty consistently staying above the 200 DMA, and every major bear market has been characterised by Nifty trading below it. If you learn nothing else from this article, learn to respect the 200 DMA. It is the institutional heartbeat of the Indian market.</p>
+      <cite>&mdash; Atish Shakergaye, SEBI Reg. INH000006086</cite>
+    </div>
+
+    <div class="cta-box">
+      <h3>Master Moving Averages &amp; Price Action</h3>
+      <p>Learn to combine moving averages with chart structure, candlestick patterns, and support-resistance in our Advanced Technical Analysis course.</p>
+      <a href="../courses.html">Explore Courses &lt;GO&gt;</a>
+    </div>
+
+    <div class="faq-section" id="faqs">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Which is better for intraday trading in India, SMA or EMA?</div>
+        <div class="faq-a">EMA is generally preferred for intraday trading on NSE because it reacts faster to recent price changes. Most BankNifty and Nifty intraday traders use the 9 EMA and 21 EMA on 5-minute and 15-minute charts for quick signals. However, always combine EMA signals with volume and support-resistance for confirmation.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What is the 200 DMA and why does it matter for Nifty?</div>
+        <div class="faq-a">The 200-Day Moving Average (200 DMA) is a long-term trend filter. When Nifty trades above its 200 DMA, the broad trend is considered bullish. FIIs and institutional investors use the 200 DMA as a key reference level. A sustained break below the 200 DMA often triggers large-scale selling across Indian equities.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What is a golden cross and a death cross?</div>
+        <div class="faq-a">A golden cross occurs when a shorter-term moving average (like the 50 DMA) crosses above a longer-term moving average (like the 200 DMA), signalling a bullish trend. A death cross is the opposite &mdash; the 50 DMA crossing below the 200 DMA &mdash; signalling a bearish trend. Both are lagging signals and should be confirmed with volume.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can I use moving averages for options trading on NSE?</div>
+        <div class="faq-a">Yes. Moving averages on the underlying index (Nifty or BankNifty) help determine directional bias. For example, if Nifty is above the 20 EMA on the hourly chart, you might favour buying Call options or selling Put options. Combine MA signals with support-resistance and volume for better accuracy.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How many moving averages should I use on my chart?</div>
+        <div class="faq-a">Using 2-3 moving averages is optimal. A common setup is a fast MA (9 or 20 EMA), a medium MA (50 SMA), and a slow MA (200 SMA). Adding too many MAs creates clutter and conflicting signals. Keep it simple and master the interaction between these three levels.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="author-bio">
+    <div class="author-bio-avatar">AS</div>
+    <div class="author-bio-info">
+      <h4>Atish Shakergaye</h4>
+      <div class="author-title">SEBI Registered Research Analyst &middot; INH000006086</div>
+      <p>Founder of Market Credo, Bhopal. 20+ years of stock market experience. Specialises in teaching chart structure, price action, and core technical analysis concepts that help traders build independent strategies.</p>
+    </div>
+  </div>
+
+  <div class="related-posts">
+    <h3>Related Articles</h3>
+    <a class="related-link" href="rsi-better-entry-points.html">How to Use RSI for Better Entry Points &rsaquo;</a>
+    <a class="related-link" href="understanding-support-resistance.html">Understanding Support &amp; Resistance Levels &rsaquo;</a>
+    <a class="related-link" href="head-shoulders-pattern-guide.html">Head &amp; Shoulders Pattern: Complete Guide &rsaquo;</a>
+  </div>
+
+</div>
+
+<!-- WA SECTION -->
+<div class="wa-section">
+  <div class="wa-left">
+    <div class="wa-tag">Instant Information &middot; Fully Automated</div>
+    <h2>WhatsApp Us &mdash; Get Full Details Instantly</h2>
+    <p>Send a message and receive complete information about Market Credo &mdash; courses, schedule, fees, demo booking, and Atish Sir's 20-year background &mdash; directly to your WhatsApp. Automated. Instant reply.</p>
+  </div>
+  <a class="wa-btn" href="https://wa.me/918827979008?text=Hello%20Market%20Credo!%20I%20want%20to%20know%20more%20about%20your%20Technical%20Analysis%20courses%20and%20Free%202-Day%20Demo.%20Please%20share%20complete%20details%20%F0%9F%99%8F" target="_blank">
+    <svg viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    WHATSAPP NOW &lt;GO&gt;
+  </a>
+</div>
+
+<footer id="contact">
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="fc-logo">MARKET CREDO</div>
+      <p class="fc-about">Bhopal's premier technical analysis training institute. Founded by Atish Shakergaye &mdash; SEBI Registered Research Analyst with 20+ years of market experience. Teaching traders to read the language of markets.</p>
+      <div class="fc-row"><span class="fc-ico">&#9673;</span>Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, MP 462016</div>
+      <div class="fc-row"><span class="fc-ico">&#9658;</span><a href="tel:+918827979008">+91-8827979008</a></div>
+      <div class="fc-row"><span class="fc-ico">&#9658;</span>SEBI Reg. No: <span style="color:var(--orange)">INH000006086</span></div>
+    </div>
+    <div class="foot-col">
+      <div class="foot-hdr">Courses</div>
+      <ul class="foot-links">
+        <li><a href="../courses.html#courses">Basics of Stock Market</a></li>
+        <li><a href="../courses.html#courses">Advanced Technical Analysis</a></li>
+        <li><a href="../courses.html#demo">2-Day Free Demo Class</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-hdr">Navigate</div>
+      <ul class="foot-links">
+        <li><a href="../about.html">About Atish Shakergaye</a></li>
+        <li><a href="../courses.html">Curriculum</a></li>
+        <li><a href="../courses.html#demo">Book Free Demo</a></li>
+        <li><a href="https://wa.me/918827979008" target="_blank">WhatsApp Us</a></li>
+        <li><a href="../blog.html">Blog &amp; Insights</a></li>
+        <li><a href="../terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="../privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <div class="foot-hdr">Credentials</div>
+      <div class="sb-body" style="padding:0;">
+        <div class="dr"><span class="dk">REGULATOR</span><span class="dv gr" style="font-size:11px;">SEBI &#10003;</span></div>
+        <div class="dr"><span class="dk">REG. NO.</span><span class="dv or" style="font-size:11px;">INH000006086</span></div>
+        <div class="dr"><span class="dk">EXPERIENCE</span><span class="dv or" style="font-size:11px;">20+ YEARS</span></div>
+        <div class="dr"><span class="dk">STUDENTS</span><span class="dv gr" style="font-size:11px;">500+ TRAINED</span></div>
+        <div class="dr"><span class="dk">CITY</span><span class="dv cy" style="font-size:11px;">BHOPAL, MP</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-disc">DISCLAIMER: Market Credo is a trading and investment education institute. Atish Shakergaye is a SEBI Registered Research Analyst (INH000006086). All course content is strictly for educational purposes only. Trading and investing in securities involves substantial risk of loss. Past performance is not indicative of future results. Please consult a SEBI-registered advisor before making any investment decisions. Market Credo does not provide buy/sell recommendations or portfolio management services.</div>
+  <div class="foot-bottom">
+    <span>&copy; 2024 MARKET CREDO &middot; ALL RIGHTS RESERVED &middot; <a href="../terms.html" style="color:var(--dim);text-decoration:none;">TERMS</a> &middot; <a href="../privacy.html" style="color:var(--dim);text-decoration:none;">PRIVACY</a></span>
+    <span>BHOPAL &middot; MADHYA PRADESH &middot; INDIA</span>
+    <span style="color:var(--orange)">SEBI: INH000006086</span>
+    <a href="../crm.html" style="color:var(--dimmer);text-decoration:none;font-size:9px;letter-spacing:1px;">&#9881; CRM</a>
+  </div>
+</footer>
+
+</main>
+<script>
+// Adjust nav/ticker for social bar
+(function(){
+  var sb = document.querySelector('.social-bar');
+  var ticker = document.querySelector('.edu-ticker');
+  var mainEl = document.querySelector('main');
+  if(sb && ticker){ ticker.style.top='96px'; }
+  if(sb && mainEl){ mainEl.style.marginTop='124px'; }
+})();
+</script>
+</body>
+</html>
