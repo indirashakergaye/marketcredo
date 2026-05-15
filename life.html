@@ -378,10 +378,10 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
           Click to select photo
         </div>
         <img id="gmPreviewImg" alt="preview"/>
-        <input type="file" id="gm-file" accept="image/*" onchange="previewGalleryPhoto(this)"/>
+        <input type="file" id="gm-file" aria-label="Upload gallery photo" accept="image/*" onchange="previewGalleryPhoto(this)"/>
       </div>
-      <div class="uf-row"><label class="uf-label">Caption</label><input class="uf-input" type="text" id="gm-caption" placeholder="E.G. LIVE CHART SESSION WITH ATISH SIR"/></div>
-      <div class="uf-row"><label class="uf-label">Category</label>
+      <div class="uf-row"><label class="uf-label" for="gm-caption">Caption</label><input class="uf-input" type="text" id="gm-caption" placeholder="E.G. LIVE CHART SESSION WITH ATISH SIR"/></div>
+      <div class="uf-row"><label class="uf-label" for="gm-category">Category</label>
         <select class="uf-input" id="gm-category">
           <option value="">SELECT CATEGORY</option>
           <option>CLASSROOM</option>

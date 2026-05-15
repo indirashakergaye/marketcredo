@@ -214,9 +214,9 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
   <h2>Or Write Here</h2>
   <p>Prefer to write your feedback directly? Fill out the form below. We may feature your review on our website (with your permission).</p>
   <form class="rv-form" id="reviewForm" onsubmit="submitReview(event)">
-    <input class="rv-input" type="text" id="rvName" name="name" placeholder="YOUR NAME" required/>
-    <input class="rv-input" type="text" id="rvCity" name="city" placeholder="YOUR CITY (E.G. BHOPAL)"/>
-    <textarea class="rv-input rv-textarea" id="rvReview" name="review" placeholder="Share your experience at Market Credo... What did you learn? How has it helped your trading? Would you recommend it?" required></textarea>
+    <input class="rv-input" type="text" id="rvName" name="name" placeholder="YOUR NAME" aria-label="Your name" required/>
+    <input class="rv-input" type="text" id="rvCity" name="city" placeholder="YOUR CITY (E.G. BHOPAL)" aria-label="Your city"/>
+    <textarea class="rv-input rv-textarea" id="rvReview" name="review" placeholder="Share your experience at Market Credo... What did you learn? How has it helped your trading? Would you recommend it?" aria-label="Your review of Market Credo" required></textarea>
     <button class="rv-submit" type="submit">SEND REVIEW VIA WHATSAPP &lt;ENTER&gt;</button>
     <p style="font-size:11px;color:var(--dim);margin:10px 0 0;">Opens WhatsApp with your review pre-filled. Hit send to deliver it to Atish sir.</p>
   </form>

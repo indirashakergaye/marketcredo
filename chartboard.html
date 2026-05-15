@@ -180,15 +180,15 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
       <div class="upload-hdr">UPLOAD YOUR CHART <span style="font-size:9px;opacity:0.7;">(ADMIN)</span></div>
       <div class="upload-form" id="uploadForm">
         <div class="uf-row">
-          <label class="uf-label">Your Name *</label>
+          <label class="uf-label" for="uf-name">Your Name *</label>
           <input class="uf-input" type="text" id="uf-name" placeholder="E.G. RAHUL K."/>
         </div>
         <div class="uf-row">
-          <label class="uf-label">Stock / Index *</label>
+          <label class="uf-label" for="uf-stock">Stock / Index *</label>
           <input class="uf-input" type="text" id="uf-stock" placeholder="E.G. NIFTY50, RELIANCE"/>
         </div>
         <div class="uf-row">
-          <label class="uf-label">Pattern Identified *</label>
+          <label class="uf-label" for="uf-pattern">Pattern Identified *</label>
           <select class="uf-input" id="uf-pattern">
             <option value="">SELECT PATTERN</option>
             <option>HEAD &amp; SHOULDERS</option>
@@ -205,7 +205,7 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
           </select>
         </div>
         <div class="uf-row">
-          <label class="uf-label">Timeframe</label>
+          <label class="uf-label" for="uf-tf">Timeframe</label>
           <select class="uf-input" id="uf-tf">
             <option value="">SELECT TIMEFRAME</option>
             <option>1 MIN</option>
@@ -218,11 +218,11 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
           </select>
         </div>
         <div class="uf-row">
-          <label class="uf-label">Analysis Note</label>
+          <label class="uf-label" for="uf-note">Analysis Note</label>
           <textarea class="uf-input" id="uf-note" rows="2" placeholder="DESCRIBE YOUR ANALYSIS..." style="resize:vertical;"></textarea>
         </div>
         <div class="uf-row">
-          <label class="uf-label">Chart Image *</label>
+          <label class="uf-label" for="uf-file">Chart Image *</label>
           <div class="file-drop" id="fileDrop" onclick="document.getElementById('uf-file').click()" ondragover="ev.preventDefault();this.classList.add('drag')" ondragleave="this.classList.remove('drag')">
             <div class="file-drop-icon">&#8682;</div>
             <div class="file-drop-text">Click or drag &amp; drop your chart screenshot<br/>PNG, JPG, WEBP &mdash; max 5MB</div>
