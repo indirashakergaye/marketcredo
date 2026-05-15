@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>OG Image Generator — Market Credo</title>
+<style>
+body{margin:0;padding:40px;background:#333;display:flex;flex-direction:column;align-items:center;gap:20px;font-family:sans-serif;}
+canvas{border:2px solid #F3772C;}
+.btn{background:#F3772C;color:#000;border:none;padding:16px 40px;font-size:16px;font-weight:700;cursor:pointer;letter-spacing:2px;margin-top:10px;}
+.btn:hover{background:#ff8c3a;}
+p{color:#fff;font-size:14px;text-align:center;}
+</style>
+</head>
+<body>
+
+<p>Click the button below to download your OG image automatically.</p>
+<canvas id="ogCanvas" width="1200" height="630"></canvas>
+<button class="btn" onclick="downloadImage()">DOWNLOAD OG IMAGE</button>
+
+<script>
+var canvas = document.getElementById('ogCanvas');
+var ctx = canvas.getContext('2d');
+
+// Load font first, then draw
+var font1 = new FontFace('IBMPlexMono', 'url(https://fonts.gstatic.com/s/ibmplexmono/v19/-F63fjptAgt5VM-kVkqdyU8n1iIq129k.woff2)');
+var font2 = new FontFace('IBMPlexMono', 'url(https://fonts.gstatic.com/s/ibmplexmono/v19/-F6qfjptAgt5VM-kVkqdyU8n3oQIwlBFhA.woff2)', {weight:'700'});
+
+Promise.all([font1.load(), font2.load()]).then(function(fonts){
+  fonts.forEach(function(f){ document.fonts.add(f); });
+  draw();
+}).catch(function(){
+  draw(); // draw anyway with fallback font
+});
+
+function draw(){
+  // Background
+  ctx.fillStyle = '#121212';
+  ctx.fillRect(0, 0, 1200, 630);
+
+  // Grid pattern
+  ctx.strokeStyle = 'rgba(243,119,44,0.04)';
+  ctx.lineWidth = 1;
+  for(var x = 0; x < 1200; x += 40){
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, 630); ctx.stroke();
+  }
+  for(var y = 0; y < 630; y += 40){
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(1200, y); ctx.stroke();
+  }
+
+  // Top orange bar
+  ctx.fillStyle = '#F3772C';
+  ctx.fillRect(0, 0, 1200, 6);
+
+  // Bottom orange bar
+  ctx.fillRect(0, 624, 1200, 6);
+
+  // Left accent line
+  ctx.fillRect(0, 6, 4, 618);
+
+  // Decorative candlesticks (right side, faded)
+  ctx.globalAlpha = 0.08;
+  // Candle 1 - red
+  ctx.fillStyle = '#F3772C';
+  ctx.fillRect(870, 160, 20, 100);
+  ctx.fillRect(879, 120, 2, 200);
+  // Candle 2 - green
+  ctx.fillStyle = '#4CAF50';
+  ctx.fillRect(930, 130, 20, 160);
+  ctx.fillRect(939, 90, 2, 260);
+  // Candle 3 - green
+  ctx.fillRect(990, 110, 20, 120);
+  ctx.fillRect(999, 70, 2, 220);
+  // Candle 4 - red
+  ctx.fillStyle = '#F3772C';
+  ctx.fillRect(1050, 180, 20, 140);
+  ctx.fillRect(1059, 140, 2, 220);
+  // Candle 5 - green
+  ctx.fillStyle = '#4CAF50';
+  ctx.fillRect(1110, 100, 20, 140);
+  ctx.fillRect(1119, 60, 2, 240);
+  ctx.globalAlpha = 1.0;
+
+  // Terminal prompt
+  ctx.font = '14px IBMPlexMono, monospace';
+  ctx.fillStyle = '#626262';
+  ctx.fillText('MKTCRED>', 60, 200);
+  ctx.fillStyle = '#626262';
+  ctx.fillText(' LEARN.THE.LANGUAGE.OF.CHARTS_', 145, 200);
+
+  // MARKET
+  ctx.font = '700 72px IBMPlexMono, monospace';
+  ctx.fillStyle = '#E8E8E8';
+  ctx.fillText('MARKET', 60, 290);
+
+  // CREDO
+  ctx.fillStyle = '#F3772C';
+  ctx.fillText('CREDO', 430, 290);
+
+  // Tagline
+  ctx.font = '400 28px IBMPlexMono, monospace';
+  ctx.fillStyle = '#9F9F9F';
+  ctx.fillText('Technical Analysis Institute', 60, 340);
+
+  // Orange divider
+  ctx.fillStyle = '#F3772C';
+  ctx.fillRect(60, 370, 120, 3);
+
+  // Details
+  ctx.font = '600 14px IBMPlexMono, monospace';
+  ctx.fillStyle = '#F3772C';
+  ctx.fillText('SEBI Registered', 60, 420);
+
+  ctx.fillStyle = '#626262';
+  ctx.fillText('|', 230, 420);
+
+  ctx.fillStyle = '#F3772C';
+  ctx.fillText('20+', 260, 420);
+  ctx.fillStyle = '#626262';
+  ctx.fillText(' Years Experience', 300, 420);
+
+  ctx.fillStyle = '#626262';
+  ctx.fillText('|', 500, 420);
+
+  ctx.fillStyle = '#F3772C';
+  ctx.fillText('Bhopal', 530, 420);
+  ctx.fillStyle = '#626262';
+  ctx.fillText(', India', 610, 420);
+
+  // SEBI badge (bottom right)
+  ctx.font = '400 11px IBMPlexMono, monospace';
+  ctx.fillStyle = '#626262';
+  ctx.textAlign = 'right';
+  ctx.fillText('SEBI REG. NO.', 1140, 560);
+  ctx.font = '700 15px IBMPlexMono, monospace';
+  ctx.fillStyle = '#F3772C';
+  ctx.fillText('INH000006086', 1140, 582);
+  ctx.textAlign = 'left';
+
+  // Contact
+  ctx.font = '400 12px IBMPlexMono, monospace';
+  ctx.fillStyle = '#626262';
+  ctx.fillText('www.marketcredo.in  |  +91-8827979008', 60, 580);
+}
+
+function downloadImage(){
+  var link = document.createElement('a');
+  link.download = 'og-default.jpg';
+  link.href = canvas.toDataURL('image/jpeg', 0.95);
+  link.click();
+}
+</script>
+
+</body>
+</html>

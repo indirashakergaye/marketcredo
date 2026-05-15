@@ -714,118 +714,13 @@ let sortCol = 'createdAt';
 let sortDir = 'desc';
 let selectedLeadForWA = null;
 
-/* =================== SAMPLE DATA =================== */
-function getSampleLeads() {
-  const now = Date.now();
-  const day = 86400000;
-  return [
-    {
-      id: now - 5 * day + 1,
-      name: 'Rahul Verma',
-      phone: '9876543210',
-      email: 'rahul.verma@gmail.com',
-      city: 'Bhopal',
-      source: 'WhatsApp',
-      course: 'Foundation',
-      status: 'New',
-      notes: 'Interested in weekend batch. Referred by existing student.',
-      followUpDate: new Date(Date.now() + day).toISOString().split('T')[0],
-      createdAt: new Date(now - 1 * day).toISOString(),
-      updatedAt: new Date(now - 1 * day).toISOString(),
-      history: [{ date: new Date(now - 1 * day).toISOString(), action: 'Created', detail: 'Lead added via WhatsApp enquiry' }]
-    },
-    {
-      id: now - 5 * day + 2,
-      name: 'Priya Sharma',
-      phone: '9123456789',
-      email: 'priya.s@outlook.com',
-      city: 'Indore',
-      source: 'Instagram Ad',
-      course: 'Advanced',
-      status: 'Demo Booked',
-      notes: 'Has prior trading experience. Very keen on Elliott Wave module.',
-      followUpDate: new Date(Date.now() + 2 * day).toISOString().split('T')[0],
-      createdAt: new Date(now - 3 * day).toISOString(),
-      updatedAt: new Date(now - 1 * day).toISOString(),
-      history: [
-        { date: new Date(now - 3 * day).toISOString(), action: 'Created', detail: 'Lead from Instagram Ad campaign' },
-        { date: new Date(now - 2 * day).toISOString(), action: 'Status Changed', detail: 'New → Contacted' },
-        { date: new Date(now - 1 * day).toISOString(), action: 'Status Changed', detail: 'Contacted → Demo Booked' }
-      ]
-    },
-    {
-      id: now - 5 * day + 3,
-      name: 'Amit Jain',
-      phone: '8765432109',
-      email: 'amit.jain@yahoo.com',
-      city: 'Bhopal',
-      source: 'Website Form',
-      course: 'Intermediate',
-      status: 'Contacted',
-      notes: 'Wants to understand price action strategy. Sent brochure.',
-      followUpDate: new Date(Date.now() + 3 * day).toISOString().split('T')[0],
-      createdAt: new Date(now - 5 * day).toISOString(),
-      updatedAt: new Date(now - 2 * day).toISOString(),
-      history: [
-        { date: new Date(now - 5 * day).toISOString(), action: 'Created', detail: 'Website form submission' },
-        { date: new Date(now - 2 * day).toISOString(), action: 'Status Changed', detail: 'New → Contacted' }
-      ]
-    },
-    {
-      id: now - 5 * day + 4,
-      name: 'Neha Gupta',
-      phone: '7654321098',
-      email: 'neha.gupta@gmail.com',
-      city: 'Jabalpur',
-      source: 'Facebook Ad',
-      course: 'Foundation',
-      status: 'Enrolled',
-      notes: 'Enrolled in April batch. Payment received.',
-      followUpDate: '',
-      createdAt: new Date(now - 10 * day).toISOString(),
-      updatedAt: new Date(now - 1 * day).toISOString(),
-      history: [
-        { date: new Date(now - 10 * day).toISOString(), action: 'Created', detail: 'Facebook Ad lead' },
-        { date: new Date(now - 8 * day).toISOString(), action: 'Status Changed', detail: 'New → Contacted' },
-        { date: new Date(now - 6 * day).toISOString(), action: 'Status Changed', detail: 'Contacted → Demo Booked' },
-        { date: new Date(now - 4 * day).toISOString(), action: 'Status Changed', detail: 'Demo Booked → Demo Attended' },
-        { date: new Date(now - 1 * day).toISOString(), action: 'Status Changed', detail: 'Demo Attended → Enrolled' }
-      ]
-    },
-    {
-      id: now - 5 * day + 5,
-      name: 'Vikram Singh',
-      phone: '6543210987',
-      email: 'vikram.s@gmail.com',
-      city: 'Sagar',
-      source: 'Google Ads',
-      course: 'Advanced',
-      status: 'Lost',
-      notes: 'Budget constraints. May follow up next quarter.',
-      followUpDate: '',
-      createdAt: new Date(now - 14 * day).toISOString(),
-      updatedAt: new Date(now - 3 * day).toISOString(),
-      history: [
-        { date: new Date(now - 14 * day).toISOString(), action: 'Created', detail: 'Google Ads landing page' },
-        { date: new Date(now - 12 * day).toISOString(), action: 'Status Changed', detail: 'New → Contacted' },
-        { date: new Date(now - 3 * day).toISOString(), action: 'Status Changed', detail: 'Contacted → Lost' }
-      ]
-    }
-  ];
-}
-
 /* =================== DATA =================== */
 function loadLeads() {
   try {
     const raw = localStorage.getItem(CRM_KEY);
     leads = raw ? JSON.parse(raw) : [];
-    if (!leads.length) {
-      leads = getSampleLeads();
-      saveLeads();
-    }
   } catch (e) {
-    leads = getSampleLeads();
-    saveLeads();
+    leads = [];
   }
 }
 
