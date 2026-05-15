@@ -549,11 +549,13 @@ button { font-family: inherit; }
 .hero-headline {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 36px;
+  font-size: clamp(24px, 7.4vw, 36px);
   line-height: 1.15;
   color: var(--text);
   margin-bottom: 16px;
   animation: fadeInUp 0.8s ease 0.15s both;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .hero-headline em {
@@ -578,11 +580,14 @@ button { font-family: inherit; }
   display: flex;
   gap: 12px;
   margin-bottom: 48px;
+  width: 100%;
+  max-width: 100%;
   animation: fadeInUp 0.8s ease 0.45s both;
 }
 
 .btn-fill {
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: #fff;
   font-family: var(--font-mono);
@@ -592,7 +597,7 @@ button { font-family: inherit; }
   text-transform: uppercase;
   border: none;
   border-radius: var(--radius);
-  padding: 14px 16px;
+  padding: 14px 12px;
   cursor: pointer;
   text-align: center;
   display: flex;
@@ -609,7 +614,8 @@ button { font-family: inherit; }
 }
 
 .btn-ghost {
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;
   background: transparent;
   color: var(--primary);
   font-family: var(--font-mono);
@@ -619,7 +625,7 @@ button { font-family: inherit; }
   text-transform: uppercase;
   border: 1.5px solid rgba(243,119,44,0.4);
   border-radius: var(--radius);
-  padding: 14px 16px;
+  padding: 14px 12px;
   cursor: pointer;
   text-align: center;
   display: flex;
@@ -638,6 +644,8 @@ button { font-family: inherit; }
 .hero-stats {
   display: flex;
   gap: 0;
+  width: 100%;
+  max-width: 100%;
   background: var(--surface);
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -648,8 +656,9 @@ button { font-family: inherit; }
 }
 
 .hero-stat {
-  flex: 1;
-  padding: 16px 8px;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 16px 6px;
   text-align: center;
   border-right: 1px solid var(--border);
 }
@@ -659,7 +668,7 @@ button { font-family: inherit; }
 .hero-stat-val {
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 20px;
+  font-size: clamp(16px, 5vw, 20px);
   color: var(--primary);
   line-height: 1;
   margin-bottom: 4px;

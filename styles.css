@@ -105,7 +105,7 @@ main{margin-top:92px;}
 .quote-box cite{display:block;font-size:9px;color:var(--orange);margin-top:10px;font-style:normal;letter-spacing:1.5px;text-transform:uppercase;}
 .check-list{list-style:none;display:flex;flex-direction:column;}
 .check-list li{display:flex;align-items:flex-start;gap:12px;font-size:11px;color:var(--dim);padding:7px 0;border-bottom:1px solid var(--border);}
-.check-list li::before{content:'&#9658;';color:var(--orange);font-size:8px;margin-top:2px;flex-shrink:0;}
+.check-list li::before{content:'\25B8';color:var(--orange);font-size:8px;margin-top:2px;flex-shrink:0;}
 .trainer-right{background:var(--bg1);display:flex;flex-direction:column;}
 /* LEARN */
 .learn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
