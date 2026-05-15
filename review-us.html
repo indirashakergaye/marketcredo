@@ -213,15 +213,41 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
 <div class="rv-form-section">
   <h2>Or Write Here</h2>
   <p>Prefer to write your feedback directly? Fill out the form below. We may feature your review on our website (with your permission).</p>
-  <form class="rv-form" id="reviewForm" onsubmit="event.preventDefault();document.getElementById('reviewForm').style.display='none';document.getElementById('reviewSuccess').style.display='block';">
-    <input class="rv-input" type="text" name="name" placeholder="YOUR NAME" required/>
-    <input class="rv-input" type="text" name="city" placeholder="YOUR CITY (E.G. BHOPAL)"/>
-    <textarea class="rv-input rv-textarea" name="review" placeholder="Share your experience at Market Credo... What did you learn? How has it helped your trading? Would you recommend it?" required></textarea>
-    <button class="rv-submit" type="submit">SUBMIT REVIEW &lt;ENTER&gt;</button>
+  <form class="rv-form" id="reviewForm" onsubmit="submitReview(event)">
+    <input class="rv-input" type="text" id="rvName" name="name" placeholder="YOUR NAME" required/>
+    <input class="rv-input" type="text" id="rvCity" name="city" placeholder="YOUR CITY (E.G. BHOPAL)"/>
+    <textarea class="rv-input rv-textarea" id="rvReview" name="review" placeholder="Share your experience at Market Credo... What did you learn? How has it helped your trading? Would you recommend it?" required></textarea>
+    <button class="rv-submit" type="submit">SEND REVIEW VIA WHATSAPP &lt;ENTER&gt;</button>
+    <p style="font-size:11px;color:var(--dim);margin:10px 0 0;">Opens WhatsApp with your review pre-filled. Hit send to deliver it to Atish sir.</p>
   </form>
   <div class="rv-success" id="reviewSuccess">
     <p>Thank you for your review! We truly appreciate your feedback. It means a lot to the Market Credo team and helps future students make informed decisions.</p>
   </div>
+  <script>
+  function submitReview(e){
+    e.preventDefault();
+    var name = document.getElementById('rvName').value.trim();
+    var city = document.getElementById('rvCity').value.trim();
+    var review = document.getElementById('rvReview').value.trim();
+    if(!name || !review){ return; }
+    var msg = encodeURIComponent(
+      'MARKET CREDO -- STUDENT REVIEW\n========================\n'+
+      'NAME : '+name+'\n'+
+      'CITY : '+(city||'Not specified')+'\n'+
+      '------------------------\n'+
+      review+'\n'+
+      '========================'
+    );
+    try{
+      var reviews = JSON.parse(localStorage.getItem('mc_reviews')||'[]');
+      reviews.push({name:name, city:city, review:review, createdAt:new Date().toISOString()});
+      localStorage.setItem('mc_reviews', JSON.stringify(reviews));
+    }catch(_){}
+    document.getElementById('reviewForm').style.display='none';
+    document.getElementById('reviewSuccess').style.display='block';
+    setTimeout(function(){ window.open('https://wa.me/918827979008?text='+msg, '_blank'); }, 600);
+  }
+  </script>
 </div>
 
 <!-- THANK YOU SECTION -->

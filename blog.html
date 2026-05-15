@@ -233,6 +233,7 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
 </div>
 
 <!-- BLOG GRID -->
+<h2 class="visually-hidden" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">All Articles</h2>
 <div class="blog-grid">
 
   <!-- Article 1: Support & Resistance -->
@@ -341,12 +342,32 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
   <div class="terminal-line" style="margin-bottom:20px;"><span class="prompt">MKTCRED&gt;</span> SUBSCRIBE.WEEKLY<span class="blink">_</span></div>
   <h2>Subscribe for Weekly <span>Market Insights</span></h2>
   <p>Get technical analysis articles, chart pattern breakdowns, and market outlooks delivered to your inbox every week. No spam. Only actionable knowledge.</p>
-  <form class="blog-newsletter-form" onsubmit="event.preventDefault();alert('Thank you for subscribing! You will receive weekly insights from Market Credo.');">
-    <input class="blog-newsletter-input" type="email" placeholder="ENTER YOUR EMAIL ADDRESS..." required/>
-    <button class="blog-newsletter-btn" type="submit">SUBSCRIBE &lt;GO&gt;</button>
+  <form class="blog-newsletter-form" onsubmit="subscribeNewsletter(event)">
+    <input class="blog-newsletter-input" id="nlEmail" type="email" placeholder="ENTER YOUR EMAIL ADDRESS..." required/>
+    <button class="blog-newsletter-btn" type="submit">SUBSCRIBE VIA WHATSAPP &lt;GO&gt;</button>
   </form>
-  <div class="blog-newsletter-note">FREE &middot; WEEKLY &middot; UNSUBSCRIBE ANYTIME</div>
+  <div class="blog-newsletter-note">FREE &middot; WEEKLY &middot; OPENS WHATSAPP TO CONFIRM</div>
 </div>
+<script>
+function subscribeNewsletter(e){
+  e.preventDefault();
+  var email = document.getElementById('nlEmail').value.trim();
+  if(!email) return;
+  var msg = encodeURIComponent(
+    'MARKET CREDO -- NEWSLETTER SUBSCRIBE\n========================\n'+
+    'EMAIL : '+email+'\n'+
+    '========================\n'+
+    'Please add me to the weekly Market Credo insights newsletter. Thank you!'
+  );
+  try{
+    var subs = JSON.parse(localStorage.getItem('mc_newsletter')||'[]');
+    subs.push({email:email, createdAt:new Date().toISOString()});
+    localStorage.setItem('mc_newsletter', JSON.stringify(subs));
+  }catch(_){}
+  document.getElementById('nlEmail').value = '';
+  window.open('https://wa.me/918827979008?text='+msg, '_blank');
+}
+</script>
 
 <!-- WA SECTION -->
 <div class="wa-section">
