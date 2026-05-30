@@ -2242,20 +2242,28 @@ function submitForm() {
     '\nExperience: ' + (exp || 'N/A')
   );
 
-  /* Save lead to CRM */
-  try {
-    var leads = JSON.parse(localStorage.getItem('mc_crm_leads') || '[]');
-    leads.push({
-      id: Date.now() + '_' + Math.random().toString(36).substr(2, 5),
-      name: name, phone: phone, email: email || '', city: '',
-      source: 'Website Form', course: program || 'Not specified',
-      status: 'New', notes: 'Mobile enquiry. Experience: ' + (exp || 'N/A'),
-      followUpDate: '', createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-      history: [{ date: new Date().toISOString(), action: 'Lead Created', detail: 'Via mobile enquiry form' }]
-    });
-    localStorage.setItem('mc_crm_leads', JSON.stringify(leads));
-  } catch (e) {}
+  /* Send lead to centralized CRM backend; fall back to localStorage if offline */
+  var leadData = {
+    name: name, phone: phone, email: email || '', city: '',
+    source: 'Website Form (Mobile)', course: program || 'Not specified',
+    notes: 'Mobile enquiry. Experience: ' + (exp || 'N/A')
+  };
+  fetch('/api/lead', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(leadData)
+  }).then(function(r){ if(!r.ok) throw new Error('bad status'); }).catch(function(){
+    try {
+      var leads = JSON.parse(localStorage.getItem('mc_crm_leads') || '[]');
+      leads.push(Object.assign({
+        id: Date.now() + '_' + Math.random().toString(36).substr(2, 5),
+        status: 'New', followUpDate: '',
+        createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(),
+        history: [{ date: new Date().toISOString(), action: 'Lead Created', detail: 'Via mobile enquiry form (offline fallback)' }]
+      }, leadData));
+      localStorage.setItem('mc_crm_leads', JSON.stringify(leads));
+    } catch (e) {}
+  });
 
   // Show success state
   document.getElementById('form-fields').style.display = 'none';

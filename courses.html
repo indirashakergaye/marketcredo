@@ -509,12 +509,15 @@ function submitBooking(){
   const msg=encodeURIComponent('MARKET CREDO -- DEMO BOOKING\n========================\nNAME     : '+name+'\nWHATSAPP : '+phone+'\nCITY     : '+(city||'Not specified')+'\nCOURSE   : '+(course||'Not specified')+'\nLEVEL    : '+(level||'Not specified')+'\n========================\nPlease confirm my 2-Day Free Demo Class. Thank you!');
   document.getElementById('bookingForm').style.display='none';
   document.getElementById('successMsg').classList.add('show');
-  /* Save lead to CRM */
-  try{
-    var leads=JSON.parse(localStorage.getItem('mc_crm_leads')||'[]');
-    leads.push({id:Date.now()+'_'+Math.random().toString(36).substr(2,5),name:name,phone:phone,email:'',city:city||'',source:'Website Form',course:course||'Not specified',status:'New',notes:'Demo booking via website. Level: '+(level||'N/A'),followUpDate:'',createdAt:new Date().toISOString(),updatedAt:new Date().toISOString(),history:[{date:new Date().toISOString(),action:'Lead Created',detail:'Via website demo booking form'}]});
-    localStorage.setItem('mc_crm_leads',JSON.stringify(leads));
-  }catch(e){}
+  /* Send lead to centralized CRM backend; fall back to localStorage if offline */
+  var leadData={name:name,phone:phone,email:'',city:city||'',source:'Website Form',course:course||'Not specified',notes:'Demo booking via website. Level: '+(level||'N/A')};
+  fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(leadData)}).then(function(r){if(!r.ok)throw new Error('bad status');}).catch(function(){
+    try{
+      var leads=JSON.parse(localStorage.getItem('mc_crm_leads')||'[]');
+      leads.push(Object.assign({id:Date.now()+'_'+Math.random().toString(36).substr(2,5),status:'New',followUpDate:'',createdAt:new Date().toISOString(),updatedAt:new Date().toISOString(),history:[{date:new Date().toISOString(),action:'Lead Created',detail:'Via website form (offline fallback)'}]},leadData));
+      localStorage.setItem('mc_crm_leads',JSON.stringify(leads));
+    }catch(e){}
+  });
   setTimeout(function(){window.open('https://wa.me/918827979008?text='+msg,'_blank');},800);
 }
 </script>

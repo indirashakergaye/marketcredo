@@ -704,6 +704,7 @@ input,select,textarea,button{font-family:inherit;font-size:inherit;}
    ========================================================= */
 
 const CRM_KEY = 'mc_crm_leads';
+const SYNCED_KEY = 'mc_crm_synced_ids';
 const PER_PAGE = 20;
 const PASSWORD = 'marketcredo2024';
 
@@ -726,6 +727,37 @@ function loadLeads() {
 
 function saveLeads() {
   localStorage.setItem(CRM_KEY, JSON.stringify(leads));
+}
+
+/* Pull leads submitted via the website (api/lead). Each server-side ID is
+   imported only once — CRM-side edits and deletions stay authoritative. */
+async function syncFromServer() {
+  let syncedIds;
+  try { syncedIds = new Set(JSON.parse(localStorage.getItem(SYNCED_KEY) || '[]')); }
+  catch (e) { syncedIds = new Set(); }
+  try {
+    const r = await fetch('/api/lead?password=' + encodeURIComponent(PASSWORD), { cache: 'no-store' });
+    if (!r.ok) return 0;
+    const j = await r.json();
+    const serverLeads = (j && j.leads) || [];
+    let imported = 0;
+    for (const sl of serverLeads) {
+      if (!sl || !sl.id) continue;
+      const idStr = String(sl.id);
+      if (syncedIds.has(idStr)) continue;
+      syncedIds.add(idStr);
+      // Avoid duplicating if the same id already exists locally (e.g. offline-fallback save)
+      if (!leads.some(l => String(l.id) === idStr)) {
+        leads.unshift(sl);
+        imported++;
+      }
+    }
+    if (imported > 0) saveLeads();
+    localStorage.setItem(SYNCED_KEY, JSON.stringify([...syncedIds]));
+    return imported;
+  } catch (e) {
+    return 0;
+  }
 }
 
 function generateId() {
@@ -1483,6 +1515,13 @@ function init() {
   captureUTM();
   loadLeads();
   applyFilters();
+  // Pull any leads submitted via the website form, then re-render
+  syncFromServer().then(n => {
+    if (n > 0) {
+      applyFilters();
+      showToast(n + ' new website lead' + (n === 1 ? '' : 's') + ' synced', 'success');
+    }
+  });
 }
 
 // Check auth on load
