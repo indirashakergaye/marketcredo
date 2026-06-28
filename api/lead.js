@@ -8,7 +8,7 @@ function ghRequest(method, path, token, body) {
       path: path,
       method: method,
       headers: {
-        'Authorization': 'Bearer ' + token,
+        'Authorization': 'Bearer ' + String(token).trim(),
         'Accept': 'application/vnd.github+json',
         'User-Agent': 'MarketCredo-CRM',
         'Content-Type': 'application/json',
