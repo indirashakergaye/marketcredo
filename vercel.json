@@ -1,0 +1,6 @@
+{
+  "functions": {
+    "api/generate-blog.js": { "maxDuration": 60 },
+    "api/publish-file.js": { "maxDuration": 30 }
+  }
+}

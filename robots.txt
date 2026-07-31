@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /crm.html
+Disallow: /blog-studio.html
 Disallow: /og-generator.html
 Disallow: /blog-template.html
 Disallow: /api/
