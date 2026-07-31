@@ -38,49 +38,66 @@
     }
   })();
 </script>
-<!-- Structured Data: Course + BreadcrumbList -->
+<!-- Structured Data: Course carousel (ItemList) + BreadcrumbList — ItemList is the v5.1 Course rich-result prerequisite; course names carry no prices/promo wording -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Course",
-      "name": "Basics of Stock Market",
-      "description": "Introductory course covering stock market fundamentals, NSE/BSE, demat accounts, and investment basics for complete beginners.",
-      "provider": {"@type": "EducationalOrganization", "name": "Market Credo", "url": "https://www.marketcredo.in"},
-      "educationalLevel": "Beginner",
-      "inLanguage": ["en", "hi"],
-      "offers": {"@type": "Offer", "category": "Stock Market Education"},
-      "hasCourseInstance": {
-        "@type": "CourseInstance",
-        "courseMode": "onsite",
-        "location": {"@type": "Place", "name": "Market Credo, Bhopal", "address": {"@type": "PostalAddress", "addressLocality": "Bhopal", "addressRegion": "Madhya Pradesh", "addressCountry": "IN"}}
-      }
-    },
-    {
-      "@type": "Course",
-      "name": "Advanced Technical Analysis",
-      "description": "Flagship programme covering chart structure, chart flow, candlestick patterns, price action, support & resistance, indicators, and strategy building across equity, commodity, forex and crypto markets.",
-      "provider": {"@type": "EducationalOrganization", "name": "Market Credo", "url": "https://www.marketcredo.in"},
-      "educationalLevel": "Beginner to Advanced",
-      "inLanguage": ["en", "hi"],
-      "numberOfCredits": "52 modules across 8 phases",
-      "about": ["Technical Analysis", "Chart Patterns", "Price Action", "Candlestick Patterns", "Options Trading", "Commodity Trading", "Forex", "Crypto"],
-      "offers": {"@type": "Offer", "category": "Stock Market Education"},
-      "hasCourseInstance": {
-        "@type": "CourseInstance",
-        "courseMode": "onsite",
-        "instructor": {"@type": "Person", "name": "Atish Shakergaye", "jobTitle": "SEBI Registered Research Analyst"},
-        "location": {"@type": "Place", "name": "Market Credo, Bhopal", "address": {"@type": "PostalAddress", "streetAddress": "Plot No 83, Shrinivas Tower, M.P. Nagar Zone II", "addressLocality": "Bhopal", "addressRegion": "Madhya Pradesh", "postalCode": "462016", "addressCountry": "IN"}}
-      }
-    },
-    {
-      "@type": "Course",
-      "name": "Free 2-Day Demo Class",
-      "description": "2-day free demo class with SEBI-registered analyst Atish Shakergaye. Experience live chart reading and introduction to technical analysis at zero cost.",
-      "provider": {"@type": "EducationalOrganization", "name": "Market Credo", "url": "https://www.marketcredo.in"},
-      "isAccessibleForFree": true,
-      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Course",
+            "name": "Basics of Stock Market",
+            "description": "Introductory course covering stock market fundamentals, NSE/BSE, demat accounts, and investment basics for complete beginners.",
+            "provider": {"@type": "EducationalOrganization", "name": "Market Credo", "url": "https://www.marketcredo.in"},
+            "educationalLevel": "Beginner",
+            "inLanguage": ["en", "hi"],
+            "offers": {"@type": "Offer", "category": "Stock Market Education"},
+            "hasCourseInstance": {
+              "@type": "CourseInstance",
+              "courseMode": "onsite",
+              "location": {"@type": "Place", "name": "Market Credo, Bhopal", "address": {"@type": "PostalAddress", "addressLocality": "Bhopal", "addressRegion": "Madhya Pradesh", "addressCountry": "IN"}}
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Course",
+            "name": "Advanced Technical Analysis",
+            "description": "Flagship programme covering chart structure, chart flow, candlestick patterns, price action, support & resistance, indicators, and strategy building across equity, commodity, forex and crypto markets.",
+            "provider": {"@type": "EducationalOrganization", "name": "Market Credo", "url": "https://www.marketcredo.in"},
+            "educationalLevel": "Beginner to Advanced",
+            "inLanguage": ["en", "hi"],
+            "numberOfCredits": "52 modules across 8 phases",
+            "about": ["Technical Analysis", "Chart Patterns", "Price Action", "Candlestick Patterns", "Options Trading", "Commodity Trading", "Forex", "Crypto"],
+            "offers": {"@type": "Offer", "category": "Stock Market Education"},
+            "hasCourseInstance": {
+              "@type": "CourseInstance",
+              "courseMode": "onsite",
+              "instructor": {"@type": "Person", "name": "Atish Shakergaye", "jobTitle": "SEBI Registered Research Analyst"},
+              "location": {"@type": "Place", "name": "Market Credo, Bhopal", "address": {"@type": "PostalAddress", "streetAddress": "Plot No 83, Shrinivas Tower, M.P. Nagar Zone II", "addressLocality": "Bhopal", "addressRegion": "Madhya Pradesh", "postalCode": "462016", "addressCountry": "IN"}}
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Course",
+            "name": "2-Day Demo Class",
+            "description": "Two-day demo class with SEBI-registered analyst Atish Shakergaye at zero cost. Experience live chart reading and an introduction to technical analysis.",
+            "provider": {"@type": "EducationalOrganization", "name": "Market Credo", "url": "https://www.marketcredo.in"},
+            "isAccessibleForFree": true,
+            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}
+          }
+        }
+      ]
     },
     {
       "@type": "BreadcrumbList",

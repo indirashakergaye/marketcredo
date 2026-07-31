@@ -38,67 +38,11 @@
     }
   })();
 </script>
-<!-- Structured Data: AggregateRating + Reviews + BreadcrumbList -->
+<!-- Structured Data: BreadcrumbList (self-serving AggregateRating/Review removed per Google review-snippet policy v5.1) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "EducationalOrganization",
-      "name": "Market Credo",
-      "url": "https://www.marketcredo.in",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "500",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Rahul Kushwaha"},
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-          "reviewBody": "Before Market Credo, I was just following tips and losing money. Atish Sir taught me to read charts myself. Now I understand why a stock moves. Complete game-changer.",
-          "datePublished": "2024-10-15"
-        },
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Priya Sharma"},
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-          "reviewBody": "I was totally new to stocks. The basics course was perfect for me. Atish Sir explains everything so simply. After 3 months I started my SIP and even understood the candlestick charts on my app!",
-          "datePublished": "2024-09-20"
-        },
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Amit Jain"},
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-          "reviewBody": "The 2-day free demo itself was worth more than most paid courses I have done. Atish Sir's 20 years of experience shows in every example he gives. I joined the full course immediately after the demo.",
-          "datePublished": "2024-08-12"
-        },
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Vikram Tiwari"},
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-          "reviewBody": "What I love most is that Atish Sir does not give signals. He teaches you the logic. Now I can look at any chart and have my own clear view. That confidence is priceless.",
-          "datePublished": "2024-07-05"
-        },
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Neha Mishra"},
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-          "reviewBody": "The live chart reading sessions are incredible. Atish Sir shows you patterns forming in real time and explains the logic behind every move. 20 years of experience — you feel it in every class.",
-          "datePublished": "2024-06-18"
-        },
-        {
-          "@type": "Review",
-          "author": {"@type": "Person", "name": "Sanjay Patel"},
-          "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-          "reviewBody": "I have been trading for 5 years but was struggling. This course fixed my foundation completely. Chart structure and flow — concepts I thought I knew but actually never understood properly. Highly recommended.",
-          "datePublished": "2024-05-22"
-        }
-      ]
-    },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [

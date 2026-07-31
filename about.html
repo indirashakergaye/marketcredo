@@ -44,13 +44,20 @@
     }
   })();
 </script>
-<!-- Structured Data: Person + BreadcrumbList -->
+<!-- Structured Data: ProfilePage + Person + BreadcrumbList (trainer employee-page, v5.1) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "ProfilePage",
+      "url": "https://www.marketcredo.in/about.html",
+      "name": "Atish Shakergaye — SEBI Registered Research Analyst | Market Credo",
+      "mainEntity": {"@id": "https://www.marketcredo.in/about.html#trainer"}
+    },
+    {
       "@type": "Person",
+      "@id": "https://www.marketcredo.in/about.html#trainer",
       "name": "Atish Shakergaye",
       "jobTitle": "SEBI Registered Research Analyst",
       "description": "Founder and lead trainer at Market Credo, Bhopal. SEBI Registered Research Analyst (INH000006086) with 20+ years of stock market experience specializing in technical analysis and price action.",
