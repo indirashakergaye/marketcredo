@@ -16,7 +16,7 @@ A step-by-step, checklist-driven plan to build Market Credo's local search visib
 - [ ] **Business Name:** Market Credo (exact, no extra keywords)
 - [ ] **Primary Category:** Educational Institution
 - [ ] **Secondary Categories:** Stock Market Training Centre, Technical Analysis Course, Coaching Centre
-- [ ] **Address:** Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, Madhya Pradesh 462016
+- [ ] **Address:** Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, Madhya Pradesh 462011
 - [ ] **Phone:** +91-8827979008
 - [ ] **Website:** https://www.marketcredo.in
 - [ ] **Hours:** Monday-Saturday 09:00-18:00, Sunday Closed
@@ -134,7 +134,7 @@ With gratitude,
 Atish Shakergaye
 Founder, Market Credo
 SEBI Registered Research Analyst (INH000006086)
-Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal 462016
+Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal 462011
 +91-8827979008 | info@marketcredo.in
 ```
 
