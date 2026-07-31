@@ -51,7 +51,40 @@
       "Bash(do echo:*)",
       "Read(//c/Users/HOME/Documents/Marketcredo/**)",
       "Bash(done)",
-      "Bash(vercel:*)"
+      "Bash(vercel:*)",
+      "Bash(nslookup:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh --version)",
+      "Bash(gh auth:*)",
+      "Bash(gh repo:*)",
+      "Skill(update-config)",
+      "Bash(git push:*)",
+      "Bash(grep:*)",
+      "WebFetch(domain:www.youtube.com)",
+      "Bash(do test:*)",
+      "Bash(echo \"EXISTS: $f\")",
+      "Bash(echo \"MISSING: $f\")",
+      "Bash(find C:UsersHOMEDocumentsMarketcredo -maxdepth 2 -name *.html -o -name *.xml -o -name *.txt -o -name *.json -o -name *.md)",
+      "Bash(npx vercel:*)",
+      "Bash(find . -name \"*.html\" -not -path \"./.git/*\" -exec sed -i 's/G-XXXXXXXXXX/G-5RJD0WSYV5/g' {} +)",
+      "WebFetch(domain:www.marketcredo.in)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash C:/Users/HOME/Documents/Marketcredo/.claude/deploy-hook.sh",
+            "timeout": 120,
+            "statusMessage": "Deploying to Vercel...",
+            "async": true
+          }
+        ]
+      }
     ]
   }
 }

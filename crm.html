@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>MARKET CREDO CRM | Lead Management</title>
 <meta name="robots" content="noindex, nofollow"/>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23121212'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='monospace' font-weight='700' font-size='18' fill='%23F3772C'%3EMC%3C/text%3E%3C/svg%3E"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 :root{--bg:#121212;--bg1:#191919;--bg2:#2C2C31;--bg3:#2F3132;--orange:#F3772C;--orange2:#833C14;--orange3:#F99727;--green:#4CAF50;--red:#EF4444;--amber:#F99727;--cyan:#607D8B;--white:#E8E8E8;--dim:#9F9F9F;--dimmer:#626262;--border:#43434A;--nav:#15191F;--wa:#25D366;}
@@ -706,7 +706,9 @@ input,select,textarea,button{font-family:inherit;font-size:inherit;}
 const CRM_KEY = 'mc_crm_leads';
 const SYNCED_KEY = 'mc_crm_synced_ids';
 const PER_PAGE = 20;
-const PASSWORD = 'marketcredo2024';
+// Password is never hardcoded here. The value typed at login is validated
+// server-side (api/lead checks CRM_PASSWORD) and kept only in sessionStorage.
+let CRM_PASS = sessionStorage.getItem('mc_crm_pass') || '';
 
 let leads = [];
 let filteredLeads = [];
@@ -736,7 +738,7 @@ async function syncFromServer() {
   try { syncedIds = new Set(JSON.parse(localStorage.getItem(SYNCED_KEY) || '[]')); }
   catch (e) { syncedIds = new Set(); }
   try {
-    const r = await fetch('/api/lead?password=' + encodeURIComponent(PASSWORD), { cache: 'no-store' });
+    const r = await fetch('/api/lead?password=' + encodeURIComponent(CRM_PASS), { cache: 'no-store' });
     if (!r.ok) return 0;
     const j = await r.json();
     const serverLeads = (j && j.leads) || [];
@@ -1427,22 +1429,36 @@ function showToast(msg, type) {
 }
 
 /* =================== LOGIN / LOGOUT =================== */
-function login() {
+async function login() {
   const pass = document.getElementById('loginPass').value;
-  if (pass === PASSWORD) {
+  const errEl = document.getElementById('loginError');
+  const btn = document.getElementById('loginPass');
+  errEl.style.display = 'none';
+  try {
+    // Validate against the server (api/lead → CRM_PASSWORD). No client-side secret.
+    const r = await fetch('/api/lead?password=' + encodeURIComponent(pass), { cache: 'no-store' });
+    if (!r.ok) {
+      errEl.style.display = 'block';
+      btn.value = '';
+      btn.focus();
+      return;
+    }
+    CRM_PASS = pass;
+    sessionStorage.setItem('mc_crm_pass', pass);
     sessionStorage.setItem('mc_crm_auth', 'true');
     document.getElementById('loginScreen').style.display = 'none';
     document.getElementById('dashboard').style.display = 'block';
     init();
-  } else {
-    document.getElementById('loginError').style.display = 'block';
-    document.getElementById('loginPass').value = '';
-    document.getElementById('loginPass').focus();
+  } catch (e) {
+    errEl.textContent = 'Could not reach server. Check connection and try again.';
+    errEl.style.display = 'block';
   }
 }
 
 function logout() {
   sessionStorage.removeItem('mc_crm_auth');
+  sessionStorage.removeItem('mc_crm_pass');
+  CRM_PASS = '';
   document.getElementById('dashboard').style.display = 'none';
   document.getElementById('loginScreen').style.display = 'flex';
   document.getElementById('loginPass').value = '';
@@ -1908,7 +1924,7 @@ function publishToLive() {
     return fetch('/api/publish', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password: PASSWORD, siteData: siteData })
+      body: JSON.stringify({ password: CRM_PASS, siteData: siteData })
     });
   })
   .then(function(r) { return r.json().then(function(d) { return { ok: r.ok, data: d }; }); })
