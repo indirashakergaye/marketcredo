@@ -403,6 +403,8 @@ html,body{max-width:100%;overflow-x:hidden;}
   .hgfx .fc1{top:-14px;right:6%;}
   .course .cl,.course .cr{padding:34px;}
   .grow .gl,.grow .gr{padding:34px;}
+  /* hide decorative candlestick backdrop so it doesn't overlap headings */
+  .ben-bg{display:none;}
 }
 
 @media(max-width:720px){
