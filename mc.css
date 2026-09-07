@@ -386,3 +386,72 @@ footer{background:var(--mint-panel);color:var(--body);padding:56px 0 0;border-to
 .author-bio-info .author-title{font-family:'Jost';font-size:12px;color:var(--green-d);letter-spacing:.03em;text-transform:uppercase;margin-bottom:8px;}
 @media(max-width:980px){.blog-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:720px){.blog-grid{grid-template-columns:1fr;}}
+
+/* ============================================================
+   MOBILE REFINEMENTS (added 2026-09-07 — fix cramped hero,
+   nav sizing, oversized paddings & headings on phones)
+   ============================================================ */
+img,svg,iframe,video{max-width:100%;}
+html,body{max-width:100%;overflow-x:hidden;}
+
+@media(max-width:980px){
+  /* hero graphic: let the app card flow naturally instead of absolute */
+  .hgfx{height:auto;margin-top:8px;}
+  .appcard{position:static;width:100%;left:auto;top:auto;}
+  .hgfx .coinstack{display:none;}
+  .hgfx .fc2{display:none;}
+  .hgfx .fc1{top:-14px;right:6%;}
+  .course .cl,.course .cr{padding:34px;}
+  .grow .gl,.grow .gr{padding:34px;}
+}
+
+@media(max-width:720px){
+  .hero{padding:34px 0 44px;}
+  .hero h1{font-size:clamp(29px,8vw,40px);line-height:1.12;}
+  .hero .lede{font-size:16.5px;}
+  .hero-cta .btn{flex:1 1 auto;justify-content:center;}
+  .hero-mini{gap:18px 26px;}
+  /* nav compact */
+  nav.navbar .wrap{height:64px;}
+  .brand{font-size:17px;gap:9px;}
+  .brand small{display:none;}
+  .bm{width:40px;height:40px;font-size:18px;border-radius:10px;}
+  .nav-r{gap:10px;}
+  .menu.open{top:64px;}
+  /* headings + spacing */
+  .sh{margin-bottom:32px;}
+  .sh h2{font-size:clamp(24px,7vw,32px);}
+  .sh p{font-size:16px;}
+  .btn{padding:12px 20px;font-size:14px;}
+  /* cards / sections */
+  .course{border-radius:18px;}
+  .course .cl,.course .cr{padding:26px;}
+  .grow{border-radius:20px;}
+  .grow .gl,.grow .gr{padding:26px;}
+  .bcard{padding:24px;min-height:0;}
+  .bcard.tall{min-height:0;}
+  .bc-ill{width:150px;height:120px;}
+  .card{padding:24px;}
+  .lead-form{padding:26px;}
+  .news{padding:22px;gap:16px;}
+  .tb{padding:22px 14px;}
+  .tb .n{font-size:30px;}
+  .cpillars{flex-wrap:wrap;}
+  .cpill{flex:1 1 40%;}
+  /* blog article readability */
+  .article-content{overflow-wrap:break-word;}
+  .article-h1{font-size:26px;}
+  .article-content h2{font-size:21px;}
+  .article-content p{font-size:16px;}
+  .tquote{font-size:20px;}
+  .medallion{width:104px;height:104px;}
+}
+
+@media(max-width:420px){
+  .wrap{padding:0 16px;}
+  .hero-mini{gap:14px 20px;}
+  .hmini .n{font-size:22px;}
+  .nav-r .btn{padding:10px 14px;font-size:13px;}
+  .app-chip{padding:9px 10px;}
+  .app-chip .v{font-size:14px;}
+}
