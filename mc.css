@@ -412,11 +412,12 @@ html,body{max-width:100%;overflow-x:hidden;}
   .hero-cta .btn{flex:1 1 auto;justify-content:center;}
   .hero-mini{gap:18px 26px;}
   /* nav compact */
-  nav.navbar .wrap{height:64px;}
-  .brand{font-size:17px;gap:9px;}
+  nav.navbar .wrap{height:64px;flex-wrap:nowrap;}
+  .brand{font-size:16px;gap:8px;white-space:nowrap;line-height:1;min-width:0;}
   .brand small{display:none;}
-  .bm{width:40px;height:40px;font-size:18px;border-radius:10px;}
-  .nav-r{gap:10px;}
+  .bm{width:38px;height:38px;font-size:17px;border-radius:10px;flex:0 0 auto;}
+  .nav-r{gap:10px;flex:0 0 auto;}
+  .nav-r .btn{display:none;}
   .menu.open{top:64px;}
   /* headings + spacing */
   .sh{margin-bottom:32px;}
