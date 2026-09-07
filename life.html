@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="theme-color" content="#121212"/>
+<meta name="theme-color" content="#34B350"/>
 <title>MARKET CREDO | Life at Market Credo — Our Culture & Classroom</title>
 <meta name="description" content="Experience life at Market Credo — our classroom culture, daily routine, and what makes learning technical analysis at our Bhopal institute unique and effective."/>
 <meta name="keywords" content="Market Credo classroom, stock market institute Bhopal, trading institute culture, life at Market Credo"/>
@@ -43,492 +43,282 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Life at Market Credo — Classroom & Press",
+  "description": "Photos from Market Credo sessions, live chart analysis, student batches and press coverage of financial-market workshops in Bhopal.",
+  "url": "https://www.marketcredo.in/life.html",
+  "image": [
+    { "@type": "ImageObject", "contentUrl": "https://www.marketcredo.in/images/mc-about.jpg", "caption": "Market Credo seminar session, Bhopal" },
+    { "@type": "ImageObject", "contentUrl": "https://www.marketcredo.in/images/mc-classroom.jpg", "caption": "Student analysing charts in the classroom" },
+    { "@type": "ImageObject", "contentUrl": "https://www.marketcredo.in/images/mc-g1.jpg", "caption": "Live chart practice" },
+    { "@type": "ImageObject", "contentUrl": "https://www.marketcredo.in/images/mc-g2.jpg", "caption": "Trading desk session" },
+    { "@type": "ImageObject", "contentUrl": "https://www.marketcredo.in/images/mc-g3.jpg", "caption": "Practice session" },
+    { "@type": "ImageObject", "contentUrl": "https://www.marketcredo.in/images/mc-g4.jpg", "caption": "Learning session" },
+    { "@type": "ImageObject", "contentUrl": "https://www.marketcredo.in/images/mc-g5.jpg", "caption": "Full house classroom seminar" },
+    { "@type": "ImageObject", "contentUrl": "https://www.marketcredo.in/images/mc-g6.jpg", "caption": "Students at seminar" },
+    { "@type": "ImageObject", "contentUrl": "https://www.marketcredo.in/images/mc-news1.jpg", "caption": "Hindustan Times coverage of Market Credo financial market workshop" },
+    { "@type": "ImageObject", "contentUrl": "https://www.marketcredo.in/images/mc-news2.jpg", "caption": "Dainik Jagran coverage of Market Credo workshop, Bhopal" },
+    { "@type": "ImageObject", "contentUrl": "https://www.marketcredo.in/images/mc-news3.jpg", "caption": "Nai Dunia coverage of Market Credo workshop, Bhopal" }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="styles.css"/>
-<script>
-  // Redirect mobile users to the dedicated mobile UI
-  (function(){
-    if(window.innerWidth <= 768){
-      window.location.replace('mobile.html');
-    }
-  })();
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RJD0WSYV5"></script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
 </script>
+<link rel="stylesheet" href="mc.css"/>
 <style>
-.skip-link{position:absolute;top:-40px;left:8px;background:#F3772C;color:#000;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;text-decoration:none;letter-spacing:1px;z-index:9999;transition:top .15s;}.skip-link:focus{top:8px;outline:2px solid #fff;}
+/* Page-local helpers (shared green look) */
+.life-lead-in{font-size:19px;max-width:640px;color:var(--body);margin-top:14px;}
+.life-lead-in b{color:var(--ink);font-weight:600;}
+.pillar-list{list-style:none;display:grid;gap:14px;margin-top:26px;max-width:760px;}
+.pillar-list li{display:flex;gap:14px;font-size:15.5px;color:var(--body);}
+.pillar-list li b{color:var(--ink);font-weight:600;}
+.pillar-list .pk{flex:0 0 40px;width:40px;height:40px;border-radius:11px;background:var(--mint-2);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--green-d);}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.gal-grid .span2{grid-column:span 2;}
+.imgcard{cursor:pointer;position:relative;transition:transform .22s,box-shadow .22s;}
+.imgcard:hover{transform:translateY(-5px);box-shadow:var(--sh-lg);}
+.imgcard img{width:100%;height:220px;object-fit:cover;display:block;}
+.imgcard.span2 img{height:220px;}
+.imgcard .cap{padding:14px 16px;}
+.imgcard .cap .p{font-family:'Jost';font-weight:600;font-size:15px;color:var(--ink);line-height:1.3;}
+.imgcard .cap .d{font-size:12.5px;color:var(--muted);margin-top:3px;}
+.timeline{display:grid;gap:14px;max-width:860px;}
+.tl{display:grid;grid-template-columns:96px 1fr;gap:18px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;box-shadow:var(--sh);}
+.tl .t{font-family:'Jost';font-weight:700;font-size:14px;color:var(--green-d);}
+.tl .e{font-family:'Jost';font-weight:600;font-size:16px;color:var(--ink);}
+.tl .dsc{font-size:14.5px;color:var(--body);margin-top:4px;}
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:3000;background:rgba(6,20,14,.94);display:none;align-items:center;justify-content:center;padding:30px;}
+.lb.open{display:flex;}
+.lb img{max-width:92vw;max-height:88vh;border-radius:10px;box-shadow:0 40px 90px -30px #000;}
+.lb-close{position:absolute;top:22px;right:28px;color:#fff;font-size:34px;cursor:pointer;line-height:1;font-family:'Jost';}
+@media(max-width:980px){.gal-grid{grid-template-columns:1fr 1fr;}.gal-grid .span2{grid-column:span 2;}}
+@media(max-width:720px){.gal-grid{grid-template-columns:1fr;}.gal-grid .span2{grid-column:span 1;}.tl{grid-template-columns:1fr;gap:6px;}}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<a class="wa-float" data-nosnippet href="https://wa.me/918827979008?text=Hello%20Market%20Credo!%20I%20am%20interested%20in%20your%20courses.%20Please%20share%20details." target="_blank" rel="noopener noreferrer">
-  <div class="wa-pulse"></div>
-  <svg aria-hidden="true" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-</a>
-
-<div class="status-bar">
-  <div class="sbar-inner">
-    <div class="sbar-seg sbar-brand">MARKET CREDO</div>
-    <div class="sbar-seg sbar-info">TECHNICAL ANALYSIS INSTITUTE</div>
-    <div class="sbar-seg sbar-info">SEBI REG: INH000006086</div>
-    <div class="sbar-seg sbar-info">ATISH SHAKERGAYE &middot; 20 YRS EXPERIENCE</div>
-    <div class="sbar-seg sbar-right"><span class="blink">&bull;</span>&nbsp;BHOPAL &middot; MP &middot; INDIA</div>
+<!-- NAV -->
+<nav class="navbar" aria-label="Primary">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="bm">M</span><span>Market Credo<small>TECHNICAL ANALYSIS INSTITUTE</small></span></a>
+    <ul class="menu" id="menu">
+      <li><a href="courses.html#courses">Courses</a></li>
+      <li><a href="about.html">Trainer</a></li>
+      <li><a href="index.html#curriculum">Curriculum</a></li>
+      <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <a class="nav-phone" href="tel:+918827979008">+91 88279 79008</a>
+      <a class="btn btn-green" href="index.html#enquire">Book Free Demo</a>
+      <button class="navtoggle" id="navtoggle" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
   </div>
-</div>
-
-<nav>
-  <a class="nav-item nav-brand" href="index.html">MARKET CREDO</a>
-  <a class="nav-item" href="about.html"><span class="nav-num">F2</span>TRAINER</a>
-  <a class="nav-item" href="courses.html#courses"><span class="nav-num">F3</span>COURSES</a>
-  <a class="nav-item" href="testimonials.html"><span class="nav-num">F7</span>REVIEWS</a>
-  <a class="nav-item" href="videos.html"><span class="nav-num">F8</span>VIDEOS</a>
-  <a class="nav-item" href="chartboard.html"><span class="nav-num">F9</span>CHARTS</a>
-  <a class="nav-item" href="index.html#contact"><span class="nav-num">F6</span>CONTACT</a>
-  <a class="nav-item" href="life.html"><span class="nav-num">F10</span>LIFE</a>
-  <a class="nav-item" href="faq.html"><span class="nav-num">F11</span>FAQ</a>
-  <a class="nav-item" href="blog.html"><span class="nav-num">F12</span>BLOG</a>
-  <a class="nav-item nav-cta" href="courses.html#demo">BOOK FREE DEMO &lt;GO&gt;</a>
 </nav>
-
-<div class="social-bar" style="position:fixed;top:64px;left:0;right:0;z-index:997;">
-  <div class="social-bar-label">FOLLOW US</div>
-  <div class="social-links">
-    <a class="social-link yt" href="https://www.youtube.com/@MarketCredo" target="_blank" rel="noopener noreferrer">
-      <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-      YOUTUBE
-    </a>
-    <a class="social-link ig" href="https://www.instagram.com/marketcredo" target="_blank" rel="noopener noreferrer">
-      <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      INSTAGRAM
-    </a>
-    <a class="social-link fb" href="https://www.facebook.com/marketcredo" target="_blank" rel="noopener noreferrer">
-      <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      FACEBOOK
-    </a>
-    <a class="social-link wa2" href="https://wa.me/918827979008" target="_blank" rel="noopener noreferrer">
-      <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-      WHATSAPP
-    </a>
-  </div>
-</div>
-
-<div class="edu-ticker">
-  <div class="ticker-scroll">
-    <div class="t-item"><span class="t-label">CHART STRUCTURE</span><span class="t-tag">&bull; CORE CONCEPT</span></div>
-    <div class="t-item"><span class="t-label">CHART FLOW</span><span class="t-val">TREND READING</span><span class="t-tag">&#9658; TAUGHT</span></div>
-    <div class="t-item"><span class="t-label">EXPERIENCE</span><span class="t-val">20 YEARS IN MARKETS</span></div>
-    <div class="t-item"><span class="t-label">SEBI REGISTERED</span><span class="t-val">INH000006086</span><span class="t-tag">&#10003; VERIFIED</span></div>
-    <div class="t-item"><span class="t-label">CANDLESTICK MASTERY</span><span class="t-tag">&bull; TAUGHT IN DEPTH</span></div>
-    <div class="t-item"><span class="t-label">FREE DEMO CLASS</span><span class="t-val">2 DAYS &middot; ZERO COST</span></div>
-    <div class="t-item"><span class="t-label">BUILD YOUR STRATEGY</span><span class="t-tag">&#9658; YOUR OWN EDGE</span></div>
-    <div class="t-item"><span class="t-label">SUPPORT &amp; RESISTANCE</span><span class="t-tag">&bull; FIRST PRINCIPLES</span></div>
-    <div class="t-item"><span class="t-label">ADVANCED TA</span><span class="t-val">FLAGSHIP COURSE</span></div>
-    <div class="t-item"><span class="t-label">WHATSAPP</span><span class="t-val">+91-8827979008</span><span class="t-tag">&bull; INSTANT REPLY</span></div>
-    <div class="t-item"><span class="t-label">PRACTICE</span><span class="t-val">MAKES PERFECT</span><span class="t-tag">&#9658; LIVE SESSIONS</span></div>
-    <div class="t-sep">&#9670;&#9670;&#9670;</div>
-    <div class="t-item"><span class="t-label">CHART STRUCTURE</span><span class="t-tag">&bull; CORE CONCEPT</span></div>
-    <div class="t-item"><span class="t-label">CHART FLOW</span><span class="t-val">TREND READING</span><span class="t-tag">&#9658; TAUGHT</span></div>
-    <div class="t-item"><span class="t-label">EXPERIENCE</span><span class="t-val">20 YEARS IN MARKETS</span></div>
-    <div class="t-item"><span class="t-label">SEBI REGISTERED</span><span class="t-val">INH000006086</span><span class="t-tag">&#10003; VERIFIED</span></div>
-    <div class="t-item"><span class="t-label">CANDLESTICK MASTERY</span><span class="t-tag">&bull; TAUGHT IN DEPTH</span></div>
-    <div class="t-item"><span class="t-label">FREE DEMO CLASS</span><span class="t-val">2 DAYS &middot; ZERO COST</span></div>
-    <div class="t-item"><span class="t-label">BUILD YOUR STRATEGY</span><span class="t-tag">&#9658; YOUR OWN EDGE</span></div>
-    <div class="t-item"><span class="t-label">SUPPORT &amp; RESISTANCE</span><span class="t-tag">&bull; FIRST PRINCIPLES</span></div>
-    <div class="t-item"><span class="t-label">ADVANCED TA</span><span class="t-val">FLAGSHIP COURSE</span></div>
-    <div class="t-item"><span class="t-label">WHATSAPP</span><span class="t-val">+91-8827979008</span><span class="t-tag">&bull; INSTANT REPLY</span></div>
-    <div class="t-item"><span class="t-label">PRACTICE</span><span class="t-val">MAKES PERFECT</span><span class="t-tag">&#9658; LIVE SESSIONS</span></div>
-    <div class="t-sep">&#9670;&#9670;&#9670;</div>
-  </div>
-</div>
 
 <main id="main">
 
-<!-- LIFE AT MARKET CREDO -->
-<!-- LIFE AT MARKET CREDO -->
-<section id="life">
-  <div class="sec-hdr">
-    <span class="sec-title">F10 &mdash; LIFE AT MARKET CREDO</span>
-    <span class="sec-line"></span>
-    <span class="sec-sub">THE CULTURE &middot; THE CLASSROOM &middot; THE COMMUNITY &middot; BHOPAL</span>
-  </div>
-
-  <!-- HERO INTRO + STATS MOSAIC -->
-  <div class="life-hero">
-    <div class="life-hero-text">
-      <div class="life-eyebrow">Inside Market Credo &middot; Bhopal</div>
-      <h1 class="life-h2">Where Traders<br/><span class="hl">Come to Think.</span></h1>
-      <p class="life-lead">Market Credo is not a typical coaching institute. It is a trading lab &mdash; a space where questions are welcomed, charts are dissected, ideas are challenged, and students leave not just educated, but genuinely transformed in how they see financial markets.</p>
-      <div class="life-pillars">
-        <div class="life-pillar"><span class="lp-icon">&#9638;</span><div class="lp-text"><strong>Concept-First Classroom</strong> &mdash; Every session begins with a core concept, not a trade call. You understand the why before the what.</div></div>
-        <div class="life-pillar"><span class="lp-icon">&#9658;</span><div class="lp-text"><strong>Live Chart Practice</strong> &mdash; Real charts, real markets, real analysis. Atish Sir reads live charts with students every session.</div></div>
-        <div class="life-pillar"><span class="lp-icon">&#10022;</span><div class="lp-text"><strong>Open Discussion Culture</strong> &mdash; Students share their own chart readings. Questions are celebrated, not rushed through.</div></div>
-        <div class="life-pillar"><span class="lp-icon">&#9672;</span><div class="lp-text"><strong>Small Batch, Deep Learning</strong> &mdash; Intimate batch sizes ensure personal attention from Atish Sir to every student.</div></div>
-        <div class="life-pillar"><span class="lp-icon">&#9673;</span><div class="lp-text"><strong>WhatsApp Community</strong> &mdash; Learning continues beyond class. Daily chart discussions, pattern spotting, and Q&amp;A in the student group.</div></div>
-      </div>
-    </div>
-    <div class="life-hero-mosaic">
-      <div class="mosaic-cell featured">
-        <div class="mc-bg-icon">&#9638;</div>
-        <div class="mc-content">
-          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:12px;">ESTABLISHED INSTITUTE</div>
-          <div style="font-size:clamp(16px,2vw,22px);font-weight:700;color:var(--white);line-height:1.3;font-family:'IBM Plex Mono',monospace;">Market Credo, Bhopal<br/>Technical Analysis Institute</div>
-          <div class="mc-bar"></div>
-          <div style="font-size:10px;color:var(--dim);font-family:'IBM Plex Sans',sans-serif;">M.P. Nagar Zone II &middot; Bhopal, MP</div>
-        </div>
-      </div>
-      <div class="mosaic-cell">
-        <div class="mc-bg-icon">&#8987;</div>
-        <div class="mc-content">
-          <div class="mc-num">20+</div>
-          <div class="mc-bar"></div>
-          <div class="mc-label">Years Experience</div>
-          <div class="mc-sub">Atish Shakergaye</div>
-        </div>
-      </div>
-      <div class="mosaic-cell">
-        <div class="mc-bg-icon">&#9787;</div>
-        <div class="mc-content">
-          <div class="mc-num">500+</div>
-          <div class="mc-bar"></div>
-          <div class="mc-label">Students Trained</div>
-          <div class="mc-sub">Across MP</div>
-        </div>
-      </div>
-      <div class="mosaic-cell">
-        <div class="mc-bg-icon">&#9728;</div>
-        <div class="mc-content">
-          <div class="mc-num">2</div>
-          <div class="mc-bar"></div>
-          <div class="mc-label">Day Free Demo</div>
-          <div class="mc-sub">Zero Cost</div>
-        </div>
-      </div>
-      <div class="mosaic-cell">
-        <div class="mc-bg-icon">&#9830;</div>
-        <div class="mc-content">
-          <div class="mc-num" style="font-size:18px;margin-top:4px;">SEBI</div>
-          <div class="mc-bar"></div>
-          <div class="mc-label">Registered RA</div>
-          <div class="mc-sub">INH000006086</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- DAY IN THE LIFE TIMELINE -->
-  <div class="life-timeline">
-    <div class="lt-title">A TYPICAL CLASS DAY AT MARKET CREDO</div>
-    <div class="timeline-track">
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-time">10:00 AM</div>
-        <div class="tl-event">Warm-Up Discussion</div>
-        <div class="tl-desc">Students share observations from the previous day's market. Open floor discussion &mdash; what did you notice?</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-time">10:30 AM</div>
-        <div class="tl-event">Core Concept Session</div>
-        <div class="tl-desc">Atish Sir explains the day's topic from first principles. Chart structure, flow, or a specific pattern &mdash; deep and clear.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-time">11:30 AM</div>
-        <div class="tl-event">Live Chart Reading</div>
-        <div class="tl-desc">Real charts on the screen. Atish Sir reads them live, pointing to exactly what the concept looks like in the wild.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-time">12:30 PM</div>
-        <div class="tl-event">Student Practice</div>
-        <div class="tl-desc">Students analyse their own charts. Identify patterns, mark levels, write their own views &mdash; then discuss.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-time">01:00 PM</div>
-        <div class="tl-event">Q&amp;A and Review</div>
-        <div class="tl-desc">Every question answered. Student charts reviewed by Atish Sir. Learning locked in through discussion and feedback.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PHOTO / MOMENT GALLERY -->
-  <div class="life-gallery-intro">
-    <div class="lgi-text"><strong>Inside the Classroom</strong> &mdash; Moments from Market Credo sessions, student chart work, live analysis days, and the community that makes this institute special.</div>
-    <button class="lgi-upload-btn" id="lifeUploadBtn" style="display:none;" onclick="document.getElementById('galleryModal').classList.add('open')">
-      &#8682; ADD PHOTO &lt;GO&gt; <span style="font-size:8px;opacity:0.7;">(ADMIN)</span>
-    </button>
-  </div>
-  <div class="photo-masonry" id="photoMasonry">
-    <div class="photo-cell tall">
-      <div class="photo-cell-inner">
-        <div class="pc-category">CLASSROOM</div>
-        <div class="pc-icon">&#9638;</div>
-        <div class="pc-label">Live Chart Analysis Session</div>
-        <div class="pc-sub">Atish Sir reading live Nifty charts with students during the Advanced TA course</div>
-        <div class="pc-overlay"></div>
-      </div>
-    </div>
-    <div class="photo-cell">
-      <div class="photo-cell-inner">
-        <div class="pc-category">DEMO DAY</div>
-        <div class="pc-icon">&#9658;</div>
-        <div class="pc-label">2-Day Free Demo Class</div>
-        <div class="pc-sub">Students experiencing Market Credo for the first time</div>
-        <div class="pc-overlay"></div>
-      </div>
-    </div>
-    <div class="photo-cell">
-      <div class="photo-cell-inner">
-        <div class="pc-category">STUDENT PRACTICE</div>
-        <div class="pc-icon">&#9672;</div>
-        <div class="pc-label">Chart Marking Session</div>
-        <div class="pc-sub">Students marking support, resistance and trend lines independently</div>
-        <div class="pc-overlay"></div>
-      </div>
-    </div>
-    <div class="photo-cell wide">
-      <div class="photo-cell-inner">
-        <div class="pc-category">COMMUNITY &middot; BHOPAL</div>
-        <div class="pc-icon">&#9787;</div>
-        <div class="pc-label">Market Credo Student Batch &mdash; Advanced Technical Analysis</div>
-        <div class="pc-sub">Every batch is a community of like-minded traders and investors coming together to learn the language of the market</div>
-        <div class="pc-overlay"></div>
-      </div>
-    </div>
-    <div class="photo-cell">
-      <div class="photo-cell-inner">
-        <div class="pc-category">DISCUSSION</div>
-        <div class="pc-icon">&#10022;</div>
-        <div class="pc-label">Open Q&amp;A Forum</div>
-        <div class="pc-sub">No question is too small. Every doubt is cleared before the session ends</div>
-        <div class="pc-overlay"></div>
-      </div>
-    </div>
-    <div class="photo-cell">
-      <div class="photo-cell-inner">
-        <div class="pc-category">TECHNOLOGY</div>
-        <div class="pc-icon">&#9830;</div>
-        <div class="pc-label">Screen Analysis Setup</div>
-        <div class="pc-sub">Live market screens and charting platform used for real-time teaching</div>
-        <div class="pc-overlay"></div>
-      </div>
-    </div>
-    <div class="photo-cell">
-      <div class="photo-cell-inner">
-        <div class="pc-category">WHATSAPP GROUP</div>
-        <div class="pc-icon">&#9728;</div>
-        <div class="pc-label">Post-Class Community</div>
-        <div class="pc-sub">Daily chart sharing and discussion continues in the Market Credo student WhatsApp group</div>
-        <div class="pc-overlay"></div>
-      </div>
-    </div>
-    <div class="photo-cell">
-      <div class="photo-cell-inner">
-        <div class="pc-category">ATISH SIR</div>
-        <div class="pc-icon">&#9673;</div>
-        <div class="pc-label">20 Years of Market Reading</div>
-        <div class="pc-sub">Every chart is taught using real examples from 20 years of live market observation</div>
-        <div class="pc-overlay"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CLASSROOM ATMOSPHERE CARDS -->
-  <div class="atm-grid">
-    <div class="atm-card">
-      <span class="atm-icon">&#9638;</span>
-      <div class="atm-title">Concept-Driven Learning</div>
-      <p class="atm-text">Every class at Market Credo is structured around one core concept. We go deep &mdash; not broad. You leave understanding the principle completely, not just memorising a pattern name.</p>
-    </div>
-    <div class="atm-card">
-      <span class="atm-icon">&#8767;</span>
-      <div class="atm-title">Live Market Focus</div>
-      <p class="atm-text">All teaching uses live, current charts. No outdated textbook examples. Atish Sir shows you the concept playing out in today's real market &mdash; so you can immediately see its relevance.</p>
-    </div>
-    <div class="atm-card">
-      <span class="atm-icon">&#9787;</span>
-      <div class="atm-title">Small, Personal Batches</div>
-      <p class="atm-text">Batch sizes are kept intentionally small. Atish Sir knows every student by name, tracks their progress, and gives individual feedback on chart readings during practice sessions.</p>
-    </div>
-    <div class="atm-card">
-      <span class="atm-icon">&#9728;</span>
-      <div class="atm-title">Beyond the Classroom</div>
-      <p class="atm-text">The Market Credo WhatsApp group stays active every day. Students share chart observations, spot patterns, ask questions, and receive guidance from Atish Sir and fellow students.</p>
+<!-- INTRO -->
+<section class="hero" id="life" style="padding:56px 0 60px;">
+  <div class="wrap">
+    <div class="sh reveal" style="max-width:760px;">
+      <span class="kpill">Life at Market Credo</span>
+      <h1 class="hh" style="margin:16px 0 0;">Where traders<br/><span class="g">come to think.</span></h1>
+      <p class="life-lead-in">Market Credo is not a typical coaching institute. It is a trading lab — a space where questions are welcomed, charts are dissected, ideas are challenged, and students leave not just educated, but genuinely transformed in how they see financial markets.</p>
+      <ul class="pillar-list reveal">
+        <li><span class="pk">&#9638;</span><div><b>Concept-First Classroom</b> — Every session begins with a core concept, not a trade call. You understand the why before the what.</div></li>
+        <li><span class="pk">&#9658;</span><div><b>Live Chart Practice</b> — Real charts, real markets, real analysis. Atish Sir reads live charts with students every session.</div></li>
+        <li><span class="pk">&#10022;</span><div><b>Open Discussion Culture</b> — Students share their own chart readings. Questions are celebrated, not rushed through.</div></li>
+        <li><span class="pk">&#9672;</span><div><b>Small Batch, Deep Learning</b> — Intimate batch sizes ensure personal attention from Atish Sir to every student.</div></li>
+        <li><span class="pk">&#9673;</span><div><b>WhatsApp Community</b> — Learning continues beyond class. Daily chart discussions, pattern spotting, and Q&amp;A in the student group.</div></li>
+      </ul>
     </div>
   </div>
 </section>
 
-
-<!-- GALLERY PHOTO UPLOAD MODAL -->
-<!-- GALLERY PHOTO UPLOAD MODAL -->
-<div class="gallery-modal" id="galleryModal" onclick="if(event.target===this)this.classList.remove('open')">
-  <div class="gm-inner">
-    <div class="gm-hdr">
-      <span>ADD A MOMENT &lt;LIFE AT MARKET CREDO&gt;</span>
-      <button class="gm-close" onclick="document.getElementById('galleryModal').classList.remove('open')">&times;</button>
+<!-- CLASSROOM GALLERY -->
+<section id="gallery" style="background:var(--mint);">
+  <div class="wrap">
+    <div class="sh reveal">
+      <span class="kpill">Life at Market Credo</span>
+      <h2>Inside our <span class="g">classroom.</span></h2>
+      <p>Moments from Market Credo sessions — live chart analysis, student practice, seminars and the community that makes this institute special. Tap any photo to enlarge.</p>
     </div>
-    <div class="gm-body">
-      <div class="gm-preview" id="gmPreview" onclick="document.getElementById('gm-file').click()">
-        <div class="gm-preview-placeholder" id="gmPlaceholder">
-          <div style="font-size:28px;color:var(--dimmer);margin-bottom:8px;">&#8682;</div>
-          Click to select photo
-        </div>
-        <img id="gmPreviewImg" alt="preview"/>
-        <input type="file" id="gm-file" aria-label="Upload gallery photo" accept="image/*" onchange="previewGalleryPhoto(this)"/>
-      </div>
-      <div class="uf-row"><label class="uf-label" for="gm-caption">Caption</label><input class="uf-input" type="text" id="gm-caption" placeholder="E.G. LIVE CHART SESSION WITH ATISH SIR"/></div>
-      <div class="uf-row"><label class="uf-label" for="gm-category">Category</label>
-        <select class="uf-input" id="gm-category">
-          <option value="">SELECT CATEGORY</option>
-          <option>CLASSROOM</option>
-          <option>DEMO DAY</option>
-          <option>STUDENT PRACTICE</option>
-          <option>DISCUSSION</option>
-          <option>COMMUNITY</option>
-          <option>OTHER</option>
-        </select>
-      </div>
-      <button class="uf-submit" onclick="publishGalleryPhoto()">PUBLISH PHOTO &lt;GO&gt;</button>
+    <div class="gal-grid reveal">
+      <div class="imgcard span2" onclick="openLb(this)"><img src="images/mc-about.jpg" alt="Market Credo seminar session, Bhopal"/><div class="cap"><div class="p">Seminar session</div><div class="d">Bhopal</div></div></div>
+      <div class="imgcard" onclick="openLb(this)"><img src="images/mc-classroom.jpg" alt="Student analysing charts in the Market Credo classroom"/><div class="cap"><div class="p">Chart analysis</div><div class="d">Live classroom practice</div></div></div>
+      <div class="imgcard" onclick="openLb(this)"><img src="images/mc-g1.jpg" alt="Live chart practice at Market Credo"/><div class="cap"><div class="p">Live chart practice</div><div class="d">Advanced TA course</div></div></div>
+      <div class="imgcard" onclick="openLb(this)"><img src="images/mc-g2.jpg" alt="Trading desk session at Market Credo"/><div class="cap"><div class="p">Trading desk</div><div class="d">Real-time reading</div></div></div>
+      <div class="imgcard" onclick="openLb(this)"><img src="images/mc-g5.jpg" alt="Full house classroom seminar at Market Credo"/><div class="cap"><div class="p">Full house</div><div class="d">Classroom seminar</div></div></div>
+      <div class="imgcard" onclick="openLb(this)"><img src="images/mc-g6.jpg" alt="Students at a Market Credo seminar"/><div class="cap"><div class="p">Students</div><div class="d">Seminar day</div></div></div>
+      <div class="imgcard" onclick="openLb(this)"><img src="images/mc-g3.jpg" alt="Practice session at Market Credo"/><div class="cap"><div class="p">Practice</div><div class="d">Chart marking</div></div></div>
+      <div class="imgcard" onclick="openLb(this)"><img src="images/mc-g4.jpg" alt="Learning session at Market Credo"/><div class="cap"><div class="p">Learning</div><div class="d">Core-concept session</div></div></div>
     </div>
   </div>
-</div>
+</section>
 
+<!-- A TYPICAL CLASS DAY -->
+<section id="day">
+  <div class="wrap">
+    <div class="sh reveal">
+      <span class="kpill">A Typical Class Day</span>
+      <h2>How a day <span class="g">unfolds.</span></h2>
+      <p>Every class follows a rhythm — from open discussion to live chart reading to your own practice and review.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl"><div class="t">10:00 AM</div><div><div class="e">Warm-Up Discussion</div><div class="dsc">Students share observations from the previous day's market. Open floor discussion — what did you notice?</div></div></div>
+      <div class="tl"><div class="t">10:30 AM</div><div><div class="e">Core Concept Session</div><div class="dsc">Atish Sir explains the day's topic from first principles. Chart structure, flow, or a specific pattern — deep and clear.</div></div></div>
+      <div class="tl"><div class="t">11:30 AM</div><div><div class="e">Live Chart Reading</div><div class="dsc">Real charts on the screen. Atish Sir reads them live, pointing to exactly what the concept looks like in the wild.</div></div></div>
+      <div class="tl"><div class="t">12:30 PM</div><div><div class="e">Student Practice</div><div class="dsc">Students analyse their own charts. Identify patterns, mark levels, write their own views — then discuss.</div></div></div>
+      <div class="tl"><div class="t">01:00 PM</div><div><div class="e">Q&amp;A and Review</div><div class="dsc">Every question answered. Student charts reviewed by Atish Sir. Learning locked in through discussion and feedback.</div></div></div>
+    </div>
+  </div>
+</section>
 
+<!-- PRESS / MEDIA -->
+<section id="press" style="background:var(--mint);">
+  <div class="wrap">
+    <div class="sh reveal">
+      <span class="kpill">In the Press</span>
+      <h2>Media <span class="g">coverage.</span></h2>
+      <p>Market Credo's financial-market workshops in Bhopal, as covered in the regional press. Tap any clipping to enlarge.</p>
+    </div>
+    <div class="cards3 reveal">
+      <div class="imgcard" onclick="openLb(this)"><img src="images/mc-news1.jpg" alt="Hindustan Times coverage of Market Credo financial market workshop"/><div class="cap"><div class="p">Financial Market Workshop, NIIST-MBA</div><div class="d">Hindustan Times · Bhopal</div></div></div>
+      <div class="imgcard" onclick="openLb(this)"><img src="images/mc-news2.jpg" alt="Dainik Jagran coverage of Market Credo workshop, Bhopal"/><div class="cap"><div class="p">Two-day Financial Market Workshop</div><div class="d">Dainik Jagran · Bhopal · 24 Nov 2015</div></div></div>
+      <div class="imgcard" onclick="openLb(this)"><img src="images/mc-news3.jpg" alt="Nai Dunia coverage of Market Credo workshop, Bhopal"/><div class="cap"><div class="p">Financial Market Workshop</div><div class="d">Nai Dunia · Bhopal</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASSROOM ATMOSPHERE -->
+<section id="atmosphere">
+  <div class="wrap">
+    <div class="sh reveal">
+      <span class="kpill">The Atmosphere</span>
+      <h2>What makes it <span class="g">different.</span></h2>
+    </div>
+    <div class="cards2 reveal">
+      <div class="card"><div class="ci"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><h3>Concept-Driven Learning</h3><p>Every class is structured around one core concept. We go deep — not broad. You leave understanding the principle completely, not just memorising a pattern name.</p></div>
+      <div class="card"><div class="ci"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>Live Market Focus</h3><p>All teaching uses live, current charts. No outdated textbook examples. Atish Sir shows you the concept playing out in today's real market — so you can immediately see its relevance.</p></div>
+      <div class="card"><div class="ci"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div><h3>Small, Personal Batches</h3><p>Batch sizes are kept intentionally small. Atish Sir knows every student by name, tracks their progress, and gives individual feedback on chart readings during practice sessions.</p></div>
+      <div class="card"><div class="ci"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div><h3>Beyond the Classroom</h3><p>The Market Credo WhatsApp group stays active every day. Students share chart observations, spot patterns, ask questions, and receive guidance from Atish Sir and fellow students.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="lead" id="enquire">
+  <div class="wrap lead-grid">
+    <div class="reveal">
+      <span class="kpill">Get Started</span>
+      <h2 style="margin-top:12px;">Come see it <b style="font-weight:700;">for yourself.</b></h2>
+      <p class="intro">Book your free 2-day demo, sit in a real class, and experience the Market Credo classroom before you enrol.</p>
+      <ul class="lead-pts">
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"/></svg> Free 2-day demo class — zero cost</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"/></svg> Learn directly from a SEBI-registered analyst</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5"/></svg> Small batches — personal attention guaranteed</li>
+      </ul>
+      <div style="margin-top:26px;"><a class="btn btn-green" href="index.html#enquire">Book Your Free Demo →</a></div>
+    </div>
+    <div class="lead-form reveal d1">
+      <h3>Get a callback</h3>
+      <p class="fsub">We usually reply within a few hours.</p>
+      <form onsubmit="return sendLead(event)">
+        <div class="field"><label for="lf-name">Your Name</label><input id="lf-name" type="text" placeholder="e.g. Rahul Sharma" required/></div>
+        <div class="field"><label for="lf-phone">Phone / WhatsApp</label><input id="lf-phone" type="tel" placeholder="+91 " required/></div>
+        <div class="field"><label for="lf-course">Interested In</label><select id="lf-course"><option>Technical Analysis &amp; Chart Reading Course</option><option>Free 2-Day Demo Class</option><option>Not sure yet — need guidance</option></select></div>
+        <button class="btn btn-green" type="submit">Send &amp; Book Demo</button>
+        <div class="fnote">Submitting opens WhatsApp with your details pre-filled.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
 <footer id="contact">
-  <div class="foot-grid">
-    <div class="foot-col">
-      <div class="fc-logo">MARKET CREDO</div>
-      <p class="fc-about">Bhopal's premier technical analysis training institute. Founded by Atish Shakergaye &mdash; SEBI Registered Research Analyst with 20+ years of market experience. Teaching traders to read the language of markets.</p>
-      <div class="fc-row"><span class="fc-ico">&#9673;</span>Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, MP 462011</div>
-      <div class="fc-row"><span class="fc-ico">&#9658;</span><a href="tel:+918827979008">+91-8827979008</a></div>
-      <div class="fc-row"><span class="fc-ico">&#9658;</span>SEBI Reg. No: <span style="color:var(--orange)">INH000006086</span></div>
-    </div>
-    <div class="foot-col">
-      <div class="foot-hdr">Courses</div>
-      <ul class="foot-links">
-        <li><a href="courses.html#courses">Basics of Stock Market</a></li>
-        <li><a href="courses.html#courses">Advanced Technical Analysis</a></li>
-        <li><a href="courses.html#demo">2-Day Free Demo Class</a></li>
-      </ul>
-    </div>
-    <div class="foot-col">
-      <div class="foot-hdr">Navigate</div>
-      <ul class="foot-links">
-        <li><a href="about.html">About Atish Shakergaye</a></li>
-        <li><a href="courses.html">Curriculum</a></li>
-        <li><a href="courses.html#demo">Book Free Demo</a></li>
-        <li><a href="https://wa.me/918827979008" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></li>
-        <li><a href="terms.html">Terms &amp; Conditions</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-      </ul>
-    </div>
-    <div class="foot-col">
-      <div class="foot-hdr">Credentials</div>
-      <div class="sb-body" style="padding:0;">
-        <div class="dr"><span class="dk">REGULATOR</span><span class="dv gr" style="font-size:11px;">SEBI &#10003;</span></div>
-        <div class="dr"><span class="dk">REG. NO.</span><span class="dv or" style="font-size:11px;">INH000006086</span></div>
-        <div class="dr"><span class="dk">EXPERIENCE</span><span class="dv or" style="font-size:11px;">20+ YEARS</span></div>
-        <div class="dr"><span class="dk">STUDENTS</span><span class="dv gr" style="font-size:11px;">500+ TRAINED</span></div>
-        <div class="dr"><span class="dk">CITY</span><span class="dv cy" style="font-size:11px;">BHOPAL, MP</span></div>
+  <div class="wrap">
+    <div class="news">
+      <div>
+        <h3>Stay on top of the markets</h3>
+        <p>Get bite-sized technical-analysis tips &amp; batch updates. No spam, ever.</p>
       </div>
+      <form onsubmit="return subNews(event)">
+        <input id="news-email" type="email" placeholder="Your email address" required/>
+        <button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+    </div>
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="bm">M</span> Market Credo</div>
+        <p class="foot-about">Bhopal's professional technical analysis training institute, led by Atish Shakergaye — SEBI Registered Research Analyst with 20+ years of market experience.</p>
+        <div class="sebi-badge">
+          <span class="sb-ic"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5.5 3.8 8.6 8 10 4.2-1.4 8-4.5 8-10V5z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <span><span class="sb-t">SEBI Registered</span><br/><span class="sb-s">Research Analyst · INH000006086</span></span>
+        </div>
+        <div class="foot-social">
+          <a href="https://www.youtube.com/@MarketCredo" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6z"/></svg></a>
+          <a href="https://www.instagram.com/marketcredo" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg></a>
+          <a href="https://www.facebook.com/marketcredo" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.44 18.63.07 12 .07S0 5.44 0 12.07c0 5.99 4.39 10.95 10.13 11.85v-8.38H7.08v-3.47h3.05V9.43c0-3.01 1.79-4.67 4.53-4.67 1.31 0 2.69.24 2.69.24v2.95h-1.51c-1.49 0-1.96.93-1.96 1.87v2.25h3.33l-.53 3.47h-2.8v8.38C19.61 23.02 24 18.06 24 12.07z"/></svg></a>
+        </div>
+      </div>
+      <div><div class="foot-h">Course</div><ul class="foot-links"><li><a href="courses.html#courses">Technical Analysis</a></li><li><a href="index.html#curriculum">Curriculum</a></li><li><a href="index.html#enquire">Free 2-Day Demo</a></li></ul></div>
+      <div><div class="foot-h">Institute</div><ul class="foot-links"><li><a href="about.html">About the Trainer</a></li><li><a href="faq.html">FAQ</a></li><li><a href="blog.html">Journal</a></li><li><a href="terms.html">Terms</a></li><li><a href="privacy.html">Privacy</a></li></ul></div>
+      <div><div class="foot-h">Contact</div><ul class="foot-links"><li><a href="tel:+918827979008">+91 88279 79008</a></li><li><a href="mailto:info@marketcredo.in">info@marketcredo.in</a></li><li><a href="https://wa.me/918827979008" target="_blank" rel="noopener">WhatsApp Us</a></li><li>Mon–Sat · 9AM–10PM</li></ul></div>
     </div>
   </div>
-  <div class="foot-disc">DISCLAIMER: Market Credo is a trading and investment education institute. Atish Shakergaye is a SEBI Registered Research Analyst (INH000006086). All course content is strictly for educational purposes only. Trading and investing in securities involves substantial risk of loss. Past performance is not indicative of future results. Please consult a SEBI-registered advisor before making any investment decisions. Market Credo does not provide buy/sell recommendations or portfolio management services.</div>
-  <div class="foot-bottom">
-    <span>&copy; 2024&ndash;2026 MARKET CREDO &middot; ALL RIGHTS RESERVED &middot; <a href="terms.html" style="color:var(--dim);text-decoration:none;">TERMS</a> &middot; <a href="privacy.html" style="color:var(--dim);text-decoration:none;">PRIVACY</a></span>
-    <span>BHOPAL &middot; MADHYA PRADESH &middot; INDIA</span>
-    <span style="color:var(--orange)">SEBI: INH000006086</span>
-    <a href="crm.html" style="color:var(--dimmer);text-decoration:none;font-size:9px;letter-spacing:1px;">&#9881; CRM</a>
+  <div class="addrbar">
+    <div class="wrap">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, Madhya Pradesh — 462011
+    </div>
+  </div>
+  <div class="foot-disc">
+    <div class="wrap">
+      DISCLAIMER: Market Credo is a trading and investment education institute. Atish Shakergaye is a SEBI Registered Research Analyst (INH000006086). All course content is strictly for educational purposes only. Trading and investing in securities involves substantial risk of loss. Past performance is not indicative of future results. Please consult a SEBI-registered advisor before making any investment decisions. Market Credo does not provide buy/sell recommendations or portfolio management services.
+      <div class="foot-bot">
+        <span>© 2024–2026 Market Credo · All Rights Reserved</span>
+        <span>Bhopal · Madhya Pradesh · India</span>
+        <span class="g">SEBI: INH000006086</span>
+      </div>
+    </div>
   </div>
 </footer>
 
-</main>
+<!-- WA FLOAT -->
+<a class="wa-float" data-nosnippet href="https://wa.me/918827979008?text=Hello%20Market%20Credo!%20I%20am%20interested%20in%20your%20courses.%20Please%20share%20details." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Market Credo">
+  <span class="dot"></span>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" onclick="closeLb()"><span class="lb-close">&times;</span><img id="lb-img" src="" alt="Market Credo photo enlarged"/></div>
+
 <script>
-// Gallery upload functionality
-const GALLERY_KEY = 'mc_gallery_photos';
-function getGalleryPhotos(){ try{ return JSON.parse(localStorage.getItem(GALLERY_KEY)||'[]'); }catch(e){ return []; } }
-function saveGalleryPhotos(arr){ localStorage.setItem(GALLERY_KEY, JSON.stringify(arr)); }
-
-function previewGalleryPhoto(input){
-  const file = input.files[0];
-  if(!file) return;
-  if(file.size > 8*1024*1024){ alert('Max 8MB'); input.value=''; return; }
-  const r = new FileReader();
-  r.onload = function(e){
-    var img = document.getElementById('gmPreviewImg');
-    img.src = e.target.result;
-    img.style.display = 'block';
-    document.getElementById('gmPlaceholder').style.display = 'none';
-  };
-  r.readAsDataURL(file);
-}
-
-function publishGalleryPhoto(){
-  const caption = document.getElementById('gm-caption').value.trim() || 'LIFE AT MARKET CREDO';
-  const category = document.getElementById('gm-category').value || 'OTHER';
-  const img = document.getElementById('gmPreviewImg');
-  if(!img.src || img.style.display==='none'){ alert('Please select a photo'); return; }
-  const photos = getGalleryPhotos();
-  photos.push({ img: img.src, caption: caption.toUpperCase(), category: category });
-  saveGalleryPhotos(photos);
-  renderGalleryPhoto({ img: img.src, caption: caption.toUpperCase(), category: category });
-  document.getElementById('galleryModal').classList.remove('open');
-  document.getElementById('gm-file').value = '';
-  document.getElementById('gm-caption').value = '';
-  document.getElementById('gm-category').value = '';
-  img.src = ''; img.style.display = 'none';
-  document.getElementById('gmPlaceholder').style.display = 'block';
-}
-
-function renderGalleryPhoto(p){
-  var masonry = document.getElementById('photoMasonry');
-  var cell = document.createElement('div');
-  cell.className = 'photo-cell';
-  cell.style.position = 'relative';
-  cell.innerHTML = '<div class="photo-cell-inner" style="padding:0;min-height:160px;">'
-    + '<img src="' + p.img + '" alt="' + p.caption + '" style="width:100%;height:160px;object-fit:cover;display:block;position:relative;"/>'
-    + '<div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.75);padding:8px 10px;">'
-    + '<div style="font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:2px;">' + p.category + '</div>'
-    + '<div style="font-size:10px;font-weight:600;color:var(--white);">' + p.caption + '</div>'
-    + '</div></div>';
-  masonry.appendChild(cell);
-}
-
-(function(){
-  getGalleryPhotos().forEach(renderGalleryPhoto);
-})();
-</script>
-<script>
-// Admin check — show upload button only for admin
-(function(){
-  var key = 'mc@2024admin';
-  if(sessionStorage.getItem('mc_admin')==='1'){
-    document.getElementById('lifeUploadBtn').style.display='';
-  }
-  if(window.location.hash==='#admin'){
-    var pw=prompt('Admin access required. Enter password:');
-    if(pw===key){sessionStorage.setItem('mc_admin','1');document.getElementById('lifeUploadBtn').style.display='';history.replaceState(null,null,' ');}
-    else if(pw!==null){alert('Incorrect password.');}
-  }
-})();
-
-// Adjust nav/ticker for social bar
-(function(){
-  var sb = document.querySelector('.social-bar');
-  var ticker = document.querySelector('.edu-ticker');
-  var mainEl = document.querySelector('main');
-  if(sb && ticker){ ticker.style.top='96px'; }
-  if(sb && mainEl){ mainEl.style.marginTop='124px'; }
-})();
+document.getElementById('navtoggle').addEventListener('click',function(){document.getElementById('menu').classList.toggle('open');});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+function openLb(el){var img=el.querySelector('img');document.getElementById('lb-img').src=img.src;document.getElementById('lb').classList.add('open');}
+function closeLb(){document.getElementById('lb').classList.remove('open');}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
+function sendLead(e){e.preventDefault();var v=function(id){return (document.getElementById(id).value||'').trim();};var t='Hello Market Credo! I would like to book a demo.\n\nName: '+v('lf-name')+'\nPhone: '+v('lf-phone')+'\nInterested in: '+v('lf-course');window.open('https://wa.me/918827979008?text='+encodeURIComponent(t),'_blank');return false;}
+function subNews(e){e.preventDefault();var em=(document.getElementById('news-email').value||'').trim();window.open('https://wa.me/918827979008?text='+encodeURIComponent('Hello Market Credo! Please add me to your updates. Email: '+em),'_blank');return false;}
 </script>
 </body>
 </html>

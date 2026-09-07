@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="robots" content="noindex, nofollow"/>
+<meta name="theme-color" content="#34B350"/>
 <title>[BLOG_TITLE] | Market Credo Blog</title>
 <meta name="description" content="[META_DESCRIPTION — 150-160 characters summarising the blog post with target keyword included naturally.]"/>
 <meta name="keywords" content="[PRIMARY_KEYWORD], [SECONDARY_KEYWORD_1], [SECONDARY_KEYWORD_2], [SECONDARY_KEYWORD_3], Market Credo, technical analysis, stock market, Bhopal"/>
@@ -35,110 +36,10 @@
 <meta name="twitter:image" content="https://www.marketcredo.in/blog/images/[POST_IMAGE].jpg"/>
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="../styles.css"/>
-<style>
-/* BLOG POST STYLES */
-.bp-hero{text-align:center;padding:60px 24px 40px;border-bottom:1px solid var(--border);background:var(--bg1);}
-.bp-breadcrumb{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--dimmer);margin-bottom:20px;}
-.bp-breadcrumb a{color:var(--dim);text-decoration:none;}
-.bp-breadcrumb a:hover{color:var(--orange);}
-.bp-breadcrumb span{color:var(--orange);margin:0 6px;}
-.bp-tag{display:inline-block;background:rgba(243,119,44,0.1);border:1px solid var(--orange2);padding:3px 10px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--orange);text-transform:uppercase;margin-bottom:16px;}
-.bp-hero h1{font-family:'IBM Plex Mono',monospace;font-size:clamp(20px,3.5vw,30px);font-weight:700;color:var(--white);letter-spacing:0.5px;margin:0 0 16px;line-height:1.4;max-width:800px;margin-left:auto;margin-right:auto;}
-.bp-hero h1 span{color:var(--orange);}
-.bp-meta{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1px;color:var(--dimmer);text-transform:uppercase;}
-.bp-meta a{color:var(--orange);text-decoration:none;}
-.bp-meta a:hover{text-decoration:underline;}
-
-/* ARTICLE CONTENT */
-.bp-content{max-width:760px;margin:0 auto;padding:48px 24px;}
-.bp-content h2{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700;color:var(--white);letter-spacing:0.5px;margin:40px 0 16px;padding-top:8px;border-top:1px solid var(--border);}
-.bp-content h2:first-child{margin-top:0;border-top:none;padding-top:0;}
-.bp-content h2 span{color:var(--orange);}
-.bp-content h3{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:700;color:var(--orange);letter-spacing:0.5px;margin:28px 0 10px;}
-.bp-content p{font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:var(--dim);line-height:2;margin:0 0 18px;}
-.bp-content strong{color:var(--white);}
-.bp-content a{color:var(--orange);text-decoration:none;border-bottom:1px solid var(--orange2);}
-.bp-content a:hover{border-bottom-color:var(--orange);}
-.bp-content ul, .bp-content ol{padding:0 0 0 0;margin:0 0 18px;list-style:none;}
-.bp-content ul li, .bp-content ol li{font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:var(--dim);line-height:2;padding:4px 0 4px 20px;position:relative;}
-.bp-content ul li::before{content:'\25B8';position:absolute;left:0;color:var(--orange);}
-.bp-content ol{counter-reset:ol-counter;}
-.bp-content ol li{counter-increment:ol-counter;}
-.bp-content ol li::before{content:counter(ol-counter) '.';position:absolute;left:0;color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;}
-.bp-content blockquote{border-left:3px solid var(--orange);background:var(--bg2);padding:16px 20px;margin:20px 0;font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:var(--dim);line-height:1.9;font-style:italic;}
-.bp-content img{max-width:100%;height:auto;border:1px solid var(--border);margin:20px 0;display:block;}
-.bp-content .bp-img-caption{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dimmer);letter-spacing:0.5px;text-align:center;margin:-12px 0 20px;}
-.bp-content code{background:var(--bg2);border:1px solid var(--border);padding:2px 6px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--orange);}
-.bp-content pre{background:var(--bg2);border:1px solid var(--border);padding:16px;overflow-x:auto;margin:20px 0;}
-.bp-content pre code{background:none;border:none;padding:0;font-size:12px;color:var(--dim);line-height:1.6;}
-.bp-content .bp-callout{background:rgba(243,119,44,0.06);border:1px solid var(--orange2);border-left:3px solid var(--orange);padding:16px 20px;margin:20px 0;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--dim);line-height:1.8;}
-.bp-content .bp-callout strong{color:var(--orange);}
-
-/* TABLE OF CONTENTS */
-.bp-toc{background:var(--bg2);border:1px solid var(--border);padding:20px 24px;margin:0 0 32px;}
-.bp-toc-title{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--white);letter-spacing:1.5px;text-transform:uppercase;margin:0 0 12px;}
-.bp-toc ol{list-style:none;padding:0;margin:0;counter-reset:toc-counter;}
-.bp-toc ol li{counter-increment:toc-counter;padding:4px 0;font-family:'IBM Plex Sans',sans-serif;font-size:13px;}
-.bp-toc ol li::before{content:counter(toc-counter) '. ';color:var(--orange);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;}
-.bp-toc ol li a{color:var(--dim);text-decoration:none;border-bottom:none;}
-.bp-toc ol li a:hover{color:var(--orange);}
-
-/* AUTHOR BOX */
-.bp-author{display:flex;gap:20px;align-items:flex-start;background:var(--bg2);border:1px solid var(--border);padding:24px;margin:40px 0 0;}
-.bp-author-avatar{width:64px;height:64px;border-radius:0;background:var(--orange);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:20px;font-weight:700;color:#000;flex-shrink:0;}
-.bp-author-info h4{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:var(--white);letter-spacing:0.5px;margin:0 0 4px;}
-.bp-author-info .bp-author-title{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--orange);letter-spacing:1px;margin:0 0 8px;}
-.bp-author-info p{font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:var(--dim);line-height:1.7;margin:0;}
-
-/* SHARE BAR */
-.bp-share{display:flex;align-items:center;gap:12px;padding:20px 0;border-top:1px solid var(--border);margin-top:32px;}
-.bp-share-label{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dimmer);letter-spacing:1.5px;text-transform:uppercase;}
-.bp-share a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--bg2);border:1px solid var(--border);transition:background 0.2s,border-color 0.2s;}
-.bp-share a:hover{background:var(--orange);border-color:var(--orange);}
-.bp-share a svg{width:16px;height:16px;fill:var(--dim);}
-.bp-share a:hover svg{fill:#fff;}
-
-/* RELATED POSTS */
-.bp-related{padding:48px 24px;border-top:1px solid var(--border);background:var(--bg2);}
-.bp-related h2{font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;color:var(--white);letter-spacing:1px;text-align:center;margin:0 0 28px;}
-.bp-related h2 span{color:var(--orange);}
-.bp-related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);max-width:900px;margin:0 auto;}
-.bp-related-card{background:var(--bg1);padding:20px;transition:background 0.2s;}
-.bp-related-card:hover{background:var(--bg3);}
-.bp-related-card .bp-related-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--orange);letter-spacing:1px;text-transform:uppercase;margin:0 0 8px;}
-.bp-related-card h3{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:var(--white);line-height:1.5;margin:0 0 8px;}
-.bp-related-card h3 a{color:var(--white);text-decoration:none;}
-.bp-related-card h3 a:hover{color:var(--orange);}
-.bp-related-card .bp-related-meta{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dimmer);letter-spacing:1px;}
-
-/* CTA BANNER */
-.bp-cta{text-align:center;padding:48px 24px;border-top:1px solid var(--border);background:var(--bg1);}
-.bp-cta h2{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700;color:var(--white);letter-spacing:1px;margin:0 0 10px;}
-.bp-cta h2 span{color:var(--orange);}
-.bp-cta p{font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:var(--dim);max-width:500px;margin:0 auto 24px;line-height:1.8;}
-
-/* FAQ SECTION (for posts with FAQ schema) */
-.bp-faq{margin:32px 0;}
-.bp-faq-item{border:1px solid var(--border);margin-bottom:-1px;}
-.bp-faq-q{background:var(--bg2);padding:14px 18px;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--white);letter-spacing:0.5px;display:flex;align-items:center;justify-content:space-between;transition:background 0.2s;}
-.bp-faq-q:hover{background:var(--bg3);}
-.bp-faq-q::after{content:'+';color:var(--orange);font-size:16px;font-weight:700;flex-shrink:0;margin-left:12px;}
-.bp-faq-q.open::after{content:'-';}
-.bp-faq-a{display:none;padding:14px 18px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--dim);line-height:1.9;background:var(--bg1);}
-.bp-faq-a.open{display:block;}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .bp-hero{padding:40px 16px 28px;}
-  .bp-content{padding:32px 16px;}
-  .bp-author{flex-direction:column;gap:12px;}
-  .bp-related-grid{grid-template-columns:1fr;}
-  .bp-related{padding:32px 16px;}
-  .bp-cta{padding:32px 16px;}
-}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="mc.css"/>
 <!-- Structured Data: Article + BreadcrumbList + FAQPage (if applicable) -->
 <script type="application/ld+json">
 {
@@ -233,100 +134,52 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
 </script>
 </head>
 <body>
-<a class="wa-float" data-nosnippet href="https://wa.me/918827979008?text=Hello%20Market%20Credo!%20I%20am%20interested%20in%20your%20courses.%20Please%20share%20details." target="_blank">
-  <div class="wa-pulse"></div>
-  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-</a>
+<a class="skip-link" href="#main">Skip to main content</a>
 
-<div class="status-bar">
-  <div class="sbar-inner">
-    <div class="sbar-seg sbar-brand">MARKET CREDO</div>
-    <div class="sbar-seg sbar-info">TECHNICAL ANALYSIS INSTITUTE</div>
-    <div class="sbar-seg sbar-info">SEBI REG: INH000006086</div>
-    <div class="sbar-seg sbar-info">ATISH SHAKERGAYE &middot; 20 YRS EXPERIENCE</div>
-    <div class="sbar-seg sbar-right"><span class="blink">&bull;</span>&nbsp;BHOPAL &middot; MP &middot; INDIA</div>
+<!-- NAV -->
+<nav class="navbar" aria-label="Primary">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="bm">M</span><span>Market Credo<small>TECHNICAL ANALYSIS INSTITUTE</small></span></a>
+    <ul class="menu" id="menu">
+      <li><a href="courses.html#courses">Courses</a></li>
+      <li><a href="about.html">Trainer</a></li>
+      <li><a href="#curriculum">Curriculum</a></li>
+      <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-r">
+      <a class="nav-phone" href="tel:+918827979008">+91 88279 79008</a>
+      <a class="btn btn-green" href="#enquire">Book Free Demo</a>
+      <button class="navtoggle" id="navtoggle" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
   </div>
-</div>
-
-<nav>
-  <a class="nav-item nav-brand" href="../index.html">MARKET CREDO</a>
-  <a class="nav-item" href="../about.html"><span class="nav-num">F2</span>TRAINER</a>
-  <a class="nav-item" href="../courses.html#courses"><span class="nav-num">F3</span>COURSES</a>
-  <a class="nav-item" href="../testimonials.html"><span class="nav-num">F7</span>REVIEWS</a>
-  <a class="nav-item" href="../videos.html"><span class="nav-num">F8</span>VIDEOS</a>
-  <a class="nav-item" href="../chartboard.html"><span class="nav-num">F9</span>CHARTS</a>
-  <a class="nav-item" href="../index.html#contact"><span class="nav-num">F6</span>CONTACT</a>
-  <a class="nav-item" href="../life.html"><span class="nav-num">F10</span>LIFE</a>
-  <a class="nav-item" href="../faq.html"><span class="nav-num">F11</span>FAQ</a>
-  <a class="nav-item active" href="../blog.html"><span class="nav-num">F12</span>BLOG</a>
-  <a class="nav-item nav-cta" href="../courses.html#demo">BOOK FREE DEMO &lt;GO&gt;</a>
 </nav>
 
-<div class="social-bar" style="position:fixed;top:64px;left:0;right:0;z-index:997;">
-  <div class="social-bar-label">FOLLOW US</div>
-  <div class="social-links">
-    <a class="social-link yt" href="https://www.youtube.com/@MarketCredo" target="_blank">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-      YOUTUBE
-    </a>
-    <a class="social-link ig" href="https://www.instagram.com/marketcredo" target="_blank">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      INSTAGRAM
-    </a>
-    <a class="social-link fb" href="https://www.facebook.com/marketcredo" target="_blank">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      FACEBOOK
-    </a>
-    <a class="social-link wa2" href="https://wa.me/918827979008" target="_blank">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-      WHATSAPP
-    </a>
-  </div>
-</div>
-
-<div class="edu-ticker">
-  <div class="ticker-scroll">
-    <div class="t-item"><span class="t-label">CHART STRUCTURE</span><span class="t-tag">&bull; CORE CONCEPT</span></div>
-    <div class="t-item"><span class="t-label">CHART FLOW</span><span class="t-val">TREND READING</span><span class="t-tag">&#9658; TAUGHT</span></div>
-    <div class="t-item"><span class="t-label">EXPERIENCE</span><span class="t-val">20 YEARS IN MARKETS</span></div>
-    <div class="t-item"><span class="t-label">SEBI REGISTERED</span><span class="t-val">INH000006086</span><span class="t-tag">&#10003; VERIFIED</span></div>
-    <div class="t-item"><span class="t-label">CANDLESTICK MASTERY</span><span class="t-tag">&bull; TAUGHT IN DEPTH</span></div>
-    <div class="t-item"><span class="t-label">FREE DEMO CLASS</span><span class="t-val">2 DAYS &middot; ZERO COST</span></div>
-    <div class="t-item"><span class="t-label">WHATSAPP</span><span class="t-val">+91-8827979008</span><span class="t-tag">&bull; INSTANT REPLY</span></div>
-    <div class="t-sep">&#9670;&#9670;&#9670;</div>
-    <div class="t-item"><span class="t-label">CHART STRUCTURE</span><span class="t-tag">&bull; CORE CONCEPT</span></div>
-    <div class="t-item"><span class="t-label">CHART FLOW</span><span class="t-val">TREND READING</span><span class="t-tag">&#9658; TAUGHT</span></div>
-    <div class="t-item"><span class="t-label">EXPERIENCE</span><span class="t-val">20 YEARS IN MARKETS</span></div>
-    <div class="t-item"><span class="t-label">SEBI REGISTERED</span><span class="t-val">INH000006086</span><span class="t-tag">&#10003; VERIFIED</span></div>
-    <div class="t-item"><span class="t-label">CANDLESTICK MASTERY</span><span class="t-tag">&bull; TAUGHT IN DEPTH</span></div>
-    <div class="t-item"><span class="t-label">FREE DEMO CLASS</span><span class="t-val">2 DAYS &middot; ZERO COST</span></div>
-    <div class="t-item"><span class="t-label">WHATSAPP</span><span class="t-val">+91-8827979008</span><span class="t-tag">&bull; INSTANT REPLY</span></div>
-    <div class="t-sep">&#9670;&#9670;&#9670;</div>
-  </div>
-</div>
-
-<main>
+<main id="main">
+<section>
+<div class="wrap">
+<article class="article-wrap">
 
 <!-- BLOG POST HERO -->
 <div class="bp-hero">
-  <div class="terminal-line" style="margin-bottom:20px;"><span class="prompt">MKTCRED&gt;</span> BLOG.READ<span class="blink">_</span></div>
-  <div class="bp-breadcrumb">
-    <a href="../index.html">HOME</a><span>&#9658;</span><a href="../blog.html">BLOG</a><span>&#9658;</span>[BLOG_TITLE_SHORT]
+  <div class="lp-breadcrumb">
+    <a href="index.html">HOME</a> &rsaquo; <a href="blog.html">BLOG</a> &rsaquo; [BLOG_TITLE_SHORT]
   </div>
-  <span class="bp-tag">[CATEGORY]</span>
-  <h1>[BLOG_TITLE — Use the <span>target keyword</span> naturally in the H1]</h1>
-  <div class="bp-meta">
-    BY <a href="../about.html">ATISH SHAKERGAYE</a> &middot; [DD MMM YYYY] &middot; [X] MIN READ &middot; [CATEGORY]
+  <span class="article-tag">[CATEGORY]</span>
+  <h1 class="article-h1">[BLOG_TITLE — Use the <span>target keyword</span> naturally in the H1]</h1>
+  <div class="article-meta">
+    BY <a href="about.html">ATISH SHAKERGAYE</a> &middot; [DD MMM YYYY] &middot; [X] MIN READ &middot; [CATEGORY]
   </div>
 </div>
 
 <!-- ARTICLE CONTENT -->
-<article class="bp-content">
+<div class="article-content">
 
   <!-- TABLE OF CONTENTS (optional, recommended for 1500+ word posts) -->
-  <div class="bp-toc">
-    <div class="bp-toc-title">Table of Contents</div>
-    <ol>
+  <div class="toc-box">
+    <div class="toc-title">Table of Contents</div>
+    <ol class="toc">
       <li><a href="#section-1">[SECTION 1 HEADING]</a></li>
       <li><a href="#section-2">[SECTION 2 HEADING]</a></li>
       <li><a href="#section-3">[SECTION 3 HEADING]</a></li>
@@ -423,7 +276,7 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
 
   <p>[CONCLUSION — Summarise key points. Include a call-to-action to learn more at Market Credo. Mention the free 2-day demo class if relevant.]</p>
 
-  <p>If you are serious about learning [TOPIC], Market Credo's <a href="../courses.html">Advanced Technical Analysis course</a> covers [TOPIC] in depth alongside chart structure, chart flow, and price action. <a href="../courses.html#demo">Book a free 2-day demo class</a> to experience the teaching methodology first-hand.</p>
+  <p>If you are serious about learning [TOPIC], Market Credo's <a href="courses.html">Advanced Technical Analysis course</a> covers [TOPIC] in depth alongside chart structure, chart flow, and price action. <a href="courses.html#demo">Book a free 2-day demo class</a> to experience the teaching methodology first-hand.</p>
 
   <!-- SHARE BAR -->
   <div class="bp-share">
@@ -452,7 +305,7 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
     </div>
   </div>
 
-</article>
+</div>
 
 <!-- RELATED POSTS -->
 <div class="bp-related">
@@ -482,83 +335,78 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
   <h2>Learn <span>Technical Analysis</span> at Market Credo</h2>
   <p>Join Bhopal's most experienced SEBI-registered analyst. 20+ years of market wisdom. Free 2-day demo class. Build your own trading strategy.</p>
   <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-    <a class="btn-primary" href="../courses.html#demo" style="text-decoration:none;display:inline-block;">BOOK FREE DEMO &lt;ENTER&gt;</a>
-    <a class="btn-ghost" href="https://wa.me/918827979008?text=Hello%20Market%20Credo!%20I%20read%20your%20blog%20and%20want%20to%20know%20more%20about%20your%20courses." target="_blank" style="text-decoration:none;display:inline-block;">WHATSAPP US</a>
+    <a class="btn btn-green" href="courses.html#demo" style="text-decoration:none;display:inline-block;">BOOK FREE DEMO &lt;ENTER&gt;</a>
+    <a class="btn btn-ghost" href="https://wa.me/918827979008?text=Hello%20Market%20Credo!%20I%20read%20your%20blog%20and%20want%20to%20know%20more%20about%20your%20courses." target="_blank" style="text-decoration:none;display:inline-block;">WHATSAPP US</a>
   </div>
 </div>
 
-<!-- WA SECTION -->
-<div class="wa-section">
-  <div class="wa-left">
-    <div class="wa-tag">Instant Information &middot; Fully Automated</div>
-    <h2>WhatsApp Us &mdash; Get Full Details Instantly</h2>
-    <p>Send a message and receive complete information about Market Credo &mdash; courses, schedule, fees, demo booking, and Atish Sir's 20-year background &mdash; directly to your WhatsApp.</p>
-  </div>
-  <a class="wa-btn" href="https://wa.me/918827979008?text=Hello%20Market%20Credo!%20I%20want%20to%20know%20more%20about%20your%20Technical%20Analysis%20courses%20and%20Free%202-Day%20Demo.%20Please%20share%20complete%20details." target="_blank">
-    <svg viewBox="0 0 24 24" fill="#000"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-    WHATSAPP NOW &lt;GO&gt;
-  </a>
+</article>
 </div>
+</section>
+</main>
 
+<!-- FOOTER -->
 <footer id="contact">
-  <div class="foot-grid">
-    <div class="foot-col">
-      <div class="fc-logo">MARKET CREDO</div>
-      <p class="fc-about">Bhopal's premier technical analysis training institute. Founded by Atish Shakergaye &mdash; SEBI Registered Research Analyst with 20+ years of market experience.</p>
-      <div class="fc-row"><span class="fc-ico">&#9673;</span>Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, MP 462011</div>
-      <div class="fc-row"><span class="fc-ico">&#9658;</span><a href="tel:+918827979008">+91-8827979008</a></div>
-      <div class="fc-row"><span class="fc-ico">&#9658;</span>SEBI Reg. No: <span style="color:var(--orange)">INH000006086</span></div>
+  <div class="wrap">
+    <div class="news">
+      <div>
+        <h3>Stay on top of the markets</h3>
+        <p>Get bite-sized technical-analysis tips &amp; batch updates. No spam, ever.</p>
+      </div>
+      <form onsubmit="return subNews(event)">
+        <input id="news-email" type="email" placeholder="Your email address" required/>
+        <button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
     </div>
-    <div class="foot-col">
-      <div class="foot-hdr">Courses</div>
-      <ul class="foot-links">
-        <li><a href="../courses.html#courses">Basics of Stock Market</a></li>
-        <li><a href="../courses.html#courses">Advanced Technical Analysis</a></li>
-        <li><a href="../courses.html#demo">2-Day Free Demo Class</a></li>
-      </ul>
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="bm">M</span> Market Credo</div>
+        <p class="foot-about">Bhopal's professional technical analysis training institute, led by Atish Shakergaye — SEBI Registered Research Analyst with 20+ years of market experience.</p>
+        <div class="sebi-badge">
+          <span class="sb-ic"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5.5 3.8 8.6 8 10 4.2-1.4 8-4.5 8-10V5z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <span><span class="sb-t">SEBI Registered</span><br/><span class="sb-s">Research Analyst · INH000006086</span></span>
+        </div>
+        <div class="foot-social">
+          <a href="https://www.youtube.com/@MarketCredo" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6z"/></svg></a>
+          <a href="https://www.instagram.com/marketcredo" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg></a>
+          <a href="https://www.facebook.com/marketcredo" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.44 18.63.07 12 .07S0 5.44 0 12.07c0 5.99 4.39 10.95 10.13 11.85v-8.38H7.08v-3.47h3.05V9.43c0-3.01 1.79-4.67 4.53-4.67 1.31 0 2.69.24 2.69.24v2.95h-1.51c-1.49 0-1.96.93-1.96 1.87v2.25h3.33l-.53 3.47h-2.8v8.38C19.61 23.02 24 18.06 24 12.07z"/></svg></a>
+        </div>
+      </div>
+      <div><div class="foot-h">Course</div><ul class="foot-links"><li><a href="courses.html#courses">Technical Analysis</a></li><li><a href="#curriculum">Curriculum</a></li><li><a href="#enquire">Free 2-Day Demo</a></li></ul></div>
+      <div><div class="foot-h">Institute</div><ul class="foot-links"><li><a href="about.html">About the Trainer</a></li><li><a href="faq.html">FAQ</a></li><li><a href="blog.html">Journal</a></li><li><a href="terms.html">Terms</a></li><li><a href="privacy.html">Privacy</a></li></ul></div>
+      <div><div class="foot-h">Contact</div><ul class="foot-links"><li><a href="tel:+918827979008">+91 88279 79008</a></li><li><a href="mailto:info@marketcredo.in">info@marketcredo.in</a></li><li><a href="https://wa.me/918827979008" target="_blank" rel="noopener">WhatsApp Us</a></li><li>Mon–Sat · 9AM–10PM</li></ul></div>
     </div>
-    <div class="foot-col">
-      <div class="foot-hdr">Navigate</div>
-      <ul class="foot-links">
-        <li><a href="../about.html">About Atish Shakergaye</a></li>
-        <li><a href="../courses.html">Curriculum</a></li>
-        <li><a href="../courses.html#demo">Book Free Demo</a></li>
-        <li><a href="https://wa.me/918827979008" target="_blank">WhatsApp Us</a></li>
-        <li><a href="../blog.html">Blog &amp; Insights</a></li>
-        <li><a href="../terms.html">Terms &amp; Conditions</a></li>
-        <li><a href="../privacy.html">Privacy Policy</a></li>
-      </ul>
+  </div>
+  <div class="addrbar">
+    <div class="wrap">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, Madhya Pradesh — 462011
     </div>
-    <div class="foot-col">
-      <div class="foot-hdr">Credentials</div>
-      <div class="sb-body" style="padding:0;">
-        <div class="dr"><span class="dk">REGULATOR</span><span class="dv gr" style="font-size:11px;">SEBI &#10003;</span></div>
-        <div class="dr"><span class="dk">REG. NO.</span><span class="dv or" style="font-size:11px;">INH000006086</span></div>
-        <div class="dr"><span class="dk">EXPERIENCE</span><span class="dv or" style="font-size:11px;">20+ YEARS</span></div>
-        <div class="dr"><span class="dk">STUDENTS</span><span class="dv gr" style="font-size:11px;">500+ TRAINED</span></div>
-        <div class="dr"><span class="dk">CITY</span><span class="dv cy" style="font-size:11px;">BHOPAL, MP</span></div>
+  </div>
+  <div class="foot-disc">
+    <div class="wrap">
+      DISCLAIMER: Market Credo is a trading and investment education institute. Atish Shakergaye is a SEBI Registered Research Analyst (INH000006086). All course content is strictly for educational purposes only. Trading and investing in securities involves substantial risk of loss. Past performance is not indicative of future results. Please consult a SEBI-registered advisor before making any investment decisions. Market Credo does not provide buy/sell recommendations or portfolio management services.
+      <div class="foot-bot">
+        <span>© 2024–2026 Market Credo · All Rights Reserved</span>
+        <span>Bhopal · Madhya Pradesh · India</span>
+        <span class="g">SEBI: INH000006086</span>
       </div>
     </div>
   </div>
-  <div class="foot-disc">DISCLAIMER: Market Credo is a trading and investment education institute. Atish Shakergaye is a SEBI Registered Research Analyst (INH000006086). All course content is strictly for educational purposes only. Trading and investing in securities involves substantial risk of loss. Past performance is not indicative of future results.</div>
-  <div class="foot-bottom">
-    <span>&copy; 2024&ndash;2026 MARKET CREDO &middot; ALL RIGHTS RESERVED &middot; <a href="../terms.html" style="color:var(--dim);text-decoration:none;">TERMS</a> &middot; <a href="../privacy.html" style="color:var(--dim);text-decoration:none;">PRIVACY</a></span>
-    <span>BHOPAL &middot; MADHYA PRADESH &middot; INDIA</span>
-    <span style="color:var(--orange)">SEBI: INH000006086</span>
-    <a href="../crm.html" style="color:var(--dimmer);text-decoration:none;font-size:9px;letter-spacing:1px;">&#9881; CRM</a>
-  </div>
 </footer>
 
-</main>
+<!-- WA FLOAT -->
+<a class="wa-float" data-nosnippet href="https://wa.me/918827979008?text=Hello%20Market%20Credo!%20I%20am%20interested%20in%20your%20courses.%20Please%20share%20details." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Market Credo">
+  <span class="dot"></span>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
 <script>
-// Adjust nav/ticker for social bar
-(function(){
-  var sb = document.querySelector('.social-bar');
-  var ticker = document.querySelector('.edu-ticker');
-  var mainEl = document.querySelector('main');
-  if(sb && ticker){ ticker.style.top='96px'; }
-  if(sb && mainEl){ mainEl.style.marginTop='124px'; }
-})();
+document.getElementById('navtoggle').addEventListener('click',function(){document.getElementById('menu').classList.toggle('open');});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+function sendLead(e){e.preventDefault();var v=function(id){return (document.getElementById(id).value||'').trim();};var t='Hello Market Credo! I would like to book a demo.\n\nName: '+v('lf-name')+'\nPhone: '+v('lf-phone')+'\nInterested in: '+v('lf-course');window.open('https://wa.me/918827979008?text='+encodeURIComponent(t),'_blank');return false;}
+function subNews(e){e.preventDefault();var em=(document.getElementById('news-email').value||'').trim();window.open('https://wa.me/918827979008?text='+encodeURIComponent('Hello Market Credo! Please add me to your updates. Email: '+em),'_blank');return false;}
 </script>
 <!--
 =============================================================
