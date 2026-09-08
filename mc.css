@@ -376,6 +376,28 @@ footer{background:var(--mint-panel);color:var(--body);padding:56px 0 0;border-to
 .cmod .ct h3{font-family:'Jost';font-size:17.5px;margin-bottom:5px;color:var(--ink);font-weight:600;}
 .cmod .ct p{font-size:14.5px;color:var(--body);}
 @media(max-width:720px){.curr{grid-template-columns:1fr;}}
+/* curriculum timeline accordion (courses.html) */
+.ctl{position:relative;max-width:840px;margin:0 auto;}
+.ctl::before{content:"";position:absolute;left:44px;top:36px;bottom:36px;width:2px;background:var(--line-2);z-index:0;}
+.ph{position:relative;z-index:1;background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:16px;box-shadow:var(--sh);overflow:hidden;transition:box-shadow .2s,border-color .2s;}
+.ph[open]{border-color:var(--green);box-shadow:var(--sh-lg);}
+.ph summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;padding:16px 20px;}
+.ph summary::-webkit-details-marker{display:none;}
+.ph-n{flex:0 0 auto;width:48px;height:48px;border-radius:50%;background:var(--green);color:#fff;font-family:'Jost';font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px var(--mint);}
+.ph[open] .ph-n{background:var(--green-dd);}
+.ph.bonus .ph-n{background:var(--amber);}
+.ph-t{flex:1;min-width:0;}
+.ph-t b{display:block;font-family:'Jost';font-weight:700;font-size:16.5px;color:var(--ink);}
+.ph-t em{font-style:normal;font-size:13px;color:var(--muted);}
+.ph-x{flex:0 0 auto;font-family:'Jost';font-weight:400;font-size:28px;color:var(--green);transition:transform .25s;line-height:1;}
+.ph[open] .ph-x{transform:rotate(45deg);}
+.ph-body{padding:2px 22px 20px 84px;}
+.ph-body ul{list-style:none;margin:0;display:grid;gap:10px;}
+.ph-body li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;color:var(--body);}
+.ph-body li svg{width:14px;height:14px;flex:0 0 20px;box-sizing:content-box;stroke:#fff;fill:none;stroke-width:4;background:var(--green);border-radius:50%;padding:3px;margin-top:1px;}
+.ph-note{font-size:14.5px;color:var(--body);margin:0 0 6px;}
+.patg-tl{font-family:'Jost';font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--green-d);margin:14px 0 8px;}
+@media(max-width:720px){.ctl::before{display:none;}.ph-n{width:42px;height:42px;font-size:15px;box-shadow:none;}.ph-body{padding:2px 20px 18px 20px;}.ph summary{gap:13px;}}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;transition:transform .22s,box-shadow .22s;}
 .card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);}
 .card .ci{width:56px;height:56px;border-radius:14px;background:var(--mint-2);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
