@@ -2,5 +2,13 @@
   "functions": {
     "api/generate-blog.js": { "maxDuration": 60 },
     "api/publish-file.js": { "maxDuration": 30 }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "marketcredo.in" }],
+      "destination": "https://www.marketcredo.in/:path*",
+      "permanent": true
+    }
+  ]
 }
