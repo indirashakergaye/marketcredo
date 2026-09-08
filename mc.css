@@ -414,6 +414,20 @@ footer{background:var(--mint-panel);color:var(--body);padding:56px 0 0;border-to
 .truth p b{color:#fff;font-weight:600;}
 .truth .btn{margin-top:28px;}
 @media(max-width:720px){.truth h2{font-size:26px;}.truth-labels .x{font-size:13px;padding:7px 13px;}}
+/* course block mobile overflow fix (card was wider than viewport → text/pillars/chips cut) */
+@media(max-width:980px){
+  .course{grid-template-columns:minmax(0,1fr);}
+  .course .cl,.course .cr{min-width:0;}
+}
+@media(max-width:720px){
+  .c-price{flex-wrap:wrap;gap:10px 12px;}
+  .cpillars{flex-wrap:wrap;}
+  .cpill{flex:1 1 44%;min-width:0;}
+  .nb-note{flex-wrap:wrap;}
+  .c-cta{flex-direction:column;align-items:stretch;gap:12px;}
+  .c-cta .btn{width:100%;justify-content:center;}
+  .cr-wa{text-align:center;}
+}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;transition:transform .22s,box-shadow .22s;}
 .card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);}
 .card .ci{width:56px;height:56px;border-radius:14px;background:var(--mint-2);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
