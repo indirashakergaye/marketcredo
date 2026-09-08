@@ -352,6 +352,19 @@ footer{background:var(--mint-panel);color:var(--body);padding:56px 0 0;border-to
 .pillrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
 .prow-chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line-2);border-radius:100px;padding:9px 16px;font-family:'Jost';font-weight:600;font-size:13.5px;color:var(--ink);box-shadow:var(--sh);}
 .prow-chip svg{width:15px;height:15px;stroke:var(--green);fill:none;stroke-width:3;}
+/* chart patterns showcase (homepage — light cards) */
+.patgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;}
+.patcol{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--sh);}
+.patcol h3{font-family:'Jost';font-weight:700;font-size:16.5px;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:9px;}
+.patcol .pdot{width:11px;height:11px;border-radius:50%;background:var(--green);flex:0 0 auto;}
+.patcol.cont .pdot{background:var(--amber);}
+.patcol.adv .pdot{background:var(--violet);}
+.pchips{display:flex;flex-wrap:wrap;gap:7px;}
+.pchips span{font-family:'Jost';font-weight:500;font-size:12.5px;color:var(--green-ink);background:var(--mint-2);border:1px solid var(--line);border-radius:100px;padding:5px 11px;}
+/* chart patterns library (courses.html — dark card, reuses .cm-chips) */
+.patlib{display:grid;gap:18px;}
+.patg-t{font-family:'Jost';font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#FFD98A;margin-bottom:9px;}
+@media(max-width:980px){.patgrid{grid-template-columns:1fr;}}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;transition:transform .22s,box-shadow .22s;}
 .card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);}
 .card .ci{width:56px;height:56px;border-radius:14px;background:var(--mint-2);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
