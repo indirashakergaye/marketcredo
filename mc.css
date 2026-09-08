@@ -398,6 +398,22 @@ footer{background:var(--mint-panel);color:var(--body);padding:56px 0 0;border-to
 .ph-note{font-size:14.5px;color:var(--body);margin:0 0 6px;}
 .patg-tl{font-family:'Jost';font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--green-d);margin:14px 0 8px;}
 @media(max-width:720px){.ctl::before{display:none;}.ph-n{width:42px;height:42px;font-size:15px;box-shadow:none;}.ph-body{padding:2px 20px 18px 20px;}.ph summary{gap:13px;}}
+/* philosophy / truth band */
+.truth{background:linear-gradient(150deg,var(--green-dd),var(--green-ink));color:#DFF3E5;position:relative;overflow:hidden;}
+.truth::before{content:"";position:absolute;top:-140px;left:50%;transform:translateX(-50%);width:700px;height:520px;background:radial-gradient(ellipse,rgba(255,217,138,.14),transparent 60%);pointer-events:none;}
+.truth::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px;-webkit-mask-image:radial-gradient(ellipse at 50% 0,#000,transparent 70%);mask-image:radial-gradient(ellipse at 50% 0,#000,transparent 70%);pointer-events:none;}
+.truth .wrap{position:relative;z-index:1;text-align:center;max-width:900px;}
+.truth .kpill{background:rgba(255,255,255,.12);color:#FFD98A;}
+.truth h2{color:#fff;font-size:clamp(28px,4.4vw,46px);font-weight:700;margin-top:16px;line-height:1.14;}
+.truth h2 .g{color:#FFD98A;}
+.truth-labels{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0 22px;}
+.truth-labels .x{font-family:'Jost';font-weight:600;font-size:14px;color:#A9C4B2;border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:8px 16px;text-decoration:line-through;text-decoration-color:#FF8A8E;text-decoration-thickness:2px;}
+.truth-one{display:inline-flex;align-items:center;gap:9px;font-family:'Jost';font-weight:800;font-size:16px;color:#1a3d24;background:#FFD98A;border-radius:100px;padding:12px 22px;box-shadow:0 0 34px rgba(255,217,138,.4);}
+.truth-one svg{width:17px;height:17px;stroke:#1a3d24;fill:none;stroke-width:3.5;}
+.truth p{font-size:18px;color:#C7E0CF;margin:26px auto 0;max-width:64ch;line-height:1.7;}
+.truth p b{color:#fff;font-weight:600;}
+.truth .btn{margin-top:28px;}
+@media(max-width:720px){.truth h2{font-size:26px;}.truth-labels .x{font-size:13px;padding:7px 13px;}}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;transition:transform .22s,box-shadow .22s;}
 .card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);}
 .card .ci{width:56px;height:56px;border-radius:14px;background:var(--mint-2);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
