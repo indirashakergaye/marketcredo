@@ -4,6 +4,9 @@ Disallow: /crm.html
 Disallow: /blog-studio.html
 Disallow: /og-generator.html
 Disallow: /blog-template.html
+Disallow: /market_credo_bloomberg.html
+Disallow: /chips-variants-preview.html
+Disallow: /mobile.html
 Disallow: /api/
 
 # Sitemaps

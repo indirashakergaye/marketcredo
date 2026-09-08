@@ -109,9 +109,9 @@ h1.hh .g{color:var(--green);font-weight:700;}
 section{padding:78px 0;}
 .sh{margin-bottom:44px;max-width:660px;}
 .sh.center{margin-left:auto;margin-right:auto;text-align:center;}
-.sh h2{font-size:clamp(28px,3.8vw,44px);font-weight:400;margin-top:12px;color:var(--ink);}
-.sh h2 b{font-weight:700;}
-.sh h2 .g{color:var(--green);font-weight:700;}
+.sh h1,.sh h2{font-size:clamp(28px,3.8vw,44px);font-weight:400;margin-top:12px;color:var(--ink);}
+.sh h1 b,.sh h2 b{font-weight:700;}
+.sh h1 .g,.sh h2 .g{color:var(--green);font-weight:700;}
 .sh p{font-size:18px;margin-top:12px;color:var(--body);}
 
 /* bento (Grow-Your-Money style) */
@@ -549,7 +549,7 @@ html,body{max-width:100%;overflow-x:hidden;}
   .menu.open{top:64px;}
   /* headings + spacing */
   .sh{margin-bottom:32px;}
-  .sh h2{font-size:clamp(24px,7vw,32px);}
+  .sh h1,.sh h2{font-size:clamp(24px,7vw,32px);}
   .sh p{font-size:16px;}
   .btn{padding:12px 20px;font-size:14px;}
   /* cards / sections */
