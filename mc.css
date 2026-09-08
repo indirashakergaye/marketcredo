@@ -321,6 +321,9 @@ footer{background:var(--mint-panel);color:var(--body);padding:56px 0 0;border-to
 @media(max-width:860px){.tsplit{grid-template-columns:1fr;gap:28px;}}
 .statgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;}
 .statgrid>div{flex:1 1 150px;min-width:140px;max-width:240px;}
+.pillrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+.prow-chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line-2);border-radius:100px;padding:9px 16px;font-family:'Jost';font-weight:600;font-size:13.5px;color:var(--ink);box-shadow:var(--sh);}
+.prow-chip svg{width:15px;height:15px;stroke:var(--green);fill:none;stroke-width:3;}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;transition:transform .22s,box-shadow .22s;}
 .card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);}
 .card .ci{width:56px;height:56px;border-radius:14px;background:var(--mint-2);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
