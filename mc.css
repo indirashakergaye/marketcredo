@@ -365,6 +365,17 @@ footer{background:var(--mint-panel);color:var(--body);padding:56px 0 0;border-to
 .patlib{display:grid;gap:18px;}
 .patg-t{font-family:'Jost';font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#FFD98A;margin-bottom:9px;}
 @media(max-width:980px){.patgrid{grid-template-columns:1fr;}}
+/* curriculum module list (homepage) */
+.curr{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.cmod{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;gap:18px;align-items:flex-start;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.cmod:hover{border-color:var(--green);box-shadow:var(--sh);transform:translateY(-3px);}
+.cmod .cn{font-family:'Jost';font-weight:700;font-size:18px;color:#fff;background:var(--green);border-radius:11px;width:48px;height:48px;flex:0 0 48px;display:flex;align-items:center;justify-content:center;}
+.cmod:nth-child(4n+2) .cn{background:var(--green-dd);}
+.cmod:nth-child(4n+3) .cn{background:var(--amber);}
+.cmod:nth-child(4n) .cn{background:var(--green-d);}
+.cmod .ct h3{font-family:'Jost';font-size:17.5px;margin-bottom:5px;color:var(--ink);font-weight:600;}
+.cmod .ct p{font-size:14.5px;color:var(--body);}
+@media(max-width:720px){.curr{grid-template-columns:1fr;}}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;transition:transform .22s,box-shadow .22s;}
 .card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);}
 .card .ci{width:56px;height:56px;border-radius:14px;background:var(--mint-2);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
