@@ -47,10 +47,12 @@ function buildPage(d, isoDate, niceDate) {
     '@graph': [
       {
         '@type': 'Article', headline: d.title, description: d.metaDescription,
-        author: { '@type': 'Person', name: 'Atish Shakergaye', jobTitle: 'SEBI Registered Research Analyst', url: 'https://www.marketcredo.in/about' },
+        author: { '@type': 'Person', '@id': 'https://www.marketcredo.in/about#trainer', name: 'Atish Shakergaye', jobTitle: 'SEBI Registered Research Analyst', url: 'https://www.marketcredo.in/about' },
         publisher: { '@type': 'Organization', name: 'Market Credo', url: 'https://www.marketcredo.in', logo: { '@type': 'ImageObject', url: 'https://www.marketcredo.in/images/og-default.jpg' } },
         datePublished: isoDate, dateModified: isoDate,
-        mainEntityOfPage: url, image: 'https://www.marketcredo.in/images/og-default.jpg', keywords: d.keywords
+        mainEntityOfPage: url,
+        image: { '@type': 'ImageObject', url: 'https://www.marketcredo.in/images/og-default.jpg', width: 1200, height: 630 },
+        keywords: d.keywords
       },
       { '@type': 'BreadcrumbList', itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.marketcredo.in/' },
@@ -125,9 +127,12 @@ function buildPage(d, isoDate, niceDate) {
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="${title}"/>
 <meta name="twitter:image" content="https://www.marketcredo.in/images/og-default.jpg"/>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../mc.css"/>
+<script src="/pixel.js"></script>
 <script type="application/ld+json">
 ${JSON.stringify(schema, null, 2)}
 </script>
@@ -146,6 +151,7 @@ ${nav}
   <div class="article-content">
 ${d.bodyHtml}
   </div>
+  <div class="bp-related"><h2>Continue learning</h2><ul class="foot-links" style="font-size:17px;display:grid;gap:10px;"><li><a href="../bhopal-stock-market-course">Advanced Technical Analysis Course in Bhopal &rarr;</a></li><li><a href="../courses#courses">All courses &amp; curriculum &rarr;</a></li><li><a href="../blog">More from the Journal &rarr;</a></li></ul></div>
   <div class="bp-cta"><strong>Want to learn this hands-on in Bhopal?</strong> Market Credo runs classroom technical-analysis training with SEBI-registered analyst Atish Shakergaye, starting with a free 2-day demo. WhatsApp <a href="https://wa.me/919993906449">+91-9993906449</a> or <a href="/#enquire">book your free demo</a>.</div>
 </article></div></section>
 </main>
@@ -155,6 +161,8 @@ ${footer}
 var _nt=document.getElementById('navtoggle');if(_nt){_nt.addEventListener('click',function(){document.getElementById('menu').classList.toggle('open');});}
 function subNews(e){e.preventDefault();var em=(document.getElementById('news-email').value||'').trim();window.open('https://wa.me/919993906449?text='+encodeURIComponent('Hello Market Credo! Please add me to your updates. Email: '+em),'_blank');return false;}
 </script>
+<script src="/mc-events.js" defer></script>
+<script src="/lead.js" defer></script>
 </body>
 </html>
 `;
