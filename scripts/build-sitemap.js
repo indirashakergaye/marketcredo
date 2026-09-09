@@ -52,17 +52,45 @@ function toUrl(relPath) {
 const root = process.cwd();
 const files = walk(root, []).map((f) => path.relative(root, f).replace(/\\/g, '/'));
 
+// Hindi layer (task 21): hi/<slug>.html is the translation of <slug>.html.
+// Build the set of hi slugs so EN pages can declare reciprocal hreflang alternates.
+const hiSlugs = new Set(files.filter((f) => f.startsWith('hi/')).map((f) => f.slice(3).replace(/\.html$/, '')));
+const enSlug = (f) => f.replace(/\.html$/, '');               // 'about', 'blog/x', 'index'
+const hasHi = (f) => !f.startsWith('hi/') && hiSlugs.has(enSlug(f) === 'index' ? 'index' : enSlug(f));
+const hiUrlFor = (f) => BASE + '/hi/' + (enSlug(f) === 'index' ? '' : enSlug(f));
+let useAlternates = false;
+
 // Stable order: home, then other root pages, then blog posts — all alphabetical within group.
-const rank = (u) => (u === BASE + '/' ? 0 : u.includes('/blog/') ? 2 : 1);
+const rank = (u) => (u === BASE + '/' ? 0 : u.includes('/blog/') ? 2 : u.includes('/hi/') ? 3 : 1);
 const entries = files
-  .map((f) => ({ url: toUrl(f), lastmod: lastmod(f) }))
+  .map((f) => {
+    const e = { url: toUrl(f), lastmod: lastmod(f) };
+    if (f.startsWith('hi/')) {
+      // Hindi page -> reciprocal alternates back to the EN original (x-default = EN).
+      const enUrl = BASE + '/' + f.slice(3).replace(/\.html$/, '').replace(/^index$/, '');
+      useAlternates = true;
+      e.alts = [['en-IN', enUrl], ['hi-IN', e.url], ['x-default', enUrl]];
+    } else if (hasHi(f)) {
+      // EN page that has a Hindi translation.
+      useAlternates = true;
+      e.alts = [['en-IN', e.url], ['hi-IN', hiUrlFor(f)], ['x-default', e.url]];
+    }
+    return e;
+  })
   .sort((a, b) => rank(a.url) - rank(b.url) || a.url.localeCompare(b.url));
+
+const ns = 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"' +
+  (useAlternates ? ' xmlns:xhtml="http://www.w3.org/1999/xhtml"' : '');
+const block = (e) => {
+  const alts = e.alts ? e.alts.map(([lang, href]) => `\n    <xhtml:link rel="alternate" hreflang="${lang}" href="${href}"/>`).join('') : '';
+  return `  <url>\n    <loc>${e.url}</loc>\n    <lastmod>${e.lastmod}</lastmod>${alts}\n  </url>`;
+};
 
 const xml =
   '<?xml version="1.0" encoding="UTF-8"?>\n' +
-  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-  entries.map((e) => `  <url>\n    <loc>${e.url}</loc>\n    <lastmod>${e.lastmod}</lastmod>\n  </url>`).join('\n') +
+  `<urlset ${ns}>\n` +
+  entries.map(block).join('\n') +
   '\n</urlset>\n';
 
 fs.writeFileSync(path.join(root, 'sitemap.xml'), xml);
-console.log(`✅ sitemap.xml written — ${entries.length} URLs.`);
+console.log(`✅ sitemap.xml written — ${entries.length} URLs${useAlternates ? ' (with hreflang alternates)' : ''}.`);
