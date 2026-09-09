@@ -1,23 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /crm.html
-Disallow: /blog-studio.html
-Disallow: /og-generator.html
-Disallow: /blog-template.html
-Disallow: /market_credo_bloomberg.html
-Disallow: /chips-variants-preview.html
-Disallow: /mobile.html
 Disallow: /api/
 
-# Sitemaps
 Sitemap: https://www.marketcredo.in/sitemap.xml
-
-# Crawl-delay for polite bots
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
