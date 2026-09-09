@@ -11,7 +11,8 @@
       "has": [{ "type": "host", "value": "marketcredo.in" }],
       "destination": "https://www.marketcredo.in/$1",
       "permanent": true
-    }
+    },
+    { "source": "/atish-shakergaye", "destination": "/about", "permanent": true }
   ],
   "headers": [
     {

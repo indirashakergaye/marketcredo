@@ -30,6 +30,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="mc.css"/>
 <!-- Structured Data: ProfilePage + Person + BreadcrumbList (trainer employee-page, v5.1) -->
+<!-- TODO(owner): in the Person node below, (1) add LinkedIn URL to "sameAs"; (2) add "alumniOf" (college/university) once confirmed; (3) add media mentions as a "subjectOf" array of {"@type":"Article","url":"...","publisher":"..."} when press/interview links are available. Do not invent any of these. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -52,7 +53,8 @@
         "name": "Market Credo",
         "url": "https://www.marketcredo.in"
       },
-      "knowsAbout": ["Technical Analysis", "Price Action", "Chart Patterns", "Candlestick Patterns", "Stock Market Trading", "Risk Management"],
+      "knowsAbout": ["Technical Analysis", "Price Action", "Chart Patterns", "Candlestick Patterns", "Stock Market Trading", "Risk Management", "Options Trading", "Commodity Trading", "Trading Psychology"],
+      "knowsLanguage": ["en", "hi"],
       "hasCredential": {
         "@type": "EducationalOccupationalCredential",
         "credentialCategory": "SEBI Registration",
