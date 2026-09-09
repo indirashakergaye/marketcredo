@@ -319,5 +319,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();})
 function sendLead(e){e.preventDefault();var v=function(id){return (document.getElementById(id).value||'').trim();};var t='Hello Market Credo! I would like to book a demo.\n\nName: '+v('lf-name')+'\nPhone: '+v('lf-phone')+'\nInterested in: '+v('lf-course');window.open('https://wa.me/919993906449?text='+encodeURIComponent(t),'_blank');return false;}
 function subNews(e){e.preventDefault();var em=(document.getElementById('news-email').value||'').trim();window.open('https://wa.me/919993906449?text='+encodeURIComponent('Hello Market Credo! Please add me to your updates. Email: '+em),'_blank');return false;}
 </script>
+<script src="/mc-events.js" defer></script>
 </body>
 </html>
