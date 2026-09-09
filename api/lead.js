@@ -209,32 +209,61 @@ module.exports = async (req, res) => {
     history: [{ date: now, action: 'Lead Created', detail: 'Via website form (' + type + ')' }]
   };
 
-  // Primary store: leads.json (keeps CRM working). Retry on concurrent-write conflicts.
-  let saved = false, lastErr = null;
-  if (GH_TOKEN) {
+  // ---- DURABLE PERSISTENCE ----
+  // NOTE: this never touches the function's local disk (Vercel fs is ephemeral).
+  // PRIMARY store  = Apps Script webhook -> Google Sheet (APPS_SCRIPT_WEBHOOK_URL).
+  // FALLBACK store = GitHub leads.json (GH_TOKEN). It commits to GH_BRANCH, so if that
+  //   branch is `master` EACH LEAD TRIGGERS A PROD REDEPLOY — point GH_BRANCH at a
+  //   non-production data branch (e.g. `leads-data`) if you keep it on. By default the
+  //   GitHub write only runs when the webhook is absent or failed; set LEADS_ALWAYS_GIT=1
+  //   to always also write it (e.g. to keep crm.html's leads.json live).
+  const webhookConfigured = !!process.env.APPS_SCRIPT_WEBHOOK_URL;
+  const githubConfigured = !!GH_TOKEN;
+
+  let webhookResult = 'not-configured';
+  if (webhookConfigured) {
+    try { webhookResult = await toAppsScript(lead); } catch (e) { webhookResult = 'error:' + e.message; }
+  }
+
+  let githubResult = 'not-configured';
+  const wantGithub = githubConfigured && (process.env.LEADS_ALWAYS_GIT === '1' || webhookResult !== 'ok');
+  if (wantGithub) {
+    githubResult = 'failed';
     for (let attempt = 0; attempt < 4; attempt++) {
       try {
         const { leads, sha } = await readLeads(GH_TOKEN, REPO, BRANCH);
         const putRes = await writeLeads(GH_TOKEN, REPO, BRANCH, [lead, ...leads], sha, 'New ' + type + ': ' + lead.name);
-        if (putRes.status === 200 || putRes.status === 201) { saved = true; break; }
-        lastErr = putRes.data;
+        if (putRes.status === 200 || putRes.status === 201) { githubResult = 'ok'; break; }
+        githubResult = 'http-' + putRes.status;
         if (putRes.status !== 409 && putRes.status !== 422) break;
-      } catch (e) { lastErr = e.message; }
+      } catch (e) { githubResult = 'error:' + e.message; }
     }
-  } else {
-    lastErr = 'GH_TOKEN not configured';
   }
 
-  // Optional fan-out — never blocks the response.
-  const settled = await Promise.allSettled([toAppsScript(lead), toResend(lead), toMetaCapi(req, lead, eventId)]);
-  const warnings = {};
-  ['appsScript', 'email', 'capi'].forEach((k, i) => {
-    warnings[k] = settled[i].status === 'fulfilled' ? settled[i].value : 'error';
-  });
-  warnings.sheetStore = saved ? 'ok' : ('leads.json:' + (typeof lastErr === 'string' ? lastErr : 'failed'));
+  const persisted = webhookResult === 'ok' || githubResult === 'ok';
 
-  // Return 200 as long as at least one sink accepted it, so the UX proceeds to thank-you.
-  const anySink = saved || warnings.appsScript === 'ok';
-  if (!anySink) return res.status(500).json({ ok: false, error: 'No storage sink succeeded', warnings, eventId });
+  // Notify sinks (marketing/ops, NOT storage) — never block the response.
+  const settled = await Promise.allSettled([toResend(lead), toMetaCapi(req, lead, eventId)]);
+  const warnings = {
+    webhook: webhookResult,
+    github: githubResult,
+    email: settled[0].status === 'fulfilled' ? settled[0].value : 'error',
+    capi: settled[1].status === 'fulfilled' ? settled[1].value : 'error',
+  };
+
+  // Nothing configured to persist -> FAIL LOUDLY. Do not pretend success; the client
+  // (/lead.js) treats a non-2xx as a cue to open the WhatsApp fallback so the lead is
+  // still delivered to the owner.
+  if (!webhookConfigured && !githubConfigured) {
+    console.error('[lead] NO durable store configured (set APPS_SCRIPT_WEBHOOK_URL, or GH_TOKEN as fallback). Lead NOT saved:',
+      JSON.stringify({ type, phone: lead.phone, email: lead.email, source: lead.source, eventId }));
+    return res.status(503).json({ ok: false, error: 'no_store_configured', eventId, warnings });
+  }
+  // Configured but every store write failed -> also fail loudly, same WhatsApp fallback.
+  if (!persisted) {
+    console.error('[lead] all configured stores failed:', JSON.stringify(warnings),
+      'lead:', JSON.stringify({ type, phone: lead.phone, eventId }));
+    return res.status(502).json({ ok: false, error: 'store_write_failed', eventId, warnings });
+  }
   return res.status(200).json({ ok: true, id: lead.id, eventId, warnings });
 };
