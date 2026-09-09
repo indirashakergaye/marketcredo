@@ -5,9 +5,9 @@
   },
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "marketcredo.in" }],
-      "destination": "https://www.marketcredo.in/:path*",
+      "destination": "https://www.marketcredo.in/$1",
       "permanent": true
     }
   ]
