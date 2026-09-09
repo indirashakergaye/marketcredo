@@ -1,0 +1,25 @@
+/* mc-guide — floating bull mascot + first-visit guided tour (homepage).
+   Bull sits bottom-LEFT so it never overlaps the WhatsApp float (bottom-right). */
+.mc-guide{position:fixed;left:18px;bottom:18px;z-index:60;width:92px;height:92px;cursor:pointer;border:0;background:none;padding:0;}
+.mc-guide model-viewer,.mc-guide svg{width:100%;height:100%;display:block;}
+.mc-guide svg{filter:drop-shadow(0 6px 14px rgba(0,0,0,.20));animation:mcBob 3.2s ease-in-out infinite;}
+.mc-guide::after{content:"Guide";position:absolute;top:-6px;right:-6px;background:#F2AA32;color:#173d24;font:700 10px/1 'Jost',sans-serif;padding:4px 7px;border-radius:20px;box-shadow:0 2px 6px rgba(0,0,0,.2);}
+@keyframes mcBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+/* tour tooltip (fixed, above the bull) */
+.mc-tip{position:fixed;left:18px;bottom:122px;z-index:61;max-width:290px;background:#fff;border:1px solid #d7e6dc;border-radius:16px;box-shadow:0 14px 34px rgba(0,0,0,.20);padding:16px 16px 13px;font-family:'Jost',sans-serif;}
+.mc-tip .mc-step{font:600 11px/1 'Jost',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#2E9A45;margin-bottom:7px;}
+.mc-tip h4{margin:0 0 6px;font-size:17px;font-weight:700;color:#14361f;}
+.mc-tip p{margin:0 0 13px;font-size:14px;line-height:1.5;color:#5b6b60;}
+.mc-tip-row{display:flex;gap:10px;justify-content:space-between;align-items:center;}
+.mc-tip .mc-skip{background:none;border:0;color:#8a978d;cursor:pointer;font:400 13px 'Jost',sans-serif;}
+.mc-tip .mc-next{background:#34B350;color:#fff;border:0;border-radius:10px;padding:9px 16px;cursor:pointer;font:600 14px 'Jost',sans-serif;}
+.mc-tip .mc-next:hover{background:#2E9A45;}
+
+.mc-highlight{outline:3px solid #34B350;outline-offset:5px;border-radius:14px;transition:outline .2s ease;}
+
+@media(max-width:600px){
+  .mc-guide{width:66px;height:66px;left:12px;bottom:12px;}
+  .mc-tip{left:12px;right:12px;bottom:88px;max-width:none;}
+}
+@media(prefers-reduced-motion:reduce){.mc-guide svg{animation:none;}}
