@@ -17,7 +17,7 @@ A step-by-step, checklist-driven plan to build Market Credo's local search visib
 - [ ] **Primary Category:** Educational Institution
 - [ ] **Secondary Categories:** Stock Market Training Centre, Technical Analysis Course, Coaching Centre
 - [ ] **Address:** Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, Madhya Pradesh 462011
-- [ ] **Phone:** +91-8827979008
+- [ ] **Phone:** +91-9993906449
 - [ ] **Website:** https://www.marketcredo.in
 - [ ] **Hours:** Monday-Saturday 09:00-18:00, Sunday Closed
 - [ ] **Description:** Write a keyword-rich, 750-character description mentioning: stock market course Bhopal, technical analysis training, SEBI registered, Atish Shakergaye, 20+ years experience, MP Nagar Zone II
@@ -105,7 +105,7 @@ Just 2-3 sentences about what you learned and your experience with Atish Sir is 
 Thank you for your support!
 
 Team Market Credo
-+91-8827979008
++91-9993906449
 ```
 
 ### Email Review Request Template
@@ -135,7 +135,7 @@ Atish Shakergaye
 Founder, Market Credo
 SEBI Registered Research Analyst (INH000006086)
 Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal 462011
-+91-8827979008 | info@marketcredo.in
++91-9993906449 | info@marketcredo.in
 ```
 
 ### Review Response Templates
@@ -147,12 +147,12 @@ Thank you so much, [Name]! It is wonderful to hear that the [course name/concept
 
 **For 4-star reviews:**
 ```
-Thank you for your feedback, [Name]! We are glad you found value in the course. We are always looking to improve — if there is anything specific we can do better, please do not hesitate to reach out at +91-8827979008. Wishing you profitable trades ahead! — Team Market Credo
+Thank you for your feedback, [Name]! We are glad you found value in the course. We are always looking to improve — if there is anything specific we can do better, please do not hesitate to reach out at +91-9993906449. Wishing you profitable trades ahead! — Team Market Credo
 ```
 
 **For negative reviews (1-3 stars):**
 ```
-Thank you for sharing your feedback, [Name]. We take every review seriously and sincerely apologise if your experience did not meet expectations. We would love the opportunity to understand your concerns better and address them. Please reach out to us directly at +91-8827979008 or info@marketcredo.in so we can make things right. — Atish Shakergaye, Market Credo
+Thank you for sharing your feedback, [Name]. We take every review seriously and sincerely apologise if your experience did not meet expectations. We would love the opportunity to understand your concerns better and address them. Please reach out to us directly at +91-9993906449 or info@marketcredo.in so we can make things right. — Atish Shakergaye, Market Credo
 ```
 
 ### Review Collection Targets

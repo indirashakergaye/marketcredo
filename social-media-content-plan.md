@@ -45,7 +45,7 @@ What you'll learn:
 
 Zero cost. Zero commitment.
 
-Book now: https://wa.me/918827979008
+Book now: https://wa.me/919993906449
 
 #FreeDemo #StockMarketCourse #Bhopal
 ```
@@ -94,7 +94,7 @@ Learn the correct way: https://www.marketcredo.in/blog/rsi-better-entry-points.h
 — Amit Jain, Businessman, Bhopal
 
 Experience it yourself — FREE:
-https://wa.me/918827979008
+https://wa.me/919993906449
 
 #MarketCredo #StockMarketTraining #Bhopal
 ```
@@ -125,7 +125,7 @@ Why choose us?
 - Free 2-day demo class
 
 Details: https://www.marketcredo.in/courses.html
-WhatsApp: +91-8827979008
+WhatsApp: +91-9993906449
 
 #StockMarketCourse #Bhopal #MarketCredo
 ```
@@ -204,7 +204,7 @@ Market Credo's "Basics of Stock Market" course covers:
 - Fundamental vs Technical Analysis
 
 Perfect for absolute beginners.
-Book FREE demo: https://wa.me/918827979008
+Book FREE demo: https://wa.me/919993906449
 
 #BeginnerTrading #StockMarket #Bhopal
 ```
@@ -330,7 +330,7 @@ https://www.marketcredo.in
 
 **Day 2:** "Kya aap jaante hain 90% traders loss me kyun rehte hain? → marketcredo.in/blog/trading-psychology-losses.html"
 
-**Day 3:** "FREE 2-Day Demo Class — Bhopal me. Abhi book karo → wa.me/918827979008"
+**Day 3:** "FREE 2-Day Demo Class — Bhopal me. Abhi book karo → wa.me/919993906449"
 
 **Day 4:** "Top 5 Candlestick Patterns jo har trader ko aane chahiye → marketcredo.in/blog/top-5-candlestick-patterns.html"
 
@@ -394,7 +394,7 @@ Before: "Yeh stock upar jayega ya neeche?" 😰
 After: "Chart structure bullish hai, support hold kar raha hai, volume confirm kar raha hai — entry clear hai" 😎
 
 Join 500+ students — Free demo class
-WhatsApp: +91-8827979008
+WhatsApp: +91-9993906449
 
 #MarketCredo #BeforeAfter #TradingLife #StockMarket #Bhopal
 ```
@@ -540,7 +540,7 @@ Yeh macro connections samjhna ZAROORI hai.
 Yahi chain-thinking hum Market Credo mein sikhaate hain.
 
 🔗 scoutstack.co.in
-📲 Free demo: +91-8827979008
+📲 Free demo: +91-9993906449
 
 #Rupee #USDINR #StockMarketIndia #Macro #ChainThinking #MarketCredo
 #Bhopal #ScoutStack #Nifty #CrudeOil #RBI #Inflation #BondMarket

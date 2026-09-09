@@ -9,7 +9,7 @@ Use this checklist to systematically submit Market Credo's business information 
 - **Business Name:** Market Credo
 - **Legal Name:** Market Credo Technical Analysis Institute
 - **Address:** Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, Madhya Pradesh 462011
-- **Phone:** +91-8827979008
+- **Phone:** +91-9993906449
 - **Email:** info@marketcredo.in
 - **Website:** https://www.marketcredo.in
 - **Categories:** Educational Institute, Stock Market Training, Technical Analysis Course
@@ -122,7 +122,7 @@ Use this checklist to systematically submit Market Credo's business information 
 ### During Submission
 1. Use the EXACT business name: "Market Credo" (not "market credo" or "MARKET CREDO" or "Market Credo Institute").
 2. Use the EXACT address format from nap-data.json every single time.
-3. Use +91-8827979008 as the primary phone number on all listings.
+3. Use +91-9993906449 as the primary phone number on all listings.
 4. Select the most relevant categories available on each platform.
 5. Upload at least 3-5 photos per listing.
 6. Add website URL: https://www.marketcredo.in
