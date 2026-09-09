@@ -5,5 +5,8 @@
   "description": "Market Credo — static site build guards (NAP lint, sitemap).",
   "scripts": {
     "build": "node scripts/check-nap.js"
+  },
+  "dependencies": {
+    "@vercel/edge": "^1.1.1"
   }
 }
