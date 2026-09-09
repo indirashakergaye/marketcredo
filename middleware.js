@@ -1,13 +1,15 @@
 import { next } from '@vercel/edge';
 
 export const config = {
+  // Both clean and .html forms: with cleanUrls enabled, /crm serves crm.html,
+  // so a .html-only matcher would leave the clean path unprotected.
   matcher: [
-    '/crm.html',
-    '/blog-studio.html',
-    '/og-generator.html',
-    '/blog-template.html',
-    '/market_credo_bloomberg.html',
-    '/chips-variants-preview.html',
+    '/crm', '/crm.html',
+    '/blog-studio', '/blog-studio.html',
+    '/og-generator', '/og-generator.html',
+    '/blog-template', '/blog-template.html',
+    '/market_credo_bloomberg', '/market_credo_bloomberg.html',
+    '/chips-variants-preview', '/chips-variants-preview.html',
   ],
 };
 
