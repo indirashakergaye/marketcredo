@@ -143,6 +143,21 @@ section{padding:78px 0;}
 .bcol.stagger .bcard:last-child .bc-ill svg{animation-delay:1.3s;}
 .bc-rays{transform-box:fill-box;transform-origin:center;animation:bcRays 2.6s ease-in-out infinite;}
 .bc-dot{transform-box:fill-box;transform-origin:center;animation:bcDot 1.9s ease-in-out infinite;}
+/* concept-scroller chart micro-animations (light) */
+.sc-line{stroke-dasharray:1;stroke-dashoffset:1;animation:scDraw 7s ease-in-out infinite;}
+@keyframes scDraw{0%{stroke-dashoffset:1}20%{stroke-dashoffset:0}88%{stroke-dashoffset:0}100%{stroke-dashoffset:1}}
+.sc-candle{transform-box:fill-box;transform-origin:bottom;animation:scGrow 2.8s ease-in-out infinite;}
+@keyframes scGrow{0%,100%{transform:scaleY(.82)}50%{transform:scaleY(1)}}
+.sc-dot{transform-box:fill-box;transform-origin:center;animation:scDot 2s ease-in-out infinite;}
+@keyframes scDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.6}}
+.scroller .scard:nth-child(2) .sc-line{animation-delay:.6s}
+.scroller .scard:nth-child(3) .sc-line{animation-delay:1.2s}
+.scroller .scard:nth-child(5) .sc-line{animation-delay:1.8s}
+.scroller .scard:nth-child(6) .sc-line{animation-delay:2.4s}
+.sc-candle:nth-of-type(2){animation-delay:.2s}
+.sc-candle:nth-of-type(3){animation-delay:.4s}
+.sc-candle:nth-of-type(4){animation-delay:.6s}
+.sc-candle:nth-of-type(5){animation-delay:.8s}
 
 /* ===================== GROW PANEL ===================== */
 .grow{background:linear-gradient(140deg,var(--green-d),var(--green-dd));border-radius:26px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:center;color:#DFF3E5;box-shadow:var(--sh-lg);}
