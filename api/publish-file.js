@@ -37,7 +37,7 @@ const esc = s => String(s == null ? '' : s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 function buildPage(d, isoDate, niceDate) {
-  const url = `https://www.marketcredo.in/blog/${d.slug}.html`;
+  const url = `https://www.marketcredo.in/blog/${d.slug}`;
   const title = esc(d.title);
   const desc = esc(d.metaDescription);
   const kw = esc(d.keywords);
@@ -47,33 +47,35 @@ function buildPage(d, isoDate, niceDate) {
     '@graph': [
       {
         '@type': 'Article', headline: d.title, description: d.metaDescription,
-        author: { '@type': 'Person', name: 'Atish Shakergaye', jobTitle: 'SEBI Registered Research Analyst', url: 'https://www.marketcredo.in/about.html' },
+        author: { '@type': 'Person', '@id': 'https://www.marketcredo.in/about#trainer', name: 'Atish Shakergaye', jobTitle: 'SEBI Registered Research Analyst', url: 'https://www.marketcredo.in/about' },
         publisher: { '@type': 'Organization', name: 'Market Credo', url: 'https://www.marketcredo.in', logo: { '@type': 'ImageObject', url: 'https://www.marketcredo.in/images/og-default.jpg' } },
         datePublished: isoDate, dateModified: isoDate,
-        mainEntityOfPage: url, image: 'https://www.marketcredo.in/images/og-default.jpg', keywords: d.keywords
+        mainEntityOfPage: url,
+        image: { '@type': 'ImageObject', url: 'https://www.marketcredo.in/images/og-default.jpg', width: 1200, height: 630 },
+        keywords: d.keywords
       },
       { '@type': 'BreadcrumbList', itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.marketcredo.in/' },
-        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.marketcredo.in/blog.html' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.marketcredo.in/blog' },
         { '@type': 'ListItem', position: 3, name: d.title, item: url }
       ] }
     ]
   };
   const nav = `<nav class="navbar" aria-label="Primary">
   <div class="wrap">
-    <a class="brand" href="../index.html"><span class="bm">M</span><span>Market Credo<small>TECHNICAL ANALYSIS INSTITUTE</small></span></a>
+    <a class="brand" href="/"><span class="bm">M</span><span>Market Credo<small>TECHNICAL ANALYSIS INSTITUTE</small></span></a>
     <ul class="menu" id="menu">
-      <li><a href="../courses.html#courses">Courses</a></li>
-      <li><a href="../about.html">Trainer</a></li>
-      <li><a href="../index.html#curriculum">Curriculum</a></li>
-      <li><a href="../testimonials.html">Reviews</a></li>
-      <li><a href="../videos.html">Videos</a></li>
-      <li><a href="../blog.html">Journal</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
+      <li><a href="../courses#courses">Courses</a></li>
+      <li><a href="../about">Trainer</a></li>
+      <li><a href="/#curriculum">Curriculum</a></li>
+      <li><a href="../testimonials">Reviews</a></li>
+      <li><a href="../videos">Videos</a></li>
+      <li><a href="../blog">Journal</a></li>
+      <li><a href="/#contact">Contact</a></li>
     </ul>
     <div class="nav-r">
       <a class="nav-phone" href="tel:+919993906449">+91 99939 06449</a>
-      <a class="btn btn-green" href="../index.html#enquire">Book Free Demo</a>
+      <a class="btn btn-green" href="/#enquire">Book Free Demo</a>
       <button class="navtoggle" id="navtoggle" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     </div>
   </div>
@@ -95,8 +97,8 @@ function buildPage(d, isoDate, niceDate) {
         <div class="foot-brand"><span class="bm">M</span> Market Credo</div>
         <p class="foot-about">Bhopal's professional technical analysis training institute, led by Atish Shakergaye — SEBI Registered Research Analyst with 20+ years of market experience.</p>
       </div>
-      <div><div class="foot-h">Course</div><ul class="foot-links"><li><a href="../courses.html#courses">Technical Analysis</a></li><li><a href="../index.html#curriculum">Curriculum</a></li><li><a href="../index.html#enquire">Free 2-Day Demo</a></li></ul></div>
-      <div><div class="foot-h">Institute</div><ul class="foot-links"><li><a href="../about.html">About the Trainer</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog.html">Journal</a></li><li><a href="../terms.html">Terms</a></li><li><a href="../privacy.html">Privacy</a></li></ul></div>
+      <div><div class="foot-h">Course</div><ul class="foot-links"><li><a href="../courses#courses">Technical Analysis</a></li><li><a href="/#curriculum">Curriculum</a></li><li><a href="/#enquire">Free 2-Day Demo</a></li></ul></div>
+      <div><div class="foot-h">Institute</div><ul class="foot-links"><li><a href="../about">About the Trainer</a></li><li><a href="../faq">FAQ</a></li><li><a href="../blog">Journal</a></li><li><a href="../terms">Terms</a></li><li><a href="../privacy">Privacy</a></li></ul></div>
       <div><div class="foot-h">Contact</div><ul class="foot-links"><li><a href="tel:+919993906449">+91 99939 06449</a></li><li><a href="mailto:info@marketcredo.in">info@marketcredo.in</a></li><li><a href="https://wa.me/919993906449" target="_blank" rel="noopener">WhatsApp Us</a></li><li>Mon–Sat · 9AM–10PM</li></ul></div>
     </div>
   </div>
@@ -125,9 +127,12 @@ function buildPage(d, isoDate, niceDate) {
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="${title}"/>
 <meta name="twitter:image" content="https://www.marketcredo.in/images/og-default.jpg"/>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../mc.css"/>
+<script src="/pixel.js"></script>
 <script type="application/ld+json">
 ${JSON.stringify(schema, null, 2)}
 </script>
@@ -139,14 +144,15 @@ ${JSON.stringify(schema, null, 2)}
 ${nav}
 <main id="main">
 <section><div class="wrap"><article class="article-wrap reveal">
-  <div class="lp-breadcrumb"><a href="../index.html">Home</a> &#9658; <a href="../blog.html">Journal</a> &#9658; ${esc(d.title)}</div>
+  <div class="lp-breadcrumb"><a href="/">Home</a> &#9658; <a href="../blog">Journal</a> &#9658; ${esc(d.title)}</div>
   <h1 class="article-h1">${title}</h1>
   <div class="bp-meta"><span>By Atish Shakergaye · SEBI INH000006086</span><span>Updated ${esc(niceDate)}</span><span>${readm} min read</span></div>
   <div class="tldr-box"><div class="tldr-label">TL;DR &mdash; Quick Answer</div><p>${esc(d.tldr)}</p></div>
   <div class="article-content">
 ${d.bodyHtml}
   </div>
-  <div class="bp-cta"><strong>Want to learn this hands-on in Bhopal?</strong> Market Credo runs classroom technical-analysis training with SEBI-registered analyst Atish Shakergaye, starting with a free 2-day demo. WhatsApp <a href="https://wa.me/919993906449">+91-9993906449</a> or <a href="../index.html#enquire">book your free demo</a>.</div>
+  <div class="bp-related"><h2>Continue learning</h2><ul class="foot-links" style="font-size:17px;display:grid;gap:10px;"><li><a href="../bhopal-stock-market-course">Advanced Technical Analysis Course in Bhopal &rarr;</a></li><li><a href="../courses#courses">All courses &amp; curriculum &rarr;</a></li><li><a href="../blog">More from the Journal &rarr;</a></li></ul></div>
+  <div class="bp-cta"><strong>Want to learn this hands-on in Bhopal?</strong> Market Credo runs classroom technical-analysis training with SEBI-registered analyst Atish Shakergaye, starting with a free 2-day demo. WhatsApp <a href="https://wa.me/919993906449">+91-9993906449</a> or <a href="/#enquire">book your free demo</a>.</div>
 </article></div></section>
 </main>
 ${footer}
@@ -155,6 +161,8 @@ ${footer}
 var _nt=document.getElementById('navtoggle');if(_nt){_nt.addEventListener('click',function(){document.getElementById('menu').classList.toggle('open');});}
 function subNews(e){e.preventDefault();var em=(document.getElementById('news-email').value||'').trim();window.open('https://wa.me/919993906449?text='+encodeURIComponent('Hello Market Credo! Please add me to your updates. Email: '+em),'_blank');return false;}
 </script>
+<script src="/mc-events.js" defer></script>
+<script src="/lead.js" defer></script>
 </body>
 </html>
 `;
@@ -198,7 +206,7 @@ module.exports = async (req, res) => {
   if (!d.slug || !d.title || !d.bodyHtml) return res.status(400).json({ error: 'draft must include slug, title, bodyHtml' });
 
   const path = `blog/${d.slug}.html`;
-  const postUrl = `https://www.marketcredo.in/blog/${d.slug}.html`;
+  const postUrl = `https://www.marketcredo.in/blog/${d.slug}`;
   const now = new Date();
   const isoDate = now.toISOString().slice(0, 10);
   const niceDate = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
@@ -232,7 +240,7 @@ module.exports = async (req, res) => {
     <p class="blog-card-excerpt">${esc(d.metaDescription)}</p>
     <div class="blog-card-footer">
       <span class="blog-card-meta">${esc(niceDate).toUpperCase()} &middot; ${Number(d.readMinutes) || 8} MIN READ</span>
-      <a class="blog-card-link" href="blog/${d.slug}.html">READ &gt;</a>
+      <a class="blog-card-link" href="blog/${d.slug}">READ &gt;</a>
     </div>
   </div>`;
           content = content.replace('<!-- BLOG_CARDS_START -->', '<!-- BLOG_CARDS_START -->' + card);
@@ -266,7 +274,7 @@ module.exports = async (req, res) => {
 
     // 5. Ping IndexNow (Bing/others) — fire and forget.
     let indexNowStatus = null;
-    try { indexNowStatus = await indexNow(INDEXNOW_KEY, [postUrl, 'https://www.marketcredo.in/blog.html', 'https://www.marketcredo.in/sitemap.xml']); } catch (e) {}
+    try { indexNowStatus = await indexNow(INDEXNOW_KEY, [postUrl, 'https://www.marketcredo.in/blog', 'https://www.marketcredo.in/sitemap.xml']); } catch (e) {}
 
     return res.status(200).json({ ok: true, url: postUrl, path, warnings, indexNowStatus });
   } catch (e) {
