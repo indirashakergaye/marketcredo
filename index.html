@@ -31,6 +31,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2"/>
+<link rel="stylesheet" href="/vendor/yt-facade.css"/>
+
+<!-- VideoObject schema for the three homepage YouTube lessons.
+     TODO(owner): add a 3rd VideoObject for BMto6lOVKco ("Market Fundamentals") once its real uploadDate is known — omitted here to avoid an invalid (dateless) VideoObject. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VideoObject",
+      "name": "Trading with Patience, Guided by Faith",
+      "description": "Learn the importance of patience and discipline in stock market trading. By Atish Shakergaye, Market Credo.",
+      "thumbnailUrl": "https://img.youtube.com/vi/TFjL5bzDs44/maxresdefault.jpg",
+      "uploadDate": "2024-01-15",
+      "contentUrl": "https://www.youtube.com/watch?v=TFjL5bzDs44",
+      "embedUrl": "https://www.youtube.com/embed/TFjL5bzDs44",
+      "author": {"@type": "Person", "name": "Atish Shakergaye"}
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Best Example of Price Action",
+      "description": "Real price action example explained in depth. Technical analysis tutorial by Atish Shakergaye, Market Credo Bhopal.",
+      "thumbnailUrl": "https://img.youtube.com/vi/_TXg2C9tb-g/maxresdefault.jpg",
+      "uploadDate": "2024-02-10",
+      "contentUrl": "https://www.youtube.com/watch?v=_TXg2C9tb-g",
+      "embedUrl": "https://www.youtube.com/embed/_TXg2C9tb-g",
+      "author": {"@type": "Person", "name": "Atish Shakergaye"}
+    }
+  ]
+}
+</script>
 
 <!-- ===================== Structured Data (preserved from live) ===================== -->
 <!-- TODO(owner): add LinkedIn company/profile URL into the #organization "sameAs" array below once available -->
@@ -528,9 +559,9 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
   <div class="wrap">
     <div class="sh reveal"><span class="kpill">Watch &amp; Learn</span><h2>Free lessons on <span class="g">YouTube.</span></h2><p>Technical analysis tutorials and live chart reading by Atish Shakergaye, SEBI RA.</p></div>
     <div class="vid-grid reveal">
-      <div class="vid"><div class="vid-frame"><iframe src="https://www.youtube.com/embed/TFjL5bzDs44" loading="lazy" allowfullscreen title="Trading with patience"></iframe></div><div class="vid-cap">Trading with Patience<span>Mindset &amp; discipline</span></div></div>
-      <div class="vid"><div class="vid-frame"><iframe src="https://www.youtube.com/embed/_TXg2C9tb-g" loading="lazy" allowfullscreen title="Price Action Example"></iframe></div><div class="vid-cap">Price Action Example<span>Reading the chart</span></div></div>
-      <div class="vid"><div class="vid-frame"><iframe src="https://www.youtube.com/embed/BMto6lOVKco" loading="lazy" allowfullscreen title="Market Fundamentals"></iframe></div><div class="vid-cap">Market Fundamentals<span>For beginners</span></div></div>
+      <div class="vid"><div class="vid-frame"><div class="yt-facade" data-id="TFjL5bzDs44" data-title="Trading with Patience"><img src="https://img.youtube.com/vi/TFjL5bzDs44/hqdefault.jpg" alt="Trading with Patience — Market Credo YouTube lesson" loading="lazy" width="480" height="360"/><button class="yt-play" type="button" aria-label="Play: Trading with Patience"></button></div></div><div class="vid-cap">Trading with Patience<span>Mindset &amp; discipline</span></div></div>
+      <div class="vid"><div class="vid-frame"><div class="yt-facade" data-id="_TXg2C9tb-g" data-title="Price Action Example"><img src="https://img.youtube.com/vi/_TXg2C9tb-g/hqdefault.jpg" alt="Price Action Example — Market Credo YouTube lesson" loading="lazy" width="480" height="360"/><button class="yt-play" type="button" aria-label="Play: Price Action Example"></button></div></div><div class="vid-cap">Price Action Example<span>Reading the chart</span></div></div>
+      <div class="vid"><div class="vid-frame"><div class="yt-facade" data-id="BMto6lOVKco" data-title="Market Fundamentals"><img src="https://img.youtube.com/vi/BMto6lOVKco/hqdefault.jpg" alt="Market Fundamentals — Market Credo YouTube lesson" loading="lazy" width="480" height="360"/><button class="yt-play" type="button" aria-label="Play: Market Fundamentals"></button></div></div><div class="vid-cap">Market Fundamentals<span>For beginners</span></div></div>
     </div>
   </div>
 </section>
@@ -660,5 +691,6 @@ function subNews(e){e.preventDefault();var em=(document.getElementById('news-ema
 })();
 </script>
 <script src="/mc-events.js" defer></script>
+<script src="/vendor/yt-facade.js" defer></script>
 </body>
 </html>
