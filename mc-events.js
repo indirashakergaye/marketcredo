@@ -4,12 +4,13 @@
   function track(name, params) {
     if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
   }
-  function on(selector, name) {
+  function fb(name) { if (typeof window.fbq === 'function') window.fbq('track', name); }
+  function on(selector, name, fbEvent) {
     document.querySelectorAll(selector).forEach(function (a) {
-      a.addEventListener('click', function () { track(name, { page: location.pathname }); });
+      a.addEventListener('click', function () { track(name, { page: location.pathname }); if (fbEvent) fb(fbEvent); });
     });
   }
-  on('a[href^="tel:"]', 'phone_click');
-  on('a[href*="wa.me"]', 'whatsapp_click');
+  on('a[href^="tel:"]', 'phone_click', 'Contact');
+  on('a[href*="wa.me"]', 'whatsapp_click', 'Contact');
   on('a[href*="g.page"],a[href*="review"]', 'review_click');
 })();
