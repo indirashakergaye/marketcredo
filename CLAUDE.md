@@ -29,7 +29,9 @@ mirrored by the TIER1/TIER2 arrays in the guard.
 **Tier 1 — HARD BLOCK (SEBI Advertisement Code). Any occurrence fails the build.**
 Never write these superlatives / standing or outcome claims anywhere:
 best, No. 1, number one, top-rated, leading, premier, finest, unmatched,
-guaranteed, assured, sure shot, accuracy %, multibagger
+guaranteed, assured, sure shot, accuracy %, multibagger, most trusted,
+world-class, most respected, most powerful, top institute, number 1, #1,
+India's best, Bhopal's best
 
 **Tier 2 — WARN ONLY (trading vocabulary). The build passes; hits are printed for
 human review.** These are legitimate in an educational sentence ("we do not give
@@ -45,6 +47,14 @@ that one comment-delimited block (between the `<!-- 9. ... -->` and
 region skip, NOT a file-level skip; the rest of terms.html is still scanned. If
 that block is edited so a marker moves, the exemption self-disables and the words
 re-flag.
+
+**Testimonial exemption:** the testimonials block in
+`bhopal-stock-market-course.html` (between the `<!-- TESTIMONIALS -->` and
+`<!-- FAQ -->` markers) is exempt via `EXEMPT_REGIONS`. Reason: quoted
+third-party (student) speech is not our marketing copy — rewording a real review
+to remove a superlative would fabricate the testimonial, which is worse than the
+word. The banned-word rules bind OUR copy, not what a student is quoted saying.
+Same narrow region-skip pattern as the terms.html §9 exemption.
 
 ### Never
 - Never invent a testimonial, review, student name, statistic or outcome.
