@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
  * scripts/build-patterns.js — generates /chart-patterns/<slug>.html from data/patterns.json
+ * plus the /chart-patterns hub index (chart-patterns/index.html) listing every record
  * + shared partials (partials/head.html, nav.html, footer.html) + a schema() function.
  *
  * CHART GATE: no pattern page ships without >= 2 annotated charts. A chart is
@@ -160,6 +161,84 @@ function buildPage(rec) {
   return `${headOut}\n${nav}\n<main id="main">\n${renderBody(rec)}\n</main>\n${footer}\n${tail}`;
 }
 
+const HUB_URL = `${BASE}/chart-patterns`;
+const HUB_TITLE = 'Chart Pattern Guides — Market Credo, Bhopal';
+const HUB_DESC = 'Educational guides to classic chart patterns: how each structure forms, what the neckline means, what confirms it and when the reading is no longer valid.';
+
+function hubSchema(recs) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': ['Organization', 'EducationalOrganization'], '@id': `${BASE}/#organization`, 'name': 'Market Credo', 'url': BASE },
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${BASE}/` },
+          { '@type': 'ListItem', 'position': 2, 'name': 'Chart Patterns', 'item': HUB_URL }
+        ]
+      },
+      {
+        '@type': 'CollectionPage',
+        'name': HUB_TITLE,
+        'description': HUB_DESC,
+        'url': HUB_URL,
+        'isPartOf': { '@id': `${BASE}/#organization` },
+        'mainEntity': {
+          '@type': 'ItemList',
+          'itemListElement': recs.map((r, i) => ({
+            '@type': 'ListItem', 'position': i + 1, 'name': r.breadcrumb || r.h1,
+            'url': `${BASE}/chart-patterns/${r.slug}`
+          }))
+        }
+      }
+    ]
+  };
+}
+
+// First sentence of the intro, as the card excerpt.
+function excerpt(rec) {
+  const m = String(rec.intro || '').match(/^[^.]+\./);
+  return m ? m[0] : String(rec.intro || '');
+}
+
+function hubCard(rec) {
+  const tag = String(rec.eyebrow || '').split('·').pop().trim() || 'Chart Pattern';
+  const url = `/chart-patterns/${rec.slug}`;
+  return `<div class="blog-card">` +
+    `<span class="blog-card-tag">${esc(tag)}</span>` +
+    `<h3 class="blog-card-title"><a href="${url}" style="color:inherit;">${esc(rec.breadcrumb || rec.h1)}</a></h3>` +
+    `<p class="blog-card-excerpt">${esc(excerpt(rec))}</p>` +
+    `<div class="blog-card-footer"><a class="blog-card-link" href="${url}">READ &gt;</a></div></div>`;
+}
+
+function buildHub(recs) {
+  const headOut = head
+    .replace(/{{TITLE}}/g, esc(HUB_TITLE))
+    .replace(/{{DESCRIPTION}}/g, esc(HUB_DESC))
+    .replace(/{{CANONICAL}}/g, HUB_URL)
+    .replace('{{JSONLD}}', JSON.stringify(hubSchema(recs), null, 2));
+
+  let body = `<section class="hero" id="home"><div class="wrap" style="max-width:860px;">` +
+    `<span class="awardline"><span class="st">&#9733;</span> Chart Patterns &middot; Educational Library</span>` +
+    `<h1 class="hh">Chart Pattern Guides</h1>` +
+    `<p class="lede">Each guide takes one classic structure and reads it from first principles — how it forms, what the psychology behind it is, what confirms it and when the reading is no longer valid. Schematic charts only: no named securities, no price levels and no recommendations.</p></div></section>`;
+
+  body += `<section><div class="wrap">` +
+    `<div class="sh reveal"><h2>Published <span class="g">guides.</span></h2></div>` +
+    `<div class="blog-grid reveal">${recs.map(hubCard).join('')}</div>` +
+    `<p class="reveal" style="margin-top:26px;color:var(--muted);">More pattern guides are being added. The full library of 60+ patterns is covered in the classroom course — see <a href="/curriculum#patterns">the curriculum</a> or the <a href="/bhopal-stock-market-course">course page</a>.</p>` +
+    `</div></section>`;
+
+  body += `<section class="lead" id="enquire"><div class="wrap" style="text-align:center;max-width:720px;">` +
+    `<h2>Learn to read chart patterns properly.</h2>` +
+    `<p>Study chart structure and price action from first principles with SEBI-registered analyst Atish Shakergaye. Start with a free 2-day demo.</p>` +
+    `<div class="hero-cta" style="justify-content:center;">` +
+    `<a class="btn btn-green" href="https://wa.me/919993906449?text=Hello%20Market%20Credo!%20I%20want%20to%20learn%20chart%20patterns." target="_blank" rel="noopener">WhatsApp Us &rarr;</a>` +
+    `<a class="btn btn-ghost" href="tel:+919993906449">Call +91 99939 06449</a></div></div></section>`;
+
+  return `${headOut}\n${nav}\n<main id="main">\n${body}\n</main>\n${footer}\n${tail}`;
+}
+
 fs.mkdirSync('chart-patterns', { recursive: true });
 const failures = [];
 for (const rec of records) {
@@ -179,4 +258,6 @@ if (failures.length) {
   console.error(`into ${IMG_DIR}/, then re-run. No pattern page ships without >= 2 annotated charts.`);
   process.exit(1);
 }
+fs.writeFileSync(path.join('chart-patterns', 'index.html'), buildHub(records));
+console.log('✓ wrote chart-patterns/index.html (hub)');
 console.log(`✅ ${records.length} pattern page(s) built; all have >= 2 charts with alt text.`);
