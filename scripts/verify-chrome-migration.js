@@ -11,6 +11,7 @@
  *
  * Exports normalize()/linksOnlyDiff() for the migrator; also runnable as a CLI:
  *   node scripts/verify-chrome-migration.js <oldFile> <newFile> <pageUrl>
+ * Exits 0 (links-only), 1 (differs beyond links) or 2 (usage error / missing file).
  */
 const BASE = 'https://www.marketcredo.in';
 
@@ -35,6 +36,18 @@ module.exports = { normalize, linksOnlyDiff, BASE };
 if (require.main === module) {
   const fs = require('fs');
   const [oldF, newF, url] = process.argv.slice(2);
+  if (!oldF || !newF || !url) {
+    console.error('Usage: node scripts/verify-chrome-migration.js <oldFile> <newFile> <pageUrl>');
+    console.error('  e.g. node scripts/verify-chrome-migration.js before.html after.html https://www.marketcredo.in/about');
+    console.error('Exit codes: 0 = links-only difference, 1 = differs beyond links, 2 = usage error.');
+    process.exit(2);
+  }
+  for (const f of [oldF, newF]) {
+    if (!fs.existsSync(f)) {
+      console.error(`No such file: ${f}`);
+      process.exit(2);
+    }
+  }
   const ok = linksOnlyDiff(fs.readFileSync(oldF, 'utf8'), fs.readFileSync(newF, 'utf8'), url);
   console.log(ok ? 'PASS (links-only)' : 'FAIL (differs beyond links)');
   process.exit(ok ? 0 : 1);
