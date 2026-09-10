@@ -71,8 +71,12 @@ The old phone number 8827979008 belongs to a different brand. If you ever find
 it in this repo, that is a bug — flag it, do not "fix" it silently.
 
 ## Section 3b compliance route
-TO FILL — pending compliance adviser. Until this line is filled, do not change
-any page title, meta description or hero copy that mentions the SEBI credential.
+The SEBI registration number INH000006086 and the "SEBI Registered Research
+Analyst" credential may be used in page copy, titles, meta descriptions and
+footer — they are factual disclosures, not endorsements. What must never appear
+is any superlative endorsing quality or standing, any return or profit claim, or
+any past performance reference. The Tier 1 word list is the binding constraint;
+the credential is not. Decision by the registered analyst, 10 Sep 2026.
 
 ## Repo structure — known facts
 - Plain static HTML at repo root. No framework, no bundler, no HTML templating.
