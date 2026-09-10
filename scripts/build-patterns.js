@@ -23,6 +23,7 @@ const IMG_DIR = path.join('images', 'chart-patterns');
 const head = fs.readFileSync(path.join('partials', 'head.html'), 'utf8');
 const nav = fs.readFileSync(path.join('partials', 'nav.html'), 'utf8');
 const footer = fs.readFileSync(path.join('partials', 'footer.html'), 'utf8');
+const tail = fs.readFileSync(path.join('partials', 'tail.html'), 'utf8');
 const data = JSON.parse(fs.readFileSync(path.join('data', 'patterns.json'), 'utf8'));
 const records = Array.isArray(data) ? data : (data.patterns || []);
 
@@ -156,7 +157,7 @@ function buildPage(rec) {
     .replace(/{{DESCRIPTION}}/g, esc(rec.metaDescription))
     .replace(/{{CANONICAL}}/g, url)
     .replace('{{JSONLD}}', jsonld);
-  return `${headOut}\n${nav}\n<main id="main">\n${renderBody(rec)}\n</main>\n${footer}`;
+  return `${headOut}\n${nav}\n<main id="main">\n${renderBody(rec)}\n</main>\n${footer}\n${tail}`;
 }
 
 fs.mkdirSync('chart-patterns', { recursive: true });

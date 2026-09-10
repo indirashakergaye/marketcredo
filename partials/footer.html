@@ -1,13 +1,29 @@
-<!-- FOOTER — shared partial. Root-relative links. -->
+<!-- FOOTER — shared partial (markup only; canonical site footer). Root-relative
+     links. The trailing WhatsApp float + scripts live in partials/tail.html. -->
 <footer id="contact">
   <div class="wrap">
+    <div class="news">
+      <div>
+        <h3>Stay on top of the markets</h3>
+        <p>Get bite-sized technical-analysis tips &amp; batch updates. No spam, ever.</p>
+      </div>
+      <form onsubmit="return subNews(event)">
+        <input id="news-email" type="email" placeholder="Your email address" required/>
+        <button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+    </div>
     <div class="foot-grid">
       <div>
         <div class="foot-brand"><span class="bm">M</span> Market Credo</div>
-        <p class="foot-about">Bhopal's price-action focused technical analysis training institute, led by Atish Shakergaye — SEBI Registered Research Analyst with 20+ years of market experience.</p>
+        <p class="foot-about">Bhopal's professional technical analysis training institute, led by Atish Shakergaye — SEBI Registered Research Analyst with 20+ years of market experience.</p>
         <div class="sebi-badge">
           <span class="sb-ic"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5.5 3.8 8.6 8 10 4.2-1.4 8-4.5 8-10V5z"/><path d="M9 12l2 2 4-4"/></svg></span>
           <span><span class="sb-t">SEBI Registered</span><br/><span class="sb-s">Research Analyst · INH000006086</span></span>
+        </div>
+        <div class="foot-social">
+          <a href="https://www.youtube.com/@MarketCredo" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6z"/></svg></a>
+          <a href="https://www.instagram.com/marketcredo" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zm0 3.68A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.4-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg></a>
+          <a href="https://www.facebook.com/marketcredo" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.44 18.63.07 12 .07S0 5.44 0 12.07c0 5.99 4.39 10.95 10.13 11.85v-8.38H7.08v-3.47h3.05V9.43c0-3.01 1.79-4.67 4.53-4.67 1.31 0 2.69.24 2.69.24v2.95h-1.51c-1.49 0-1.96.93-1.96 1.87v2.25h3.33l-.53 3.47h-2.8v8.38C19.61 23.02 24 18.06 24 12.07z"/></svg></a>
         </div>
       </div>
       <div><div class="foot-h">Course</div><ul class="foot-links"><li><a href="/courses#courses">Technical Analysis</a></li><li><a href="/#curriculum">Curriculum</a></li><li><a href="/#enquire">Free 2-Day Demo</a></li></ul></div>
@@ -24,21 +40,11 @@
   <div class="foot-disc">
     <div class="wrap">
       DISCLAIMER: Market Credo is a trading and investment education institute. Atish Shakergaye is a SEBI Registered Research Analyst (INH000006086). All course content is strictly for educational purposes only. Trading and investing in securities involves substantial risk of loss. Past performance is not indicative of future results. Please consult a SEBI-registered advisor before making any investment decisions. Market Credo does not provide buy/sell recommendations or portfolio management services.
+      <div class="foot-bot">
+        <span>© 2024–2026 Market Credo · All Rights Reserved</span>
+        <span>Bhopal · Madhya Pradesh · India</span>
+        <span class="g">SEBI: INH000006086</span>
+      </div>
     </div>
   </div>
 </footer>
-
-<a class="wa-float" data-nosnippet href="https://wa.me/919993906449?text=Hello%20Market%20Credo!%20I%20am%20interested%20in%20your%20courses.%20Please%20share%20details." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Market Credo">
-  <span class="dot"></span>
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.553 4.1 1.523 5.824L.072 23.998l6.32-1.428A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.865 0-3.608-.507-5.101-1.387l-.365-.217-3.748.847.863-3.658-.237-.375A9.938 9.938 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-</a>
-
-<script>
-var _nt=document.getElementById('navtoggle');if(_nt){_nt.addEventListener('click',function(){document.getElementById('menu').classList.toggle('open');});}
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
-document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
-</script>
-<script src="/mc-events.js" defer></script>
-<script src="/lead.js" defer></script>
-</body>
-</html>
