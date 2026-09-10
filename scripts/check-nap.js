@@ -24,7 +24,7 @@ const EXCLUDE_FILES = new Set([
   'chips-variants-preview.html',
   'mobile.html',
 ]);
-const EXCLUDE_DIRS = new Set(['node_modules', '.git', 'docs', 'vendor', 'templates']);
+const EXCLUDE_DIRS = new Set(['node_modules', '.git', 'docs', 'vendor', 'templates', 'data', 'partials']);
 
 function walk(dir, acc) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {

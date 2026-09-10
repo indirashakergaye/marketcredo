@@ -21,7 +21,7 @@ const EXCLUDE = new Set([
   'market_credo_bloomberg.html', 'chips-variants-preview.html', 'mobile.html',
   'thank-you.html', 'privacy.html', 'terms.html', '404.html',
 ]);
-const EXCLUDE_DIRS = new Set(['node_modules', '.git', 'docs', 'vendor', 'templates', 'scripts', 'api']);
+const EXCLUDE_DIRS = new Set(['node_modules', '.git', 'docs', 'vendor', 'templates', 'scripts', 'api', 'data', 'partials']);
 
 function walk(dir, acc) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
