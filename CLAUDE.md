@@ -21,10 +21,30 @@ problem.
    No return or profit claims. No past performance. No misleading testimonials.
    No SEBI logo. No celebrities.
 
-### Banned words — never write these into any page, meta tag, alt text or JSON-LD
+### Banned words — two tiers (enforced by scripts/check-compliance.js)
+These are checked in page text, meta tags, alt attributes and JSON-LD
+(case-insensitive, whole-word). The list here is the single source of truth,
+mirrored by the TIER1/TIER2 arrays in the guard.
+
+**Tier 1 — HARD BLOCK (SEBI Advertisement Code). Any occurrence fails the build.**
+Never write these superlatives / standing or outcome claims anywhere:
 best, No. 1, number one, top-rated, leading, premier, finest, unmatched,
-guaranteed, assured, sure shot, accuracy %, profit, returns, earn, multibagger,
-tips, calls, signals, target, stop loss
+guaranteed, assured, sure shot, accuracy %, multibagger
+
+**Tier 2 — WARN ONLY (trading vocabulary). The build passes; hits are printed for
+human review.** These are legitimate in an educational sentence ("we do not give
+tips or signals") but must never appear as a recommendation — review each in
+context, do not blanket-remove:
+tips, calls, signals, target, stop loss, profit, returns, earn
+
+**Documented exemption:** `terms.html` §9 "No Guaranteed Returns" is a
+SEBI-protective legal disclaimer whose exact wording ("no guaranteed or assured
+returns") is required and must never be reworded or removed. The guard exempts
+that one comment-delimited block (between the `<!-- 9. ... -->` and
+`<!-- 10. ... -->` markers) via `EXEMPT_REGIONS` in check-compliance.js — a narrow
+region skip, NOT a file-level skip; the rest of terms.html is still scanned. If
+that block is edited so a marker moves, the exemption self-disables and the words
+re-flag.
 
 ### Never
 - Never invent a testimonial, review, student name, statistic or outcome.
