@@ -83,6 +83,11 @@ scoped to that single list item only.
 - Never write market commentary, price levels, or anything naming a specific
   security.
 - Never reference ScoutStack. It is a separate brand with a separate NAP.
+- Never name a specific security alongside a price level, a chart example, or an
+  outcome. Teaching examples use generic placeholders ("a stock at Rs 2,500",
+  "Stock A") or schematic charts with no ticker. Naming an index as an index is
+  fine; naming it with a price level is not. /blog/nifty-weekly-outlook is the
+  model — it states outright that no specific prices are used, on purpose.
 
 ## Canonical facts — use these exactly, never from memory
 Name:    Market Credo
