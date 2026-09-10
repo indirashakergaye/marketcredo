@@ -116,9 +116,11 @@ the credential is not. Decision by the registered analyst, 10 Sep 2026.
 ## Repo structure — known facts
 - Plain static HTML at repo root. No framework, no bundler, no HTML templating.
 - Vercel, `cleanUrls: true`, `trailingSlash: false`. URL = filename minus .html.
-- Build: `node scripts/check-nap.js && node scripts/build-sitemap.js && node scripts/build-rss.js`
+- Build: `node scripts/check-nap.js && node scripts/check-compliance.js && node scripts/build-sitemap.js && node scripts/build-rss.js`
 - `check-nap.js` fails the build on a wrong phone or pincode. Follow this pattern
   for any new guard.
+- `check-compliance.js` fails the build on any Tier-1 (CLAIM) banned word; Tier-2
+  hits print for review but do not block. See the banned-words section above.
 - `build-sitemap.js` already derives lastmod from git commit dates.
 - No partials: all 26 pages repeat nav and footer as literal HTML.
 - JSON-LD is hardcoded per page (33 inline blocks). No shared schema source.
