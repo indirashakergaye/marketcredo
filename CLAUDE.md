@@ -117,8 +117,8 @@ the credential is not. Decision by the registered analyst, 10 Sep 2026.
 - Plain static HTML at repo root. No framework, no bundler, no runtime templating.
   There is now a build-time generator and shared chrome partials — see below.
 - Vercel, `cleanUrls: true`, `trailingSlash: false`. URL = filename minus .html.
-- 30 HTML files; the guards scan 25 as public (the rest are admin tools, the blog
-  template and the bloomberg mock).
+- The guards scan every public page. Not public, and skipped: the admin tools, the
+  blog template and the bloomberg mock — `scripts/exclude.js` is the list.
 - Build: `node scripts/check-nap.js && node scripts/check-compliance.js && node scripts/build-sitemap.js && node scripts/build-rss.js`
   `build-patterns.js`, `build-og.js` and `migrate-chrome.js` are NOT wired into
   `npm run build` — run them by hand and commit their output.
@@ -128,17 +128,19 @@ the credential is not. Decision by the registered analyst, 10 Sep 2026.
   hits print for review but do not block. See the banned-words section above.
 - `build-sitemap.js` already derives lastmod from git commit dates.
 - **Shared chrome partials** live in `partials/`: `head.html`, `nav.html`,
-  `footer.html`, `tail.html`. They are build-time and migration sources, NOT
-  runtime includes — nothing fetches them in the browser, so editing a partial
-  changes nothing on its own. 19 of the 30 pages now carry the canonical nav and
-  footer byte-for-byte: all 9 blog posts, the generated chart-pattern page, about,
-  chartboard, faq, fees, privacy, review-us, terms, testimonials, videos. Still on
-  hand-written chrome: index, bhopal-stock-market-course, courses, life, blog,
-  blog-template, thank-you and the three admin pages.
-  **The partials are build-time sources, NOT runtime includes. Editing a partial
-  does NOT update the 19 pages that use it — those pages hold their own copy of
-  the chrome, and `scripts/migrate-chrome.js` has to be re-run to re-stamp them.**
-  Change shared chrome in two steps, always: edit the partial, then re-stamp.
+  `footer.html`, `tail.html`. Most pages now carry the canonical nav and footer
+  byte-for-byte — every blog post, every generated chart-pattern page, and the
+  newer top-level pages. A handful of older pages still carry hand-written chrome,
+  and this is the list to check before touching shared markup: index,
+  bhopal-stock-market-course, courses, life, blog, blog-template, thank-you and
+  the three admin pages. For the split as it stands today, compare
+  each page's `<nav class="navbar">` and `<footer id="contact">` against the
+  partials (whitespace-normalised) rather than trusting a count written here.
+  **The partials are build-time sources, NOT runtime includes. Nothing fetches
+  them in the browser. Editing a partial does NOT update the pages that use it —
+  each page holds its own copy of the chrome, and `scripts/migrate-chrome.js` has
+  to be re-run to re-stamp them.** Change shared chrome in two steps, always: edit
+  the partial, then re-stamp.
 - `scripts/migrate-chrome.js` stamps the nav/footer partials into a page. It
   replaces ONLY the `<nav class="navbar">` and `<footer id="contact">` elements
   and never touches `<head>`, JSON-LD, the WhatsApp float or trailing scripts.
@@ -154,16 +156,17 @@ the credential is not. Decision by the registered analyst, 10 Sep 2026.
   least 2 charts whose WebP actually exists in `images/chart-patterns/` and that
   carry alt text — the guard against shipping text-only pattern pages. Pages are
   still written when the gate fails, with visible placeholders, so a failing run
-  must not be committed. Currently 1 pattern: head-and-shoulders.
+  must not be committed. Which pattern pages exist is whatever `data/patterns.json`
+  defines — read the JSON, do not count the files.
 - `scripts/exclude.js` is the single source of truth for what stays out of the
   generated feeds: `EXCLUDE` (admin tools, blog-template, the bloomberg mock,
   thank-you, privacy, terms, 404, and the three noindexed blog posts) and
   `EXCLUDE_DIRS` (non-public trees). Both `build-sitemap.js` and `build-rss.js`
   import it, so a page can never be syndicated in one feed and hidden in the
-  other. Add exclusions there, not in either builder. Current output: sitemap 19
-  URLs, feed 6 posts.
-- JSON-LD is hardcoded per page — 35 inline blocks across 27 files. No shared
-  schema source, except pattern pages whose graph comes from build-patterns.js.
+  other. Add exclusions there, not in either builder.
+- JSON-LD is hardcoded per page — one `@graph` block per page as the rule, though
+  a few pages carry more than one. No shared schema source, except pattern pages
+  whose graph comes from build-patterns.js.
 - `site-loader.js` and `/site-data.json` are ORPHANED DEAD CODE — not referenced
   by any live page and never fetched. All user-visible text and every JSON-LD
   value are static in the raw HTML; editing site-data.json has no effect.
@@ -178,11 +181,11 @@ the credential is not. Decision by the registered analyst, 10 Sep 2026.
 - URLs: clean, no trailing slash, no .html. Never change a live URL without
   adding a 301.
 - Internal links: root-relative (`/about`), never relative (`about`, `../about`).
-  The nav and footer debt is cleared on the 19 migrated pages and in the partials,
+  The nav and footer debt is cleared on the migrated pages and in the partials,
   which are root-relative throughout — that is why /chart-patterns/ could be added
-  safely. About 200 relative hrefs remain in body copy and on the 11 unmigrated
-  pages (blog.html and blog-template.html carry 20 each). Still debt, still not a
-  precedent: write new links root-relative.
+  safely. A couple of hundred relative hrefs still remain in body copy and on the
+  pages that carry hand-written chrome — a real cleanup, not a five-minute one.
+  Still debt, still not a precedent: write new links root-relative.
 - Titles: under 60 characters. Meta descriptions: 140-155 characters. Every page
   unique.
 - Exactly one `<h1>` per page. Real semantic heading elements, never styled divs.
