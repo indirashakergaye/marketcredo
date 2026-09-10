@@ -85,7 +85,7 @@ function buildPage(d, isoDate, niceDate) {
     <div class="news">
       <div>
         <h3>Stay on top of the markets</h3>
-        <p>Get bite-sized technical-analysis tips &amp; batch updates. No spam, ever.</p>
+        <p>Get bite-sized technical-analysis lessons &amp; batch updates. No spam, ever.</p>
       </div>
       <form onsubmit="return subNews(event)">
         <input id="news-email" type="email" placeholder="Your email address" required/>
