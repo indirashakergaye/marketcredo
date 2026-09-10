@@ -120,8 +120,9 @@ the credential is not. Decision by the registered analyst, 10 Sep 2026.
 - The guards scan every public page. Not public, and skipped: the admin tools, the
   blog template and the bloomberg mock — `scripts/exclude.js` is the list.
 - Build: `node scripts/check-nap.js && node scripts/check-compliance.js && node scripts/build-sitemap.js && node scripts/build-rss.js`
-  `build-patterns.js`, `build-og.js` and `migrate-chrome.js` are NOT wired into
-  `npm run build` — run them by hand and commit their output.
+  `build-patterns.js`, `make-schematic-chart.js`, `build-og.js` and
+  `migrate-chrome.js` are NOT wired into `npm run build` — run them by hand and
+  commit their output.
 - `check-nap.js` fails the build on a wrong phone or pincode. Follow this pattern
   for any new guard.
 - `check-compliance.js` fails the build on any Tier-1 (CLAIM) banned word; Tier-2
@@ -158,6 +159,24 @@ the credential is not. Decision by the registered analyst, 10 Sep 2026.
   still written when the gate fails, with visible placeholders, so a failing run
   must not be committed. Which pattern pages exist is whatever `data/patterns.json`
   defines — read the JSON, do not count the files.
+- **The charts are generated from data too.** `scripts/make-schematic-chart.js`
+  draws each chart from the `draw` block on its chart record — a synthetic price
+  path, an optional neckline and a list of annotation marks — and writes the WebP
+  into `images/chart-patterns/`. Synthetic means no named security and no real
+  price data, which is what keeps the pattern pages clear of the 30-day rule; every
+  image carries a footer note saying so. Output is deterministic, so re-running on
+  unchanged data produces no diff, and `--check` reports what would change without
+  writing. A chart record with no `draw` block is a hand-supplied image and is left
+  alone. The script needs sharp, installed for the run only
+  (`npm install --no-save sharp`) and deliberately not a project dependency — the
+  site build needs no binaries.
+- **Cross-links between pattern pages are structured, not prose.** Each record's
+  `related` array holds `{slug, note}` entries; `relatedOffPage` holds
+  `{name, note}` for patterns that have no page yet (named and described, not
+  linked). build-patterns.js renders the "Related patterns" section from them and
+  runs a RELATED-LINK GATE alongside the chart gate: an unknown slug, a self-link,
+  a duplicate or a missing note fails the build with exit 1. A dead cross-link on a
+  live page is worse than no link, and prose links cannot be checked.
 - `scripts/exclude.js` is the single source of truth for what stays out of the
   generated feeds: `EXCLUDE` (admin tools, blog-template, the bloomberg mock,
   thank-you, privacy, terms, 404, and the three noindexed blog posts) and
