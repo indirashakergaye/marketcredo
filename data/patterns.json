@@ -55,7 +55,89 @@
           "height": 675,
           "alt": "Schematic daily chart of a head and shoulders top: a left shoulder, a higher head and a right shoulder of similar height to the left, with a neckline drawn through the two pullback lows.",
           "caption": "Anatomy of a head and shoulders top — the three peaks and the neckline.",
-          "spec": "Illustrative/schematic daily chart (no named security). Mark and label: left shoulder, head (clearly higher), right shoulder (≈ left shoulder height), and the neckline drawn through the two intervening pullback lows. Purpose: show the three-peak reversal structure and where the neckline sits. Format: WebP, 1200×675. If a real chart is used instead of a schematic, it must use price data at least 30 days old, with the date range labelled on the image, and must not imply any recommendation. Current image: schematic, generated from a synthetic price series (replaces an earlier real-market capture)."
+          "spec": "Illustrative/schematic daily chart (no named security). Mark and label: left shoulder, head (clearly higher), right shoulder (≈ left shoulder height), and the neckline drawn through the two intervening pullback lows. Purpose: show the three-peak reversal structure and where the neckline sits. Format: WebP, 1200×675. If a real chart is used instead of a schematic, it must use price data at least 30 days old, with the date range labelled on the image, and must not imply any recommendation. Current image: schematic, generated from a synthetic price series (replaces an earlier real-market capture).",
+          "draw": {
+            "seed": 7,
+            "neckline": [
+              0.24,
+              34.5,
+              0.97,
+              32.5
+            ],
+            "waypoints": [
+              [
+                0,
+                17
+              ],
+              [
+                0.1,
+                27
+              ],
+              [
+                0.18,
+                23
+              ],
+              [
+                0.28,
+                47
+              ],
+              [
+                0.37,
+                34
+              ],
+              [
+                0.5,
+                63
+              ],
+              [
+                0.59,
+                33
+              ],
+              [
+                0.7,
+                48
+              ],
+              [
+                0.8,
+                35
+              ],
+              [
+                0.9,
+                33
+              ],
+              [
+                1,
+                32
+              ]
+            ],
+            "marks": [
+              {
+                "t": "label",
+                "f": 0.28,
+                "v": 56,
+                "s": "Left shoulder"
+              },
+              {
+                "t": "label",
+                "f": 0.5,
+                "v": 72,
+                "s": "Head"
+              },
+              {
+                "t": "label",
+                "f": 0.7,
+                "v": 57,
+                "s": "Right shoulder"
+              },
+              {
+                "t": "label",
+                "f": 0.93,
+                "v": 24,
+                "s": "Neckline",
+                "anchor": "end"
+              }
+            ]
+          }
         },
         {
           "file": "head-and-shoulders-neckline-break.webp",
@@ -63,7 +145,140 @@
           "height": 675,
           "alt": "Schematic daily chart showing a head and shoulders neckline break, a throwback that retests the neckline from below, and the pattern height projected downward from the break point as a measured move.",
           "caption": "Neckline break, throwback, and the measured-move concept.",
-          "spec": "Illustrative/schematic daily chart (no named security). Mark and label: the neckline break (a decisive close beyond the neckline), an optional throwback (retest of the neckline from the other side), and the measured move (project the vertical head-to-neckline distance from the break point). Purpose: show confirmation and how the pattern's height frames the scale of a move — as a concept, not a price call. Format: WebP, 1200×675. Same 30-day-data + labelled-date-range rule applies if a real security chart is used. Current image: schematic, generated from a synthetic price series (replaces an earlier real-market capture)."
+          "spec": "Illustrative/schematic daily chart (no named security). Mark and label: the neckline break (a decisive close beyond the neckline), an optional throwback (retest of the neckline from the other side), and the measured move (project the vertical head-to-neckline distance from the break point). Purpose: show confirmation and how the pattern's height frames the scale of a move — as a concept, not a price call. Format: WebP, 1200×675. Same 30-day-data + labelled-date-range rule applies if a real security chart is used. Current image: schematic, generated from a synthetic price series (replaces an earlier real-market capture).",
+          "draw": {
+            "seed": 11,
+            "neckline": [
+              0.24,
+              34.5,
+              0.97,
+              32.5
+            ],
+            "waypoints": [
+              [
+                0,
+                17
+              ],
+              [
+                0.09,
+                27
+              ],
+              [
+                0.17,
+                23
+              ],
+              [
+                0.26,
+                47
+              ],
+              [
+                0.34,
+                34
+              ],
+              [
+                0.46,
+                63
+              ],
+              [
+                0.55,
+                33
+              ],
+              [
+                0.65,
+                48
+              ],
+              [
+                0.73,
+                34
+              ],
+              [
+                0.79,
+                25
+              ],
+              [
+                0.86,
+                32
+              ],
+              [
+                1,
+                8
+              ]
+            ],
+            "marks": [
+              {
+                "t": "label",
+                "f": 0.26,
+                "v": 56,
+                "s": "Left shoulder",
+                "size": 19
+              },
+              {
+                "t": "label",
+                "f": 0.46,
+                "v": 72,
+                "s": "Head",
+                "size": 19
+              },
+              {
+                "t": "label",
+                "f": 0.65,
+                "v": 57,
+                "s": "Right shoulder",
+                "size": 19
+              },
+              {
+                "t": "move",
+                "f": 0.5,
+                "from": 63,
+                "to": 33.5
+              },
+              {
+                "t": "label",
+                "f": 0.5,
+                "v": 48,
+                "s": "Pattern height",
+                "anchor": "start",
+                "size": 18,
+                "fill": "move",
+                "dx": 22
+              },
+              {
+                "t": "dot",
+                "f": 0.762,
+                "v": 31
+              },
+              {
+                "t": "label",
+                "f": 0.762,
+                "v": 24,
+                "s": "Neckline break",
+                "size": 19
+              },
+              {
+                "t": "label",
+                "f": 0.875,
+                "v": 40,
+                "s": "Throwback",
+                "size": 19
+              },
+              {
+                "t": "move",
+                "f": 0.93,
+                "from": 33,
+                "to": 3.5
+              },
+              {
+                "t": "label",
+                "f": 0.93,
+                "v": 18,
+                "s": "Measured move",
+                "anchor": "end",
+                "size": 18,
+                "fill": "move",
+                "dx": -16
+              }
+            ]
+          }
         }
       ],
       "faqs": [
@@ -132,7 +347,87 @@
           "height": 675,
           "alt": "Schematic daily chart of a double top: two peaks at roughly the same height separated by a pullback, with a neckline drawn along the low between them.",
           "caption": "Anatomy of a double top — the two peaks and the neckline.",
-          "spec": "Mark and label: first top, second top (roughly the same height), and the neckline drawn along the intervening pullback low. Purpose: show the two-peak reversal structure and where the neckline sits. Illustrative/schematic daily chart (no named security, no price axis, synthetic series). Format: WebP, 1200x675. If a real chart is ever used instead of a schematic, it must use price data at least 30 days old, with the date range labelled on the image, and must not imply any recommendation. Current image: schematic, generated from a synthetic price series."
+          "spec": "Mark and label: first top, second top (roughly the same height), and the neckline drawn along the intervening pullback low. Purpose: show the two-peak reversal structure and where the neckline sits. Illustrative/schematic daily chart (no named security, no price axis, synthetic series). Format: WebP, 1200x675. If a real chart is ever used instead of a schematic, it must use price data at least 30 days old, with the date range labelled on the image, and must not imply any recommendation. Current image: schematic, generated from a synthetic price series.",
+          "draw": {
+            "seed": 23,
+            "neckline": [
+              0.22,
+              34.5,
+              0.97,
+              33.5
+            ],
+            "waypoints": [
+              [
+                0,
+                16
+              ],
+              [
+                0.12,
+                28
+              ],
+              [
+                0.2,
+                24
+              ],
+              [
+                0.32,
+                53
+              ],
+              [
+                0.44,
+                34
+              ],
+              [
+                0.56,
+                52
+              ],
+              [
+                0.68,
+                36
+              ],
+              [
+                0.8,
+                34
+              ],
+              [
+                1,
+                33
+              ]
+            ],
+            "marks": [
+              {
+                "t": "label",
+                "f": 0.32,
+                "v": 63,
+                "s": "First top"
+              },
+              {
+                "t": "label",
+                "f": 0.56,
+                "v": 62,
+                "s": "Second top"
+              },
+              {
+                "t": "label",
+                "f": 0.93,
+                "v": 24,
+                "s": "Neckline",
+                "anchor": "end"
+              },
+              {
+                "t": "tick",
+                "f": 0.32,
+                "from": 53,
+                "to": 56
+              },
+              {
+                "t": "tick",
+                "f": 0.56,
+                "from": 52,
+                "to": 56
+              }
+            ]
+          }
         },
         {
           "file": "double-top-neckline-break.webp",
@@ -140,7 +435,129 @@
           "height": 675,
           "alt": "Schematic daily chart showing a double top neckline break, a throwback that retests the neckline from below, and the pattern height projected down from the break point as a measured move.",
           "caption": "Neckline break, throwback, and the measured-move concept.",
-          "spec": "Mark and label: the neckline break (a decisive close beyond the line), the throwback (retest from the other side), the pattern height (top to neckline) and the measured move projected from the break point. Purpose: show confirmation and how the pattern's height frames scale — as a concept, not a price call. Illustrative/schematic daily chart (no named security, no price axis, synthetic series). Format: WebP, 1200x675. If a real chart is ever used instead of a schematic, it must use price data at least 30 days old, with the date range labelled on the image, and must not imply any recommendation. Current image: schematic, generated from a synthetic price series."
+          "spec": "Mark and label: the neckline break (a decisive close beyond the line), the throwback (retest from the other side), the pattern height (top to neckline) and the measured move projected from the break point. Purpose: show confirmation and how the pattern's height frames scale — as a concept, not a price call. Illustrative/schematic daily chart (no named security, no price axis, synthetic series). Format: WebP, 1200x675. If a real chart is ever used instead of a schematic, it must use price data at least 30 days old, with the date range labelled on the image, and must not imply any recommendation. Current image: schematic, generated from a synthetic price series.",
+          "draw": {
+            "seed": 31,
+            "neckline": [
+              0.2,
+              34.5,
+              0.97,
+              33.5
+            ],
+            "waypoints": [
+              [
+                0,
+                16
+              ],
+              [
+                0.11,
+                28
+              ],
+              [
+                0.18,
+                24
+              ],
+              [
+                0.29,
+                53
+              ],
+              [
+                0.4,
+                34
+              ],
+              [
+                0.51,
+                52
+              ],
+              [
+                0.62,
+                36
+              ],
+              [
+                0.7,
+                25
+              ],
+              [
+                0.78,
+                33
+              ],
+              [
+                0.86,
+                22
+              ],
+              [
+                1,
+                12
+              ]
+            ],
+            "marks": [
+              {
+                "t": "label",
+                "f": 0.29,
+                "v": 63,
+                "s": "First top",
+                "size": 19
+              },
+              {
+                "t": "label",
+                "f": 0.51,
+                "v": 62,
+                "s": "Second top",
+                "size": 19
+              },
+              {
+                "t": "move",
+                "f": 0.555,
+                "from": 52,
+                "to": 34
+              },
+              {
+                "t": "label",
+                "f": 0.555,
+                "v": 43,
+                "s": "Pattern height",
+                "anchor": "start",
+                "size": 18,
+                "fill": "move",
+                "dx": 22
+              },
+              {
+                "t": "dot",
+                "f": 0.665,
+                "v": 32
+              },
+              {
+                "t": "label",
+                "f": 0.665,
+                "v": 25,
+                "s": "Neckline break",
+                "size": 19
+              },
+              {
+                "t": "label",
+                "f": 0.78,
+                "v": 40,
+                "s": "Throwback",
+                "size": 19
+              },
+              {
+                "t": "move",
+                "f": 0.9,
+                "from": 33.5,
+                "to": 15.5
+              },
+              {
+                "t": "label",
+                "f": 0.9,
+                "v": 24,
+                "s": "Measured move",
+                "anchor": "end",
+                "size": 18,
+                "fill": "move",
+                "dx": -16
+              }
+            ]
+          }
         }
       ],
       "faqs": [
