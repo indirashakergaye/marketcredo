@@ -21,22 +21,35 @@ problem.
    No return or profit claims. No past performance. No misleading testimonials.
    No SEBI logo. No celebrities.
 
-### Banned words — two tiers (enforced by scripts/check-compliance.js)
-These are checked in page text, meta tags, alt attributes and JSON-LD
-(case-insensitive, whole-word). The list here is the single source of truth,
-mirrored by the TIER1/TIER2 arrays in the guard.
+### Banned words — scope-aware, enforced by scripts/check-compliance.js
+Checked in page text, meta tags, alt attributes and JSON-LD (case-insensitive,
+whole-word). This is the single source of truth, mirrored by the
+CLAIM/SUBJECTIVE/TIER2 arrays in the guard.
 
-**Tier 1 — HARD BLOCK (SEBI Advertisement Code). Any occurrence fails the build.**
-Never write these superlatives / standing or outcome claims anywhere:
-best, No. 1, number one, top-rated, leading, premier, finest, unmatched,
-guaranteed, assured, sure shot, accuracy %, multibagger, most trusted,
-world-class, most respected, most powerful, top institute, number 1, #1,
+**Why scope matters:** a superlative about *our own institute* ("Bhopal's premier
+institute," "the best course") is SEBI Advertisement Code exposure. The same word
+inside *teaching prose about a market concept* ("the most powerful reversal
+signal," "RSI works best at support") is not a claim about us — it is educational
+copy. So the rule is split by where the word appears.
+
+**CLAIM — HARD BLOCK EVERYWHERE (fails the build), no exception.** Standing
+superlatives and outcome/return claims, wherever they appear — marketing page or
+blog, title, meta, JSON-LD or body:
+guaranteed, assured, sure shot, accuracy %, multibagger, premier, No. 1, #1,
+number one, number 1, top-rated, finest, unmatched, top institute,
 India's best, Bhopal's best
+(`No. 1` requires the period form — it does NOT match "no 1:2 ratio".)
 
-**Tier 2 — WARN ONLY (trading vocabulary). The build passes; hits are printed for
-human review.** These are legitimate in an educational sentence ("we do not give
-tips or signals") but must never appear as a recommendation — review each in
-context, do not blanket-remove:
+**SUBJECTIVE — HARD BLOCK on marketing copy, WARN-ONLY in blog body.** These are
+hard-blocked on the marketing pages (index, bhopal-stock-market-course, courses,
+about, faq, videos, life, testimonials) AND inside any blog post's title, meta
+tags and JSON-LD. Inside `blog/*.html` **body prose only**, they drop to warn-only
+(teaching language, not a claim about us):
+best, leading, most powerful, world-class, most trusted, most respected
+
+**TIER 2 — WARN ONLY everywhere. The build passes; hits are printed for review.**
+Legitimate in an educational sentence ("we do not give tips or signals") but never
+as a recommendation — review each in context, do not blanket-remove:
 tips, calls, signals, target, stop loss, profit, returns, earn
 
 **Documented exemption:** `terms.html` §9 "No Guaranteed Returns" is a
