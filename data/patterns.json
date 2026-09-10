@@ -1,0 +1,72 @@
+{
+  "patterns": [
+    {
+      "slug": "head-and-shoulders",
+      "title": "Head and Shoulders Pattern — How to Read It | Market Credo",
+      "metaDescription": "Learn to read the head and shoulders chart pattern — the two shoulders, the head and the neckline — with a clear, educational guide from Market Credo, Bhopal.",
+      "breadcrumb": "Head and Shoulders",
+      "eyebrow": "Chart Patterns · Reversal Structure",
+      "h1": "The Head and Shoulders Pattern",
+      "intro": "The head and shoulders is a reversal structure made of three peaks — a higher middle peak (the head) between two lower, roughly equal peaks (the shoulders) — resting on a line called the neckline. It is studied as a sign that an existing uptrend may be losing strength.",
+      "about": ["Technical Analysis", "Chart Patterns", "Price Action", "Chart Structure"],
+      "sections": [
+        {
+          "h2": "What the pattern looks like",
+          "html": "<p>Read left to right, the shape has three pushes higher. The first push forms the <strong>left shoulder</strong>. Price pulls back, then rises to a higher point — the <strong>head</strong> — before pulling back again. A third push rises to about the height of the first, forming the <strong>right shoulder</strong>. The two pullback lows in between define the <strong>neckline</strong>.</p><p>The pattern matters because the second lower peak (the right shoulder) shows buyers were unable to push price back to the previous high. That loss of momentum is the whole idea — the structure is a picture of a trend running out of fuel.</p>"
+        },
+        {
+          "h2": "The neckline is the key line",
+          "html": "<p>Draw the neckline by connecting the two pullback lows either side of the head. Until price closes clearly beyond that line, the shape is only a possibility — an outline, not a confirmed pattern. Most readers treat a decisive close beyond the neckline as the point where the structure is confirmed.</p><ul><li>A neckline can be flat, rising or falling — the angle is part of what you read.</li><li>After a break, price sometimes comes back to the neckline from the other side (a throwback) before continuing. That retest is a common place to study the pattern's behaviour.</li></ul>"
+        },
+        {
+          "h2": "Volume and the story it tells",
+          "html": "<p>Volume often eases as the pattern develops — frequently lighter under the right shoulder than under the head. That fading participation is consistent with the idea of a weakening trend. Volume is context, not proof: read it alongside the structure rather than on its own.</p>"
+        },
+        {
+          "h2": "The measured move, as a concept",
+          "html": "<p>Students often ask how far a move might carry after a neckline break. As an educational concept, the vertical distance from the head to the neckline can be projected from the break point to give a sense of scale. Treat this as a way to understand proportion in the pattern — not as a forecast, and never as advice to act.</p>"
+        },
+        {
+          "h2": "The inverse head and shoulders",
+          "html": "<p>Flip the pattern upside down and it forms at the end of a downtrend instead: a lower middle trough (the head) between two shallower troughs (the shoulders), under a neckline. It is studied as the mirror image — a downtrend that may be losing strength.</p>"
+        },
+        {
+          "h2": "Common mistakes when reading it",
+          "html": "<ul><li><strong>Forcing the shape.</strong> Not every three-peak wiggle is a head and shoulders. The shoulders should be roughly symmetrical and the head clearly higher.</li><li><strong>Ignoring the neckline.</strong> An unbroken neckline means the pattern is unconfirmed. The outline alone is not enough.</li><li><strong>Reading it in isolation.</strong> The pattern is one piece of structure. Weigh it against the wider trend, support and resistance, and overall context.</li></ul>"
+        },
+        {
+          "h2": "How we teach it at Market Credo",
+          "html": "<p>In the classroom we teach the head and shoulders from first principles — why the structure forms, what the neckline represents, and how to confirm it — so you can recognise it on any chart yourself. The aim is an independent reader of price, not someone who depends on ready-made trades.</p>"
+        }
+      ],
+      "charts": [
+        {
+          "file": "head-and-shoulders-anatomy.webp",
+          "width": 1200,
+          "height": 675,
+          "alt": "Schematic daily chart of a head and shoulders top: a left shoulder, a higher head and a right shoulder of similar height to the left, with a neckline drawn through the two pullback lows.",
+          "caption": "Anatomy of a head and shoulders top — the three peaks and the neckline.",
+          "spec": "Illustrative/schematic daily chart (no named security). Mark and label: left shoulder, head (clearly higher), right shoulder (≈ left shoulder height), and the neckline drawn through the two intervening pullback lows. Purpose: show the three-peak reversal structure and where the neckline sits. Format: WebP, 1200×675. If a real chart is used instead of a schematic, it must use price data at least 30 days old, with the date range labelled on the image, and must not imply any recommendation."
+        },
+        {
+          "file": "head-and-shoulders-neckline-break.webp",
+          "width": 1200,
+          "height": 675,
+          "alt": "Schematic daily chart showing a head and shoulders neckline break, a throwback that retests the neckline from below, and the pattern height projected downward from the break point as a measured move.",
+          "caption": "Neckline break, throwback, and the measured-move concept.",
+          "spec": "Illustrative/schematic daily chart (no named security). Mark and label: the neckline break (a decisive close beyond the neckline), an optional throwback (retest of the neckline from the other side), and the measured move (project the vertical head-to-neckline distance from the break point). Purpose: show confirmation and how the pattern's height frames the scale of a move — as a concept, not a price call. Format: WebP, 1200×675. Same 30-day-data + labelled-date-range rule applies if a real security chart is used."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is the head and shoulders a bullish or bearish pattern?",
+          "a": "The classic head and shoulders forms at the end of an uptrend and is studied as a potential reversal lower. Its mirror image, the inverse head and shoulders, forms at the end of a downtrend and is studied as a potential reversal higher. Neither outcome is a certainty — it is one piece of structure to weigh with the rest of the chart."
+        },
+        {
+          "q": "How do I confirm a head and shoulders pattern?",
+          "a": "Most readers wait for a decisive close beyond the neckline before treating the pattern as confirmed. A neckline that has not broken means the shape is still just an outline. At Market Credo we teach confirmation and context rather than acting on the outline alone."
+        }
+      ]
+    }
+  ]
+}

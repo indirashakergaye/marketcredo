@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="theme-color" content="#34B350"/>
+<meta name="theme-color" content="#28A064"/>
 <title>Atish Shakergaye — SEBI-Registered Analyst | Market Credo</title>
-<meta name="description" content="Meet Atish Shakergaye — SEBI-registered research analyst (INH000006086) with 20+ years of stock market experience. Founder and lead trainer at Market Credo, Bhopal."/>
+<meta name="description" content="Meet Atish Shakergaye — SEBI-registered research analyst (INH000006086), founder of Market Credo, Bhopal, with 20+ years of stock market experience."/>
 <meta name="geo.region" content="IN-MP"/>
 <meta name="geo.placename" content="Bhopal"/>
 <meta name="geo.position" content="23.2332;77.4347"/>
@@ -29,6 +29,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="mc.css"/>
 <!-- Structured Data: ProfilePage + Person + BreadcrumbList (trainer employee-page, v5.1) -->
@@ -57,13 +58,21 @@
       },
       "knowsAbout": ["Technical Analysis", "Price Action", "Chart Patterns", "Candlestick Patterns", "Stock Market Trading", "Risk Management", "Options Trading", "Commodity Trading", "Trading Psychology"],
       "knowsLanguage": ["en", "hi"],
-      "hasCredential": {
-        "@type": "EducationalOccupationalCredential",
-        "credentialCategory": "SEBI Registration",
-        "recognizedBy": {"@type": "Organization", "name": "Securities and Exchange Board of India (SEBI)"},
-        "name": "SEBI Registered Research Analyst",
-        "identifier": "INH000006086"
-      },
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "SEBI Registration",
+          "recognizedBy": {"@type": "Organization", "name": "Securities and Exchange Board of India (SEBI)"},
+          "name": "SEBI Registered Research Analyst",
+          "identifier": "INH000006086"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "certification",
+          "recognizedBy": {"@type": "Organization", "name": "National Institute of Securities Markets (NISM)"},
+          "name": "NISM Series-XV: Research Analyst Certification Examination"
+        }
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Plot No 83, Shrinivas Tower, M.P. Nagar Zone II",
@@ -104,11 +113,11 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
   <div class="wrap">
     <a class="brand" href="/"><span class="bm">M</span><span>Market Credo<small>TECHNICAL ANALYSIS INSTITUTE</small></span></a>
     <ul class="menu" id="menu">
-      <li><a href="courses#courses">Courses</a></li>
-      <li><a href="about">Trainer</a></li>
+      <li><a href="/courses#courses">Courses</a></li>
+      <li><a href="/about">Trainer</a></li>
       <li><a href="/#curriculum">Curriculum</a></li>
-      <li><a href="testimonials">Reviews</a></li>
-      <li><a href="videos">Videos</a></li>
+      <li><a href="/testimonials">Reviews</a></li>
+      <li><a href="/videos">Videos</a></li>
       <li><a href="/#contact">Contact</a></li>
     </ul>
     <div class="nav-r">
@@ -164,7 +173,7 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
     <div class="sh reveal"><span class="kpill">About the Trainer</span><h2>Two decades of <span class="g">living the markets.</span></h2><p>Not just studying charts — trading them, every single day, through every kind of market.</p></div>
     <div class="reveal tsplit">
       <div>
-        <p style="font-size:17px;color:var(--body);margin-bottom:18px;"><strong style="color:var(--ink);">Atish Shakergaye</strong> is a SEBI Registered Research Analyst (INH000006086) with over <strong style="color:var(--ink);">20 years of hands-on experience</strong> in the Indian financial markets. As the founder of <strong style="color:var(--ink);">Market Credo</strong>, Bhopal's premier technical analysis training institute, Atish has spent two decades not just studying the markets — but living them, trading them, and distilling their deepest lessons into a curriculum that transforms how students see price.</p>
+        <p style="font-size:17px;color:var(--body);margin-bottom:18px;"><strong style="color:var(--ink);">Atish Shakergaye</strong> is a SEBI Registered Research Analyst (INH000006086) with over <strong style="color:var(--ink);">20 years of hands-on experience</strong> in the Indian financial markets. As the founder of <strong style="color:var(--ink);">Market Credo</strong>, Bhopal's price-action focused technical analysis training institute, Atish has spent two decades not just studying the markets — but living them, trading them, and distilling their deepest lessons into a curriculum that transforms how students see price.</p>
         <p style="font-size:17px;color:var(--body);">With 20 years of real market cycles behind him — bull runs, bear crashes, consolidations, and breakouts — Atish brings something no textbook can replicate: the intuition and pattern recognition of someone who has been reading charts every single day for two decades. He has built this 20-year journey into a structured programme that teaches you <strong style="color:var(--ink);">the core concepts of technical analysis from absolute first principles.</strong></p>
       </div>
       <div style="background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh);overflow:hidden;">
@@ -362,7 +371,7 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
     <div class="news">
       <div>
         <h3>Stay on top of the markets</h3>
-        <p>Get bite-sized technical-analysis tips &amp; batch updates. No spam, ever.</p>
+        <p>Get bite-sized technical-analysis lessons &amp; batch updates. No spam, ever.</p>
       </div>
       <form onsubmit="return subNews(event)">
         <input id="news-email" type="email" placeholder="Your email address" required/>
@@ -383,8 +392,8 @@ gtag('js',new Date());gtag('config','G-5RJD0WSYV5');
           <a href="https://www.facebook.com/marketcredo" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.44 18.63.07 12 .07S0 5.44 0 12.07c0 5.99 4.39 10.95 10.13 11.85v-8.38H7.08v-3.47h3.05V9.43c0-3.01 1.79-4.67 4.53-4.67 1.31 0 2.69.24 2.69.24v2.95h-1.51c-1.49 0-1.96.93-1.96 1.87v2.25h3.33l-.53 3.47h-2.8v8.38C19.61 23.02 24 18.06 24 12.07z"/></svg></a>
         </div>
       </div>
-      <div><div class="foot-h">Course</div><ul class="foot-links"><li><a href="courses#courses">Technical Analysis</a></li><li><a href="/#curriculum">Curriculum</a></li><li><a href="/#enquire">Free 2-Day Demo</a></li></ul></div>
-      <div><div class="foot-h">Institute</div><ul class="foot-links"><li><a href="about">About the Trainer</a></li><li><a href="faq">FAQ</a></li><li><a href="blog">Journal</a></li><li><a href="terms">Terms</a></li><li><a href="privacy">Privacy</a></li></ul></div>
+      <div><div class="foot-h">Course</div><ul class="foot-links"><li><a href="/courses#courses">Technical Analysis</a></li><li><a href="/#curriculum">Curriculum</a></li><li><a href="/#enquire">Free 2-Day Demo</a></li></ul></div>
+      <div><div class="foot-h">Institute</div><ul class="foot-links"><li><a href="/about">About the Trainer</a></li><li><a href="/faq">FAQ</a></li><li><a href="/blog">Journal</a></li><li><a href="/terms">Terms</a></li><li><a href="/privacy">Privacy</a></li></ul></div>
       <div><div class="foot-h">Contact</div><ul class="foot-links"><li><a href="tel:+919993906449">+91 99939 06449</a></li><li><a href="mailto:info@marketcredo.in">info@marketcredo.in</a></li><li><a href="https://wa.me/919993906449" target="_blank" rel="noopener">WhatsApp Us</a></li><li>Mon–Sat · 9AM–10PM</li></ul></div>
     </div>
   </div>
