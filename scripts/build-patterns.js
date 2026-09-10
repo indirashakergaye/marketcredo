@@ -49,6 +49,50 @@ function chartProblems(rec) {
   return problems;
 }
 
+const BY_SLUG = new Map(records.map((r) => [r.slug, r]));
+
+// Validate rec.related the same way the chart gate validates charts: a cross-link to a
+// slug that has no pattern is a dead link on a live page, so it fails the build.
+function relatedProblems(rec) {
+  const problems = [];
+  const seen = new Set();
+  (rec.related || []).forEach((r, i) => {
+    const at = `related[${i}]`;
+    if (!r || !r.slug) { problems.push(`${at} has no slug`); return; }
+    if (r.slug === rec.slug) problems.push(`${at} "${r.slug}" points at this page itself`);
+    else if (!BY_SLUG.has(r.slug)) problems.push(`${at} "${r.slug}" has no pattern in data/patterns.json`);
+    if (seen.has(r.slug)) problems.push(`${at} "${r.slug}" is listed twice`);
+    seen.add(r.slug);
+    if (!r.note || !r.note.trim()) problems.push(`${at} "${r.slug}" has no note explaining the relationship`);
+  });
+  (rec.relatedOffPage || []).forEach((o, i) => {
+    if (!o || !o.name) problems.push(`relatedOffPage[${i}] has no name`);
+    else if (o.slug && BY_SLUG.has(o.slug)) problems.push(`relatedOffPage[${i}] "${o.name}" now has a page — move it to related`);
+  });
+  return problems;
+}
+
+function renderRelated(rec) {
+  const items = [];
+  for (const r of rec.related || []) {
+    const t = BY_SLUG.get(r.slug);
+    if (!t) continue; // the gate fails the build; keep the rendering honest meanwhile
+    items.push(`<li><a href="/chart-patterns/${esc(r.slug)}">${esc(t.breadcrumb || t.h1)}</a> &mdash; ${esc(r.note)}</li>`);
+  }
+  for (const o of rec.relatedOffPage || []) {
+    items.push(`<li><strong>${esc(o.name)}</strong> &mdash; ${esc(o.note || '')}</li>`);
+  }
+  if (!items.length) return '';
+  return `<section><div class="wrap" style="max-width:820px;">` +
+    `<div class="sh reveal"><h2>Related <span class="g">patterns.</span></h2></div>` +
+    `<ul>${items.join('')}</ul>` +
+    `<p>The full pattern library sits inside the course syllabus &mdash; see ` +
+    `<a href="/curriculum#patterns">the 60+ chart patterns we cover</a>, or the ` +
+    `<a href="/bhopal-stock-market-course">classroom course in Bhopal</a>. Every published ` +
+    `guide is listed on the <a href="/chart-patterns">chart patterns hub</a>.</p>` +
+    `</div></section>`;
+}
+
 function schema(rec) {
   const url = `${BASE}/chart-patterns/${rec.slug}`;
   const graph = [
@@ -130,6 +174,8 @@ function renderBody(rec) {
     if (i === 1 && rec.charts[1]) s += renderChart(rec.charts[1]);
   });
   s += `</div></section>`;
+
+  s += renderRelated(rec);
 
   if (rec.faqs && rec.faqs.length) {
     s += `<section id="faq" style="background:var(--mint);"><div class="wrap" style="max-width:820px;">` +
@@ -241,11 +287,14 @@ function buildHub(recs) {
 
 fs.mkdirSync('chart-patterns', { recursive: true });
 const failures = [];
+const linkFailures = [];
 for (const rec of records) {
   fs.writeFileSync(path.join('chart-patterns', `${rec.slug}.html`), buildPage(rec));
   console.log(`✓ wrote chart-patterns/${rec.slug}.html`);
   const problems = chartProblems(rec);
   if (problems.length) failures.push({ slug: rec.slug, problems });
+  const linkProblems = relatedProblems(rec);
+  if (linkProblems.length) linkFailures.push({ slug: rec.slug, problems: linkProblems });
 }
 
 if (failures.length) {
@@ -256,8 +305,19 @@ if (failures.length) {
   }
   console.error('\nProduce each chart (see the "spec" field on every chart record), drop the WebP');
   console.error(`into ${IMG_DIR}/, then re-run. No pattern page ships without >= 2 annotated charts.`);
-  process.exit(1);
 }
+
+if (linkFailures.length) {
+  console.error('\n❌ RELATED-LINK GATE FAILED — a cross-link points at a pattern that does not exist:');
+  for (const f of linkFailures) {
+    console.error(`  ${f.slug}:`);
+    f.problems.forEach((p) => console.error(`    - ${p}`));
+  }
+  console.error('\nAdd the missing pattern to data/patterns.json, or move the entry to');
+  console.error('"relatedOffPage" — named and described, but not linked — until its page exists.');
+}
+
 fs.writeFileSync(path.join('chart-patterns', 'index.html'), buildHub(records));
 console.log('✓ wrote chart-patterns/index.html (hub)');
-console.log(`✅ ${records.length} pattern page(s) built; all have >= 2 charts with alt text.`);
+if (failures.length || linkFailures.length) process.exit(1);
+console.log(`✅ ${records.length} pattern page(s) built; all have >= 2 charts with alt text and valid cross-links.`);

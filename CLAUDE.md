@@ -170,6 +170,13 @@ the credential is not. Decision by the registered analyst, 10 Sep 2026.
   alone. The script needs sharp, installed for the run only
   (`npm install --no-save sharp`) and deliberately not a project dependency — the
   site build needs no binaries.
+- **Cross-links between pattern pages are structured, not prose.** Each record's
+  `related` array holds `{slug, note}` entries; `relatedOffPage` holds
+  `{name, note}` for patterns that have no page yet (named and described, not
+  linked). build-patterns.js renders the "Related patterns" section from them and
+  runs a RELATED-LINK GATE alongside the chart gate: an unknown slug, a self-link,
+  a duplicate or a missing note fails the build with exit 1. A dead cross-link on a
+  live page is worse than no link, and prose links cannot be checked.
 - `scripts/exclude.js` is the single source of truth for what stays out of the
   generated feeds: `EXCLUDE` (admin tools, blog-template, the bloomberg mock,
   thank-you, privacy, terms, 404, and the three noindexed blog posts) and

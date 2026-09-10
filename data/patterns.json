@@ -40,10 +40,6 @@
           "html": "<ul><li><strong>Forcing the shape.</strong> Not every three-peak wiggle is a head and shoulders. The shoulders should be roughly symmetrical and the head clearly higher.</li><li><strong>Ignoring the neckline.</strong> An unbroken neckline means the pattern is unconfirmed. The outline alone is not enough.</li><li><strong>Reading it in isolation.</strong> The pattern is one piece of structure. Weigh it against the wider trend, support and resistance, and overall context.</li></ul>"
         },
         {
-          "h2": "Related patterns",
-          "html": "<ul><li><a href=\"/chart-patterns/double-top\">Double top</a> — the two-peak relative: two tops at roughly the same height instead of three peaks with a higher middle one, resting on the same kind of neckline and read the same way once the line breaks.</li><li><strong>Inverse head and shoulders</strong> — this pattern turned upside down at the end of a downtrend, as described above.</li></ul><p>The full pattern library sits inside the course syllabus — see <a href=\"/curriculum#patterns\">the 60+ chart patterns we cover</a>, or the <a href=\"/bhopal-stock-market-course\">classroom course in Bhopal</a>. Every published guide is listed on the <a href=\"/chart-patterns\">chart patterns hub</a>.</p>"
-        },
-        {
           "h2": "How we teach it at Market Credo",
           "html": "<p>In the classroom we teach the head and shoulders from first principles — why the structure forms, what the neckline represents, and how to confirm it — so you can recognise it on any chart yourself. The aim is an independent reader of price, not someone who depends on ready-made trades.</p>"
         }
@@ -290,6 +286,18 @@
           "q": "How do I confirm a head and shoulders pattern?",
           "a": "Most readers wait for a decisive close beyond the neckline before treating the pattern as confirmed. A neckline that has not broken means the shape is still just an outline. At Market Credo we teach confirmation and context rather than acting on the outline alone."
         }
+      ],
+      "related": [
+        {
+          "slug": "double-top",
+          "note": "the two-peak relative: two tops at roughly the same height instead of three peaks with a higher middle one, resting on the same kind of neckline and read the same way once the line breaks."
+        }
+      ],
+      "relatedOffPage": [
+        {
+          "name": "Inverse head and shoulders",
+          "note": "this pattern turned upside down at the end of a downtrend, as described above."
+        }
       ]
     },
     {
@@ -330,10 +338,6 @@
         {
           "h2": "Common failure cases",
           "html": "<ul><li><strong>The break that does not hold.</strong> Price closes beyond the neckline and then recovers back inside the structure.</li><li><strong>Forcing the shape.</strong> Any two bumps on a chart are not a double top.</li><li><strong>A second peak far above or below the first.</strong> That is a different structure being read as this one.</li><li><strong>No context.</strong> Reading the pattern without the wider trend, or without a second timeframe.</li><li><strong>Treating the measured move as a promise</strong> rather than a way of thinking about scale.</li></ul>"
-        },
-        {
-          "h2": "Related patterns",
-          "html": "<ul><li><a href=\"/chart-patterns/head-and-shoulders\">Head and shoulders</a> — the near neighbour: three peaks with a higher middle one instead of two of equal height, resting on the same kind of neckline and read the same way once the line breaks.</li><li><strong>Double bottom</strong> — this pattern inverted, forming at the end of a downtrend. Same logic, mirrored.</li></ul><p>The full pattern library sits inside the course syllabus — see <a href=\"/curriculum#patterns\">the 60+ chart patterns we cover</a>, or the <a href=\"/bhopal-stock-market-course\">classroom course in Bhopal</a>. Every published guide is listed on the <a href=\"/chart-patterns\">chart patterns hub</a>.</p>"
         },
         {
           "h2": "How we teach it at Market Credo",
@@ -572,6 +576,18 @@
         {
           "q": "What is the difference between a double top and a head and shoulders?",
           "a": "A double top has two peaks of similar height; a head and shoulders has three, with a higher middle peak between two lower ones. Both rest on a neckline, and both are read the same way once that line breaks decisively."
+        }
+      ],
+      "related": [
+        {
+          "slug": "head-and-shoulders",
+          "note": "the near neighbour: three peaks with a higher middle one instead of two tops of equal height, resting on the same kind of neckline and read the same way once the line breaks."
+        }
+      ],
+      "relatedOffPage": [
+        {
+          "name": "Double bottom",
+          "note": "this pattern inverted, forming at the end of a downtrend. Same logic, mirrored."
         }
       ]
     }
