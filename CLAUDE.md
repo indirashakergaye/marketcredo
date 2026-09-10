@@ -63,8 +63,9 @@ any page title, meta description or hero copy that mentions the SEBI credential.
 - `build-sitemap.js` already derives lastmod from git commit dates.
 - No partials: all 26 pages repeat nav and footer as literal HTML.
 - JSON-LD is hardcoded per page (33 inline blocks). No shared schema source.
-- `site-loader.js` patches CRM-managed text into the DOM client-side from
-  /site-data.json.
+- `site-loader.js` and `/site-data.json` are ORPHANED DEAD CODE — not referenced
+  by any live page and never fetched. All user-visible text and every JSON-LD
+  value are static in the raw HTML; editing site-data.json has no effect.
 - Admin pages (/crm, /blog-studio, /og-generator) are Basic-auth gated in
   middleware.js and excluded from the sitemap.
 
