@@ -38,6 +38,7 @@ function lastmod(relPath) {
 function toUrl(relPath) {
   let p = relPath.replace(/\\/g, '/').replace(/\.html$/, '');
   if (p === 'index') return BASE + '/';
+  p = p.replace(/\/index$/, '');   // a section index (chart-patterns/index.html) is the directory URL
   return BASE + '/' + p;
 }
 

@@ -8,7 +8,12 @@
       "eyebrow": "Chart Patterns · Reversal Structure",
       "h1": "The Head and Shoulders Pattern",
       "intro": "The head and shoulders is a reversal structure made of three peaks — a higher middle peak (the head) between two lower, roughly equal peaks (the shoulders) — resting on a line called the neckline. It is studied as a sign that an existing uptrend may be losing strength.",
-      "about": ["Technical Analysis", "Chart Patterns", "Price Action", "Chart Structure"],
+      "about": [
+        "Technical Analysis",
+        "Chart Patterns",
+        "Price Action",
+        "Chart Structure"
+      ],
       "sections": [
         {
           "h2": "What the pattern looks like",
@@ -35,6 +40,10 @@
           "html": "<ul><li><strong>Forcing the shape.</strong> Not every three-peak wiggle is a head and shoulders. The shoulders should be roughly symmetrical and the head clearly higher.</li><li><strong>Ignoring the neckline.</strong> An unbroken neckline means the pattern is unconfirmed. The outline alone is not enough.</li><li><strong>Reading it in isolation.</strong> The pattern is one piece of structure. Weigh it against the wider trend, support and resistance, and overall context.</li></ul>"
         },
         {
+          "h2": "Related patterns",
+          "html": "<ul><li><a href=\"/chart-patterns/double-top\">Double top</a> — the two-peak relative: two tops at roughly the same height instead of three peaks with a higher middle one, resting on the same kind of neckline and read the same way once the line breaks.</li><li><strong>Inverse head and shoulders</strong> — this pattern turned upside down at the end of a downtrend, as described above.</li></ul><p>The full pattern library sits inside the course syllabus — see <a href=\"/curriculum#patterns\">the 60+ chart patterns we cover</a>, or the <a href=\"/bhopal-stock-market-course\">classroom course in Bhopal</a>. Every published guide is listed on the <a href=\"/chart-patterns\">chart patterns hub</a>.</p>"
+        },
+        {
           "h2": "How we teach it at Market Credo",
           "html": "<p>In the classroom we teach the head and shoulders from first principles — why the structure forms, what the neckline represents, and how to confirm it — so you can recognise it on any chart yourself. The aim is an independent reader of price, not someone who depends on ready-made trades.</p>"
         }
@@ -46,7 +55,7 @@
           "height": 675,
           "alt": "Schematic daily chart of a head and shoulders top: a left shoulder, a higher head and a right shoulder of similar height to the left, with a neckline drawn through the two pullback lows.",
           "caption": "Anatomy of a head and shoulders top — the three peaks and the neckline.",
-          "spec": "Illustrative/schematic daily chart (no named security). Mark and label: left shoulder, head (clearly higher), right shoulder (≈ left shoulder height), and the neckline drawn through the two intervening pullback lows. Purpose: show the three-peak reversal structure and where the neckline sits. Format: WebP, 1200×675. If a real chart is used instead of a schematic, it must use price data at least 30 days old, with the date range labelled on the image, and must not imply any recommendation."
+          "spec": "Illustrative/schematic daily chart (no named security). Mark and label: left shoulder, head (clearly higher), right shoulder (≈ left shoulder height), and the neckline drawn through the two intervening pullback lows. Purpose: show the three-peak reversal structure and where the neckline sits. Format: WebP, 1200×675. If a real chart is used instead of a schematic, it must use price data at least 30 days old, with the date range labelled on the image, and must not imply any recommendation. Current image: schematic, generated from a synthetic price series (replaces an earlier real-market capture)."
         },
         {
           "file": "head-and-shoulders-neckline-break.webp",
@@ -54,7 +63,7 @@
           "height": 675,
           "alt": "Schematic daily chart showing a head and shoulders neckline break, a throwback that retests the neckline from below, and the pattern height projected downward from the break point as a measured move.",
           "caption": "Neckline break, throwback, and the measured-move concept.",
-          "spec": "Illustrative/schematic daily chart (no named security). Mark and label: the neckline break (a decisive close beyond the neckline), an optional throwback (retest of the neckline from the other side), and the measured move (project the vertical head-to-neckline distance from the break point). Purpose: show confirmation and how the pattern's height frames the scale of a move — as a concept, not a price call. Format: WebP, 1200×675. Same 30-day-data + labelled-date-range rule applies if a real security chart is used."
+          "spec": "Illustrative/schematic daily chart (no named security). Mark and label: the neckline break (a decisive close beyond the neckline), an optional throwback (retest of the neckline from the other side), and the measured move (project the vertical head-to-neckline distance from the break point). Purpose: show confirmation and how the pattern's height frames the scale of a move — as a concept, not a price call. Format: WebP, 1200×675. Same 30-day-data + labelled-date-range rule applies if a real security chart is used. Current image: schematic, generated from a synthetic price series (replaces an earlier real-market capture)."
         }
       ],
       "faqs": [
@@ -65,6 +74,87 @@
         {
           "q": "How do I confirm a head and shoulders pattern?",
           "a": "Most readers wait for a decisive close beyond the neckline before treating the pattern as confirmed. A neckline that has not broken means the shape is still just an outline. At Market Credo we teach confirmation and context rather than acting on the outline alone."
+        }
+      ]
+    },
+    {
+      "slug": "double-top",
+      "title": "Double Top Pattern — How to Read It | Market Credo",
+      "metaDescription": "Learn to read the double top chart pattern — the two peaks, the neckline and what confirms a break — an educational guide from Market Credo, Bhopal.",
+      "breadcrumb": "Double Top",
+      "eyebrow": "Chart Patterns · Reversal Structure",
+      "h1": "The Double Top Pattern",
+      "intro": "A double top is a reversal structure made of two peaks at roughly the same height, separated by a pullback, with a line called the neckline drawn along the low between them. It is studied as a sign that an existing uptrend may be losing strength.",
+      "about": [
+        "Technical Analysis",
+        "Chart Patterns",
+        "Price Action",
+        "Chart Structure"
+      ],
+      "sections": [
+        {
+          "h2": "What the pattern looks like",
+          "html": "<p>Read left to right, price advances and stalls at a first peak, pulls back to a low that holds, then advances a second time into roughly the same zone and stalls again. The two peaks are the <strong>tops</strong>; the line drawn along the pullback low between them is the <strong>neckline</strong>.</p><p>The structure matters because the second push could not better the first — it is a picture of a trend that has stopped making progress. <em>Roughly</em> equal is the operative phrase: the two tops rarely match exactly, and a modest overshoot or undershoot on the second is normal. What you are reading is a failure to extend, not a measurement to the tick.</p>"
+        },
+        {
+          "h2": "How the pattern forms",
+          "html": "<p>An uptrend has to be in place first — without a prior advance there is nothing to reverse.</p><ul><li>The advance stalls and forms the <strong>first top</strong>.</li><li>Price pulls back to a level that holds; that low defines the <strong>neckline</strong>.</li><li>A second advance retests the area of the first top and stalls in the same zone, forming the <strong>second top</strong>.</li><li>The structure is complete only when price closes decisively beyond the neckline. Until then it is an outline, not a pattern.</li></ul><p>Time matters as much as shape. The two tops normally separate by a meaningful number of sessions; two peaks a couple of bars apart are noise, not structure.</p>"
+        },
+        {
+          "h2": "The psychology behind the two tops",
+          "html": "<p>The first top is where an advance meets enough supply to halt it. The pullback brings in buyers who still read the trend as intact, and the second advance is their attempt to carry it further. When that attempt stalls in the same zone, it tells you the buyers driving the trend could not absorb what was waiting for them there.</p><p>There is a second group in the picture: traders who bought into the first top and have been holding a loss since. Near the second top they are close to breakeven, and some of them take that exit — which adds to supply exactly where the advance is already struggling.</p><p>The neckline is where these groups meet. It has held once, everyone can see it, and a decisive close beyond it removes the level the structure was resting on. Volume often eases on the second top compared with the first, which is consistent with fading participation — read it as context, not proof.</p>"
+        },
+        {
+          "h2": "Validation rules — when the shape counts",
+          "html": "<p>Treat the shape as a pattern only when all of this is present:</p><ul><li>A prior uptrend to reverse.</li><li>Two peaks in roughly the same zone, with neither dramatically higher.</li><li>A genuine reaction between them, not a shallow pause.</li><li>Visible separation in time between the two tops.</li><li>A neckline you can draw cleanly along the pullback low.</li><li>A decisive close beyond that neckline — a wick through the line, on its own, is not the same thing.</li></ul><p>Miss any of these and what you have is a possibility, not a pattern.</p>"
+        },
+        {
+          "h2": "Where the structure is confirmed, and where it stops being valid",
+          "html": "<p>Confirmation is conventionally taken as a decisive close beyond the neckline. Some readers wait for price to come back to the line from the other side — a <strong>throwback</strong> — before treating the break as settled, and that retest is a useful place to study how the structure behaves.</p><p>The reading is invalidated when price recovers above the higher of the two tops: the failure to extend that defined the pattern no longer holds, so the structure is gone. Between the neckline and the tops it is simply unresolved — neither confirmed nor invalid.</p><p>On scale, the vertical distance from the tops down to the neckline, projected from the break point, is taught as a way to understand the pattern's proportions. That is a concept for reading structure, not a forecast. We teach where a reading stops being valid; we do not tell anyone what to buy or sell, and nothing here is a recommendation.</p>"
+        },
+        {
+          "h2": "Common failure cases",
+          "html": "<ul><li><strong>The break that does not hold.</strong> Price closes beyond the neckline and then recovers back inside the structure.</li><li><strong>Forcing the shape.</strong> Any two bumps on a chart are not a double top.</li><li><strong>A second peak far above or below the first.</strong> That is a different structure being read as this one.</li><li><strong>No context.</strong> Reading the pattern without the wider trend, or without a second timeframe.</li><li><strong>Treating the measured move as a promise</strong> rather than a way of thinking about scale.</li></ul>"
+        },
+        {
+          "h2": "Related patterns",
+          "html": "<ul><li><a href=\"/chart-patterns/head-and-shoulders\">Head and shoulders</a> — the near neighbour: three peaks with a higher middle one instead of two of equal height, resting on the same kind of neckline and read the same way once the line breaks.</li><li><strong>Double bottom</strong> — this pattern inverted, forming at the end of a downtrend. Same logic, mirrored.</li></ul><p>The full pattern library sits inside the course syllabus — see <a href=\"/curriculum#patterns\">the 60+ chart patterns we cover</a>, or the <a href=\"/bhopal-stock-market-course\">classroom course in Bhopal</a>. Every published guide is listed on the <a href=\"/chart-patterns\">chart patterns hub</a>.</p>"
+        },
+        {
+          "h2": "How we teach it at Market Credo",
+          "html": "<p>In the classroom we teach the double top from first principles — why the structure forms, what the neckline represents, how it is confirmed and when it is no longer valid — so you can read it on any chart yourself. The aim is an independent reader of price, not someone who depends on ready-made trades.</p>"
+        }
+      ],
+      "charts": [
+        {
+          "file": "double-top-anatomy.webp",
+          "width": 1200,
+          "height": 675,
+          "alt": "Schematic daily chart of a double top: two peaks at roughly the same height separated by a pullback, with a neckline drawn along the low between them.",
+          "caption": "Anatomy of a double top — the two peaks and the neckline.",
+          "spec": "Mark and label: first top, second top (roughly the same height), and the neckline drawn along the intervening pullback low. Purpose: show the two-peak reversal structure and where the neckline sits. Illustrative/schematic daily chart (no named security, no price axis, synthetic series). Format: WebP, 1200x675. If a real chart is ever used instead of a schematic, it must use price data at least 30 days old, with the date range labelled on the image, and must not imply any recommendation. Current image: schematic, generated from a synthetic price series."
+        },
+        {
+          "file": "double-top-neckline-break.webp",
+          "width": 1200,
+          "height": 675,
+          "alt": "Schematic daily chart showing a double top neckline break, a throwback that retests the neckline from below, and the pattern height projected down from the break point as a measured move.",
+          "caption": "Neckline break, throwback, and the measured-move concept.",
+          "spec": "Mark and label: the neckline break (a decisive close beyond the line), the throwback (retest from the other side), the pattern height (top to neckline) and the measured move projected from the break point. Purpose: show confirmation and how the pattern's height frames scale — as a concept, not a price call. Illustrative/schematic daily chart (no named security, no price axis, synthetic series). Format: WebP, 1200x675. If a real chart is ever used instead of a schematic, it must use price data at least 30 days old, with the date range labelled on the image, and must not imply any recommendation. Current image: schematic, generated from a synthetic price series."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Is a double top a bullish or bearish pattern?",
+          "a": "A double top forms after an uptrend and is studied as a potential reversal lower. Its mirror image, the double bottom, forms at the end of a downtrend and is studied as a potential reversal higher. Neither outcome is a certainty — it is one piece of structure to weigh with the rest of the chart."
+        },
+        {
+          "q": "How equal do the two tops have to be?",
+          "a": "They should form in the same zone rather than match tick for tick. A modest overshoot or undershoot on the second attempt is normal. What matters is the failure to extend, and a neckline you can draw cleanly along the low between the two peaks."
+        },
+        {
+          "q": "What is the difference between a double top and a head and shoulders?",
+          "a": "A double top has two peaks of similar height; a head and shoulders has three, with a higher middle peak between two lower ones. Both rest on a neckline, and both are read the same way once that line breaks decisively."
         }
       ]
     }
