@@ -134,8 +134,11 @@ the credential is not. Decision by the registered analyst, 10 Sep 2026.
   footer byte-for-byte: all 9 blog posts, the generated chart-pattern page, about,
   chartboard, faq, fees, privacy, review-us, terms, testimonials, videos. Still on
   hand-written chrome: index, bhopal-stock-market-course, courses, life, blog,
-  blog-template, thank-you and the three admin pages. Edit a partial → re-stamp
-  the migrated pages.
+  blog-template, thank-you and the three admin pages.
+  **The partials are build-time sources, NOT runtime includes. Editing a partial
+  does NOT update the 19 pages that use it — those pages hold their own copy of
+  the chrome, and `scripts/migrate-chrome.js` has to be re-run to re-stamp them.**
+  Change shared chrome in two steps, always: edit the partial, then re-stamp.
 - `scripts/migrate-chrome.js` stamps the nav/footer partials into a page. It
   replaces ONLY the `<nav class="navbar">` and `<footer id="contact">` elements
   and never touches `<head>`, JSON-LD, the WhatsApp float or trailing scripts.
