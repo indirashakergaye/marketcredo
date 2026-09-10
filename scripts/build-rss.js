@@ -8,6 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const { EXCLUDE } = require('./exclude');
 
 const BASE = 'https://www.marketcredo.in';
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -31,7 +32,7 @@ const dir = path.join(root, 'blog');
 if (!fs.existsSync(dir)) { console.log('ℹ build-rss: no blog/ dir, skipped.'); process.exit(0); }
 
 const items = fs.readdirSync(dir)
-  .filter((f) => f.endsWith('.html') && f !== 'index.html')
+  .filter((f) => f.endsWith('.html') && f !== 'index.html' && !EXCLUDE.has(f))
   .map((f) => {
     const rel = 'blog/' + f;
     const html = fs.readFileSync(path.join(dir, f), 'utf8');

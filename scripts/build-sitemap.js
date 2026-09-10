@@ -11,18 +11,9 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const { EXCLUDE, EXCLUDE_DIRS } = require('./exclude');
 
 const BASE = 'https://www.marketcredo.in';
-
-// Not in the public sitemap: admin tools, the blog template, thank-you (noindex),
-// and the legal utility pages.
-const EXCLUDE = new Set([
-  'crm.html', 'blog-studio.html', 'og-generator.html', 'blog-template.html',
-  'market_credo_bloomberg.html', 'chips-variants-preview.html', 'mobile.html',
-  'thank-you.html', 'privacy.html', 'terms.html', '404.html',
-  'head-shoulders-pattern-guide.html', 'rsi-better-entry-points.html', 'top-5-candlestick-patterns.html',
-]);
-const EXCLUDE_DIRS = new Set(['node_modules', '.git', 'docs', 'vendor', 'templates', 'scripts', 'api', 'data', 'partials']);
 
 function walk(dir, acc) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
