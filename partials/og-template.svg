@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect width="1200" height="12" y="618" fill="#28A064"/>
+  <rect width="16" height="630" fill="#28A064"/>
+  <text x="80" y="118" font-family="Jost" font-weight="700" font-size="34" fill="#28A064" letter-spacing="2">MARKET CREDO</text>
+  <text x="80" y="152" font-family="Jost" font-weight="500" font-size="20" fill="#5b6b60">Technical Analysis Institute · Bhopal</text>
+  <text x="80" y="238" font-family="Jost" font-weight="600" font-size="24" fill="#28A064" letter-spacing="1">{{EYEBROW}}</text>
+  <text x="80" y="316" font-family="Jost" font-weight="700" font-size="64" fill="#12211a">{{TITLE_TSPANS}}</text>
+  <text x="80" y="576" font-family="Jost" font-weight="500" font-size="22" fill="#5b6b60">marketcredo.in · SEBI Registered Research Analyst</text>
+</svg>
