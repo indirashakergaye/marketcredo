@@ -69,6 +69,13 @@ to remove a superlative would fabricate the testimonial, which is worse than the
 word. The banned-word rules bind OUR copy, not what a student is quoted saying.
 Same narrow region-skip pattern as the terms.html §9 exemption.
 
+**Quoted-warning exemption:** the "Realistic claims" bullet in
+`blog/start-trading-journey.html` quotes the exact phrase scammers use
+("guaranteed returns") in order to warn readers away from it. A banned phrase
+quoted to warn against it is not a claim — rewording it would weaken the
+investor-protection message to satisfy a lint rule. Exempt via `EXEMPT_REGIONS`,
+scoped to that single list item only.
+
 ### Never
 - Never invent a testimonial, review, student name, statistic or outcome.
 - Never add Review or AggregateRating schema for a review you cannot verify
