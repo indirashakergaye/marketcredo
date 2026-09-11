@@ -1,2 +1,20 @@
 .vercel
 node_modules/
+
+# --- Secrets / service-account keys — NEVER commit ---
+# Targeted (NOT a blanket *.json, which would catch package.json, vercel.json,
+# data/patterns.json, nap-data.json, site-data.json, etc.).
+marketcredo-seo-*.json
+*-service-account*.json
+service-account*.json
+*service_account*.json
+*-credentials.json
+credentials*.json
+client_secret*.json
+gcp-*.json
+*.key.json
+*.pem
+/secrets/
+
+# GSC tooling output (may list URLs; keep out of the repo)
+gsc-coverage.out.json
