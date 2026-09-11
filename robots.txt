@@ -1,4 +1,40 @@
+# Market Credo — robots.txt
+# All crawlers, including AI/LLM crawlers, are welcome. Only /api/ is disallowed.
+# Named groups below make that intent explicit so it survives future edits to the
+# wildcard group. NOTE: a named user-agent group overrides the * group entirely,
+# so each named group repeats "Disallow: /api/".
+
 User-agent: *
+Allow: /
+Disallow: /api/
+
+# --- Search engines ---
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+
+# --- AI / LLM crawlers ---
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+
+User-agent: ClaudeBot
 Allow: /
 Disallow: /api/
 
