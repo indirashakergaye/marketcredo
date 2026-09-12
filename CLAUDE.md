@@ -92,7 +92,7 @@ scoped to that single list item only.
 ## Canonical facts — use these exactly, never from memory
 Name:    Market Credo
 Trainer: Atish Shakergaye
-Address: Plot No. 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, Madhya Pradesh 462011
+Address: Shrinivas Tower, Plot No 83, Near City Hospital, Maharana Pratap Nagar Zone-II, Bhopal, Madhya Pradesh 462011
 Phone:   +91 99939 06449
 Email:   info@marketcredo.in
 Hours:   Mon-Sat 09:00-22:00 IST
