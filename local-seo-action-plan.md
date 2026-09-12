@@ -19,7 +19,7 @@ A step-by-step, checklist-driven plan to build Market Credo's local search visib
 - [ ] **Address:** Plot No 83, Shrinivas Tower, M.P. Nagar Zone II, Bhopal, Madhya Pradesh 462011
 - [ ] **Phone:** +91-9993906449
 - [ ] **Website:** https://www.marketcredo.in
-- [ ] **Hours:** Monday-Saturday 09:00-18:00, Sunday Closed
+- [ ] **Hours:** Monday-Saturday 09:00-22:00, Sunday Closed
 - [ ] **Description:** Write a keyword-rich, 750-character description mentioning: stock market course Bhopal, technical analysis training, SEBI registered, Atish Shakergaye, 20+ years experience, MP Nagar Zone II
 - [ ] **Services:** Add each course as a service (Basics of Stock Market, Advanced Technical Analysis, Free 2-Day Demo Class)
 - [ ] **Attributes:** Set all applicable attributes (wheelchair accessible, languages spoken, etc.)
