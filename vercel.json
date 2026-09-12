@@ -12,7 +12,8 @@
       "destination": "https://www.marketcredo.in/$1",
       "permanent": true
     },
-    { "source": "/atish-shakergaye", "destination": "/about", "permanent": true }
+    { "source": "/atish-shakergaye", "destination": "/about", "permanent": true },
+    { "source": "/blog/nifty-weekly-outlook", "destination": "/blog/how-to-read-nifty-weekly-chart", "permanent": true }
   ],
   "headers": [
     {
