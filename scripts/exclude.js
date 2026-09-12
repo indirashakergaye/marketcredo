@@ -15,6 +15,7 @@ const EXCLUDE = new Set([
   'market_credo_bloomberg.html', 'chips-variants-preview.html', 'mobile.html',
   'thank-you.html', 'privacy.html', 'terms.html', '404.html',
   'head-shoulders-pattern-guide.html', 'rsi-better-entry-points.html', 'top-5-candlestick-patterns.html',
+  'chartboard.html', // INDEX-01: noindexed while empty — remove once 10+ approved charts are live
 ]);
 
 const EXCLUDE_DIRS = new Set(['node_modules', '.git', 'docs', 'vendor', 'templates', 'scripts', 'api', 'data', 'partials']);
