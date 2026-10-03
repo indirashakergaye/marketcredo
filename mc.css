@@ -53,6 +53,7 @@ nav.navbar .wrap{display:flex;align-items:center;justify-content:space-between;h
 .bm{width:44px;height:44px;border-radius:12px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;position:relative;overflow:hidden;}
 .bm::after{content:'';position:absolute;bottom:0;left:0;right:0;height:5px;background:var(--amber);}
 .brand small{display:block;font-family:'Jost';font-size:9px;font-weight:500;letter-spacing:.16em;color:var(--muted);margin-top:1px;}
+.brand img{height:54px;width:auto;display:block;}
 .menu{display:flex;gap:26px;list-style:none;}
 .menu a{font-size:15.5px;font-weight:500;color:var(--ink);transition:color .2s;}
 .menu a:hover{color:var(--green-d);}
@@ -312,6 +313,7 @@ footer{background:var(--mint-panel);color:var(--body);padding:56px 0 0;border-to
 .foot-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.1fr;gap:40px;}
 .foot-brand{display:flex;align-items:center;gap:11px;font-family:'Jost';font-weight:700;font-size:20px;color:var(--ink);margin-bottom:14px;}
 .foot-brand .bm{width:40px;height:40px;font-size:18px;}
+.foot-brand img{height:34px;width:auto;display:block;}
 .foot-about{font-size:14.5px;color:var(--body);max-width:40ch;}
 .sebi-badge{display:inline-flex;align-items:center;gap:10px;margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;box-shadow:var(--sh);}
 .sebi-badge .sb-ic{width:34px;height:34px;border-radius:8px;background:var(--mint-2);display:flex;align-items:center;justify-content:center;}
@@ -559,6 +561,7 @@ html,body{max-width:100%;overflow-x:hidden;}
   .brand{font-size:20px;gap:11px;white-space:nowrap;min-width:0;}
   .brand small{display:block;font-size:8.5px;letter-spacing:.14em;}
   .bm{width:46px;height:46px;font-size:21px;border-radius:12px;flex:0 0 auto;}
+  .brand img{height:46px;}
   .nav-r{gap:10px;flex:0 0 auto;}
   .nav-r .btn{display:none;}
   .menu.open{top:70px;}
@@ -596,6 +599,7 @@ html,body{max-width:100%;overflow-x:hidden;}
   .brand small{display:none;}
   .brand{font-size:19px;}
   .bm{width:42px;height:42px;font-size:19px;}
+  .brand img{height:40px;}
   .hero-mini{gap:14px 20px;}
   .hmini .n{font-size:22px;}
   .nav-r .btn{padding:10px 14px;font-size:13px;}
